@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap&subset=vietnamese"
+        rel="stylesheet">
+    <title>LisaFood – Hamper Tết 2027</title>
+    <style>
+        :root {
+            --bg: #fffaf2;
+            --surface: #ffffff;
+            --text: #2b2118;
+            --muted: #6f6154;
+            --red: #b3261e;
+            --red-d: #8f1d17;
+            --gold: #c58b1b;
+            --soft: #f6ead6;
+            --line: #ead9bd;
+            --on-red: #fff;
+            --hero: #7a1712;
+            --hero2: #b3261e;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #1a1410;
+                --surface: #251c16;
+                --text: #f4eadb;
+                --muted: #bba98f;
+                --red: #e0574d;
+                --red-d: #c9443a;
+                --gold: #e3b04b;
+                --soft: #2e231b;
+                --line: #3d2f24;
+                --hero: #4a0f0c;
+                --hero2: #8a1d17
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #1a1410;
+            --surface: #251c16;
+            --text: #f4eadb;
+            --muted: #bba98f;
+            --red: #e0574d;
+            --red-d: #c9443a;
+            --gold: #e3b04b;
+            --soft: #2e231b;
+            --line: #3d2f24;
+            --hero: #4a0f0c;
+            --hero2: #8a1d17
+        }
+
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px);
+            scroll-behavior: smooth
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Be Vietnam Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0 0 auto;
+            height: env(safe-area-inset-top, 0px);
+            background: var(--hero);
+            z-index: 20
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Playfair Display", "Be Vietnam Pro", Georgia, "Times New Roman", serif;
+            line-height: 1.2;
+            margin: 0
+        }
+
+        a {
+            color: inherit
+        }
+
+        .wrap {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        header {
+            position: sticky;
+            top: env(safe-area-inset-top, 0px);
+            z-index: 10;
+            background: var(--hero);
+            color: #fff
+        }
+
+        header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px
+        }
+
+        .logo {
+            font-family: "Playfair Display", "Be Vietnam Pro", Georgia, serif;
+            font-weight: 700;
+            font-size: 20px;
+            text-decoration: none;
+            color: #fff
+        }
+
+        .logo span {
+            color: #f2c75c
+        }
+
+        .call {
+            background: #f2c75c;
+            color: #3a1200;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 99px
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--hero), var(--hero2));
+            color: #fff;
+            padding: 64px 0 72px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero::after {
+            content: "🌸";
+            position: absolute;
+            right: -10px;
+            top: 10px;
+            font-size: 150px;
+            opacity: .12
+        }
+
+        .tag {
+            display: inline-block;
+            border: 1px solid #f2c75c;
+            color: #f2c75c;
+            border-radius: 99px;
+            padding: 4px 14px;
+            font-size: 13px;
+            letter-spacing: .08em;
+            text-transform: uppercase
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 6vw, 58px);
+            margin: 18px 0 14px;
+            max-width: 720px
+        }
+
+        .hero p {
+            max-width: 560px;
+            font-size: 18px;
+            opacity: .92;
+            margin: 0 0 28px
+        }
+
+        .btns {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 14px 26px;
+            border-radius: 99px;
+            font-size: 16px
+        }
+
+        .btn.gold {
+            background: #f2c75c;
+            color: #3a1200
+        }
+
+        .btn.ghost {
+            border: 2px solid #fff;
+            color: #fff
+        }
+
+        section {
+            padding: 60px 0
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 34px
+        }
+
+        .title h2 {
+            font-size: clamp(26px, 4vw, 36px)
+        }
+
+        .title p {
+            color: var(--muted);
+            margin: 8px auto 0;
+            max-width: 540px
+        }
+
+        .title .bar {
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 14px auto 0;
+            border-radius: 2px
+        }
+
+        .grid {
+            display: grid;
+            gap: 18px
+        }
+
+        .g3 {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+        }
+
+        .g4 {
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 24px
+        }
+
+        .card .ic {
+            font-size: 34px;
+            margin-bottom: 10px
+        }
+
+        .card h3 {
+            font-size: 19px;
+            margin-bottom: 6px
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        .alt {
+            background: var(--soft)
+        }
+
+        .hamper {
+            text-align: center;
+            padding: 26px 16px
+        }
+
+        .hamper .ic {
+            font-size: 44px
+        }
+
+        .hamper .price {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--red);
+            font-weight: 700;
+            font-size: 14px
+        }
+
+        .cat {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 18px
+        }
+
+        .cat .ic {
+            font-size: 30px
+        }
+
+        .cat b {
+            display: block
+        }
+
+        .cat small {
+            color: var(--muted)
+        }
+
+        .cta {
+            background: linear-gradient(135deg, var(--hero), var(--hero2));
+            color: #fff;
+            text-align: center;
+            border-radius: 22px;
+            padding: 48px 24px
+        }
+
+        .cta h2 {
+            font-size: clamp(26px, 4vw, 38px);
+            margin-bottom: 10px
+        }
+
+        .cta p {
+            opacity: .92;
+            margin: 0 auto 24px;
+            max-width: 520px
+        }
+
+        .cta .phone {
+            display: block;
+            font-family: "Playfair Display", "Be Vietnam Pro", Georgia, serif;
+            font-size: clamp(28px, 5vw, 42px);
+            color: #f2c75c;
+            text-decoration: none;
+            margin: 0 0 20px;
+            font-weight: 700
+        }
+
+        footer {
+            padding: 30px 0 40px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+            border-top: 1px solid var(--line)
+        }
+
+        footer a {
+            margin: 0 8px
+        }
+
+        .mobile-call {
+            display: none
+        }
+
+        @media(max-width:600px) {
+            section {
+                padding: 44px 0
+            }
+
+            .hero {
+                padding: 44px 0 52px
+            }
+
+            .mobile-call {
+                display: flex;
+                gap: 10px;
+                position: fixed;
+                left: 16px;
+                right: 16px;
+                bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+                z-index: 15
+            }
+
+            .mobile-call a {
+                flex: 1;
+                text-align: center;
+                background: var(--red);
+                color: var(--on-red);
+                text-decoration: none;
+                font-weight: 700;
+                padding: 14px;
+                border-radius: 99px;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, .3)
+            }
+
+            .mobile-call a.z {
+                background: #0068ff
+            }
+
+            body {
+                padding-bottom: 80px
+            }
+        }
+
+        .hg {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
+        }
+
+        .hc {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            overflow: hidden
+        }
+
+        .hc img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 640/340;
+            object-fit: cover
+        }
+
+        .hb {
+            padding: 18px 20px 20px
+        }
+
+        .hb h3 {
+            font-size: 21px
+        }
+
+        .pr {
+            color: var(--red);
+            font-weight: 700;
+            font-size: 22px;
+            margin: 4px 0 10px
+        }
+
+        .hb ul {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .pg {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
+        }
+
+        .pc {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 13px
+        }
+
+        .pc img {
+            width: 100%;
+            border-radius: 8px;
+            aspect-ratio: 1;
+            object-fit: cover
+        }
+
+        .pc span {
+            color: var(--red);
+            font-weight: 700
+        }
+
+        .heroimg {
+            max-width: 1040px;
+            margin: -36px auto 0;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2
+        }
+
+        .heroimg img {
+            width: 100%;
+            border-radius: 18px;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .3)
+        }
+
+        .perks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 26px
+        }
+
+        .perks span {
+            background: var(--surface);
+            border: 1px solid var(--gold);
+            border-radius: 99px;
+            padding: 8px 16px;
+            font-size: 14px
+        }
+
+        .note {
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 20px
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block
+        }
+
+        .flogo {
+            height: 90px;
+            width: auto;
+            background: #7a1712;
+            border-radius: 12px;
+            padding: 10px 16px
+        }
+
+        header .wrap {
+            height: 64px
+        }
+
+        .num {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--red);
+            color: var(--on-red);
+            font-family: "Be Vietnam Pro", Arial, sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        h1,
+        h2,
+        h3 {
+            letter-spacing: 0
+        }
+
+        .btn.zalo {
+            background: #0068ff;
+            color: #fff
+        }
+
+        .wl {
+            margin: 8px 0 0;
+            padding-left: 18px;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .fm {
+            max-width: 640px;
+            margin: 0 auto;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 24px;
+            display: grid;
+            gap: 14px
+        }
+
+        .fm label {
+            display: grid;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 500
+        }
+
+        .fm input,
+        .fm select,
+        .fm textarea {
+            font: inherit;
+            color: var(--text);
+            background: var(--bg);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 11px 12px;
+            width: 100%
+        }
+
+        .f2 {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+        }
+
+        .fmsg {
+            margin: 0;
+            text-align: center;
+            font-weight: 700;
+            color: var(--red);
+            min-height: 1.2em
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap"><a class="logo" href="#top" aria-label="LisaFood"><img src="images/logo.png"
+                    alt="LisaFood"></a><a class="call" href="tel:0393955516">📞 0393.955.516</a></div>
+    </header>
+
+    <main id="top">
+        <div class="hero">
+            <div class="wrap">
+                <span class="tag">Hamper Tết 2027</span>
+                <h1>Hamper Tết 2027: quà tặng cao cấp từ nông sản Việt</h1>
+                <p>LisaFood tuyển chọn thực phẩm cao cấp từ các nông trại đạt chuẩn, gói trọn lời chúc xuân vào từng hộp
+                    quà sang trọng, sạch và an toàn.</p>
+                <div class="btns"><a class="btn gold" href="#hamper">Xem bộ sưu tập Hamper</a><a class="btn ghost"
+                        href="#baogia">Nhận báo giá</a><a class="btn ghost" href="tel:0393955516">Gọi tư vấn ngay</a><a
+                        class="btn zalo" href="https://zalo.me/0393955516">Chat Zalo</a></div>
+            </div>
+        </div>
+        <div class="heroimg"><img src="images/catalogue-tet-2027-lisafood.jpg" alt="Catalogue Tết 2027 LisaFood"></div>
+
+        <section>
+            <div class="wrap">
+                <div class="title">
+                    <h2>Vì sao chọn LisaFood?</h2>
+                    <p>Di sản Việt Nam · Tiêu chuẩn quốc tế · Hợp tác toàn cầu</p>
+                    <div class="bar"></div>
+                </div>
+                <div class="grid g4">
+                    <div class="card">
+                        <div class="ic">🌱</div>
+                        <h3>Nguyên liệu tuyển chọn kỹ lưỡng</h3>
+                        <ul class="wl">
+                            <li>Nguồn nông sản Việt Nam cao cấp</li>
+                            <li>Giữ trọn chất lượng và giá trị dinh dưỡng</li>
+                            <li>Chọn lọc cho thị trường xuất khẩu khó tính</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="ic">🛡️</div>
+                        <h3>Sản xuất đạt chứng nhận ISO 22000</h3>
+                        <ul class="wl">
+                            <li>Hệ thống quản lý an toàn thực phẩm được chứng nhận</li>
+                            <li>Kiểm soát toàn bộ quy trình</li>
+                            <li>Từ nguyên liệu thô đến thành phẩm</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="ic">🎁</div>
+                        <h3>Giải pháp quà tặng doanh nghiệp cao cấp</h3>
+                        <ul class="wl">
+                            <li>Bộ sưu tập quà tặng được thiết kế tinh tế</li>
+                            <li>Dành cho khách hàng, đối tác và nhân viên</li>
+                            <li>Trình bày sang trọng, mang dấu ấn thương hiệu</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="ic">🤝</div>
+                        <h3>Hợp tác chiến lược lâu dài</h3>
+                        <ul class="wl">
+                            <li>Hợp tác dựa trên sự tin cậy</li>
+                            <li>Cùng phát triển bền vững</li>
+                            <li>Xây dựng mối quan hệ lâu bền</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="alt" id="hamper">
+            <div class="wrap">
+                <div class="title">
+                    <h2>Bộ sưu tập Hamper Tết 2027</h2>
+                    <p>Giá từ 590.000đ. Mỗi set được tặng khắc logo doanh nghiệp.</p>
+                    <div class="bar"></div>
+                </div>
+                <div class="hg">
+                    <article class="hc"><img src="images/hamper-sac-xuan-01-a.jpg" alt="Hamper Sắc Xuân 01 (A)"
+                            loading="lazy">
+                        <div class="hb">
+                            <h3>Sắc Xuân 01 (A)</h3>
+                            <div class="pr">1.022.000đ</div>
+                            <ul>
+                                <li>Hộp quà ô cửa sổ mỹ thuật 2 tầng, kèm túi xách</li>
+                                <li>Hạt điều capuchino 210g</li>
+                                <li>Hạt mix tổng hợp 200g</li>
+                                <li>Nhân macca wasabi 210g</li>
+                                <li>Hạt điều tỏi ớt 210g</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="hc"><img src="images/hamper-sac-xuan-01-b.jpg" alt="Hamper Sắc Xuân 01 (B)"
+                            loading="lazy">
+                        <div class="hb">
+                            <h3>Sắc Xuân 01 (B)</h3>
+                            <div class="pr">1.154.000đ</div>
+                            <ul>
+                                <li>Hộp quà ô cửa sổ mỹ thuật 2 tầng, kèm túi xách</li>
+                                <li>Hạt macca sấy Super Premium 250g</li>
+                                <li>Hạnh nhân rang bơ Super Premium 250g</li>
+                                <li>Hạt điều capuchino 200g (hũ thủy tinh)</li>
+                                <li>Hạt điều cacao 200g (hũ thủy tinh)</li>
+                                <li>Hạt tổng hợp 230g (hũ thủy tinh)</li>
+                                <li>Nho khô Chile 250g (hũ thủy tinh)</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="hc"><img src="images/hamper-sac-xuan-02-a.jpg" alt="Hamper Sắc Xuân 02 (A)"
+                            loading="lazy">
+                        <div class="hb">
+                            <h3>Sắc Xuân 02 (A)</h3>
+                            <div class="pr">1.043.000đ</div>
+                            <ul>
+                                <li>Hộp quà 2 tầng kèm túi xách</li>
+                                <li>Rượu vang Ý, Chi-lê, Pháp nhập khẩu</li>
+                                <li>Hạt điều rang muối Super Premium 250g</li>
+                                <li>Hạt macca sấy Super Premium 250g</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="hc"><img src="images/hamper-sac-xuan-02-b.jpg" alt="Hamper Sắc Xuân 02 (B)"
+                            loading="lazy">
+                        <div class="hb">
+                            <h3>Sắc Xuân 02 (B)</h3>
+                            <div class="pr">999.000đ</div>
+                            <ul>
+                                <li>Hộp quà 2 tầng kèm túi xách</li>
+                                <li>Hạt điều rang muối Super Premium 250g</li>
+                                <li>Hạt macca sấy Super Premium 250g</li>
+                                <li>Khô gà lá chanh 200g (hũ thủy tinh)</li>
+                                <li>Khô gà bơ tỏi 200g (hũ thủy tinh)</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="hc"><img src="images/hamper-ngoc-vu-khai-loc-a.jpg"
+                            alt="Hamper Ngọc Vũ Khai Lộc (A)" loading="lazy">
+                        <div class="hb">
+                            <h3>Ngọc Vũ Khai Lộc (A)</h3>
+                            <div class="pr">955.000đ</div>
+                            <ul>
+                                <li>Hộp quà lục giác mỹ thuật có đèn, kèm túi giấy</li>
+                                <li>Rượu sake Masuki Aka</li>
+                                <li>Hạt điều tỏi ớt 210g</li>
+                                <li>Hạt điều cacao 210g</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="hc"><img src="images/hamper-ngoc-vu-khai-loc-b.jpg"
+                            alt="Hamper Ngọc Vũ Khai Lộc (B)" loading="lazy">
+                        <div class="hb">
+                            <h3>Ngọc Vũ Khai Lộc (B)</h3>
+                            <div class="pr">899.000đ</div>
+                            <ul>
+                                <li>Hộp quà lục giác mỹ thuật có đèn, kèm túi giấy</li>
+                                <li>Nho khô Chile 250g (hũ thủy tinh)</li>
+                                <li>Hạt tổng hợp 230g (hũ thủy tinh)</li>
+                                <li>Hạt Sachi rang mộc 250g</li>
+                                <li>Nhân macca wasabi 210g (hũ thủy tinh)</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="hc"><img src="images/hamper-xuan-hoan-ca.jpg" alt="Hamper Xuân Hoan Ca"
+                            loading="lazy">
+                        <div class="hb">
+                            <h3>Xuân Hoan Ca</h3>
+                            <div class="pr">1.380.000đ</div>
+                            <ul>
+                                <li>Hộp quà mỹ thuật họa tiết hoa văn xanh lam</li>
+                                <li>Rượu vang trắng Paolini Lucido</li>
+                                <li>Hạnh nhân rang bơ Super Premium 250g</li>
+                                <li>Hạt điều rang muối Super Premium 250g</li>
+                                <li>Hạt điều tỏi ớt 210g</li>
+                                <li>Hạt điều cacao 210g</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="hc"><img src="images/hamper-huong-xuan.jpg" alt="Hamper Hương Xuân" loading="lazy">
+                        <div class="hb">
+                            <h3>Hương Xuân</h3>
+                            <div class="pr">1.314.000đ</div>
+                            <ul>
+                                <li>Hộp quà mỹ thuật linh dương, kèm túi xách</li>
+                                <li>Hạnh nhân rang bơ Super Premium 250g</li>
+                                <li>Hạt điều rang muối Super Premium 250g</li>
+                                <li>Hạt macca sấy Super Premium 250g</li>
+                                <li>Hạt điều capuchino 200g (hũ thủy tinh)</li>
+                                <li>Hạt điều cacao 200g (hũ thủy tinh)</li>
+                                <li>Hạt điều tỏi ớt 200g (hũ thủy tinh)</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="hc"><img src="images/hamper-xuan-dong-day.jpg" alt="Hamper Xuân Đong Đầy"
+                            loading="lazy">
+                        <div class="hb">
+                            <h3>Xuân Đong Đầy</h3>
+                            <div class="pr">1.055.000đ</div>
+                            <ul>
+                                <li>Hộp quà thiết kế mỹ thuật</li>
+                                <li>Hạt Sachi rang mộc 200g (hũ thủy tinh)</li>
+                                <li>Hạt điều capuchino 210g (hộp giấy)</li>
+                                <li>Hạt điều cacao 210g (hộp giấy)</li>
+                                <li>Hạt điều tỏi ớt 210g (hộp giấy)</li>
+                                <li>Hạt mix tổng hợp 200g (hộp giấy)</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="hc"><img src="images/hamper-xuan-nhu-y.jpg" alt="Hamper Xuân Như Ý" loading="lazy">
+                        <div class="hb">
+                            <h3>Xuân Như Ý</h3>
+                            <div class="pr">1.655.000đ</div>
+                            <ul>
+                                <li>Hộp quà gỗ thiết kế mỹ thuật</li>
+                                <li>Cà phê hòa tan Sâm Ngọc Linh</li>
+                                <li>Hạt điều capuchino, cacao, tỏi ớt 210g (hộp giấy)</li>
+                                <li>Hạt mix tổng hợp 200g</li>
+                                <li>Khô gà lá chanh 200g</li>
+                                <li>Khô gà bơ tỏi 200g</li>
+                                <li>Nhân macca wasabi 230g</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="hc"><img src="images/hamper-tet-lac-hong.jpg" alt="Hamper Tết Lạc Hồng"
+                            loading="lazy">
+                        <div class="hb">
+                            <h3>Tết Lạc Hồng</h3>
+                            <div class="pr">1.682.000đ</div>
+                            <ul>
+                                <li>Hộp quà thiết kế nghệ thuật</li>
+                                <li>Hạnh nhân rang bơ Super Premium 250g</li>
+                                <li>Hạt điều rang muối Super Premium 250g</li>
+                                <li>Hạt macca sấy Super Premium 250g</li>
+                                <li>Hạt mix tổng hợp 200g (hộp giấy)</li>
+                                <li>Khô gà lá chanh 100g</li>
+                                <li>Hạt Sachi rang mộc 200g</li>
+                                <li>Nho khô Chile 250g</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <div class="perks"><span>🎁 Miễn phí khắc logo doanh nghiệp</span><span>🚚 Hỗ trợ vận chuyển toàn
+                        quốc</span><span>✏️ Thiết kế theo yêu cầu, giá tương tự</span></div>
+            </div>
+        </section>
+        <section id="sanpham">
+            <div class="wrap">
+                <div class="title">
+                    <h2>Sản phẩm lẻ</h2>
+                    <p>Hạt dinh dưỡng và khô gà Super Premium.</p>
+                    <div class="bar"></div>
+                </div>
+                <div class="pg">
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-250g.jpg" alt="Hạt điều rang muối 250g"
+                            loading="lazy"><b>Hạt điều rang muối 250g</b><span>177.000đ</span></div>
+                    <div class="pc"><img src="images/hat-macca-say-250g.jpg" alt="Hạt macca sấy 250g"
+                            loading="lazy"><b>Hạt macca sấy 250g</b><span>172.000đ</span></div>
+                    <div class="pc"><img src="images/hanh-nhan-rang-bo-250g.jpg" alt="Hạnh nhân rang bơ 250g"
+                            loading="lazy"><b>Hạnh nhân rang bơ 250g</b><span>160.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-rang-moc-boc-vo-250g.jpg"
+                            alt="Hạt điều rang mộc bóc vỏ 250g" loading="lazy"><b>Hạt điều rang mộc bóc vỏ
+                            250g</b><span>196.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-rang-moc-vo-lua-250g.jpg"
+                            alt="Hạt điều rang mộc vỏ lụa 250g" loading="lazy"><b>Hạt điều rang mộc vỏ lụa
+                            250g</b><span>186.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-hop-go-500g.jpg"
+                            alt="Hạt điều rang muối hộp gỗ 500g" loading="lazy"><b>Hạt điều rang muối hộp gỗ
+                            500g</b><span>428.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-210g.jpg"
+                            alt="Hạt điều rang muối vỏ lụa 210g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
+                            210g</b><span>144.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-boc-vo-210g.jpg"
+                            alt="Hạt điều rang muối bóc vỏ 210g" loading="lazy"><b>Hạt điều rang muối bóc vỏ
+                            210g</b><span>155.000đ</span></div>
+                    <div class="pc"><img src="images/hat-tong-hop-210g.jpg" alt="Hạt tổng hợp 210g"
+                            loading="lazy"><b>Hạt tổng hợp 210g</b><span>137.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-capuchino-210g.jpg" alt="Hạt điều capuchino 210g"
+                            loading="lazy"><b>Hạt điều capuchino 210g</b><span>162.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-toi-ot-210g.jpg" alt="Hạt điều tỏi ớt 210g"
+                            loading="lazy"><b>Hạt điều tỏi ớt 210g</b><span>157.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-cacao-210g.jpg" alt="Hạt điều cacao 210g"
+                            loading="lazy"><b>Hạt điều cacao 210g</b><span>160.000đ</span></div>
+                    <div class="pc"><img src="images/nhan-macca-wasabi.jpg" alt="Nhân macca wasabi"
+                            loading="lazy"><b>Nhân macca wasabi</b><span>224.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-toi-ot-200g-hu.jpg" alt="Hạt điều tỏi ớt 200g (hũ)"
+                            loading="lazy"><b>Hạt điều tỏi ớt 200g (hũ)</b><span>160.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-capuchino-200g-hu.jpg" alt="Hạt điều capuchino 200g (hũ)"
+                            loading="lazy"><b>Hạt điều capuchino 200g (hũ)</b><span>163.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-cacao-200g-hu.jpg" alt="Hạt điều cacao 200g (hũ)"
+                            loading="lazy"><b>Hạt điều cacao 200g (hũ)</b><span>163.000đ</span></div>
+                    <div class="pc"><img src="images/hat-sachi-rang-moc-250g-hu.jpg" alt="Hạt sachi rang mộc 250g (hũ)"
+                            loading="lazy"><b>Hạt sachi rang mộc 250g (hũ)</b><span>145.000đ</span></div>
+                    <div class="pc"><img src="images/nho-kho-250g.jpg" alt="Nho khô 250g" loading="lazy"><b>Nho khô
+                            250g</b><span>110.000đ</span></div>
+                    <div class="pc"><img src="images/hat-sachi-rang-moc-100g.jpg" alt="Hạt sachi rang mộc 100g"
+                            loading="lazy"><b>Hạt sachi rang mộc 100g</b><span>68.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-100g.jpg"
+                            alt="Hạt điều rang muối vỏ lụa 100g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
+                            100g</b><span>68.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-boc-vo-205g.jpg"
+                            alt="Hạt điều rang muối bóc vỏ 205g" loading="lazy"><b>Hạt điều rang muối bóc vỏ
+                            205g</b><span>170.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-205g.jpg"
+                            alt="Hạt điều rang muối vỏ lụa 205g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
+                            205g</b><span>145.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-400g.jpg"
+                            alt="Hạt điều rang muối vỏ lụa 400g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
+                            400g</b><span>297.000đ</span></div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-boc-vo-400g.jpg"
+                            alt="Hạt điều rang muối bóc vỏ 400g" loading="lazy"><b>Hạt điều rang muối bóc vỏ
+                            400g</b><span>342.000đ</span></div>
+                    <div class="pc"><img src="images/kho-ga-la-chanh-200g.jpg" alt="Khô gà lá chanh 200g"
+                            loading="lazy"><b>Khô gà lá chanh 200g</b><span>151.000đ</span></div>
+                    <div class="pc"><img src="images/kho-ga-bo-toi-200g.jpg" alt="Khô gà bơ tỏi 200g"
+                            loading="lazy"><b>Khô gà bơ tỏi 200g</b><span>160.000đ</span></div>
+                    <div class="pc"><img src="images/kho-ga-bo-toi-100g.jpg" alt="Khô gà bơ tỏi 100g"
+                            loading="lazy"><b>Khô gà bơ tỏi 100g</b><span>56.000đ</span></div>
+                    <div class="pc"><img src="images/kho-ga-la-chanh-100g.jpg" alt="Khô gà lá chanh 100g"
+                            loading="lazy"><b>Khô gà lá chanh 100g</b><span>52.000đ</span></div>
+                </div>
+                <p class="note">Giá niêm yết theo catalogue Tết 2027. Liên hệ để nhận chính sách chiết khấu cho số lượng
+                    lớn.</p>
+            </div>
+        </section>
+        <section class="alt">
+            <div class="wrap">
+                <div class="title">
+                    <h2>Đặt quà Tết dễ dàng</h2>
+                    <div class="bar"></div>
+                </div>
+                <div class="grid g3">
+                    <div class="card">
+                        <div class="ic num">1</div>
+                        <h3>Chọn mẫu hamper</h3>
+                        <p>Xem bộ sưu tập và chọn mẫu hợp ngân sách, đối tượng nhận quà.</p>
+                    </div>
+                    <div class="card">
+                        <div class="ic num">2</div>
+                        <h3>Liên hệ tư vấn</h3>
+                        <p>Gọi hotline để nhận báo giá, số lượng và tùy chỉnh nội dung hộp quà.</p>
+                    </div>
+                    <div class="card">
+                        <div class="ic num">3</div>
+                        <h3>Nhận quà tận nơi</h3>
+                        <p>LisaFood chuẩn bị và giao quà để bạn trao tay trọn vẹn lời chúc xuân.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="alt" id="baogia">
+            <div class="wrap">
+                <div class="title">
+                    <h2>Nhận báo giá hamper Tết</h2>
+                    <p>Để lại thông tin, LisaFood sẽ liên hệ tư vấn sớm nhất.</p>
+                    <div class="bar"></div>
+                </div>
+                <div class="fm">
+                    <div class="f2"><label>Họ và tên<input id="fn" autocomplete="name"
+                                placeholder="Nguyễn Văn A"></label><label>Số điện thoại *<input id="fp" type="tel"
+                                inputmode="tel" autocomplete="tel" placeholder="09xx xxx xxx"></label></div>
+                    <div class="f2"><label>Công ty (nếu có)<input id="fc" autocomplete="organization"></label><label>Số
+                            lượng set<input id="fq" inputmode="numeric" placeholder="VD: 50"></label></div>
+                    <label>Mẫu hamper quan tâm<select id="fh">
+                            <option>Sắc Xuân 01 (A) – 1.022.000đ</option>
+                            <option>Sắc Xuân 01 (B) – 1.154.000đ</option>
+                            <option>Sắc Xuân 02 (A) – 1.043.000đ</option>
+                            <option>Sắc Xuân 02 (B) – 999.000đ</option>
+                            <option>Ngọc Vũ Khai Lộc (A) – 955.000đ</option>
+                            <option>Ngọc Vũ Khai Lộc (B) – 899.000đ</option>
+                            <option>Xuân Hoan Ca – 1.380.000đ</option>
+                            <option>Hương Xuân – 1.314.000đ</option>
+                            <option>Xuân Đong Đầy – 1.055.000đ</option>
+                            <option>Xuân Như Ý – 1.655.000đ</option>
+                            <option>Tết Lạc Hồng – 1.682.000đ</option>
+                            <option>Thiết kế theo yêu cầu</option>
+                            <option>Sản phẩm lẻ</option>
+                        </select></label>
+                    <label>Ghi chú<textarea id="fm" rows="3"
+                            placeholder="Khắc logo, địa chỉ giao hàng, ngày nhận..."></textarea></label>
+                    <button class="btn gold sub" id="fs" type="button"
+                        style="background:var(--red);color:var(--on-red);border:0;cursor:pointer;width:100%">Gửi yêu cầu
+                        báo giá</button>
+                    <p class="fmsg" id="fmsg" role="status"></p>
+                    <p class="note" style="margin-top:8px">Yêu cầu sẽ mở ứng dụng email trên thiết bị của bạn với nội
+                        dung soạn sẵn gửi đến sale@lisafood.vn. Bạn cũng có thể gọi hoặc nhắn Zalo 0393.955.516.</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="wrap">
+                <div class="cta">
+                    <h2>Đặt hamper Tết 2027 cùng LisaFood</h2>
+                    <p>Liên hệ ngay để đặt sớm, nhận báo giá và tư vấn tận tình.</p>
+                    <a class="phone" href="tel:0393955516">039-39-555-16</a>
+                    <div class="btns" style="justify-content:center"><a class="btn gold" href="tel:0393955516">Gọi
+                            ngay</a><a class="btn zalo" href="https://zalo.me/0393955516">Chat Zalo</a><a
+                            class="btn ghost" href="https://lisafood.vn/lien-he">Trang liên hệ</a></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <p><img class="flogo" src="images/logo.png" alt="LisaFood"></p>
+            <p>Hotline / Zalo: 0393.955.516</p>
+            <p><a href="https://lisafood.vn/ve-chung-toi">Về LisaFood</a><a href="https://lisafood.vn/san-pham">Sản
+                    phẩm</a><a href="https://lisafood.vn/tin-tuc">Tin tức</a><a href="https://lisafood.vn/lien-he">Liên
+                    hệ</a></p>
+            <p>Bản quyền thuộc về LisaFood.</p>
+        </div>
+    </footer>
+    <div class="mobile-call"><a href="tel:0393955516">📞 Gọi ngay</a><a class="z" href="https://zalo.me/0393955516">💬
+            Zalo</a></div>
+    <script>
+        (function () {
+            var b = document.getElementById("fs"); if (!b) return;
+            b.addEventListener("click", function () {
+                var g = function (i) { return document.getElementById(i).value.trim() };
+                var m = document.getElementById("fmsg"), ph = g("fp");
+                if (ph.replace(/\D/g, "").length < 9) { m.textContent = "Vui lòng nhập số điện thoại hợp lệ."; return }
+                var body = "Họ tên: " + g("fn") + "\nSố điện thoại: " + ph + "\nCông ty: " + g("fc") + "\nSố lượng: " + g("fq") + "\nMẫu hamper: " + g("fh") + "\nGhi chú: " + g("fm");
+                var a = document.createElement("a");
+                a.href = "mailto:sale@lisafood.vn?subject=" + encodeURIComponent("Yêu cầu báo giá hamper Tết 2027") + "&body=" + encodeURIComponent(body);
+                document.body.appendChild(a); a.click(); a.remove();
+                m.textContent = "Đã mở email soạn sẵn. Bạn bấm Gửi để hoàn tất nhé."
+            });
+        })();
+    </script>
+</body>
+
+</html>

@@ -983,12 +983,12 @@
                         </select></label>
                     <label>Ghi chú<textarea id="fm" rows="3"
                             placeholder="Khắc logo, địa chỉ giao hàng, ngày nhận..."></textarea></label>
-                    <button class="btn gold sub" id="fs" type="button"
-                        style="background:var(--red);color:var(--on-red);border:0;cursor:pointer;width:100%">Gửi yêu cầu
-                        báo giá</button>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:6px;">
+                        <button class="btn sub" id="fs" type="button" style="background:var(--red);color:var(--on-red);border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">📩 Gửi yêu cầu qua Email</button>
+                        <button class="btn sub" id="fs_zalo" type="button" style="background:#0068ff;color:#fff;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">💬 Gửi nhanh qua Zalo</button>
+                    </div>
                     <p class="fmsg" id="fmsg" role="status"></p>
-                    <p class="note" style="margin-top:8px">Yêu cầu sẽ mở ứng dụng email trên thiết bị của bạn với nội
-                        dung soạn sẵn gửi đến sale@lisafood.vn. Bạn cũng có thể gọi hoặc nhắn Zalo 0393.955.516.</p>
+                    <p class="note" style="margin-top:8px">Thông tin được bảo mật và gửi trực tiếp đến bộ phận kinh doanh LisaFood (sale@lisafood.vn hoặc Hotline/Zalo 0393.955.516).</p>
                 </div>
             </div>
         </section>
@@ -1020,17 +1020,80 @@
             Zalo</a></div>
     <script>
         (function () {
-            var b = document.getElementById("fs"); if (!b) return;
-            b.addEventListener("click", function () {
-                var g = function (i) { return document.getElementById(i).value.trim() };
-                var m = document.getElementById("fmsg"), ph = g("fp");
-                if (ph.replace(/\D/g, "").length < 9) { m.textContent = "Vui lòng nhập số điện thoại hợp lệ."; return }
-                var body = "Họ tên: " + g("fn") + "\nSố điện thoại: " + ph + "\nCông ty: " + g("fc") + "\nSố lượng: " + g("fq") + "\nMẫu hamper: " + g("fh") + "\nGhi chú: " + g("fm");
-                var a = document.createElement("a");
-                a.href = "mailto:sale@lisafood.vn?subject=" + encodeURIComponent("Yêu cầu báo giá hamper Tết 2027") + "&body=" + encodeURIComponent(body);
-                document.body.appendChild(a); a.click(); a.remove();
-                m.textContent = "Đã mở email soạn sẵn. Bạn bấm Gửi để hoàn tất nhé."
-            });
+            var g = function (i) { var el = document.getElementById(i); return el ? el.value.trim() : ""; };
+            var m = document.getElementById("fmsg");
+            var bMail = document.getElementById("fs");
+            var bZalo = document.getElementById("fs_zalo");
+
+            function validate() {
+                var ph = g("fp");
+                if (ph.replace(/\D/g, "").length < 9) {
+                    m.style.color = "var(--red)";
+                    m.textContent = "Vui lòng nhập số điện thoại hợp lệ để LisaFood tiện liên hệ.";
+                    return false;
+                }
+                return true;
+            }
+
+            function buildContent() {
+                return "[YÊU CẦU BÁO GIÁ HAMPER TẾT 2027]\n" +
+                       "- Họ tên: " + (g("fn") || "(Chưa điền)") + "\n" +
+                       "- Số điện thoại: " + g("fp") + "\n" +
+                       "- Công ty: " + (g("fc") || "(Cá nhân)") + "\n" +
+                       "- Số lượng dự kiến: " + (g("fq") || "1") + " set\n" +
+                       "- Mẫu quan tâm: " + g("fh") + "\n" +
+                       "- Ghi chú: " + (g("fm") || "(Không có)");
+            }
+
+            if (bMail) {
+                bMail.addEventListener("click", function () {
+                    if (!validate()) return;
+                    m.style.color = "var(--gold)";
+                    m.textContent = "Đang gửi yêu cầu đến sale@lisafood.vn...";
+                    bMail.disabled = true;
+
+                    fetch("https://formsubmit.co/ajax/sale@lisafood.vn", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                        body: JSON.stringify({
+                            _subject: "[LisaFood Hamper] Yêu cầu báo giá từ " + (g("fn") || g("fp")),
+                            "Họ và tên": g("fn"),
+                            "Số điện thoại": g("fp"),
+                            "Công ty": g("fc"),
+                            "Số lượng": g("fq"),
+                            "Mẫu hamper": g("fh"),
+                            "Ghi chú": g("fm")
+                        })
+                    })
+                    .then(function(res) { return res.json(); })
+                    .then(function(data) {
+                        m.style.color = "#2e7d32";
+                        m.textContent = "✓ Gửi yêu cầu thành công! Bộ phận kinh doanh LisaFood sẽ liên hệ lại sớm nhất.";
+                        bMail.disabled = false;
+                    })
+                    .catch(function(err) {
+                        var a = document.createElement("a");
+                        a.href = "mailto:sale@lisafood.vn?subject=" + encodeURIComponent("Yêu cầu báo giá hamper Tết 2027") + "&body=" + encodeURIComponent(buildContent());
+                        document.body.appendChild(a); a.click(); a.remove();
+                        m.style.color = "#2e7d32";
+                        m.textContent = "Đã mở ứng dụng Email để hoàn tất gửi đến sale@lisafood.vn.";
+                        bMail.disabled = false;
+                    });
+                });
+            }
+
+            if (bZalo) {
+                bZalo.addEventListener("click", function () {
+                    if (!validate()) return;
+                    var msg = buildContent();
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(msg);
+                    }
+                    m.style.color = "#0068ff";
+                    m.textContent = "Đang kết nối Zalo 0393.955.516... (Nội dung đã được copy sẵn, bạn chỉ cần Dán/Paste vào khung chat nhé)";
+                    window.open("https://zalo.me/0393955516", "_blank");
+                });
+            }
         })();
     </script>
 </body>

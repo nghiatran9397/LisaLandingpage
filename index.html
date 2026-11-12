@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap&subset=vietnamese"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <title>LisaFood – Hamper Tết 2027</title>
     <style>
         :root {
@@ -72,7 +70,10 @@
             margin: 0;
             background: var(--bg);
             color: var(--text);
-            font-family: "Be Vietnam Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             line-height: 1.6
         }
 
@@ -88,7 +89,9 @@
         h1,
         h2,
         h3 {
-            font-family: "Playfair Display", "Be Vietnam Pro", Georgia, "Times New Roman", serif;
+            font-family: "Be Vietnam Pro", sans-serif;
+            letter-spacing: -0.025em;
+            font-weight: 700;
             line-height: 1.2;
             margin: 0
         }
@@ -119,7 +122,8 @@
         }
 
         .logo {
-            font-family: "Playfair Display", "Be Vietnam Pro", Georgia, serif;
+            font-family: "Be Vietnam Pro", sans-serif;
+            letter-spacing: -0.02em;
             font-weight: 700;
             font-size: 20px;
             text-decoration: none;
@@ -334,7 +338,8 @@
 
         .cta .phone {
             display: block;
-            font-family: "Playfair Display", "Be Vietnam Pro", Georgia, serif;
+            font-family: "Be Vietnam Pro", sans-serif;
+            letter-spacing: -0.01em;
             font-size: clamp(28px, 5vw, 42px);
             color: #f2c75c;
             text-decoration: none;
@@ -773,6 +778,41 @@
 @keyframes zoomInAnim {
     from { transform: scale(0.85); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
+}
+
+
+/* --- CHUẨN HÓA FONT CHỮ LUXURY & CLEAN STYLE --- */
+* {
+    font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+h1 {
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+}
+h2 {
+    font-weight: 700 !important;
+    letter-spacing: -0.025em !important;
+}
+h3 {
+    font-weight: 600 !important;
+    letter-spacing: -0.015em !important;
+}
+.hb h3 {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: var(--text) !important;
+}
+.pr {
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+}
+.btn {
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+}
+.tag {
+    font-weight: 600 !important;
+    letter-spacing: 0.08em !important;
 }
 
 </style>

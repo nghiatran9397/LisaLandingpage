@@ -985,10 +985,10 @@
                             placeholder="Khắc logo, địa chỉ giao hàng, ngày nhận..."></textarea></label>
                     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:6px;">
                         <button class="btn sub" id="fs" type="button" style="background:var(--red);color:var(--on-red);border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">📩 Gửi yêu cầu qua Email</button>
-                        <button class="btn sub" id="fs_zalo" type="button" style="background:#0068ff;color:#fff;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">💬 Gửi nhanh qua Zalo</button>
+                        <button class="btn sub" id="fs_wa" type="button" style="background:#25D366;color:#fff;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;">💬 Gửi nhanh qua WhatsApp</button>
                     </div>
                     <p class="fmsg" id="fmsg" role="status"></p>
-                    <p class="note" style="margin-top:8px">Thông tin được bảo mật và gửi trực tiếp đến bộ phận kinh doanh LisaFood (sale@lisafood.vn hoặc Hotline/Zalo 0393.955.516).</p>
+                    <p class="note" style="margin-top:8px">Thông tin được bảo mật và gửi trực tiếp đến bộ phận kinh doanh LisaFood (sale@lisafood.vn hoặc WhatsApp/Hotline: 0393.955.516).</p>
                 </div>
             </div>
         </section>
@@ -1023,7 +1023,7 @@
             var g = function (i) { var el = document.getElementById(i); return el ? el.value.trim() : ""; };
             var m = document.getElementById("fmsg");
             var bMail = document.getElementById("fs");
-            var bZalo = document.getElementById("fs_zalo");
+            var bWa = document.getElementById("fs_wa");
 
             function validate() {
                 var ph = g("fp");
@@ -1037,12 +1037,12 @@
 
             function buildContent() {
                 return "[YÊU CẦU BÁO GIÁ HAMPER TẾT 2027]\n" +
-                       "- Họ tên: " + (g("fn") || "(Chưa điền)") + "\n" +
-                       "- Số điện thoại: " + g("fp") + "\n" +
-                       "- Công ty: " + (g("fc") || "(Cá nhân)") + "\n" +
-                       "- Số lượng dự kiến: " + (g("fq") || "1") + " set\n" +
-                       "- Mẫu quan tâm: " + g("fh") + "\n" +
-                       "- Ghi chú: " + (g("fm") || "(Không có)");
+                       "• Họ tên: " + (g("fn") || "(Chưa điền)") + "\n" +
+                       "• Số điện thoại: " + g("fp") + "\n" +
+                       "• Công ty: " + (g("fc") || "(Cá nhân)") + "\n" +
+                       "• Số lượng: " + (g("fq") || "1") + " set\n" +
+                       "• Mẫu quan tâm: " + g("fh") + "\n" +
+                       "• Ghi chú: " + (g("fm") || "(Không có)");
             }
 
             if (bMail) {
@@ -1082,16 +1082,14 @@
                 });
             }
 
-            if (bZalo) {
-                bZalo.addEventListener("click", function () {
+            if (bWa) {
+                bWa.addEventListener("click", function () {
                     if (!validate()) return;
                     var msg = buildContent();
-                    if (navigator.clipboard && navigator.clipboard.writeText) {
-                        navigator.clipboard.writeText(msg);
-                    }
-                    m.style.color = "#0068ff";
-                    m.textContent = "Đang kết nối Zalo 0393.955.516... (Nội dung đã được copy sẵn, bạn chỉ cần Dán/Paste vào khung chat nhé)";
-                    window.open("https://zalo.me/0393955516", "_blank");
+                    var waUrl = "https://api.whatsapp.com/send?phone=84393955516&text=" + encodeURIComponent(msg);
+                    m.style.color = "#25D366";
+                    m.textContent = "Đang mở WhatsApp với nội dung soạn sẵn...";
+                    window.open(waUrl, "_blank");
                 });
             }
         })();

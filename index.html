@@ -1167,6 +1167,52 @@
     letter-spacing: 0.05em;
 }
 
+
+/* --- TỐI ƯU GIAO DIỆN SMARTPHONE (IOS & ANDROID) --- */
+@media (max-width: 600px) {
+    /* Đẩy nút ghim nổi lên trên thanh mobile-call để không bao giờ bị đè */
+    .float-list-btn {
+        right: 14px !important;
+        bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important;
+        padding: 9px 15px !important;
+        font-size: 13px !important;
+    }
+    
+    /* Modal chiếm toàn màn hình vừa vặn trên điện thoại */
+    .list-modal {
+        padding: 10px !important;
+        align-items: flex-end !important;
+    }
+    .list-modal-content {
+        max-height: 86vh !important;
+        border-radius: 20px 20px 0 0 !important;
+    }
+    .list-modal-body {
+        padding: 14px !important;
+        gap: 10px !important;
+    }
+    .list-modal-footer {
+        padding: 12px 14px !important;
+    }
+    
+    /* Lightbox mũi tên to dễ bấm trên ngón tay */
+    .lightbox-prev {
+        left: 10px !important;
+        width: 42px !important;
+        height: 42px !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+    }
+    .lightbox-next {
+        right: 10px !important;
+        width: 42px !important;
+        height: 42px !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+    }
+    .lightbox-wrap img {
+        max-height: 72vh !important;
+    }
+}
+
 </style>
 </head>
 

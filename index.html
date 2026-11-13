@@ -1138,6 +1138,76 @@
     margin-left: 8px;
 }
 
+
+/* --- SAO CHÉP CHUẨN XÁC TỪNG PIXEL CỦA GIFTCARD.JSX --- */
+.exact-subtitle {
+    font-size: 13px !important;
+    color: #475569 !important; /* slate-600 */
+    line-height: 1.6 !important;
+    margin: 0 0 14px 0 !important;
+}
+.exact-heading {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #ea580c !important; /* text-orange-600 */
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin: 0 0 8px 0 !important;
+}
+.exact-heading svg {
+    color: #ea580c;
+    flex-shrink: 0;
+}
+.exact-items-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    margin-bottom: 16px !important;
+}
+.exact-item-pill {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    font-size: 12px !important;
+    padding: 7px 12px !important;
+    border-radius: 12px !important; /* rounded-xl */
+    background: rgba(255, 247, 237, 0.45) !important; /* bg-orange-50/40 */
+    border: 1px solid rgba(254, 215, 170, 0.7) !important; /* border-orange-100/70 */
+    gap: 8px !important;
+    transition: all 0.2s ease !important;
+}
+.exact-item-pill:hover {
+    background: rgba(255, 237, 213, 0.6) !important;
+    border-color: #fdba74 !important;
+}
+.exact-item-left {
+    color: #1e293b !important; /* text-slate-800 */
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-weight: 500 !important;
+    min-width: 0 !important;
+}
+.exact-item-left svg {
+    color: #f97316 !important; /* text-orange-500 */
+    flex-shrink: 0 !important;
+}
+.exact-item-left span {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+.exact-item-weight {
+    color: #ea580c !important; /* text-orange-600 */
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+}
+
 </style>
 </head>
 
@@ -1223,31 +1293,45 @@
                         <div class="hb">
                             <h3>Sắc Xuân 01 (A)</h3>
                             <div class="pr">1.022.000đ</div>
-                            
-        <p class="hamper-desc">🎁 Hộp quà ô cửa sổ mỹ thuật 2 tầng, kèm túi xách</p>
-        <div class="ingredient-section">
-            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
-            <div class="ingredient-list">
+        <p class="exact-subtitle">Hộp quà ô cửa sổ mỹ thuật 2 tầng sang trọng, kèm túi xách đồng bộ</p>
+        <div style="margin-bottom: 14px;">
+            <p class="exact-heading">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                Thành phần tuyển chọn bên trong:
+            </p>
+            <div class="exact-items-grid">
                 
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều capuchino</span></span>
-                <span class="item-weight">210g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt mix tổng hợp</span></span>
-                <span class="item-weight">200g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Nhân macca wasabi</span></span>
-                <span class="item-weight">210g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều tỏi ớt</span></span>
-                <span class="item-weight">210g</span>
-            </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều capuchino</span>
+                    </span>
+                    <span class="exact-item-weight">210g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt mix tổng hợp</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Nhân macca wasabi</span>
+                    </span>
+                    <span class="exact-item-weight">210g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều tỏi ớt</span>
+                    </span>
+                    <span class="exact-item-weight">210g</span>
+                </div>
             </div>
         </div>
-                            <div class="qty-box">
+        <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
                                     <input type="text" class="qty-val" value="1" readonly>
@@ -1264,39 +1348,59 @@
                         <div class="hb">
                             <h3>Sắc Xuân 01 (B)</h3>
                             <div class="pr">1.154.000đ</div>
-                            
-        <p class="hamper-desc">🎁 Hộp quà ô cửa sổ mỹ thuật 2 tầng, kèm túi xách</p>
-        <div class="ingredient-section">
-            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
-            <div class="ingredient-list">
+        <p class="exact-subtitle">Bộ quà 6 món hũ thủy tinh Super Premium thượng hạng kèm túi xách</p>
+        <div style="margin-bottom: 14px;">
+            <p class="exact-heading">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                Thành phần tuyển chọn bên trong:
+            </p>
+            <div class="exact-items-grid">
                 
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt macca sấy Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạnh nhân rang bơ Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều capuchino</span></span>
-                <span class="item-weight">200g (hũ thủy tinh)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều cacao</span></span>
-                <span class="item-weight">200g (hũ thủy tinh)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt tổng hợp</span></span>
-                <span class="item-weight">230g (hũ thủy tinh)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Nho khô Chile</span></span>
-                <span class="item-weight">250g (hũ thủy tinh)</span>
-            </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt macca sấy Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạnh nhân rang bơ Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều capuchino (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều cacao (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt tổng hợp (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">230g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Nho khô Chile (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
             </div>
         </div>
-                            <div class="qty-box">
+        <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
                                     <input type="text" class="qty-val" value="1" readonly>
@@ -1313,27 +1417,38 @@
                         <div class="hb">
                             <h3>Sắc Xuân 02 (A)</h3>
                             <div class="pr">1.043.000đ</div>
-                            
-        <p class="hamper-desc">🎁 Hộp quà 2 tầng kèm túi xách</p>
-        <div class="ingredient-section">
-            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
-            <div class="ingredient-list">
+        <p class="exact-subtitle">Kết hợp hoàn mỹ cùng Rượu Vang Ý, Chi-lê, Pháp nhập khẩu</p>
+        <div style="margin-bottom: 14px;">
+            <p class="exact-heading">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                Thành phần tuyển chọn bên trong:
+            </p>
+            <div class="exact-items-grid">
                 
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Rượu vang Ý, Chi-lê, Pháp nhập khẩu</span></span>
-                
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều rang muối Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt macca sấy Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Rượu vang Ý / Chi-lê / Pháp</span>
+                    </span>
+                    <span class="exact-item-weight">750ml</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều rang muối Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt macca sấy Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
             </div>
         </div>
-                            <div class="qty-box">
+        <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
                                     <input type="text" class="qty-val" value="1" readonly>
@@ -1350,31 +1465,45 @@
                         <div class="hb">
                             <h3>Sắc Xuân 02 (B)</h3>
                             <div class="pr">999.000đ</div>
-                            
-        <p class="hamper-desc">🎁 Hộp quà 2 tầng kèm túi xách</p>
-        <div class="ingredient-section">
-            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
-            <div class="ingredient-list">
+        <p class="exact-subtitle">Món quà trọn vẹn sức khỏe dưới 1 triệu đồng cho doanh nghiệp</p>
+        <div style="margin-bottom: 14px;">
+            <p class="exact-heading">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                Thành phần tuyển chọn bên trong:
+            </p>
+            <div class="exact-items-grid">
                 
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều rang muối Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt macca sấy Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Khô gà lá chanh</span></span>
-                <span class="item-weight">200g (hũ thủy tinh)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Khô gà bơ tỏi</span></span>
-                <span class="item-weight">200g (hũ thủy tinh)</span>
-            </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều rang muối Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt macca sấy Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Khô gà lá chanh (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Khô gà bơ tỏi (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
             </div>
         </div>
-                            <div class="qty-box">
+        <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
                                     <input type="text" class="qty-val" value="1" readonly>
@@ -1391,27 +1520,38 @@
                         <div class="hb">
                             <h3>Ngọc Vũ Khai Lộc (A)</h3>
                             <div class="pr">955.000đ</div>
-                            
-        <p class="hamper-desc">🎁 Hộp quà lục giác mỹ thuật có đèn, kèm túi giấy</p>
-        <div class="ingredient-section">
-            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
-            <div class="ingredient-list">
+        <p class="exact-subtitle">Thiết kế hộp lục giác tích hợp đèn LED phát sáng nghệ thuật & Rượu sake</p>
+        <div style="margin-bottom: 14px;">
+            <p class="exact-heading">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                Thành phần tuyển chọn bên trong:
+            </p>
+            <div class="exact-items-grid">
                 
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Rượu sake Masuki Aka</span></span>
-                
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều tỏi ớt</span></span>
-                <span class="item-weight">210g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều cacao</span></span>
-                <span class="item-weight">210g</span>
-            </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Rượu sake Masuki Aka</span>
+                    </span>
+                    <span class="exact-item-weight">Chai nhập khẩu</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều tỏi ớt</span>
+                    </span>
+                    <span class="exact-item-weight">210g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều cacao</span>
+                    </span>
+                    <span class="exact-item-weight">210g</span>
+                </div>
             </div>
         </div>
-                            <div class="qty-box">
+        <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
                                     <input type="text" class="qty-val" value="1" readonly>
@@ -1428,31 +1568,45 @@
                         <div class="hb">
                             <h3>Ngọc Vũ Khai Lộc (B)</h3>
                             <div class="pr">899.000đ</div>
-                            
-        <p class="hamper-desc">🎁 Hộp quà lục giác mỹ thuật có đèn, kèm túi giấy</p>
-        <div class="ingredient-section">
-            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
-            <div class="ingredient-list">
+        <p class="exact-subtitle">Hộp quà lục giác mỹ thuật có đèn cùng bộ 4 món hạt dinh dưỡng</p>
+        <div style="margin-bottom: 14px;">
+            <p class="exact-heading">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                Thành phần tuyển chọn bên trong:
+            </p>
+            <div class="exact-items-grid">
                 
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Nho khô Chile</span></span>
-                <span class="item-weight">250g (hũ thủy tinh)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt tổng hợp</span></span>
-                <span class="item-weight">230g (hũ thủy tinh)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt Sachi rang mộc</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Nhân macca wasabi</span></span>
-                <span class="item-weight">210g (hũ thủy tinh)</span>
-            </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Nho khô Chile (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt tổng hợp (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">230g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt Sachi rang mộc</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Nhân macca wasabi (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">210g</span>
+                </div>
             </div>
         </div>
-                            <div class="qty-box">
+        <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
                                     <input type="text" class="qty-val" value="1" readonly>
@@ -1469,35 +1623,52 @@
                         <div class="hb">
                             <h3>Xuân Hoan Ca</h3>
                             <div class="pr">1.380.000đ</div>
-                            
-        <p class="hamper-desc">🎁 Hộp quà mỹ thuật họa tiết hoa văn xanh lam</p>
-        <div class="ingredient-section">
-            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
-            <div class="ingredient-list">
+        <p class="exact-subtitle">Hộp mỹ thuật hoa văn xanh lam quý phái cùng vang trắng Paolini Lucido</p>
+        <div style="margin-bottom: 14px;">
+            <p class="exact-heading">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                Thành phần tuyển chọn bên trong:
+            </p>
+            <div class="exact-items-grid">
                 
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Rượu vang trắng Paolini Lucido</span></span>
-                
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạnh nhân rang bơ Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều rang muối Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều tỏi ớt</span></span>
-                <span class="item-weight">210g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều cacao</span></span>
-                <span class="item-weight">210g</span>
-            </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Rượu vang trắng Paolini Lucido</span>
+                    </span>
+                    <span class="exact-item-weight">750ml</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạnh nhân rang bơ Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều rang muối Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều tỏi ớt</span>
+                    </span>
+                    <span class="exact-item-weight">210g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều cacao</span>
+                    </span>
+                    <span class="exact-item-weight">210g</span>
+                </div>
             </div>
         </div>
-                            <div class="qty-box">
+        <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
                                     <input type="text" class="qty-val" value="1" readonly>
@@ -1513,39 +1684,59 @@
                         <div class="hb">
                             <h3>Hương Xuân</h3>
                             <div class="pr">1.314.000đ</div>
-                            
-        <p class="hamper-desc">🎁 Hộp quà mỹ thuật linh dương, kèm túi xách</p>
-        <div class="ingredient-section">
-            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
-            <div class="ingredient-list">
+        <p class="exact-subtitle">Thiết kế biểu tượng Linh Dương thịnh vượng – 6 món thượng hạng</p>
+        <div style="margin-bottom: 14px;">
+            <p class="exact-heading">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                Thành phần tuyển chọn bên trong:
+            </p>
+            <div class="exact-items-grid">
                 
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạnh nhân rang bơ Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều rang muối Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt macca sấy Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều capuchino</span></span>
-                <span class="item-weight">200g (hũ thủy tinh)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều cacao</span></span>
-                <span class="item-weight">200g (hũ thủy tinh)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều tỏi ớt</span></span>
-                <span class="item-weight">200g (hũ thủy tinh)</span>
-            </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạnh nhân rang bơ Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều rang muối Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt macca sấy Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều capuchino (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều cacao (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều tỏi ớt (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
             </div>
         </div>
-                            <div class="qty-box">
+        <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
                                     <input type="text" class="qty-val" value="1" readonly>
@@ -1562,35 +1753,52 @@
                         <div class="hb">
                             <h3>Xuân Đong Đầy</h3>
                             <div class="pr">1.055.000đ</div>
-                            
-        <p class="hamper-desc">🎁 Hộp quà thiết kế mỹ thuật</p>
-        <div class="ingredient-section">
-            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
-            <div class="ingredient-list">
+        <p class="exact-subtitle">Bộ 5 loại hạt dinh dưỡng thanh lành cho gia đình sum vầy</p>
+        <div style="margin-bottom: 14px;">
+            <p class="exact-heading">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                Thành phần tuyển chọn bên trong:
+            </p>
+            <div class="exact-items-grid">
                 
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt Sachi rang mộc</span></span>
-                <span class="item-weight">200g (hũ thủy tinh)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều capuchino</span></span>
-                <span class="item-weight">210g (hộp giấy)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều cacao</span></span>
-                <span class="item-weight">210g (hộp giấy)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều tỏi ớt</span></span>
-                <span class="item-weight">210g (hộp giấy)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt mix tổng hợp</span></span>
-                <span class="item-weight">200g (hộp giấy)</span>
-            </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt Sachi rang mộc (hũ thủy tinh)</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều capuchino (hộp giấy)</span>
+                    </span>
+                    <span class="exact-item-weight">210g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều cacao (hộp giấy)</span>
+                    </span>
+                    <span class="exact-item-weight">210g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều tỏi ớt (hộp giấy)</span>
+                    </span>
+                    <span class="exact-item-weight">210g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt mix tổng hợp (hộp giấy)</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
             </div>
         </div>
-                            <div class="qty-box">
+        <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
                                     <input type="text" class="qty-val" value="1" readonly>
@@ -1606,39 +1814,59 @@
                         <div class="hb">
                             <h3>Xuân Như Ý</h3>
                             <div class="pr">1.655.000đ</div>
-                            
-        <p class="hamper-desc">🎁 Hộp quà gỗ thiết kế mỹ thuật</p>
-        <div class="ingredient-section">
-            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
-            <div class="ingredient-list">
+        <p class="exact-subtitle">Hộp gỗ mỹ thuật kèm Cà phê hòa tan Sâm Ngọc Linh quý hiếm</p>
+        <div style="margin-bottom: 14px;">
+            <p class="exact-heading">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                Thành phần tuyển chọn bên trong:
+            </p>
+            <div class="exact-items-grid">
                 
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Cà phê hòa tan Sâm Ngọc Linh</span></span>
-                
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều capuchino, cacao, tỏi ớt</span></span>
-                <span class="item-weight">210g (hộp giấy)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt mix tổng hợp</span></span>
-                <span class="item-weight">200g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Khô gà lá chanh</span></span>
-                <span class="item-weight">200g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Khô gà bơ tỏi</span></span>
-                <span class="item-weight">200g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Nhân macca wasabi</span></span>
-                <span class="item-weight">230g</span>
-            </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Cà phê hòa tan Sâm Ngọc Linh</span>
+                    </span>
+                    <span class="exact-item-weight">Hộp cao cấp</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều capuchino, cacao, tỏi ớt (hộp giấy)</span>
+                    </span>
+                    <span class="exact-item-weight">210g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt mix tổng hợp</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Khô gà lá chanh</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Khô gà bơ tỏi</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Nhân macca wasabi</span>
+                    </span>
+                    <span class="exact-item-weight">230g</span>
+                </div>
             </div>
         </div>
-                            <div class="qty-box">
+        <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
                                     <input type="text" class="qty-val" value="1" readonly>
@@ -1655,43 +1883,66 @@
                         <div class="hb">
                             <h3>Tết Lạc Hồng</h3>
                             <div class="pr">1.682.000đ</div>
-                            
-        <p class="hamper-desc">🎁 Hộp quà thiết kế nghệ thuật</p>
-        <div class="ingredient-section">
-            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
-            <div class="ingredient-list">
+        <p class="exact-subtitle">Kiệt tác quà Tết mang đậm hồn cốt dân tộc Lạc Hồng thịnh vượng</p>
+        <div style="margin-bottom: 14px;">
+            <p class="exact-heading">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                Thành phần tuyển chọn bên trong:
+            </p>
+            <div class="exact-items-grid">
                 
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạnh nhân rang bơ Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều rang muối Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt macca sấy Super Premium</span></span>
-                <span class="item-weight">250g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt mix tổng hợp</span></span>
-                <span class="item-weight">200g (hộp giấy)</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Khô gà lá chanh</span></span>
-                <span class="item-weight">100g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt Sachi rang mộc</span></span>
-                <span class="item-weight">200g</span>
-            </div>
-            <div class="ingredient-item">
-                <span class="item-left"><span class="item-icon">🎯</span><span>Nho khô Chile</span></span>
-                <span class="item-weight">250g</span>
-            </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạnh nhân rang bơ Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt điều rang muối Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt macca sấy Super Premium</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt mix tổng hợp (hộp giấy)</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Khô gà lá chanh</span>
+                    </span>
+                    <span class="exact-item-weight">100g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Hạt Sachi rang mộc</span>
+                    </span>
+                    <span class="exact-item-weight">200g</span>
+                </div>
+                <div class="exact-item-pill">
+                    <span class="exact-item-left">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        <span>Nho khô Chile</span>
+                    </span>
+                    <span class="exact-item-weight">250g</span>
+                </div>
             </div>
         </div>
-                            <div class="qty-box">
+        <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
                                     <input type="text" class="qty-val" value="1" readonly>

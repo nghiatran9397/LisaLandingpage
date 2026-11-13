@@ -1072,7 +1072,73 @@
         .inquiry-del-btn:hover {
             color: var(--red);
         }
-    </style>
+    
+/* --- GIAO DIỆN THÀNH PHẦN TUYỂN CHỌN DẠNG PILL TAG SANG TRỌNG --- */
+.hamper-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.45;
+    margin: 0 0 12px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--line);
+}
+.ingredient-section {
+    margin-bottom: 14px;
+}
+.ingredient-heading {
+    font-size: 11px;
+    font-weight: 700;
+    color: #c55a11;
+    letter-spacing: 0.05em;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.ingredient-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.ingredient-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fffbf5;
+    border: 1px solid #f5e4cc;
+    border-radius: 99px;
+    padding: 6px 14px;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+.ingredient-item:hover {
+    background: #fff7eb;
+    border-color: #e5b980;
+    transform: translateX(3px);
+}
+.item-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text);
+    font-weight: 500;
+    min-width: 0;
+}
+.item-icon {
+    color: #c55a11;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+.item-weight {
+    color: #c55a11;
+    font-weight: 700;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+
+</style>
 </head>
 
 <body>
@@ -1157,13 +1223,30 @@
                         <div class="hb">
                             <h3>Sắc Xuân 01 (A)</h3>
                             <div class="pr">1.022.000đ</div>
-                            <ul>
-                                <li>Hộp quà ô cửa sổ mỹ thuật 2 tầng, kèm túi xách</li>
-                                <li>Hạt điều capuchino 210g</li>
-                                <li>Hạt mix tổng hợp 200g</li>
-                                <li>Nhân macca wasabi 210g</li>
-                                <li>Hạt điều tỏi ớt 210g</li>
-                            </ul>
+                            
+        <p class="hamper-desc">🎁 Hộp quà ô cửa sổ mỹ thuật 2 tầng, kèm túi xách</p>
+        <div class="ingredient-section">
+            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
+            <div class="ingredient-list">
+                
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều capuchino</span></span>
+                <span class="item-weight">210g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt mix tổng hợp</span></span>
+                <span class="item-weight">200g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Nhân macca wasabi</span></span>
+                <span class="item-weight">210g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều tỏi ớt</span></span>
+                <span class="item-weight">210g</span>
+            </div>
+            </div>
+        </div>
                             <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
@@ -1181,15 +1264,38 @@
                         <div class="hb">
                             <h3>Sắc Xuân 01 (B)</h3>
                             <div class="pr">1.154.000đ</div>
-                            <ul>
-                                <li>Hộp quà ô cửa sổ mỹ thuật 2 tầng, kèm túi xách</li>
-                                <li>Hạt macca sấy Super Premium 250g</li>
-                                <li>Hạnh nhân rang bơ Super Premium 250g</li>
-                                <li>Hạt điều capuchino 200g (hũ thủy tinh)</li>
-                                <li>Hạt điều cacao 200g (hũ thủy tinh)</li>
-                                <li>Hạt tổng hợp 230g (hũ thủy tinh)</li>
-                                <li>Nho khô Chile 250g (hũ thủy tinh)</li>
-                            </ul>
+                            
+        <p class="hamper-desc">🎁 Hộp quà ô cửa sổ mỹ thuật 2 tầng, kèm túi xách</p>
+        <div class="ingredient-section">
+            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
+            <div class="ingredient-list">
+                
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt macca sấy Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạnh nhân rang bơ Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều capuchino</span></span>
+                <span class="item-weight">200g (hũ thủy tinh)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều cacao</span></span>
+                <span class="item-weight">200g (hũ thủy tinh)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt tổng hợp</span></span>
+                <span class="item-weight">230g (hũ thủy tinh)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Nho khô Chile</span></span>
+                <span class="item-weight">250g (hũ thủy tinh)</span>
+            </div>
+            </div>
+        </div>
                             <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
@@ -1207,12 +1313,26 @@
                         <div class="hb">
                             <h3>Sắc Xuân 02 (A)</h3>
                             <div class="pr">1.043.000đ</div>
-                            <ul>
-                                <li>Hộp quà 2 tầng kèm túi xách</li>
-                                <li>Rượu vang Ý, Chi-lê, Pháp nhập khẩu</li>
-                                <li>Hạt điều rang muối Super Premium 250g</li>
-                                <li>Hạt macca sấy Super Premium 250g</li>
-                            </ul>
+                            
+        <p class="hamper-desc">🎁 Hộp quà 2 tầng kèm túi xách</p>
+        <div class="ingredient-section">
+            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
+            <div class="ingredient-list">
+                
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Rượu vang Ý, Chi-lê, Pháp nhập khẩu</span></span>
+                
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều rang muối Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt macca sấy Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            </div>
+        </div>
                             <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
@@ -1230,13 +1350,30 @@
                         <div class="hb">
                             <h3>Sắc Xuân 02 (B)</h3>
                             <div class="pr">999.000đ</div>
-                            <ul>
-                                <li>Hộp quà 2 tầng kèm túi xách</li>
-                                <li>Hạt điều rang muối Super Premium 250g</li>
-                                <li>Hạt macca sấy Super Premium 250g</li>
-                                <li>Khô gà lá chanh 200g (hũ thủy tinh)</li>
-                                <li>Khô gà bơ tỏi 200g (hũ thủy tinh)</li>
-                            </ul>
+                            
+        <p class="hamper-desc">🎁 Hộp quà 2 tầng kèm túi xách</p>
+        <div class="ingredient-section">
+            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
+            <div class="ingredient-list">
+                
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều rang muối Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt macca sấy Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Khô gà lá chanh</span></span>
+                <span class="item-weight">200g (hũ thủy tinh)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Khô gà bơ tỏi</span></span>
+                <span class="item-weight">200g (hũ thủy tinh)</span>
+            </div>
+            </div>
+        </div>
                             <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
@@ -1254,12 +1391,26 @@
                         <div class="hb">
                             <h3>Ngọc Vũ Khai Lộc (A)</h3>
                             <div class="pr">955.000đ</div>
-                            <ul>
-                                <li>Hộp quà lục giác mỹ thuật có đèn, kèm túi giấy</li>
-                                <li>Rượu sake Masuki Aka</li>
-                                <li>Hạt điều tỏi ớt 210g</li>
-                                <li>Hạt điều cacao 210g</li>
-                            </ul>
+                            
+        <p class="hamper-desc">🎁 Hộp quà lục giác mỹ thuật có đèn, kèm túi giấy</p>
+        <div class="ingredient-section">
+            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
+            <div class="ingredient-list">
+                
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Rượu sake Masuki Aka</span></span>
+                
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều tỏi ớt</span></span>
+                <span class="item-weight">210g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều cacao</span></span>
+                <span class="item-weight">210g</span>
+            </div>
+            </div>
+        </div>
                             <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
@@ -1277,13 +1428,30 @@
                         <div class="hb">
                             <h3>Ngọc Vũ Khai Lộc (B)</h3>
                             <div class="pr">899.000đ</div>
-                            <ul>
-                                <li>Hộp quà lục giác mỹ thuật có đèn, kèm túi giấy</li>
-                                <li>Nho khô Chile 250g (hũ thủy tinh)</li>
-                                <li>Hạt tổng hợp 230g (hũ thủy tinh)</li>
-                                <li>Hạt Sachi rang mộc 250g</li>
-                                <li>Nhân macca wasabi 210g (hũ thủy tinh)</li>
-                            </ul>
+                            
+        <p class="hamper-desc">🎁 Hộp quà lục giác mỹ thuật có đèn, kèm túi giấy</p>
+        <div class="ingredient-section">
+            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
+            <div class="ingredient-list">
+                
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Nho khô Chile</span></span>
+                <span class="item-weight">250g (hũ thủy tinh)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt tổng hợp</span></span>
+                <span class="item-weight">230g (hũ thủy tinh)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt Sachi rang mộc</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Nhân macca wasabi</span></span>
+                <span class="item-weight">210g (hũ thủy tinh)</span>
+            </div>
+            </div>
+        </div>
                             <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
@@ -1301,14 +1469,34 @@
                         <div class="hb">
                             <h3>Xuân Hoan Ca</h3>
                             <div class="pr">1.380.000đ</div>
-                            <ul>
-                                <li>Hộp quà mỹ thuật họa tiết hoa văn xanh lam</li>
-                                <li>Rượu vang trắng Paolini Lucido</li>
-                                <li>Hạnh nhân rang bơ Super Premium 250g</li>
-                                <li>Hạt điều rang muối Super Premium 250g</li>
-                                <li>Hạt điều tỏi ớt 210g</li>
-                                <li>Hạt điều cacao 210g</li>
-                            </ul>
+                            
+        <p class="hamper-desc">🎁 Hộp quà mỹ thuật họa tiết hoa văn xanh lam</p>
+        <div class="ingredient-section">
+            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
+            <div class="ingredient-list">
+                
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Rượu vang trắng Paolini Lucido</span></span>
+                
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạnh nhân rang bơ Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều rang muối Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều tỏi ớt</span></span>
+                <span class="item-weight">210g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều cacao</span></span>
+                <span class="item-weight">210g</span>
+            </div>
+            </div>
+        </div>
                             <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
@@ -1325,15 +1513,38 @@
                         <div class="hb">
                             <h3>Hương Xuân</h3>
                             <div class="pr">1.314.000đ</div>
-                            <ul>
-                                <li>Hộp quà mỹ thuật linh dương, kèm túi xách</li>
-                                <li>Hạnh nhân rang bơ Super Premium 250g</li>
-                                <li>Hạt điều rang muối Super Premium 250g</li>
-                                <li>Hạt macca sấy Super Premium 250g</li>
-                                <li>Hạt điều capuchino 200g (hũ thủy tinh)</li>
-                                <li>Hạt điều cacao 200g (hũ thủy tinh)</li>
-                                <li>Hạt điều tỏi ớt 200g (hũ thủy tinh)</li>
-                            </ul>
+                            
+        <p class="hamper-desc">🎁 Hộp quà mỹ thuật linh dương, kèm túi xách</p>
+        <div class="ingredient-section">
+            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
+            <div class="ingredient-list">
+                
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạnh nhân rang bơ Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều rang muối Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt macca sấy Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều capuchino</span></span>
+                <span class="item-weight">200g (hũ thủy tinh)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều cacao</span></span>
+                <span class="item-weight">200g (hũ thủy tinh)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều tỏi ớt</span></span>
+                <span class="item-weight">200g (hũ thủy tinh)</span>
+            </div>
+            </div>
+        </div>
                             <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
@@ -1351,14 +1562,34 @@
                         <div class="hb">
                             <h3>Xuân Đong Đầy</h3>
                             <div class="pr">1.055.000đ</div>
-                            <ul>
-                                <li>Hộp quà thiết kế mỹ thuật</li>
-                                <li>Hạt Sachi rang mộc 200g (hũ thủy tinh)</li>
-                                <li>Hạt điều capuchino 210g (hộp giấy)</li>
-                                <li>Hạt điều cacao 210g (hộp giấy)</li>
-                                <li>Hạt điều tỏi ớt 210g (hộp giấy)</li>
-                                <li>Hạt mix tổng hợp 200g (hộp giấy)</li>
-                            </ul>
+                            
+        <p class="hamper-desc">🎁 Hộp quà thiết kế mỹ thuật</p>
+        <div class="ingredient-section">
+            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
+            <div class="ingredient-list">
+                
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt Sachi rang mộc</span></span>
+                <span class="item-weight">200g (hũ thủy tinh)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều capuchino</span></span>
+                <span class="item-weight">210g (hộp giấy)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều cacao</span></span>
+                <span class="item-weight">210g (hộp giấy)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều tỏi ớt</span></span>
+                <span class="item-weight">210g (hộp giấy)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt mix tổng hợp</span></span>
+                <span class="item-weight">200g (hộp giấy)</span>
+            </div>
+            </div>
+        </div>
                             <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
@@ -1375,15 +1606,38 @@
                         <div class="hb">
                             <h3>Xuân Như Ý</h3>
                             <div class="pr">1.655.000đ</div>
-                            <ul>
-                                <li>Hộp quà gỗ thiết kế mỹ thuật</li>
-                                <li>Cà phê hòa tan Sâm Ngọc Linh</li>
-                                <li>Hạt điều capuchino, cacao, tỏi ớt 210g (hộp giấy)</li>
-                                <li>Hạt mix tổng hợp 200g</li>
-                                <li>Khô gà lá chanh 200g</li>
-                                <li>Khô gà bơ tỏi 200g</li>
-                                <li>Nhân macca wasabi 230g</li>
-                            </ul>
+                            
+        <p class="hamper-desc">🎁 Hộp quà gỗ thiết kế mỹ thuật</p>
+        <div class="ingredient-section">
+            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
+            <div class="ingredient-list">
+                
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Cà phê hòa tan Sâm Ngọc Linh</span></span>
+                
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều capuchino, cacao, tỏi ớt</span></span>
+                <span class="item-weight">210g (hộp giấy)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt mix tổng hợp</span></span>
+                <span class="item-weight">200g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Khô gà lá chanh</span></span>
+                <span class="item-weight">200g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Khô gà bơ tỏi</span></span>
+                <span class="item-weight">200g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Nhân macca wasabi</span></span>
+                <span class="item-weight">230g</span>
+            </div>
+            </div>
+        </div>
                             <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
@@ -1401,16 +1655,42 @@
                         <div class="hb">
                             <h3>Tết Lạc Hồng</h3>
                             <div class="pr">1.682.000đ</div>
-                            <ul>
-                                <li>Hộp quà thiết kế nghệ thuật</li>
-                                <li>Hạnh nhân rang bơ Super Premium 250g</li>
-                                <li>Hạt điều rang muối Super Premium 250g</li>
-                                <li>Hạt macca sấy Super Premium 250g</li>
-                                <li>Hạt mix tổng hợp 200g (hộp giấy)</li>
-                                <li>Khô gà lá chanh 100g</li>
-                                <li>Hạt Sachi rang mộc 200g</li>
-                                <li>Nho khô Chile 250g</li>
-                            </ul>
+                            
+        <p class="hamper-desc">🎁 Hộp quà thiết kế nghệ thuật</p>
+        <div class="ingredient-section">
+            <div class="ingredient-heading">📦 THÀNH PHẦN TUYỂN CHỌN BÊN TRONG:</div>
+            <div class="ingredient-list">
+                
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạnh nhân rang bơ Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt điều rang muối Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt macca sấy Super Premium</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt mix tổng hợp</span></span>
+                <span class="item-weight">200g (hộp giấy)</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Khô gà lá chanh</span></span>
+                <span class="item-weight">100g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Hạt Sachi rang mộc</span></span>
+                <span class="item-weight">200g</span>
+            </div>
+            <div class="ingredient-item">
+                <span class="item-left"><span class="item-icon">🎯</span><span>Nho khô Chile</span></span>
+                <span class="item-weight">250g</span>
+            </div>
+            </div>
+        </div>
                             <div class="qty-box">
                                 <div class="qty-ctrl">
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>

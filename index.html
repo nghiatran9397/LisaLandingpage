@@ -1125,7 +1125,61 @@
             width: 22px;
             border-radius: 99px;
         }
-    </style>
+    
+/* --- CHUẨN HÓA KHUNG HÌNH TRÌNH DUYỆT TRÊN MOBILE (CLEAN RESPONSIVE WEB) --- */
+@media (max-width: 600px) {
+    /* Đảm bảo khung trang không bao giờ bị tràn ngang */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .wrap {
+        padding: 0 16px;
+    }
+    
+    /* Vị trí nút nổi danh sách: Đặt phía trên thanh gọi điện 1 chút, chuẩn web */
+    .float-list-btn {
+        right: 16px !important;
+        bottom: 84px !important;
+        padding: 10px 16px !important;
+        font-size: 13px !important;
+    }
+
+    /* Bảng Phiếu dự toán khi mở trên điện thoại: vừa vặn khung hình trình duyệt */
+    .list-modal {
+        padding: 12px;
+    }
+    .list-modal-content {
+        max-width: 100%;
+        max-height: 85vh;
+        border-radius: 16px;
+    }
+    
+    /* Form báo giá ở cuối trang: 1 cột trên mobile cho thoáng */
+    .f2 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Lưới sản phẩm lẻ trên mobile: 2 cột gọn gàng */
+    .pg {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    .pc {
+        padding: 8px !important;
+    }
+    .pc b {
+        font-size: 12px !important;
+    }
+    
+    /* Nút chọn và tăng giảm số lượng trên mobile */
+    .qty-box {
+        margin-top: 4px !important;
+        padding-top: 4px !important;
+    }
+}
+
+</style>
 </head>
 
 <body>

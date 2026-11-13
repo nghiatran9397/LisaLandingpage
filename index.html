@@ -815,6 +815,83 @@ h3 {
     letter-spacing: 0.08em !important;
 }
 
+
+/* --- BỘ SLIDER 2 ẢNH VỚI CHẤM TRÒN & MŨI TÊN (KIỂU 2) --- */
+.card-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 14px 14px 0 0;
+}
+.pc .card-slider {
+    border-radius: 10px;
+}
+.slider-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.slider-track img {
+    width: 100%;
+    flex-shrink: 0;
+    display: block;
+}
+.slider-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    border: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background 0.2s, opacity 0.2s;
+    z-index: 5;
+    opacity: 0;
+}
+.card-slider:hover .slider-nav-btn.has-multi {
+    display: flex;
+    opacity: 1;
+}
+.slider-nav-btn:hover {
+    background: var(--red);
+}
+.slider-prev { left: 8px; }
+.slider-next { right: 8px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    z-index: 6;
+}
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    padding: 0;
+}
+.slider-dot.active {
+    background: #f2c75c;
+    width: 22px;
+    border-radius: 99px;
+}
+
 </style>
 </head>
 
@@ -895,8 +972,19 @@ h3 {
                     <div class="bar"></div>
                 </div>
                 <div class="hg">
-                    <article class="hc"><img src="images/hamper-sac-xuan-01-a-2.jpg" alt="Hamper Sắc Xuân 01 (A)"
-                            loading="lazy">
+                    <article class="hc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hamper-sac-xuan-01-a-2.jpg" alt="Hamper Sắc Xuân 01 (A) - Ảnh 1" loading="lazy">
+                <img src="images/hamper-sac-xuan-01-a-2-2.jpg" alt="Hamper Sắc Xuân 01 (A) - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div>
                         <div class="hb">
                             <h3>Sắc Xuân 01 (A)</h3>
                             <div class="pr">1.022.000đ</div>
@@ -916,8 +1004,19 @@ h3 {
             <button type="button" class="btn-add-list" onclick="addItemToList('Sắc Xuân 01 (A)', 1022000, '1.022.000đ', this)">+ Chọn mẫu này</button>
         </div>
     </div></article>
-                    <article class="hc"><img src="images/hamper-sac-xuan-01-b.jpg" alt="Hamper Sắc Xuân 01 (B)"
-                            loading="lazy">
+                    <article class="hc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hamper-sac-xuan-01-b.jpg" alt="Hamper Sắc Xuân 01 (B) - Ảnh 1" loading="lazy">
+                <img src="images/hamper-sac-xuan-01-b-2.jpg" alt="Hamper Sắc Xuân 01 (B) - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div>
                         <div class="hb">
                             <h3>Sắc Xuân 01 (B)</h3>
                             <div class="pr">1.154.000đ</div>
@@ -939,8 +1038,19 @@ h3 {
             <button type="button" class="btn-add-list" onclick="addItemToList('Sắc Xuân 01 (B)', 1154000, '1.154.000đ', this)">+ Chọn mẫu này</button>
         </div>
     </div></article>
-                    <article class="hc"><img src="images/hamper-sac-xuan-02-a.jpg" alt="Hamper Sắc Xuân 02 (A)"
-                            loading="lazy">
+                    <article class="hc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hamper-sac-xuan-02-a.jpg" alt="Hamper Sắc Xuân 02 (A) - Ảnh 1" loading="lazy">
+                <img src="images/hamper-sac-xuan-02-a-2.jpg" alt="Hamper Sắc Xuân 02 (A) - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div>
                         <div class="hb">
                             <h3>Sắc Xuân 02 (A)</h3>
                             <div class="pr">1.043.000đ</div>
@@ -959,8 +1069,19 @@ h3 {
             <button type="button" class="btn-add-list" onclick="addItemToList('Sắc Xuân 02 (A)', 1043000, '1.043.000đ', this)">+ Chọn mẫu này</button>
         </div>
     </div></article>
-                    <article class="hc"><img src="images/hamper-sac-xuan-02-b.png" alt="Hamper Sắc Xuân 02 (B)"
-                            loading="lazy">
+                    <article class="hc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hamper-sac-xuan-02-b.png" alt="Hamper Sắc Xuân 02 (B) - Ảnh 1" loading="lazy">
+                <img src="images/hamper-sac-xuan-02-b-2.png" alt="Hamper Sắc Xuân 02 (B) - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div>
                         <div class="hb">
                             <h3>Sắc Xuân 02 (B)</h3>
                             <div class="pr">999.000đ</div>
@@ -980,8 +1101,19 @@ h3 {
             <button type="button" class="btn-add-list" onclick="addItemToList('Sắc Xuân 02 (B)', 999000, '999.000đ', this)">+ Chọn mẫu này</button>
         </div>
     </div></article>
-                    <article class="hc"><img src="images/hamper-ngoc-vu-khai-loc-a.jpg"
-                            alt="Hamper Ngọc Vũ Khai Lộc (A)" loading="lazy">
+                    <article class="hc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hamper-ngoc-vu-khai-loc-a.jpg" alt="Hamper Ngọc Vũ Khai Lộc (A) - Ảnh 1" loading="lazy">
+                <img src="images/hamper-ngoc-vu-khai-loc-a-2.jpg" alt="Hamper Ngọc Vũ Khai Lộc (A) - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div>
                         <div class="hb">
                             <h3>Ngọc Vũ Khai Lộc (A)</h3>
                             <div class="pr">955.000đ</div>
@@ -1000,8 +1132,19 @@ h3 {
             <button type="button" class="btn-add-list" onclick="addItemToList('Ngọc Vũ Khai Lộc (A)', 955000, '955.000đ', this)">+ Chọn mẫu này</button>
         </div>
     </div></article>
-                    <article class="hc"><img src="images/hamper-ngoc-vu-khai-loc-b.jpg"
-                            alt="Hamper Ngọc Vũ Khai Lộc (B)" loading="lazy">
+                    <article class="hc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hamper-ngoc-vu-khai-loc-b.jpg" alt="Hamper Ngọc Vũ Khai Lộc (B) - Ảnh 1" loading="lazy">
+                <img src="images/hamper-ngoc-vu-khai-loc-b-2.jpg" alt="Hamper Ngọc Vũ Khai Lộc (B) - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div>
                         <div class="hb">
                             <h3>Ngọc Vũ Khai Lộc (B)</h3>
                             <div class="pr">899.000đ</div>
@@ -1021,8 +1164,19 @@ h3 {
             <button type="button" class="btn-add-list" onclick="addItemToList('Ngọc Vũ Khai Lộc (B)', 899000, '899.000đ', this)">+ Chọn mẫu này</button>
         </div>
     </div></article>
-                    <article class="hc"><img src="images/hamper-xuan-hoan-ca.png" alt="Hamper Xuân Hoan Ca"
-                            loading="lazy">
+                    <article class="hc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hamper-xuan-hoan-ca.png" alt="Hamper Xuân Hoan Ca - Ảnh 1" loading="lazy">
+                <img src="images/hamper-xuan-hoan-ca-2.png" alt="Hamper Xuân Hoan Ca - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div>
                         <div class="hb">
                             <h3>Xuân Hoan Ca</h3>
                             <div class="pr">1.380.000đ</div>
@@ -1043,7 +1197,19 @@ h3 {
             <button type="button" class="btn-add-list" onclick="addItemToList('Xuân Hoan Ca', 1380000, '1.380.000đ', this)">+ Chọn mẫu này</button>
         </div>
     </div></article>
-                    <article class="hc"><img src="images/hamper-huong-xuan.png" alt="Hamper Hương Xuân" loading="lazy">
+                    <article class="hc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hamper-huong-xuan.png" alt="Hamper Hương Xuân - Ảnh 1" loading="lazy">
+                <img src="images/hamper-huong-xuan-2.png" alt="Hamper Hương Xuân - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div>
                         <div class="hb">
                             <h3>Hương Xuân</h3>
                             <div class="pr">1.314.000đ</div>
@@ -1065,8 +1231,19 @@ h3 {
             <button type="button" class="btn-add-list" onclick="addItemToList('Hương Xuân', 1314000, '1.314.000đ', this)">+ Chọn mẫu này</button>
         </div>
     </div></article>
-                    <article class="hc"><img src="images/hamper-xuan-dong-day.png" alt="Hamper Xuân Đong Đầy"
-                            loading="lazy">
+                    <article class="hc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hamper-xuan-dong-day.png" alt="Hamper Xuân Đong Đầy - Ảnh 1" loading="lazy">
+                <img src="images/hamper-xuan-dong-day-2.png" alt="Hamper Xuân Đong Đầy - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div>
                         <div class="hb">
                             <h3>Xuân Đong Đầy</h3>
                             <div class="pr">1.055.000đ</div>
@@ -1087,7 +1264,19 @@ h3 {
             <button type="button" class="btn-add-list" onclick="addItemToList('Xuân Đong Đầy', 1055000, '1.055.000đ', this)">+ Chọn mẫu này</button>
         </div>
     </div></article>
-                    <article class="hc"><img src="images/hamper-xuan-nhu-y.png" alt="Hamper Xuân Như Ý" loading="lazy">
+                    <article class="hc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hamper-xuan-nhu-y.png" alt="Hamper Xuân Như Ý - Ảnh 1" loading="lazy">
+                <img src="images/hamper-xuan-nhu-y-2.png" alt="Hamper Xuân Như Ý - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div>
                         <div class="hb">
                             <h3>Xuân Như Ý</h3>
                             <div class="pr">1.655.000đ</div>
@@ -1109,8 +1298,19 @@ h3 {
             <button type="button" class="btn-add-list" onclick="addItemToList('Xuân Như Ý', 1655000, '1.655.000đ', this)">+ Chọn mẫu này</button>
         </div>
     </div></article>
-                    <article class="hc"><img src="images/hamper-tet-lac-hong.png" alt="Hamper Tết Lạc Hồng"
-                            loading="lazy">
+                    <article class="hc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hamper-tet-lac-hong.png" alt="Hamper Tết Lạc Hồng - Ảnh 1" loading="lazy">
+                <img src="images/hamper-tet-lac-hong-2.png" alt="Hamper Tết Lạc Hồng - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div>
                         <div class="hb">
                             <h3>Tết Lạc Hồng</h3>
                             <div class="pr">1.682.000đ</div>
@@ -1146,8 +1346,19 @@ h3 {
                     <div class="bar"></div>
                 </div>
                 <div class="pg">
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-250g.jpg" alt="Hạt điều rang muối 250g"
-                            loading="lazy"><b>Hạt điều rang muối 250g</b><span>177.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-rang-muoi-250g.jpg" alt="Hạt điều rang muối 250g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-rang-muoi-250g-2.jpg" alt="Hạt điều rang muối 250g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều rang muối 250g</b><span>177.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1157,8 +1368,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều rang muối 250g', 177000, '177.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-macca-say-250g.jpg" alt="Hạt macca sấy 250g"
-                            loading="lazy"><b>Hạt macca sấy 250g</b><span>172.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-macca-say-250g.jpg" alt="Hạt macca sấy 250g - Ảnh 1" loading="lazy">
+                <img src="images/hat-macca-say-250g-2.jpg" alt="Hạt macca sấy 250g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt macca sấy 250g</b><span>172.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1168,8 +1390,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt macca sấy 250g', 172000, '172.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hanh-nhan-rang-bo-250g.jpg" alt="Hạnh nhân rang bơ 250g"
-                            loading="lazy"><b>Hạnh nhân rang bơ 250g</b><span>160.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hanh-nhan-rang-bo-250g.jpg" alt="Hạnh nhân rang bơ 250g - Ảnh 1" loading="lazy">
+                <img src="images/hanh-nhan-rang-bo-250g-2.jpg" alt="Hạnh nhân rang bơ 250g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạnh nhân rang bơ 250g</b><span>160.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1179,8 +1412,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạnh nhân rang bơ 250g', 160000, '160.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-moc-boc-vo-250g.jpg"
-                            alt="Hạt điều rang mộc bóc vỏ 250g" loading="lazy"><b>Hạt điều rang mộc bóc vỏ
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-rang-moc-boc-vo-250g.jpg" alt="Hạt điều rang mộc bóc vỏ 250g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-rang-moc-boc-vo-250g-2.jpg" alt="Hạt điều rang mộc bóc vỏ 250g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều rang mộc bóc vỏ
                             250g</b><span>196.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1191,8 +1435,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều rang mộc bóc vỏ 250g', 196000, '196.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-moc-vo-lua-250g.jpg"
-                            alt="Hạt điều rang mộc vỏ lụa 250g" loading="lazy"><b>Hạt điều rang mộc vỏ lụa
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-rang-moc-vo-lua-250g.jpg" alt="Hạt điều rang mộc vỏ lụa 250g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-rang-moc-vo-lua-250g-2.jpg" alt="Hạt điều rang mộc vỏ lụa 250g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều rang mộc vỏ lụa
                             250g</b><span>186.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1203,8 +1458,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều rang mộc vỏ lụa 250g', 186000, '186.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-hop-go-500g.jpg"
-                            alt="Hạt điều rang muối hộp gỗ 500g" loading="lazy"><b>Hạt điều rang muối hộp gỗ
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-rang-muoi-hop-go-500g.jpg" alt="Hạt điều rang muối hộp gỗ 500g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-rang-muoi-hop-go-500g-2.jpg" alt="Hạt điều rang muối hộp gỗ 500g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều rang muối hộp gỗ
                             500g</b><span>428.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1215,8 +1481,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều rang muối hộp gỗ 500g', 428000, '428.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-210g.jpg"
-                            alt="Hạt điều rang muối vỏ lụa 210g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-rang-muoi-vo-lua-210g.jpg" alt="Hạt điều rang muối vỏ lụa 210g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-rang-muoi-vo-lua-210g-2.jpg" alt="Hạt điều rang muối vỏ lụa 210g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều rang muối vỏ lụa
                             210g</b><span>144.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1227,8 +1504,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều rang muối vỏ lụa 210g', 144000, '144.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-boc-vo-210g.jpg"
-                            alt="Hạt điều rang muối bóc vỏ 210g" loading="lazy"><b>Hạt điều rang muối bóc vỏ
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-rang-muoi-boc-vo-210g.jpg" alt="Hạt điều rang muối bóc vỏ 210g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-rang-muoi-boc-vo-210g-2.jpg" alt="Hạt điều rang muối bóc vỏ 210g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều rang muối bóc vỏ
                             210g</b><span>155.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1239,8 +1527,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều rang muối bóc vỏ 210g', 155000, '155.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-tong-hop-210g.jpg" alt="Hạt tổng hợp 210g"
-                            loading="lazy"><b>Hạt tổng hợp 210g</b><span>137.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-tong-hop-210g.jpg" alt="Hạt tổng hợp 210g - Ảnh 1" loading="lazy">
+                <img src="images/hat-tong-hop-210g-2.jpg" alt="Hạt tổng hợp 210g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt tổng hợp 210g</b><span>137.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1250,8 +1549,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt tổng hợp 210g', 137000, '137.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-capuchino-210g.jpg" alt="Hạt điều capuchino 210g"
-                            loading="lazy"><b>Hạt điều capuchino 210g</b><span>162.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-capuchino-210g.jpg" alt="Hạt điều capuchino 210g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-capuchino-210g-2.jpg" alt="Hạt điều capuchino 210g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều capuchino 210g</b><span>162.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1261,8 +1571,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều capuchino 210g', 162000, '162.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-toi-ot-210g.jpg" alt="Hạt điều tỏi ớt 210g"
-                            loading="lazy"><b>Hạt điều tỏi ớt 210g</b><span>157.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-toi-ot-210g.jpg" alt="Hạt điều tỏi ớt 210g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-toi-ot-210g-2.jpg" alt="Hạt điều tỏi ớt 210g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều tỏi ớt 210g</b><span>157.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1272,8 +1593,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều tỏi ớt 210g', 157000, '157.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-cacao-210g.jpg" alt="Hạt điều cacao 210g"
-                            loading="lazy"><b>Hạt điều cacao 210g</b><span>160.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-cacao-210g.jpg" alt="Hạt điều cacao 210g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-cacao-210g-2.jpg" alt="Hạt điều cacao 210g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều cacao 210g</b><span>160.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1283,8 +1615,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều cacao 210g', 160000, '160.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/nhan-macca-wasabi.jpg" alt="Nhân macca wasabi"
-                            loading="lazy"><b>Nhân macca wasabi</b><span>224.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/nhan-macca-wasabi.jpg" alt="Nhân macca wasabi - Ảnh 1" loading="lazy">
+                <img src="images/nhan-macca-wasabi-2.jpg" alt="Nhân macca wasabi - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Nhân macca wasabi</b><span>224.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1294,8 +1637,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Nhân macca wasabi', 224000, '224.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-toi-ot-200g-hu.jpg" alt="Hạt điều tỏi ớt 200g (hũ)"
-                            loading="lazy"><b>Hạt điều tỏi ớt 200g (hũ)</b><span>160.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-toi-ot-200g-hu.jpg" alt="Hạt điều tỏi ớt 200g (hũ) - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-toi-ot-200g-hu-2.jpg" alt="Hạt điều tỏi ớt 200g (hũ) - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều tỏi ớt 200g (hũ)</b><span>160.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1305,8 +1659,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều tỏi ớt 200g (hũ)', 160000, '160.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-capuchino-200g-hu.jpg" alt="Hạt điều capuchino 200g (hũ)"
-                            loading="lazy"><b>Hạt điều capuchino 200g
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-capuchino-200g-hu.jpg" alt="Hạt điều capuchino 200g (hũ) - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-capuchino-200g-hu-2.jpg" alt="Hạt điều capuchino 200g (hũ) - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều capuchino 200g
                             (hũ)</b><span>163.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1317,8 +1682,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều capuchino 200g (hũ)', 163000, '163.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-cacao-200g-hu.jpg" alt="Hạt điều cacao 200g (hũ)"
-                            loading="lazy"><b>Hạt điều cacao 200g (hũ)</b><span>163.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-cacao-200g-hu.jpg" alt="Hạt điều cacao 200g (hũ) - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-cacao-200g-hu-2.jpg" alt="Hạt điều cacao 200g (hũ) - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều cacao 200g (hũ)</b><span>163.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1328,8 +1704,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều cacao 200g (hũ)', 163000, '163.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-sachi-rang-moc-250g-hu.jpg" alt="Hạt sachi rang mộc 250g (hũ)"
-                            loading="lazy"><b>Hạt sachi rang mộc 250g
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-sachi-rang-moc-250g-hu.jpg" alt="Hạt sachi rang mộc 250g (hũ) - Ảnh 1" loading="lazy">
+                <img src="images/hat-sachi-rang-moc-250g-hu-2.jpg" alt="Hạt sachi rang mộc 250g (hũ) - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt sachi rang mộc 250g
                             (hũ)</b><span>145.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1340,7 +1727,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt sachi rang mộc 250g (hũ)', 145000, '145.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/nho-kho-250g.jpg" alt="Nho khô 250g" loading="lazy"><b>Nho khô
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/nho-kho-250g.jpg" alt="Nho khô 250g - Ảnh 1" loading="lazy">
+                <img src="images/nho-kho-250g-2.jpg" alt="Nho khô 250g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Nho khô
                             250g</b><span>110.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1351,8 +1750,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Nho khô 250g', 110000, '110.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-sachi-rang-moc-100g.jpg" alt="Hạt sachi rang mộc 100g"
-                            loading="lazy"><b>Hạt sachi rang mộc 100g</b><span>68.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-sachi-rang-moc-100g.jpg" alt="Hạt sachi rang mộc 100g - Ảnh 1" loading="lazy">
+                <img src="images/hat-sachi-rang-moc-100g-2.jpg" alt="Hạt sachi rang mộc 100g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt sachi rang mộc 100g</b><span>68.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1362,8 +1772,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt sachi rang mộc 100g', 68000, '68.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-100g.jpg"
-                            alt="Hạt điều rang muối vỏ lụa 100g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-rang-muoi-vo-lua-100g.jpg" alt="Hạt điều rang muối vỏ lụa 100g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-rang-muoi-vo-lua-100g-2.jpg" alt="Hạt điều rang muối vỏ lụa 100g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều rang muối vỏ lụa
                             100g</b><span>68.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1374,8 +1795,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều rang muối vỏ lụa 100g', 68000, '68.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-boc-vo-205g.jpg"
-                            alt="Hạt điều rang muối bóc vỏ 205g" loading="lazy"><b>Hạt điều rang muối bóc vỏ
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-rang-muoi-boc-vo-205g.jpg" alt="Hạt điều rang muối bóc vỏ 205g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-rang-muoi-boc-vo-205g-2.jpg" alt="Hạt điều rang muối bóc vỏ 205g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều rang muối bóc vỏ
                             205g</b><span>170.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1386,8 +1818,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều rang muối bóc vỏ 205g', 170000, '170.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-205g.jpg"
-                            alt="Hạt điều rang muối vỏ lụa 205g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-rang-muoi-vo-lua-205g.jpg" alt="Hạt điều rang muối vỏ lụa 205g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-rang-muoi-vo-lua-205g-2.jpg" alt="Hạt điều rang muối vỏ lụa 205g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều rang muối vỏ lụa
                             205g</b><span>145.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1398,8 +1841,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều rang muối vỏ lụa 205g', 145000, '145.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-400g.jpg"
-                            alt="Hạt điều rang muối vỏ lụa 400g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-rang-muoi-vo-lua-400g.jpg" alt="Hạt điều rang muối vỏ lụa 400g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-rang-muoi-vo-lua-400g-2.jpg" alt="Hạt điều rang muối vỏ lụa 400g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều rang muối vỏ lụa
                             400g</b><span>297.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1410,8 +1864,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều rang muối vỏ lụa 400g', 297000, '297.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-boc-vo-400g.jpg"
-                            alt="Hạt điều rang muối bóc vỏ 400g" loading="lazy"><b>Hạt điều rang muối bóc vỏ
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/hat-dieu-rang-muoi-boc-vo-400g.jpg" alt="Hạt điều rang muối bóc vỏ 400g - Ảnh 1" loading="lazy">
+                <img src="images/hat-dieu-rang-muoi-boc-vo-400g-2.jpg" alt="Hạt điều rang muối bóc vỏ 400g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Hạt điều rang muối bóc vỏ
                             400g</b><span>342.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
@@ -1422,8 +1887,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Hạt điều rang muối bóc vỏ 400g', 342000, '342.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/kho-ga-la-chanh-200g.jpg" alt="Khô gà lá chanh 200g"
-                            loading="lazy"><b>Khô gà lá chanh 200g</b><span>151.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/kho-ga-la-chanh-200g.jpg" alt="Khô gà lá chanh 200g - Ảnh 1" loading="lazy">
+                <img src="images/kho-ga-la-chanh-200g-2.jpg" alt="Khô gà lá chanh 200g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Khô gà lá chanh 200g</b><span>151.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1433,8 +1909,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Khô gà lá chanh 200g', 151000, '151.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/kho-ga-bo-toi-200g.jpg" alt="Khô gà bơ tỏi 200g"
-                            loading="lazy"><b>Khô gà bơ tỏi 200g</b><span>160.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/kho-ga-bo-toi-200g.jpg" alt="Khô gà bơ tỏi 200g - Ảnh 1" loading="lazy">
+                <img src="images/kho-ga-bo-toi-200g-2.jpg" alt="Khô gà bơ tỏi 200g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Khô gà bơ tỏi 200g</b><span>160.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1444,8 +1931,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Khô gà bơ tỏi 200g', 160000, '160.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/kho-ga-bo-toi-100g.jpg" alt="Khô gà bơ tỏi 100g"
-                            loading="lazy"><b>Khô gà bơ tỏi 100g</b><span>56.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/kho-ga-bo-toi-100g.jpg" alt="Khô gà bơ tỏi 100g - Ảnh 1" loading="lazy">
+                <img src="images/kho-ga-bo-toi-100g-2.jpg" alt="Khô gà bơ tỏi 100g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Khô gà bơ tỏi 100g</b><span>56.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -1455,8 +1953,19 @@ h3 {
             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;" onclick="addItemToList('Khô gà bơ tỏi 100g', 56000, '56.000đ', this)">+ Chọn</button>
         </div>
     </div>
-                    <div class="pc"><img src="images/kho-ga-la-chanh-100g.jpg" alt="Khô gà lá chanh 100g"
-                            loading="lazy"><b>Khô gà lá chanh 100g</b><span>52.000đ</span>
+                    <div class="pc">
+        <div class="card-slider" data-current="0">
+            <div class="slider-track">
+                <img src="images/kho-ga-la-chanh-100g.jpg" alt="Khô gà lá chanh 100g - Ảnh 1" loading="lazy">
+                <img src="images/kho-ga-la-chanh-100g-2.jpg" alt="Khô gà lá chanh 100g - Ảnh 2" loading="lazy" onerror="handleMissingSlide(this)">
+            </div>
+            <button type="button" class="slider-nav-btn slider-prev has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, -1)">&#10094;</button>
+            <button type="button" class="slider-nav-btn slider-next has-multi" style="width:22px;height:22px;font-size:11px;" onclick="slideCard(this, 1)">&#10095;</button>
+            <div class="slider-dots">
+                <button type="button" class="slider-dot active" style="width:6px;height:6px;" onclick="gotoSlide(this, 0)"></button>
+                <button type="button" class="slider-dot" style="width:6px;height:6px;" onclick="gotoSlide(this, 1)"></button>
+            </div>
+        </div><b>Khô gà lá chanh 100g</b><span>52.000đ</span>
         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
             <div class="qty-ctrl">
                 <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;" onclick="adjustQty(this, -1)">-</button>
@@ -2116,6 +2625,64 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+</script>
+
+
+<script>
+// --- ĐIỀU KHIỂN SLIDER 2 ẢNH VỚI CHẤM TRÒN ---
+function slideCard(btn, dir) {
+    var slider = btn.closest('.card-slider');
+    var track = slider.querySelector('.slider-track');
+    var dots = slider.querySelectorAll('.slider-dot');
+    var total = track.querySelectorAll('img').length;
+    var current = parseInt(slider.getAttribute('data-current') || '0', 10);
+
+    current += dir;
+    if (current < 0) current = total - 1;
+    if (current >= total) current = 0;
+
+    applySlide(slider, track, dots, current);
+}
+
+function gotoSlide(dotBtn, index) {
+    var slider = dotBtn.closest('.card-slider');
+    var track = slider.querySelector('.slider-track');
+    var dots = slider.querySelectorAll('.slider-dot');
+    applySlide(slider, track, dots, index);
+}
+
+function applySlide(slider, track, dots, index) {
+    slider.setAttribute('data-current', index);
+    track.style.transform = 'translateX(-' + (index * 100) + '%)';
+    dots.forEach(function(dot, i) {
+        if (i === index) {
+            dot.classList.add('active');
+            if (slider.closest('.pc')) {
+                dot.style.width = '16px';
+            } else {
+                dot.style.width = '22px';
+            }
+        } else {
+            dot.classList.remove('active');
+            if (slider.closest('.pc')) {
+                dot.style.width = '6px';
+            } else {
+                dot.style.width = '8px';
+            }
+        }
+    });
+}
+
+// Neu anh thu 2 chua duoc upload (bi loi 404), tu dong an cham tron va mui ten, chi hien 1 anh duy nhat
+function handleMissingSlide(img) {
+    var slider = img.closest('.card-slider');
+    if (!slider) return;
+    img.remove(); // Xoa tam anh loi
+    var navBtns = slider.querySelectorAll('.slider-nav-btn');
+    var dots = slider.querySelector('.slider-dots');
+    navBtns.forEach(function(b) { b.remove(); });
+    if (dots) dots.remove();
+}
 </script>
 
 </body>

@@ -1742,10 +1742,12 @@
                                 style="width:22px;height:22px;font-size:11px;"
                                 onclick="slideCard(this, 1)">&#10095;</button>
                             <div class="slider-dots">
-                                <button type="button" class="slider-dot active" style="width:6px;height:6px;"
+                                <button type="button" class="slider-dot active" style="width:16px;height:6px;"
                                     onclick="gotoSlide(this, 0)"></button>
                                 <button type="button" class="slider-dot" style="width:6px;height:6px;"
                                     onclick="gotoSlide(this, 1)"></button>
+                                <button type="button" class="slider-dot" style="width:6px;height:6px;"
+                                    onclick="gotoSlide(this, 2)"></button>
                             </div>
                         </div><b>Hạnh nhân rang bơ 250g</b><span>160.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -3433,15 +3435,26 @@
             });
         }
 
-        // Neu anh thu 2 chua duoc upload (bi loi 404), tu dong an cham tron va mui ten, chi hien 1 anh duy nhat
+        // Tu dong dieu chinh dots va mui ten theo so anh hop le thuc te
         function handleMissingSlide(img) {
             var slider = img.closest('.card-slider');
             if (!slider) return;
-            img.remove(); // Xoa tam anh loi
+            img.remove(); // Xoa anh bi loi
+            var track = slider.querySelector('.slider-track');
+            var remaining = track ? track.querySelectorAll('img').length : 0;
             var navBtns = slider.querySelectorAll('.slider-nav-btn');
             var dots = slider.querySelector('.slider-dots');
-            navBtns.forEach(function (b) { b.remove(); });
-            if (dots) dots.remove();
+
+            if (remaining <= 1) {
+                navBtns.forEach(function (b) { b.style.display = 'none'; });
+                if (dots) dots.style.display = 'none';
+            } else if (dots) {
+                // Xoa bot 1 cham dot
+                var allDots = dots.querySelectorAll('.slider-dot');
+                if (allDots.length > remaining) {
+                    allDots[allDots.length - 1].remove();
+                }
+            }
         }
     </script>
 

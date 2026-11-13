@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-theme="light">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light only">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -29,35 +30,9 @@
             padding-bottom: env(safe-area-inset-bottom, 0px)
         }
 
-        @media (prefers-color-scheme:dark) {
-            :root:not([data-theme="light"]) {
-                --bg: #1a1410;
-                --surface: #251c16;
-                --text: #f4eadb;
-                --muted: #bba98f;
-                --red: #e0574d;
-                --red-d: #c9443a;
-                --gold: #e3b04b;
-                --soft: #2e231b;
-                --line: #3d2f24;
-                --hero: #4a0f0c;
-                --hero2: #8a1d17
-            }
-        }
+        /* Dark mode media query disabled to keep light luxury theme always */
 
-        :root[data-theme="dark"] {
-            --bg: #1a1410;
-            --surface: #251c16;
-            --text: #f4eadb;
-            --muted: #bba98f;
-            --red: #e0574d;
-            --red-d: #c9443a;
-            --gold: #e3b04b;
-            --soft: #2e231b;
-            --line: #3d2f24;
-            --hero: #4a0f0c;
-            --hero2: #8a1d17
-        }
+        /* Dark theme disabled */
 
         html {
             scroll-padding-top: env(safe-area-inset-top, 0px);

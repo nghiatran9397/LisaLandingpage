@@ -762,6 +762,63 @@ h3 { font-weight: 600 !important; letter-spacing: -0.015em !important; }
     }
 }
 
+
+/* --- DANH SÁCH MÓN TRONG POPUP DỰ TOÁN (HIỂN THỊ ĐẸP CẢ MOBILE & DESKTOP) --- */
+.inquiry-items-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 240px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+.inquiry-item-row {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.inquiry-item-info {
+    flex: 1;
+    min-width: 0;
+}
+.inquiry-item-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+    word-break: break-word;
+}
+.inquiry-item-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--red);
+}
+.inquiry-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+.inquiry-del-btn {
+    background: transparent;
+    border: 0;
+    color: var(--muted);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 4px;
+    transition: color 0.2s;
+}
+.inquiry-del-btn:hover {
+    color: var(--red);
+}
+
 </style>
 </head>
 

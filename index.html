@@ -1232,7 +1232,57 @@
             flex-shrink: 0 !important;
             white-space: nowrap !important;
         }
-    </style>
+    
+/* --- HIỆU ỨNG SPOTLIGHT CARD ĐỔ QUẦNG SÁNG THEO CON TRỘT CHUỘT (CHÍNH XÁC TỪ SPOTLIGHTCARD.JSX) --- */
+.hc {
+    position: relative !important;
+    background: #ffffff !important;
+    border: 1px solid #ffedd5 !important; /* border-orange-100 */
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 25px -5px rgba(67, 20, 7, 0.04), 0 8px 10px -6px rgba(67, 20, 7, 0.04) !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease !important;
+}
+
+.hc:hover {
+    border-color: #fdba74 !important; /* hover:border-orange-300 */
+    box-shadow: 0 25px 45px -12px rgba(249, 115, 22, 0.16), 0 10px 20px -8px rgba(249, 115, 22, 0.1) !important; /* hover:shadow-orange-500/10 */
+    transform: translateY(-4px) !important;
+}
+
+/* Lớp quầng sáng Spotlight di chuyển theo con trỏ chuột */
+.spotlight-glow {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    background: radial-gradient(400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(249, 115, 22, 0.14), transparent 70%);
+}
+
+.hc:hover .spotlight-glow {
+    opacity: 1;
+}
+
+/* Nội dung thẻ nằm trên lớp Spotlight */
+.hc .hb, .hc img, .hc .qty-box {
+    position: relative;
+    z-index: 2;
+}
+
+/* Nâng cấp hiệu ứng hover trên từng viên thuốc thành phần (.exact-item-pill) */
+.exact-item-pill {
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+.exact-item-pill:hover {
+    background: rgba(255, 237, 213, 0.75) !important;
+    border-color: #fb923c !important;
+    transform: translateX(4px) !important;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.1) !important;
+}
+
+</style>
 </head>
 
 <body>
@@ -1312,7 +1362,7 @@
                     <div class="bar"></div>
                 </div>
                 <div class="hg">
-                    <article class="hc"><img src="images/hamper-sac-xuan-01-a-2.jpg" alt="Hamper Sắc Xuân 01 (A)"
+                    <article class="hc"><div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-01-a-2.jpg" alt="Hamper Sắc Xuân 01 (A)"
                             loading="lazy">
                         <div class="hb">
                             <h3>Sắc Xuân 01 (A)</h3>
@@ -1404,7 +1454,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc"><img src="images/hamper-sac-xuan-01-b.jpg" alt="Hamper Sắc Xuân 01 (B)"
+                    <article class="hc"><div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-01-b.jpg" alt="Hamper Sắc Xuân 01 (B)"
                             loading="lazy">
                         <div class="hb">
                             <h3>Sắc Xuân 01 (B)</h3>
@@ -1524,7 +1574,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc"><img src="images/hamper-sac-xuan-02-a.jpg" alt="Hamper Sắc Xuân 02 (A)"
+                    <article class="hc"><div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-02-a.jpg" alt="Hamper Sắc Xuân 02 (A)"
                             loading="lazy">
                         <div class="hb">
                             <h3>Sắc Xuân 02 (A)</h3>
@@ -1601,7 +1651,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc"><img src="images/hamper-sac-xuan-02-b.png" alt="Hamper Sắc Xuân 02 (B)"
+                    <article class="hc"><div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-02-b.png" alt="Hamper Sắc Xuân 02 (B)"
                             loading="lazy">
                         <div class="hb">
                             <h3>Sắc Xuân 02 (B)</h3>
@@ -1692,7 +1742,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc"><img src="images/hamper-ngoc-vu-khai-loc-a.jpg"
+                    <article class="hc"><div class="spotlight-glow"></div><img src="images/hamper-ngoc-vu-khai-loc-a.jpg"
                             alt="Hamper Ngọc Vũ Khai Lộc (A)" loading="lazy">
                         <div class="hb">
                             <h3>Ngọc Vũ Khai Lộc (A)</h3>
@@ -1770,7 +1820,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc"><img src="images/hamper-ngoc-vu-khai-loc-b.jpg"
+                    <article class="hc"><div class="spotlight-glow"></div><img src="images/hamper-ngoc-vu-khai-loc-b.jpg"
                             alt="Hamper Ngọc Vũ Khai Lộc (B)" loading="lazy">
                         <div class="hb">
                             <h3>Ngọc Vũ Khai Lộc (B)</h3>
@@ -1861,7 +1911,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc"><img src="images/hamper-xuan-hoan-ca.png" alt="Hamper Xuân Hoan Ca"
+                    <article class="hc"><div class="spotlight-glow"></div><img src="images/hamper-xuan-hoan-ca.png" alt="Hamper Xuân Hoan Ca"
                             loading="lazy">
                         <div class="hb">
                             <h3>Xuân Hoan Ca</h3>
@@ -1967,7 +2017,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc"><img src="images/hamper-huong-xuan.png" alt="Hamper Hương Xuân" loading="lazy">
+                    <article class="hc"><div class="spotlight-glow"></div><img src="images/hamper-huong-xuan.png" alt="Hamper Hương Xuân" loading="lazy">
                         <div class="hb">
                             <h3>Hương Xuân</h3>
                             <div class="pr">1.314.000đ</div>
@@ -2085,7 +2135,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc"><img src="images/hamper-xuan-dong-day.png" alt="Hamper Xuân Đong Đầy"
+                    <article class="hc"><div class="spotlight-glow"></div><img src="images/hamper-xuan-dong-day.png" alt="Hamper Xuân Đong Đầy"
                             loading="lazy">
                         <div class="hb">
                             <h3>Xuân Đong Đầy</h3>
@@ -2190,7 +2240,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc"><img src="images/hamper-xuan-nhu-y.png" alt="Hamper Xuân Như Ý" loading="lazy">
+                    <article class="hc"><div class="spotlight-glow"></div><img src="images/hamper-xuan-nhu-y.png" alt="Hamper Xuân Như Ý" loading="lazy">
                         <div class="hb">
                             <h3>Xuân Như Ý</h3>
                             <div class="pr">1.655.000đ</div>
@@ -2308,7 +2358,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc"><img src="images/hamper-tet-lac-hong.png" alt="Hamper Tết Lạc Hồng"
+                    <article class="hc"><div class="spotlight-glow"></div><img src="images/hamper-tet-lac-hong.png" alt="Hamper Tết Lạc Hồng"
                             loading="lazy">
                         <div class="hb">
                             <h3>Tết Lạc Hồng</h3>
@@ -2441,7 +2491,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc"><img src="images/hamper-tet-viet.png" alt="Hamper Tết Việt" loading="lazy">
+                    <article class="hc"><div class="spotlight-glow"></div><img src="images/hamper-tet-viet.png" alt="Hamper Tết Việt" loading="lazy">
                         <div class="hb">
                             <h3>Tết Việt</h3>
                             <div class="pr">1.435.000đ</div>
@@ -3815,6 +3865,26 @@
             }
         });
     </script>
+
+
+<script>
+// --- LOGIC TÍNH TOÁN VỊ TRÍ CHUỘT SPOTLIGHT (CHÍNH XÁC TỪ SPOTLIGHTCARD.JSX) ---
+document.addEventListener("DOMContentLoaded", function() {
+    var cards = document.querySelectorAll(".hc");
+    cards.forEach(function(card) {
+        card.addEventListener("mousemove", function(e) {
+            var rect = card.getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var y = e.clientY - rect.top;
+            var glow = card.querySelector(".spotlight-glow");
+            if (glow) {
+                glow.style.setProperty("--mouse-x", x + "px");
+                glow.style.setProperty("--mouse-y", y + "px");
+            }
+        });
+    });
+});
+</script>
 
 </body>
 

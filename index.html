@@ -1729,20 +1729,8 @@ h3 { font-weight: 600 !important; letter-spacing: -0.015em !important; }
             </div>
             <div class="list-modal-body">
                 <p style="margin:0;font-size:13px;color:var(--muted);">Quý khách có thể tùy chỉnh số lượng các mẫu quà và sản phẩm quan tâm trước khi gửi yêu cầu tư vấn báo giá chính thức.</p>
-                <div style="overflow-x:auto;">
-                    <table class="list-items-table">
-                        <thead>
-                            <tr>
-                                <th>Mẫu / Sản phẩm</th>
-                                <th style="width:80px;text-align:center;">Số lượng</th>
-                                <th style="text-align:right;">Đơn giá</th>
-                                <th style="width:30px;"></th>
-                            </tr>
-                        </thead>
-                        <tbody id="cartItemsTbody">
-                            <!-- JS render -->
-                        </tbody>
-                    </table>
+                <div class="inquiry-items-wrap" id="cartItemsTbody">
+                    <!-- Danh sách món dạng row hiện đại không tràn -->
                 </div>
                 <div class="list-total-box">
                     <span>Dự toán kinh phí tham khảo:</span>
@@ -1831,23 +1819,27 @@ function updateCartUI() {
     if (tbody) {
         tbody.innerHTML = "";
         if (inquiryList.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:20px;color:var(--muted);">Chưa có mẫu quà nào trong danh sách. Quý khách vui lòng chọn thêm từ bộ sưu tập phía trên.</td></tr>';
+            tbody.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted);font-size:13px;">Chưa có mẫu quà nào trong danh sách. Quý khách vui lòng chọn thêm từ bộ sưu tập phía trên.</div>';
             return;
         }
 
         inquiryList.forEach(function(item, idx) {
-            var tr = document.createElement("tr");
-            tr.innerHTML = '<td><b>' + item.title + '</b></td>' +
-                '<td style="text-align:center;">' +
+            var row = document.createElement("div");
+            row.className = "inquiry-item-row";
+            row.innerHTML = 
+                '<div class="inquiry-item-info">' +
+                    '<div class="inquiry-item-title">' + item.title + '</div>' +
+                    '<div class="inquiry-item-price">' + (item.price * item.qty).toLocaleString('vi-VN') + 'đ</div>' +
+                '</div>' +
+                '<div class="inquiry-item-actions">' +
                     '<div class="qty-ctrl" style="border-radius:6px;">' +
-                        '<button type="button" class="qty-btn" style="width:20px;height:22px;font-size:12px;" onclick="changeModalItemQty(' + idx + ', -1)">-</button>' +
-                        '<input type="text" class="qty-val" style="width:24px;font-size:11px;" value="' + item.qty + '" readonly>' +
-                        '<button type="button" class="qty-btn" style="width:20px;height:22px;font-size:12px;" onclick="changeModalItemQty(' + idx + ', 1)">+</button>' +
+                        '<button type="button" class="qty-btn" style="width:22px;height:24px;font-size:13px;" onclick="changeModalItemQty(' + idx + ', -1)">-</button>' +
+                        '<input type="text" class="qty-val" style="width:26px;font-size:12px;" value="' + item.qty + '" readonly>' +
+                        '<button type="button" class="qty-btn" style="width:22px;height:24px;font-size:13px;" onclick="changeModalItemQty(' + idx + ', 1)">+</button>' +
                     '</div>' +
-                '</td>' +
-                '<td style="text-align:right;font-weight:700;color:var(--red);">' + (item.price * item.qty).toLocaleString('vi-VN') + 'đ</td>' +
-                '<td style="text-align:center;"><button type="button" class="list-item-del" onclick="removeModalItem(' + idx + ')">&times;</button></td>';
-            tbody.appendChild(tr);
+                    '<button type="button" class="inquiry-del-btn" title="Xóa món này" onclick="removeModalItem(' + idx + ')">&times;</button>' +
+                '</div>';
+            tbody.appendChild(row);
         });
     }
 }

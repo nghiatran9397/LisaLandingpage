@@ -864,13 +864,13 @@
             transform: scale(1.04);
         }
 
-        /* --- MODAL CHI TIẾT SẢN PHẨM & LIGHTBOX (2 CỘT: ẢNH BÊN TRÁI + THÔNG TIN BÊN PHẢI) --- */
+        /* --- MODAL LIGHTBOX: PHÓNG TO ẢNH HAMPER (TRUYỀN THỐNG) & 2 CỘT CHO SẢN PHẨM LẺ --- */
         .img-lightbox {
             display: none;
             position: fixed;
             inset: 0;
             z-index: 10000;
-            background: rgba(15, 10, 8, 0.88);
+            background: rgba(12, 8, 6, 0.93);
             backdrop-filter: blur(10px);
             align-items: center;
             justify-content: center;
@@ -882,6 +882,128 @@
             display: flex;
         }
 
+        /* 1. GIAO DIỆN PHÓNG TO ẢNH TRUYỀN THỐNG (HAMPER TẾT 2027) */
+        .lightbox-wrap {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-img-holder {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+            min-height: 200px;
+            max-width: 100%;
+            max-height: 80vh;
+        }
+
+        .lightbox-wrap img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 16px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            object-fit: contain;
+            transition: opacity 0.22s ease;
+            opacity: 1;
+        }
+
+        .lightbox-wrap img.loading {
+            opacity: 0.35;
+        }
+
+        .lightbox-caption {
+            margin-top: 12px;
+            color: #fffaf2;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .lightbox-counter {
+            margin-top: 4px;
+            color: #f2c75c;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -46px;
+            right: 0;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .lightbox-close:hover {
+            background: var(--red);
+        }
+
+        .lightbox-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(30, 20, 15, 0.8);
+            color: #fff;
+            border: 1.5px solid var(--gold);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            z-index: 10002;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .lightbox-btn:hover {
+            background: var(--red);
+        }
+
+        .lightbox-btn:active {
+            transform: translateY(-50%) scale(0.92);
+        }
+
+        .lightbox-prev {
+            left: 12px;
+        }
+
+        .lightbox-next {
+            right: 12px;
+        }
+
+        @media (min-width: 769px) {
+            .lightbox-prev {
+                left: -60px;
+            }
+
+            .lightbox-next {
+                right: -60px;
+            }
+        }
+
+        /* 2. GIAO DIỆN 2 CỘT CHI TIẾT SẢN PHẨM (CHỈ DÀNH RIÊNG CHO SẢN PHẨM LẺ) */
         .lightbox-modal-card {
             position: relative;
             background: #ffffff;
@@ -935,7 +1057,6 @@
             transform: rotate(90deg);
         }
 
-        /* CỘT BÊN TRÁI: KHUNG ẢNH & THUMBNAILS */
         .lb-col-gallery {
             background: #faf7f2;
             padding: 24px;
@@ -1049,7 +1170,6 @@
             letter-spacing: 0.05em;
         }
 
-        /* Hàng Thumbnails ảnh nhỏ phía dưới ảnh lớn */
         .lb-thumbs-row {
             display: flex;
             align-items: center;
@@ -1087,7 +1207,6 @@
             transform: scale(1.04);
         }
 
-        /* CỘT BÊN PHẢI: KHUNG NỘI DUNG THÔNG TIN SẢN PHẨM */
         .lb-col-info {
             padding: 28px 26px 24px 26px;
             display: flex;
@@ -1142,7 +1261,6 @@
             letter-spacing: 0.04em;
         }
 
-        /* Khối thông tin chi tiết (specs) */
         .lb-details-box {
             display: flex;
             flex-direction: column;
@@ -1178,46 +1296,6 @@
             flex: 1;
         }
 
-        .lb-hamper-items {
-            background: #faf7f2;
-            border: 1px solid #ebd9c3;
-            border-radius: 12px;
-            padding: 12px 14px;
-            margin-bottom: 18px;
-        }
-
-        .lb-hamper-items-title {
-            font-size: 12px;
-            font-weight: 700;
-            color: #8B0000;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .lb-hamper-list {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            max-height: 160px;
-            overflow-y: auto;
-        }
-
-        .lb-hamper-item-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #ffffff;
-            border: 1px solid #ebd9c3;
-            padding: 6px 10px;
-            border-radius: 8px;
-            font-size: 12.5px;
-        }
-
-        /* Khu vực điều khiển số lượng và nút bấm */
         .lb-actions-box {
             margin-top: auto;
             padding-top: 16px;
@@ -1347,7 +1425,6 @@
             color: #ffffff;
         }
 
-        /* RESPONSIVE TRÊN MOBILE (< 768px) */
         @media (max-width: 768px) {
             .lightbox-modal-card {
                 grid-template-columns: 1fr;
@@ -4602,9 +4679,25 @@
     </script>
 
 
-    <!-- MODAL LIGHTBOX CHI TIẾT SẢN PHẨM & ALBUM 2 CỘT -->
+    <!-- MODAL LIGHTBOX: PHÓNG TO ẢNH HAMPER (TRUYỀN THỐNG) & 2 CỘT CHO SẢN PHẨM LẺ -->
     <div class="img-lightbox" id="imgLightbox" onclick="closeLightbox(event)">
-        <div class="lightbox-modal-card" id="lbModalCard">
+        <!-- 1. GIAO DIỆN PHÓNG TO ẢNH TRUYỀN THỐNG (DÀNH CHO HAMPER TẾT 2027) -->
+        <div class="lightbox-wrap" id="lbClassicWrap" style="display: none;">
+            <button type="button" class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button type="button" class="lightbox-btn lightbox-prev" id="lbClassicPrev"
+                onclick="navigateLightbox(-1)">&#10094;</button>
+            <div class="lightbox-img-holder">
+                <div class="lightbox-spinner" id="lbClassicSpinner"></div>
+                <img id="lightboxClassicImg" src="" alt="Hamper Zoom preview">
+            </div>
+            <button type="button" class="lightbox-btn lightbox-next" id="lbClassicNext"
+                onclick="navigateLightbox(1)">&#10095;</button>
+            <div class="lightbox-caption" id="lightboxCap"></div>
+            <div class="lightbox-counter" id="lbClassicCounter"></div>
+        </div>
+
+        <!-- 2. GIAO DIỆN 2 CỘT CHI TIẾT SẢN PHẨM (DÀNH RIÊNG CHO SẢN PHẨM LẺ) -->
+        <div class="lightbox-modal-card" id="lbProductCard" style="display: none;">
             <button type="button" class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
 
             <!-- CỘT BÊN TRÁI: KHUNG ẢNH & THUMBNAILS -->
@@ -4621,7 +4714,7 @@
                 <div class="lb-thumbs-row" id="lbThumbsRow"></div>
             </div>
 
-            <!-- CỘT BÊN PHẢI: KHUNG THÔNG TIN SẢN PHẨM -->
+            <!-- CỘT BÊN PHẢI: KHUNG THÔNG TIN SẢN PHẨM LẺ -->
             <div class="lb-col-info">
                 <div class="lb-badge" id="lbBadge">Nông sản xuất khẩu</div>
                 <h3 class="lb-title" id="lbTitle">Hạt điều rang muối 250g</h3>
@@ -4630,22 +4723,8 @@
                     <span class="lb-price-note">Giá niêm yết</span>
                 </div>
 
-                <!-- KHỐI ĐẶC ĐIỂM CHI TIẾT SẢN PHẨM -->
+                <!-- KHỐI ĐẶC ĐIỂM CHI TIẾT SẢN PHẨM LẺ -->
                 <div class="lb-details-box" id="lbDetailsBox"></div>
-
-                <!-- NẾU LÀ HAMPER: DANH SÁCH THÀNH PHẦN BÊN TRONG -->
-                <div class="lb-hamper-items" id="lbHamperItems" style="display: none;">
-                    <div class="lb-hamper-items-title">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m7.5 4.27 9 5.15"></path>
-                            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 21 16Z"></path>
-                            <path d="m3.3 7 8.7 5 8.7-5"></path>
-                            <path d="M12 22V12"></path>
-                        </svg>
-                        Thành phần tuyển chọn bên trong:
-                    </div>
-                    <div class="lb-hamper-list" id="lbHamperList"></div>
-                </div>
 
                 <!-- KHU VỰC SỐ LƯỢNG & NÚT THAO TÁC -->
                 <div class="lb-actions-box">
@@ -4687,7 +4766,7 @@
 
 
     <script>
-        // --- DỮ LIỆU ĐẶC ĐIỂM CHI TIẾT SẢN PHẨM RETAIL & HAMPER ---
+        // --- DỮ LIỆU ĐẶC ĐIỂM CHI TIẾT SẢN PHẨM RETAIL ---
         var retailProductDetails = {
             "Hạt điều rang muối 250g": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
@@ -4856,86 +4935,45 @@
             currentAlbum = imgList;
             currentAlbumIdx = 0;
 
-            // Thu thập thông tin sản phẩm từ thẻ card
-            var isHamper = cardEl && cardEl.classList.contains("hc");
             var isProduct = cardEl && cardEl.classList.contains("pc");
 
-            var priceStr = "";
-            if (isHamper) {
-                var prEl = cardEl.querySelector(".pr");
-                if (prEl) priceStr = prEl.textContent.trim();
-            } else if (isProduct) {
-                var spEl = cardEl.querySelector("span");
-                if (spEl) priceStr = spEl.textContent.trim();
-            }
-
-            var priceNum = parseInt(priceStr.replace(/\D/g, '')) || 0;
+            var classicWrap = document.getElementById("lbClassicWrap");
+            var productCard = document.getElementById("lbProductCard");
 
             currentProduct = {
                 title: title,
-                priceStr: priceStr,
-                priceNum: priceNum,
-                isHamper: isHamper,
+                isProduct: isProduct,
                 cardEl: cardEl
             };
 
-            // Điền dữ liệu vào cột bên phải
-            var badgeEl = document.getElementById("lbBadge");
-            var titleEl = document.getElementById("lbTitle");
-            var priceEl = document.getElementById("lbPrice");
-            var detailsBox = document.getElementById("lbDetailsBox");
-            var hamperBox = document.getElementById("lbHamperItems");
-            var hamperList = document.getElementById("lbHamperList");
-            var qtyInput = document.getElementById("modalQtyVal");
-            var btnAdd = document.getElementById("lbBtnAdd");
-            var btnAddText = document.getElementById("lbBtnAddText");
+            if (isProduct) {
+                // CHỈ ÁP DỤNG 2 CỘT CHO SẢN PHẨM LẺ
+                if (classicWrap) classicWrap.style.display = "none";
+                if (productCard) productCard.style.display = "grid";
 
-            if (titleEl) titleEl.textContent = title;
-            if (priceEl) priceEl.textContent = priceStr || "Liên hệ báo giá";
-            if (qtyInput) qtyInput.value = "1";
-            if (btnAddText) btnAddText.textContent = "Chọn vào danh sách báo giá";
-            if (btnAdd) btnAdd.classList.remove("added");
+                var spEl = cardEl.querySelector("span");
+                var priceStr = spEl ? spEl.textContent.trim() : "";
+                var priceNum = parseInt(priceStr.replace(/\D/g, '')) || 0;
 
-            if (isHamper) {
-                if (badgeEl) badgeEl.textContent = "Bộ Sưu Tập Hamper Tết 2027";
+                currentProduct.priceStr = priceStr;
+                currentProduct.priceNum = priceNum;
 
-                var subTitle = "";
-                var subEl = cardEl ? cardEl.querySelector(".exact-subtitle") : null;
-                if (subEl) subTitle = subEl.textContent.trim();
+                var badgeEl = document.getElementById("lbBadge");
+                var titleEl = document.getElementById("lbTitle");
+                var priceEl = document.getElementById("lbPrice");
+                var detailsBox = document.getElementById("lbDetailsBox");
+                var qtyInput = document.getElementById("modalQtyVal");
+                var btnAdd = document.getElementById("lbBtnAdd");
+                var btnAddText = document.getElementById("lbBtnAddText");
 
-                if (detailsBox) {
-                    detailsBox.innerHTML =
-                        '<div class="lb-detail-row"><span class="lb-detail-icon">🎁</span><span class="lb-detail-label">Quy cách:</span><span class="lb-detail-val">' + (subTitle || "Hộp quà tết cao cấp kèm túi xách đồng bộ") + '</span></div>' +
-                        '<div class="lb-detail-row"><span class="lb-detail-icon">✨</span><span class="lb-detail-label">Tiêu chuẩn:</span><span class="lb-detail-val">Chuẩn xuất khẩu ISO 22000, 100% nông sản mới vụ mới</span></div>' +
-                        '<div class="lb-detail-row"><span class="lb-detail-icon">🏷️</span><span class="lb-detail-label">Doanh nghiệp:</span><span class="lb-detail-val">Hỗ trợ in/khắc logo, xuất VAT đầy đủ, giao tận nơi</span></div>';
-                }
+                if (titleEl) titleEl.textContent = title;
+                if (priceEl) priceEl.textContent = priceStr || "Liên hệ báo giá";
+                if (qtyInput) qtyInput.value = "1";
+                if (btnAddText) btnAddText.textContent = "Chọn vào danh sách báo giá";
+                if (btnAdd) btnAdd.classList.remove("added");
 
-                // Lấy danh sách thành phần từ thẻ card
-                if (hamperBox && hamperList) {
-                    hamperList.innerHTML = "";
-                    var pills = cardEl ? cardEl.querySelectorAll(".exact-item-pill") : [];
-                    if (pills && pills.length > 0) {
-                        pills.forEach(function (pill) {
-                            var itemLeft = pill.querySelector(".exact-item-left span") || pill.querySelector(".exact-item-left");
-                            var itemWeight = pill.querySelector(".exact-item-weight");
-                            var nameTxt = itemLeft ? itemLeft.textContent.trim() : "";
-                            var weightTxt = itemWeight ? itemWeight.textContent.trim() : "";
-
-                            var row = document.createElement("div");
-                            row.className = "lb-hamper-item-row";
-                            row.innerHTML = '<span><b>•</b> ' + nameTxt + '</span><span style="color:#8B0000;font-weight:700;">' + weightTxt + '</span>';
-                            hamperList.appendChild(row);
-                        });
-                        hamperBox.style.display = "block";
-                    } else {
-                        hamperBox.style.display = "none";
-                    }
-                }
-            } else {
-                // SẢN PHẨM LẺ (RETAIL) - ĐẶC BIỆT LÀ HẠT ĐIỀU RANG MUỐI 250G
                 var specs = getProductSpecs(title);
                 if (badgeEl) badgeEl.textContent = specs.badge;
-                if (hamperBox) hamperBox.style.display = "none";
 
                 if (detailsBox) {
                     detailsBox.innerHTML =
@@ -4947,28 +4985,35 @@
                         '<div class="lb-detail-row"><span class="lb-detail-icon">⏳</span><span class="lb-detail-label">HSD & Bảo quản:</span><span class="lb-detail-val">' + specs.hsd + '</span></div>' +
                         '<div class="lb-detail-row"><span class="lb-detail-icon">🛡️</span><span class="lb-detail-label">Chứng nhận:</span><span class="lb-detail-val">' + specs.cert + '</span></div>';
                 }
-            }
 
-            // Dựng danh sách thumbnails bên trái
-            var thumbsRow = document.getElementById("lbThumbsRow");
-            if (thumbsRow) {
-                thumbsRow.innerHTML = "";
-                if (currentAlbum.length > 1) {
-                    thumbsRow.style.display = "flex";
-                    currentAlbum.forEach(function (url, idx) {
-                        var thumb = document.createElement("img");
-                        thumb.className = "lb-thumb-item" + (idx === 0 ? " active" : "");
-                        thumb.src = url;
-                        thumb.alt = "Thumb " + (idx + 1);
-                        thumb.onclick = function (e) {
-                            e.stopPropagation();
-                            selectLightboxImage(idx);
-                        };
-                        thumbsRow.appendChild(thumb);
-                    });
-                } else {
-                    thumbsRow.style.display = "none";
+                // Dựng thumbnails dưới ảnh sản phẩm lẻ
+                var thumbsRow = document.getElementById("lbThumbsRow");
+                if (thumbsRow) {
+                    thumbsRow.innerHTML = "";
+                    if (currentAlbum.length > 1) {
+                        thumbsRow.style.display = "flex";
+                        currentAlbum.forEach(function (url, idx) {
+                            var thumb = document.createElement("img");
+                            thumb.className = "lb-thumb-item" + (idx === 0 ? " active" : "");
+                            thumb.src = url;
+                            thumb.alt = "Thumb " + (idx + 1);
+                            thumb.onclick = function (e) {
+                                e.stopPropagation();
+                                selectLightboxImage(idx);
+                            };
+                            thumbsRow.appendChild(thumb);
+                        });
+                    } else {
+                        thumbsRow.style.display = "none";
+                    }
                 }
+            } else {
+                // CHỖ HAMPER TẾT 2027 & CÁC ẢNH KHÁC: GIỮ NGUYÊN GIAO DIỆN PHÓNG TO ẢNH TRUYỀN THỐNG (KHÔNG ĐỤNG ĐẾN GIAO DIỆN HAMPER)
+                if (productCard) productCard.style.display = "none";
+                if (classicWrap) classicWrap.style.display = "flex";
+
+                var cap = document.getElementById("lightboxCap");
+                if (cap) cap.textContent = title;
             }
 
             // Tải trước toàn bộ ảnh trong album
@@ -4998,7 +5043,7 @@
         }
 
         function addCurrentProductToList() {
-            if (!currentProduct) return;
+            if (!currentProduct || !currentProduct.isProduct) return;
             var inp = document.getElementById("modalQtyVal");
             var qty = inp ? (parseInt(inp.value, 10) || 1) : 1;
 
@@ -5017,69 +5062,97 @@
         }
 
         function updateLightboxView() {
-            var img = document.getElementById("lightboxImg");
-            var counter = document.getElementById("lbCounter");
-            var prevBtn = document.getElementById("lbPrev");
-            var nextBtn = document.getElementById("lbNext");
-            var spinner = document.getElementById("lbSpinner");
-
+            var isProduct = currentProduct && currentProduct.isProduct;
             var targetSrc = currentAlbum[currentAlbumIdx];
 
+            // Tải trước ảnh liền trước & liền sau
             if (currentAlbum.length > 1) {
-                if (counter) {
-                    counter.textContent = (currentAlbumIdx + 1) + " / " + currentAlbum.length;
-                    counter.style.display = "block";
-                }
-                if (prevBtn) prevBtn.style.display = "flex";
-                if (nextBtn) nextBtn.style.display = "flex";
-            } else {
-                if (counter) counter.style.display = "none";
-                if (prevBtn) prevBtn.style.display = "none";
-                if (nextBtn) nextBtn.style.display = "none";
+                var nextIdx = (currentAlbumIdx + 1) % currentAlbum.length;
+                var prevIdx = (currentAlbumIdx - 1 + currentAlbum.length) % currentAlbum.length;
+                preloadImgUrl(currentAlbum[nextIdx]);
+                preloadImgUrl(currentAlbum[prevIdx]);
             }
 
-            // Cập nhật trạng thái active của thumbnails
-            var thumbs = document.querySelectorAll(".lb-thumb-item");
-            thumbs.forEach(function (th, idx) {
-                if (idx === currentAlbumIdx) th.classList.add("active");
-                else th.classList.remove("active");
-            });
+            if (isProduct) {
+                // CẬP NHẬT GIAO DIỆN 2 CỘT SẢN PHẨM LẺ
+                var img = document.getElementById("lightboxImg");
+                var counter = document.getElementById("lbCounter");
+                var prevBtn = document.getElementById("lbPrev");
+                var nextBtn = document.getElementById("lbNext");
+                var spinner = document.getElementById("lbSpinner");
 
-            if (img && targetSrc) {
-                // Tải trước ảnh liền trước & liền sau
                 if (currentAlbum.length > 1) {
-                    var nextIdx = (currentAlbumIdx + 1) % currentAlbum.length;
-                    var prevIdx = (currentAlbumIdx - 1 + currentAlbum.length) % currentAlbum.length;
-                    preloadImgUrl(currentAlbum[nextIdx]);
-                    preloadImgUrl(currentAlbum[prevIdx]);
-                }
-
-                var testImg = new Image();
-                testImg.src = targetSrc;
-
-                if (testImg.complete && testImg.naturalWidth > 0) {
-                    img.src = targetSrc;
-                    img.classList.remove("loading");
-                    if (spinner) spinner.classList.remove("show");
+                    if (counter) {
+                        counter.textContent = (currentAlbumIdx + 1) + " / " + currentAlbum.length;
+                        counter.style.display = "block";
+                    }
+                    if (prevBtn) prevBtn.style.display = "flex";
+                    if (nextBtn) nextBtn.style.display = "flex";
                 } else {
-                    if (spinner) spinner.classList.add("show");
-                    img.classList.add("loading");
-
-                    testImg.onload = function () {
-                        if (currentAlbum[currentAlbumIdx] === targetSrc) {
-                            img.src = targetSrc;
-                            img.classList.remove("loading");
-                            if (spinner) spinner.classList.remove("show");
-                        }
-                    };
-                    testImg.onerror = function () {
-                        if (currentAlbum[currentAlbumIdx] === targetSrc) {
-                            img.src = targetSrc;
-                            img.classList.remove("loading");
-                            if (spinner) spinner.classList.remove("show");
-                        }
-                    };
+                    if (counter) counter.style.display = "none";
+                    if (prevBtn) prevBtn.style.display = "none";
+                    if (nextBtn) nextBtn.style.display = "none";
                 }
+
+                var thumbs = document.querySelectorAll(".lb-thumb-item");
+                thumbs.forEach(function (th, idx) {
+                    if (idx === currentAlbumIdx) th.classList.add("active");
+                    else th.classList.remove("active");
+                });
+
+                bindImageLoading(img, spinner, targetSrc);
+            } else {
+                // CẬP NHẬT GIAO DIỆN TRUYỀN THỐNG CỦA HAMPER TẾT 2027
+                var img = document.getElementById("lightboxClassicImg");
+                var counter = document.getElementById("lbClassicCounter");
+                var prevBtn = document.getElementById("lbClassicPrev");
+                var nextBtn = document.getElementById("lbClassicNext");
+                var spinner = document.getElementById("lbClassicSpinner");
+
+                if (currentAlbum.length > 1) {
+                    if (counter) {
+                        counter.textContent = (currentAlbumIdx + 1) + " / " + currentAlbum.length;
+                        counter.style.display = "block";
+                    }
+                    if (prevBtn) prevBtn.style.display = "flex";
+                    if (nextBtn) nextBtn.style.display = "flex";
+                } else {
+                    if (counter) counter.style.display = "none";
+                    if (prevBtn) prevBtn.style.display = "none";
+                    if (nextBtn) nextBtn.style.display = "none";
+                }
+
+                bindImageLoading(img, spinner, targetSrc);
+            }
+        }
+
+        function bindImageLoading(img, spinner, targetSrc) {
+            if (!img || !targetSrc) return;
+            var testImg = new Image();
+            testImg.src = targetSrc;
+
+            if (testImg.complete && testImg.naturalWidth > 0) {
+                img.src = targetSrc;
+                img.classList.remove("loading");
+                if (spinner) spinner.classList.remove("show");
+            } else {
+                if (spinner) spinner.classList.add("show");
+                img.classList.add("loading");
+
+                testImg.onload = function () {
+                    if (currentAlbum[currentAlbumIdx] === targetSrc) {
+                        img.src = targetSrc;
+                        img.classList.remove("loading");
+                        if (spinner) spinner.classList.remove("show");
+                    }
+                };
+                testImg.onerror = function () {
+                    if (currentAlbum[currentAlbumIdx] === targetSrc) {
+                        img.src = targetSrc;
+                        img.classList.remove("loading");
+                        if (spinner) spinner.classList.remove("show");
+                    }
+                };
             }
         }
 
@@ -5093,8 +5166,10 @@
 
         function closeLightbox(e) {
             if (e && e.target) {
-                var card = document.getElementById("lbModalCard");
-                if (card && card.contains(e.target) && !e.target.closest(".lightbox-close-btn")) {
+                var pCard = document.getElementById("lbProductCard");
+                var cWrap = document.getElementById("lbClassicWrap");
+                if ((pCard && pCard.contains(e.target) && !e.target.closest(".lightbox-close-btn")) ||
+                    (cWrap && cWrap.contains(e.target) && !e.target.closest(".lightbox-close") && !e.target.classList.contains("lightbox-wrap"))) {
                     return;
                 }
             }

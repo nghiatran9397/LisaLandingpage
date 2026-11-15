@@ -864,55 +864,110 @@
             transform: scale(1.04);
         }
 
-        /* Modal Lightbox xem phóng to ảnh + Slider trong Popup */
+        /* --- MODAL CHI TIẾT SẢN PHẨM & LIGHTBOX (2 CỘT: ẢNH BÊN TRÁI + THÔNG TIN BÊN PHẢI) --- */
         .img-lightbox {
             display: none;
             position: fixed;
             inset: 0;
             z-index: 10000;
-            background: rgba(12, 8, 6, 0.93);
-            backdrop-filter: blur(8px);
+            background: rgba(15, 10, 8, 0.88);
+            backdrop-filter: blur(10px);
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 16px;
+            overflow-y: auto;
         }
 
         .img-lightbox.active {
             display: flex;
         }
 
-        .lightbox-wrap {
+        .lightbox-modal-card {
             position: relative;
-            max-width: 90vw;
+            background: #ffffff;
+            border: 1.5px solid rgba(212, 160, 23, 0.45);
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+            max-width: 960px;
+            width: 100%;
             max-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            overflow: hidden;
+            animation: lbModalIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .lightbox-img-holder {
-            position: relative;
+        @keyframes lbModalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.96) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .lightbox-close-btn {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            z-index: 10005;
+            background: rgba(0, 0, 0, 0.06);
+            color: #333;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 200px;
-            min-height: 200px;
-            max-width: 100%;
-            max-height: 80vh;
+            transition: all 0.2s ease;
         }
 
-        .lightbox-wrap img {
+        .lightbox-close-btn:hover {
+            background: #8B0000;
+            color: #ffffff;
+            border-color: #8B0000;
+            transform: rotate(90deg);
+        }
+
+        /* CỘT BÊN TRÁI: KHUNG ẢNH & THUMBNAILS */
+        .lb-col-gallery {
+            background: #faf7f2;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border-right: 1px solid #f0e6d6;
+            position: relative;
+            user-select: none;
+        }
+
+        .lb-main-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lb-main-img-wrap img {
             max-width: 100%;
-            max-height: 80vh;
-            border-radius: 16px;
-            border: 2px solid var(--gold);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            max-height: 100%;
             object-fit: contain;
+            border-radius: 12px;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
             transition: opacity 0.22s ease;
             opacity: 1;
         }
 
-        .lightbox-wrap img.loading {
+        .lb-main-img-wrap img.loading {
             opacity: 0.35;
         }
 
@@ -924,8 +979,8 @@
             transform: translate(-50%, -50%);
             width: 48px;
             height: 48px;
-            border: 4px solid rgba(242, 199, 92, 0.25);
-            border-top: 4px solid var(--gold);
+            border: 4px solid rgba(212, 160, 23, 0.25);
+            border-top: 4px solid #d4a017;
             border-radius: 50%;
             animation: lbSpin 0.75s linear infinite;
             z-index: 10001;
@@ -942,82 +997,402 @@
             100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
-        .lightbox-caption {
-            margin-top: 12px;
-            color: #fffaf2;
-            font-size: 16px;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .lightbox-counter {
-            margin-top: 4px;
-            color: #f2c75c;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -46px;
-            right: 0;
-            background: rgba(255, 255, 255, 0.15);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox-btn {
+        .lb-nav-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(30, 20, 15, 0.8);
-            color: #fff;
-            border: 1.5px solid var(--gold);
-            width: 44px;
-            height: 44px;
+            background: rgba(255, 255, 255, 0.92);
+            color: #8B0000;
+            border: 1.5px solid #d4a017;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 700;
             z-index: 10002;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transition: all 0.2s;
         }
 
-        .lightbox-btn:hover {
-            background: var(--red);
+        .lb-nav-btn:hover {
+            background: #8B0000;
+            color: #ffffff;
+            border-color: #8B0000;
         }
 
-        .lightbox-btn:active {
-            transform: translateY(-50%) scale(0.92);
+        .lb-nav-btn:active {
+            transform: translateY(-50%) scale(0.9);
         }
 
-        .lightbox-prev {
-            left: 12px;
+        .lb-nav-prev {
+            left: 8px;
         }
 
-        .lightbox-next {
+        .lb-nav-next {
+            right: 8px;
+        }
+
+        .lb-counter-pill {
+            position: absolute;
+            bottom: 8px;
             right: 12px;
+            background: rgba(0, 0, 0, 0.65);
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
         }
 
-        @media (min-width: 769px) {
-            .lightbox-prev {
-                left: -60px;
+        /* Hàng Thumbnails ảnh nhỏ phía dưới ảnh lớn */
+        .lb-thumbs-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 16px;
+            width: 100%;
+            overflow-x: auto;
+            padding: 4px 2px;
+        }
+
+        .lb-thumb-item {
+            width: 62px;
+            height: 62px;
+            border-radius: 10px;
+            border: 2px solid #e0d5c3;
+            background: #fff;
+            padding: 3px;
+            cursor: pointer;
+            object-fit: contain;
+            transition: all 0.2s ease;
+            opacity: 0.65;
+            flex-shrink: 0;
+        }
+
+        .lb-thumb-item:hover {
+            opacity: 1;
+            border-color: #d4a017;
+        }
+
+        .lb-thumb-item.active {
+            opacity: 1;
+            border-color: #8B0000;
+            box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.25);
+            transform: scale(1.04);
+        }
+
+        /* CỘT BÊN PHẢI: KHUNG NỘI DUNG THÔNG TIN SẢN PHẨM */
+        .lb-col-info {
+            padding: 28px 26px 24px 26px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+
+        .lb-badge {
+            align-self: flex-start;
+            background: #fff5e6;
+            color: #b86200;
+            border: 1px solid #ffd280;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            padding: 4px 11px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .lb-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.35;
+            margin: 0 0 8px 0;
+            padding-right: 32px;
+        }
+
+        .lb-price-wrap {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px dashed #e8dcc8;
+        }
+
+        .lb-price {
+            font-size: 26px;
+            font-weight: 800;
+            color: #8B0000;
+            letter-spacing: -0.02em;
+        }
+
+        .lb-price-note {
+            font-size: 12px;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* Khối thông tin chi tiết (specs) */
+        .lb-details-box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 18px;
+            font-size: 13.5px;
+            color: #3b3b3b;
+            line-height: 1.55;
+        }
+
+        .lb-detail-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .lb-detail-icon {
+            color: #d4a017;
+            font-size: 14px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .lb-detail-label {
+            font-weight: 700;
+            color: #222;
+            min-width: 90px;
+            flex-shrink: 0;
+        }
+
+        .lb-detail-val {
+            color: #444;
+            flex: 1;
+        }
+
+        .lb-hamper-items {
+            background: #faf7f2;
+            border: 1px solid #ebd9c3;
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+        }
+
+        .lb-hamper-items-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #8B0000;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lb-hamper-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            max-height: 160px;
+            overflow-y: auto;
+        }
+
+        .lb-hamper-item-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            border: 1px solid #ebd9c3;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 12.5px;
+        }
+
+        /* Khu vực điều khiển số lượng và nút bấm */
+        .lb-actions-box {
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .lb-qty-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lb-qty-label {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .lb-qty-ctrl {
+            display: flex;
+            align-items: center;
+            border: 1.5px solid #d4a017;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .lb-qty-btn {
+            background: #faf7f2;
+            border: none;
+            width: 32px;
+            height: 32px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            color: #8B0000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s;
+        }
+
+        .lb-qty-btn:hover {
+            background: #ebd9c3;
+        }
+
+        .lb-qty-input {
+            width: 38px;
+            height: 32px;
+            border: none;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .lb-btn-add {
+            flex: 1;
+            background: #8B0000;
+            color: #ffffff;
+            border: 1.5px solid #8B0000;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
+        }
+
+        .lb-btn-add:hover {
+            background: #6e0000;
+            border-color: #6e0000;
+            transform: translateY(-1px);
+        }
+
+        .lb-btn-add.added {
+            background: #2e7d32 !important;
+            border-color: #2e7d32 !important;
+        }
+
+        .lb-consult-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .lb-btn-consult {
+            flex: 1;
+            padding: 9px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .lb-btn-zalo {
+            background: #eef5ff;
+            color: #0068ff;
+            border: 1px solid #c2dbff;
+        }
+
+        .lb-btn-zalo:hover {
+            background: #0068ff;
+            color: #ffffff;
+        }
+
+        .lb-btn-hotline {
+            background: #fdf5f5;
+            color: #8B0000;
+            border: 1px solid #ffd5d5;
+        }
+
+        .lb-btn-hotline:hover {
+            background: #8B0000;
+            color: #ffffff;
+        }
+
+        /* RESPONSIVE TRÊN MOBILE (< 768px) */
+        @media (max-width: 768px) {
+            .lightbox-modal-card {
+                grid-template-columns: 1fr;
+                max-height: 92vh;
+                overflow-y: auto;
+                border-radius: 16px;
             }
 
-            .lightbox-next {
-                right: -60px;
+            .lb-col-gallery {
+                padding: 16px;
+                border-right: none;
+                border-bottom: 1px solid #f0e6d6;
+            }
+
+            .lb-main-img-wrap {
+                height: 250px;
+            }
+
+            .lb-thumb-item {
+                width: 52px;
+                height: 52px;
+            }
+
+            .lb-col-info {
+                padding: 18px 16px 20px 16px;
+                max-height: none;
+                overflow-y: visible;
+            }
+
+            .lb-title {
+                font-size: 18px;
+                padding-right: 28px;
+            }
+
+            .lb-price {
+                font-size: 22px;
+            }
+
+            .lb-qty-row {
+                flex-wrap: wrap;
+            }
+
+            .lb-btn-add {
+                width: 100%;
+                flex: none;
             }
         }
 
@@ -4053,10 +4428,15 @@
             inp.value = val;
         }
 
-        function addItemToList(title, priceNum, priceStr, btn) {
-            var card = btn.closest('.hb') || btn.closest('.pc');
-            var qtyInp = card ? card.querySelector('.qty-val') : null;
-            var qty = qtyInp ? (parseInt(qtyInp.value, 10) || 1) : 1;
+        function addItemToList(title, priceNum, priceStr, btn, customQty) {
+            var qty = 1;
+            if (typeof customQty === 'number' && customQty > 0) {
+                qty = customQty;
+            } else if (btn) {
+                var card = btn.closest('.hb') || btn.closest('.pc');
+                var qtyInp = card ? card.querySelector('.qty-val') : null;
+                qty = qtyInp ? (parseInt(qtyInp.value, 10) || 1) : 1;
+            }
 
             var existing = inquiryList.find(function (item) { return item.title === title; });
             if (existing) {
@@ -4222,29 +4602,244 @@
     </script>
 
 
-    <!-- MODAL LIGHTBOX PHÓNG TO & SLIDER ALBUM TRONG POPUP -->
+    <!-- MODAL LIGHTBOX CHI TIẾT SẢN PHẨM & ALBUM 2 CỘT -->
     <div class="img-lightbox" id="imgLightbox" onclick="closeLightbox(event)">
-        <div class="lightbox-wrap">
-            <button type="button" class="lightbox-close" onclick="closeLightbox()">&times;</button>
-            <button type="button" class="lightbox-btn lightbox-prev" id="lbPrev"
-                onclick="navigateLightbox(-1)">&#10094;</button>
-            <div class="lightbox-img-holder">
-                <div class="lightbox-spinner" id="lbSpinner"></div>
-                <img id="lightboxImg" src="" alt="Zoom preview">
+        <div class="lightbox-modal-card" id="lbModalCard">
+            <button type="button" class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
+
+            <!-- CỘT BÊN TRÁI: KHUNG ẢNH & THUMBNAILS -->
+            <div class="lb-col-gallery">
+                <div class="lb-main-img-wrap">
+                    <button type="button" class="lb-nav-btn lb-nav-prev" id="lbPrev"
+                        onclick="navigateLightbox(-1)">&#10094;</button>
+                    <div class="lightbox-spinner" id="lbSpinner"></div>
+                    <img id="lightboxImg" src="" alt="Product preview">
+                    <button type="button" class="lb-nav-btn lb-nav-next" id="lbNext"
+                        onclick="navigateLightbox(1)">&#10095;</button>
+                    <div class="lb-counter-pill" id="lbCounter"></div>
+                </div>
+                <div class="lb-thumbs-row" id="lbThumbsRow"></div>
             </div>
-            <button type="button" class="lightbox-btn lightbox-next" id="lbNext"
-                onclick="navigateLightbox(1)">&#10095;</button>
-            <div class="lightbox-caption" id="lightboxCap"></div>
-            <div class="lightbox-counter" id="lbCounter"></div>
+
+            <!-- CỘT BÊN PHẢI: KHUNG THÔNG TIN SẢN PHẨM -->
+            <div class="lb-col-info">
+                <div class="lb-badge" id="lbBadge">Nông sản xuất khẩu</div>
+                <h3 class="lb-title" id="lbTitle">Hạt điều rang muối 250g</h3>
+                <div class="lb-price-wrap">
+                    <span class="lb-price" id="lbPrice">177.000đ</span>
+                    <span class="lb-price-note">Giá niêm yết</span>
+                </div>
+
+                <!-- KHỐI ĐẶC ĐIỂM CHI TIẾT SẢN PHẨM -->
+                <div class="lb-details-box" id="lbDetailsBox"></div>
+
+                <!-- NẾU LÀ HAMPER: DANH SÁCH THÀNH PHẦN BÊN TRONG -->
+                <div class="lb-hamper-items" id="lbHamperItems" style="display: none;">
+                    <div class="lb-hamper-items-title">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m7.5 4.27 9 5.15"></path>
+                            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 21 16Z"></path>
+                            <path d="m3.3 7 8.7 5 8.7-5"></path>
+                            <path d="M12 22V12"></path>
+                        </svg>
+                        Thành phần tuyển chọn bên trong:
+                    </div>
+                    <div class="lb-hamper-list" id="lbHamperList"></div>
+                </div>
+
+                <!-- KHU VỰC SỐ LƯỢNG & NÚT THAO TÁC -->
+                <div class="lb-actions-box">
+                    <div class="lb-qty-row">
+                        <span class="lb-qty-label">Số lượng:</span>
+                        <div class="lb-qty-ctrl">
+                            <button type="button" class="lb-qty-btn" onclick="adjustModalQty(-1)">-</button>
+                            <input type="text" class="lb-qty-input" id="modalQtyVal" value="1" readonly>
+                            <button type="button" class="lb-qty-btn" onclick="adjustModalQty(1)">+</button>
+                        </div>
+                        <button type="button" class="lb-btn-add" id="lbBtnAdd" onclick="addCurrentProductToList()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="8" cy="21" r="1"></circle>
+                                <circle cx="19" cy="21" r="1"></circle>
+                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                            </svg>
+                            <span id="lbBtnAddText">Chọn vào danh sách báo giá</span>
+                        </button>
+                    </div>
+
+                    <div class="lb-consult-row">
+                        <a href="https://zalo.me/0393955516" target="_blank" class="lb-btn-consult lb-btn-zalo">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.09-1.34C8.54 21.52 10.23 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+                            </svg>
+                            Chat Zalo tư vấn
+                        </a>
+                        <a href="tel:0393955516" class="lb-btn-consult lb-btn-hotline">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            Hotline: 0393.955.516
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
 
     <script>
-        // --- ĐIỀU KHIỂN POPUP LIGHTBOX ALBUM SLIDER ---
+        // --- DỮ LIỆU ĐẶC ĐIỂM CHI TIẾT SẢN PHẨM RETAIL & HAMPER ---
+        var retailProductDetails = {
+            "Hạt điều rang muối 250g": {
+                badge: "Nông Sản Tuyển Chọn Loại 1",
+                weight: "250g",
+                packaging: "Hũ cao cấp có màng seal bảo vệ độ giòn",
+                origin: "Bình Phước, Việt Nam",
+                ingredients: "99.5% Hạt điều tuyển chọn loại 1, 0.5% muối tinh khiết",
+                taste: "Hạt to tròn đều, rang củi gia truyền giòn rụm béo bùi, vị mặn dịu thanh khiết đậm đà.",
+                benefit: "Giàu Omega, protein, magie và kẽm tốt cho tim mạch và tăng cường đề kháng.",
+                hsd: "12 tháng kể từ NSX (bảo quản khô ráo, đậy kín nắp sau khi mở)",
+                cert: "Chuẩn xuất khẩu ISO 22000, 100% không chất bảo quản"
+            },
+            "Hạt Macca sấy 250g": {
+                badge: "Nữ Hoàng Các Loại Hạt",
+                weight: "250g (Kèm đồ khui tiện dụng)",
+                packaging: "Hũ cao cấp màng seal",
+                origin: "Tây Nguyên, Việt Nam",
+                ingredients: "100% Hạt macca sấy nứt vỏ tự nhiên",
+                taste: "Nhân dày màu trắng sữa, giòn xốp nhẹ, vị béo ngậy thơm mát tan trong miệng.",
+                benefit: "Dồi dào chất béo tốt không bão hòa đơn, vitamin E và khoáng chất quý.",
+                hsd: "12 tháng kể từ NSX",
+                cert: "Chuẩn ISO 22000, nông sản sạch 100%"
+            },
+            "Hạnh nhân rang bơ 250g": {
+                badge: "Thượng Hạng Giòn Tan",
+                weight: "250g",
+                packaging: "Hũ cao cấp màng seal",
+                origin: "Nhập khẩu tuyển chọn",
+                ingredients: "Hạnh nhân nguyên vỏ, bơ thực vật cao cấp, muối nhẹ",
+                taste: "Vỏ mỏng dễ tách, giòn rụm đậm vị thơm lừng hương bơ tự nhiên quyến rũ.",
+                benefit: "Giàu chất xơ, vitamin E, chất chống oxy hóa hỗ trợ tim mạch.",
+                hsd: "12 tháng kể từ NSX",
+                cert: "Chuẩn an toàn vệ sinh thực phẩm quốc tế"
+            },
+            "Hạt mix tổng hợp 210g": {
+                badge: "Đa Dạng Dinh Dưỡng",
+                weight: "210g",
+                packaging: "Hũ cao cấp màng seal",
+                origin: "Tuyển chọn nông sản Việt & Nhập khẩu",
+                ingredients: "Hạt macca, hạt điều, hạnh nhân, nho khô Chile, hạt bí...",
+                taste: "Sự hòa quyện giữa béo bùi của hạt dinh dưỡng và chua ngọt dịu của nho khô.",
+                benefit: "Bổ sung đa dạng vi chất, năng lượng lành mạnh cho cả gia đình.",
+                hsd: "12 tháng kể từ NSX",
+                cert: "Chuẩn ISO 22000"
+            },
+            "Nhân macca wasabi": {
+                badge: "Độc Quyền Vị Cay Thanh",
+                weight: "210g - 224g",
+                packaging: "Hũ thủy tinh cao cấp",
+                origin: "LisaFood R&D độc quyền",
+                ingredients: "Nhân macca tách vỏ, bột wasabi Nhật Bản, gia vị chuẩn vị",
+                taste: "Béo ngậy của macca hòa cùng vị cay the thanh mát của wasabi kích thích vị giác.",
+                benefit: "Món khai vị hoàn hảo ngày đầu xuân bên gia đình và bạn bè.",
+                hsd: "12 tháng kể từ NSX",
+                cert: "Công thức độc quyền LisaFood"
+            },
+            "Nho khô 250g": {
+                badge: "Nhập Khẩu Chile Thượng Hạng",
+                weight: "250g",
+                packaging: "Hũ cao cấp màng seal",
+                origin: "Chile",
+                ingredients: "100% Nho khô dẻo tự nhiên không thêm đường",
+                taste: "Trái to mọng nước, vị ngọt thanh mát tự nhiên, dẻo mềm thơm ngon.",
+                benefit: "Giàu sắt, kali, chất xơ tự nhiên hỗ trợ tiêu hóa và bổ máu.",
+                hsd: "12 tháng kể từ NSX",
+                cert: "Chứng nhận nhập khẩu chính ngạch"
+            },
+            "Khô gà lá chanh 200g": {
+                badge: "Đặc Sản Truyền Thống",
+                weight: "200g",
+                packaging: "Hũ cao cấp màng seal",
+                origin: "Việt Nam",
+                ingredients: "Ức gà tươi loại 1, ớt hiểm, lá chanh tươi, nước mắm ngon gia truyền",
+                taste: "Thớ thịt gà xé tơi cay nhẹ đậm đà, thơm lừng hương lá chanh tươi tự nhiên.",
+                benefit: "Hàm lượng đạm cao, ít chất béo, món nhắm tuyệt vời ngày Tết.",
+                hsd: "09 tháng kể từ NSX",
+                cert: "An toàn vệ sinh thực phẩm"
+            },
+            "Khô gà bơ tỏi 200g": {
+                badge: "Thơm Bơ Bùi Ngậy",
+                weight: "200g",
+                packaging: "Hũ cao cấp màng seal",
+                origin: "Việt Nam",
+                ingredients: "Ức gà tươi, tỏi phi giòn tan, bơ hảo hạng, gia vị đậm đà",
+                taste: "Ngọt thanh tự nhiên của thịt gà quyện mùi thơm ngậy của bơ và tỏi phi giòn.",
+                benefit: "Cung cấp năng lượng sạch, giàu protein.",
+                hsd: "09 tháng kể từ NSX",
+                cert: "An toàn vệ sinh thực phẩm"
+            }
+        };
+
+        function getProductSpecs(name) {
+            if (retailProductDetails[name]) return retailProductDetails[name];
+
+            var weightMatch = name.match(/\b\d{2,3}g\b/i);
+            var weightStr = weightMatch ? weightMatch[0] : "Hũ tiêu chuẩn";
+
+            if (name.indexOf("Hạt điều") !== -1) {
+                return {
+                    badge: "Nông Sản Xuất Khẩu",
+                    weight: weightStr,
+                    packaging: "Hũ cao cấp có màng seal",
+                    origin: "Bình Phước, Việt Nam",
+                    ingredients: "Hạt điều tuyển chọn loại 1, gia vị tự nhiên",
+                    taste: "Hạt to đều giòn rụm bùi béo, thơm ngon chuẩn hương vị truyền thống.",
+                    benefit: "Bổ sung protein, khoáng chất và chất béo lành mạnh.",
+                    hsd: "12 tháng kể từ NSX",
+                    cert: "Chuẩn ISO 22000, 100% không chất bảo quản"
+                };
+            } else if (name.indexOf("Khô gà") !== -1) {
+                return {
+                    badge: "Đặc Sản Đậm Vị",
+                    weight: weightStr,
+                    packaging: "Hũ / Túi cao cấp",
+                    origin: "Việt Nam",
+                    ingredients: "Ức gà tươi loại 1, gia vị gia truyền",
+                    taste: "Vị ngọt thịt đậm đà, hương thơm cay the hấp dẫn.",
+                    benefit: "Món ăn vặt và nhâm nhi tiếp khách ngày Tết thơm ngon.",
+                    hsd: "09 tháng kể từ NSX",
+                    cert: "An toàn vệ sinh thực phẩm"
+                };
+            } else if (name.indexOf("sachi") !== -1 || name.indexOf("Sachi") !== -1) {
+                return {
+                    badge: "Vua Hạt Omega",
+                    weight: weightStr,
+                    packaging: "Hũ / Túi cao cấp",
+                    origin: "Tây Nguyên, Việt Nam",
+                    ingredients: "100% Hạt Sachi rang mộc tự nhiên",
+                    taste: "Bùi ngậy, thơm mộc đặc trưng, không tẩm ướp phụ gia.",
+                    benefit: "Hàm lượng Omega 3-6-9 vượt trội tốt cho não bộ và tim mạch.",
+                    hsd: "12 tháng kể từ NSX",
+                    cert: "Chuẩn nông sản sạch"
+                };
+            }
+
+            return {
+                badge: "Nông Sản Thượng Hạng",
+                weight: weightStr,
+                packaging: "Hũ / Hộp cao cấp",
+                origin: "Việt Nam / Nhập khẩu",
+                ingredients: "Nguyên liệu tuyển chọn tự nhiên 100%",
+                taste: "Hương vị thanh khiết, thơm ngon giàu dưỡng chất.",
+                benefit: "Tốt cho sức khỏe người tiêu dùng, thích hợp làm quà tặng.",
+                hsd: "12 tháng kể từ NSX",
+                cert: "Chuẩn ISO 22000"
+            };
+        }
+
+        // --- ĐIỀU KHIỂN POPUP LIGHTBOX ALBUM & CHI TIẾT SẢN PHẨM ---
         var currentAlbum = [];
         var currentAlbumIdx = 0;
-        var currentAlbumTitle = "";
+        var currentProduct = null;
         var preloadedImages = {};
 
         function preloadImgUrl(url) {
@@ -4254,15 +4849,129 @@
             preloadedImages[url] = p;
         }
 
-        function openAlbumLightbox(imgList, title) {
+        function openAlbumLightbox(imgList, title, cardEl) {
             var lb = document.getElementById("imgLightbox");
             if (!lb || !imgList || imgList.length === 0) return;
 
             currentAlbum = imgList;
             currentAlbumIdx = 0;
-            currentAlbumTitle = title;
 
-            // Ngay khi mở ảnh, âm thầm tải sẵn (cache RAM) toàn bộ ảnh còn lại trong album
+            // Thu thập thông tin sản phẩm từ thẻ card
+            var isHamper = cardEl && cardEl.classList.contains("hc");
+            var isProduct = cardEl && cardEl.classList.contains("pc");
+
+            var priceStr = "";
+            if (isHamper) {
+                var prEl = cardEl.querySelector(".pr");
+                if (prEl) priceStr = prEl.textContent.trim();
+            } else if (isProduct) {
+                var spEl = cardEl.querySelector("span");
+                if (spEl) priceStr = spEl.textContent.trim();
+            }
+
+            var priceNum = parseInt(priceStr.replace(/\D/g, '')) || 0;
+
+            currentProduct = {
+                title: title,
+                priceStr: priceStr,
+                priceNum: priceNum,
+                isHamper: isHamper,
+                cardEl: cardEl
+            };
+
+            // Điền dữ liệu vào cột bên phải
+            var badgeEl = document.getElementById("lbBadge");
+            var titleEl = document.getElementById("lbTitle");
+            var priceEl = document.getElementById("lbPrice");
+            var detailsBox = document.getElementById("lbDetailsBox");
+            var hamperBox = document.getElementById("lbHamperItems");
+            var hamperList = document.getElementById("lbHamperList");
+            var qtyInput = document.getElementById("modalQtyVal");
+            var btnAdd = document.getElementById("lbBtnAdd");
+            var btnAddText = document.getElementById("lbBtnAddText");
+
+            if (titleEl) titleEl.textContent = title;
+            if (priceEl) priceEl.textContent = priceStr || "Liên hệ báo giá";
+            if (qtyInput) qtyInput.value = "1";
+            if (btnAddText) btnAddText.textContent = "Chọn vào danh sách báo giá";
+            if (btnAdd) btnAdd.classList.remove("added");
+
+            if (isHamper) {
+                if (badgeEl) badgeEl.textContent = "Bộ Sưu Tập Hamper Tết 2027";
+
+                var subTitle = "";
+                var subEl = cardEl ? cardEl.querySelector(".exact-subtitle") : null;
+                if (subEl) subTitle = subEl.textContent.trim();
+
+                if (detailsBox) {
+                    detailsBox.innerHTML =
+                        '<div class="lb-detail-row"><span class="lb-detail-icon">🎁</span><span class="lb-detail-label">Quy cách:</span><span class="lb-detail-val">' + (subTitle || "Hộp quà tết cao cấp kèm túi xách đồng bộ") + '</span></div>' +
+                        '<div class="lb-detail-row"><span class="lb-detail-icon">✨</span><span class="lb-detail-label">Tiêu chuẩn:</span><span class="lb-detail-val">Chuẩn xuất khẩu ISO 22000, 100% nông sản mới vụ mới</span></div>' +
+                        '<div class="lb-detail-row"><span class="lb-detail-icon">🏷️</span><span class="lb-detail-label">Doanh nghiệp:</span><span class="lb-detail-val">Hỗ trợ in/khắc logo, xuất VAT đầy đủ, giao tận nơi</span></div>';
+                }
+
+                // Lấy danh sách thành phần từ thẻ card
+                if (hamperBox && hamperList) {
+                    hamperList.innerHTML = "";
+                    var pills = cardEl ? cardEl.querySelectorAll(".exact-item-pill") : [];
+                    if (pills && pills.length > 0) {
+                        pills.forEach(function (pill) {
+                            var itemLeft = pill.querySelector(".exact-item-left span") || pill.querySelector(".exact-item-left");
+                            var itemWeight = pill.querySelector(".exact-item-weight");
+                            var nameTxt = itemLeft ? itemLeft.textContent.trim() : "";
+                            var weightTxt = itemWeight ? itemWeight.textContent.trim() : "";
+
+                            var row = document.createElement("div");
+                            row.className = "lb-hamper-item-row";
+                            row.innerHTML = '<span><b>•</b> ' + nameTxt + '</span><span style="color:#8B0000;font-weight:700;">' + weightTxt + '</span>';
+                            hamperList.appendChild(row);
+                        });
+                        hamperBox.style.display = "block";
+                    } else {
+                        hamperBox.style.display = "none";
+                    }
+                }
+            } else {
+                // SẢN PHẨM LẺ (RETAIL) - ĐẶC BIỆT LÀ HẠT ĐIỀU RANG MUỐI 250G
+                var specs = getProductSpecs(title);
+                if (badgeEl) badgeEl.textContent = specs.badge;
+                if (hamperBox) hamperBox.style.display = "none";
+
+                if (detailsBox) {
+                    detailsBox.innerHTML =
+                        '<div class="lb-detail-row"><span class="lb-detail-icon">🌿</span><span class="lb-detail-label">Khối lượng:</span><span class="lb-detail-val"><b>' + specs.weight + '</b> (' + specs.packaging + ')</span></div>' +
+                        '<div class="lb-detail-row"><span class="lb-detail-icon">📍</span><span class="lb-detail-label">Xuất xứ:</span><span class="lb-detail-val">' + specs.origin + '</span></div>' +
+                        '<div class="lb-detail-row"><span class="lb-detail-icon">🥣</span><span class="lb-detail-label">Thành phần:</span><span class="lb-detail-val">' + specs.ingredients + '</span></div>' +
+                        '<div class="lb-detail-row"><span class="lb-detail-icon">✨</span><span class="lb-detail-label">Hương vị:</span><span class="lb-detail-val">' + specs.taste + '</span></div>' +
+                        '<div class="lb-detail-row"><span class="lb-detail-icon">❤️</span><span class="lb-detail-label">Dinh dưỡng:</span><span class="lb-detail-val">' + specs.benefit + '</span></div>' +
+                        '<div class="lb-detail-row"><span class="lb-detail-icon">⏳</span><span class="lb-detail-label">HSD & Bảo quản:</span><span class="lb-detail-val">' + specs.hsd + '</span></div>' +
+                        '<div class="lb-detail-row"><span class="lb-detail-icon">🛡️</span><span class="lb-detail-label">Chứng nhận:</span><span class="lb-detail-val">' + specs.cert + '</span></div>';
+                }
+            }
+
+            // Dựng danh sách thumbnails bên trái
+            var thumbsRow = document.getElementById("lbThumbsRow");
+            if (thumbsRow) {
+                thumbsRow.innerHTML = "";
+                if (currentAlbum.length > 1) {
+                    thumbsRow.style.display = "flex";
+                    currentAlbum.forEach(function (url, idx) {
+                        var thumb = document.createElement("img");
+                        thumb.className = "lb-thumb-item" + (idx === 0 ? " active" : "");
+                        thumb.src = url;
+                        thumb.alt = "Thumb " + (idx + 1);
+                        thumb.onclick = function (e) {
+                            e.stopPropagation();
+                            selectLightboxImage(idx);
+                        };
+                        thumbsRow.appendChild(thumb);
+                    });
+                } else {
+                    thumbsRow.style.display = "none";
+                }
+            }
+
+            // Tải trước toàn bộ ảnh trong album
             imgList.forEach(function (url) {
                 preloadImgUrl(url);
             });
@@ -4272,9 +4981,43 @@
             document.body.style.overflow = "hidden";
         }
 
+        function selectLightboxImage(idx) {
+            if (idx < 0 || idx >= currentAlbum.length) return;
+            currentAlbumIdx = idx;
+            updateLightboxView();
+        }
+
+        function adjustModalQty(delta) {
+            var inp = document.getElementById("modalQtyVal");
+            if (!inp) return;
+            var val = parseInt(inp.value, 10) || 1;
+            val += delta;
+            if (val < 1) val = 1;
+            if (val > 999) val = 999;
+            inp.value = val;
+        }
+
+        function addCurrentProductToList() {
+            if (!currentProduct) return;
+            var inp = document.getElementById("modalQtyVal");
+            var qty = inp ? (parseInt(inp.value, 10) || 1) : 1;
+
+            addItemToList(currentProduct.title, currentProduct.priceNum, currentProduct.priceStr, null, qty);
+
+            var btn = document.getElementById("lbBtnAdd");
+            var btnText = document.getElementById("lbBtnAddText");
+            if (btn && btnText) {
+                btn.classList.add("added");
+                btnText.textContent = "✓ Đã thêm (" + qty + ") vào dự toán!";
+                setTimeout(function () {
+                    btn.classList.remove("added");
+                    btnText.textContent = "Chọn vào danh sách báo giá";
+                }, 1800);
+            }
+        }
+
         function updateLightboxView() {
             var img = document.getElementById("lightboxImg");
-            var cap = document.getElementById("lightboxCap");
             var counter = document.getElementById("lbCounter");
             var prevBtn = document.getElementById("lbPrev");
             var nextBtn = document.getElementById("lbNext");
@@ -4282,20 +5025,28 @@
 
             var targetSrc = currentAlbum[currentAlbumIdx];
 
-            if (cap) cap.textContent = currentAlbumTitle;
-
             if (currentAlbum.length > 1) {
-                if (counter) counter.textContent = (currentAlbumIdx + 1) + " / " + currentAlbum.length;
+                if (counter) {
+                    counter.textContent = (currentAlbumIdx + 1) + " / " + currentAlbum.length;
+                    counter.style.display = "block";
+                }
                 if (prevBtn) prevBtn.style.display = "flex";
                 if (nextBtn) nextBtn.style.display = "flex";
             } else {
-                if (counter) counter.textContent = "";
+                if (counter) counter.style.display = "none";
                 if (prevBtn) prevBtn.style.display = "none";
                 if (nextBtn) nextBtn.style.display = "none";
             }
 
+            // Cập nhật trạng thái active của thumbnails
+            var thumbs = document.querySelectorAll(".lb-thumb-item");
+            thumbs.forEach(function (th, idx) {
+                if (idx === currentAlbumIdx) th.classList.add("active");
+                else th.classList.remove("active");
+            });
+
             if (img && targetSrc) {
-                // Tải trước ảnh kế tiếp và ảnh trước đó để lướt tức thì không chờ đợi
+                // Tải trước ảnh liền trước & liền sau
                 if (currentAlbum.length > 1) {
                     var nextIdx = (currentAlbumIdx + 1) % currentAlbum.length;
                     var prevIdx = (currentAlbumIdx - 1 + currentAlbum.length) % currentAlbum.length;
@@ -4303,7 +5054,6 @@
                     preloadImgUrl(currentAlbum[prevIdx]);
                 }
 
-                // Kiểm tra xem ảnh này đã nạp xong vào cache/bộ nhớ chưa
                 var testImg = new Image();
                 testImg.src = targetSrc;
 
@@ -4312,7 +5062,6 @@
                     img.classList.remove("loading");
                     if (spinner) spinner.classList.remove("show");
                 } else {
-                    // Chưa tải xong: bật spinner xoay màu vàng kim và làm mờ nhẹ ảnh cũ
                     if (spinner) spinner.classList.add("show");
                     img.classList.add("loading");
 
@@ -4343,8 +5092,11 @@
         }
 
         function closeLightbox(e) {
-            if (e && e.target && (e.target.id === "lightboxImg" || e.target.classList.contains("lightbox-btn") || e.target.id === "lbSpinner")) {
-                return;
+            if (e && e.target) {
+                var card = document.getElementById("lbModalCard");
+                if (card && card.contains(e.target) && !e.target.closest(".lightbox-close-btn")) {
+                    return;
+                }
             }
             var lb = document.getElementById("imgLightbox");
             if (lb) {
@@ -4508,7 +5260,7 @@
 
                     var src = img.getAttribute("src");
                     var album = existingMultiImages[src] || [src];
-                    openAlbumLightbox(album, title);
+                    openAlbumLightbox(album, title, card);
                 });
             });
 

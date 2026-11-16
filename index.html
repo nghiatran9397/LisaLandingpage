@@ -5055,154 +5055,31 @@
 
 
     <script>
-        // --- DỮ LIỆU ĐẶC ĐIỂM CHI TIẾT SẢN PHẨM RETAIL ---
-        var retailProductDetails = {
-            "Hạt điều rang muối 250g": {
+        // --- BẢNG DỮ LIỆU CHI TIẾT SẢN PHẨM GẮN THEO FILE ẢNH (KEYED BY IMAGE PATH) ---
+        // Thầy có thể nhập tay thông tin từng sản phẩm vào bảng này dựa theo tên file ảnh.
+        // - Sản phẩm nào có khai báo trong bảng này: Sẽ tự động mở giao diện 2 cột với nội dung chuẩn.
+        // - Sản phẩm nào chưa khai báo: Sẽ tự động mở chế độ phóng to ảnh truyền thống.
+        var productDetailsByImage = {
+            "images/hat-dieu-rang-muoi-250g.png": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
-                weight: "250g",
-                packaging: "Hũ cao cấp có màng seal bảo vệ độ giòn",
-                origin: "Bình Phước, Việt Nam",
-                ingredients: "99.5% Hạt điều tuyển chọn loại 1, 0.5% muối tinh khiết",
-                taste: "Hạt to tròn đều, rang củi gia truyền giòn rụm béo bùi, vị mặn dịu thanh khiết đậm đà.",
-                benefit: "Giàu Omega, protein, magie và kẽm tốt cho tim mạch và tăng cường đề kháng.",
-                hsd: "12 tháng kể từ NSX (bảo quản khô ráo, đậy kín nắp sau khi mở)",
-                cert: "Chuẩn xuất khẩu ISO 22000, 100% không chất bảo quản"
-            },
-            "Hạt Macca sấy 250g": {
-                badge: "Nữ Hoàng Các Loại Hạt",
-                weight: "250g (Kèm đồ khui tiện dụng)",
-                packaging: "Hũ cao cấp màng seal",
-                origin: "Tây Nguyên, Việt Nam",
-                ingredients: "100% Hạt macca sấy nứt vỏ tự nhiên",
-                taste: "Nhân dày màu trắng sữa, giòn xốp nhẹ, vị béo ngậy thơm mát tan trong miệng.",
-                benefit: "Dồi dào chất béo tốt không bão hòa đơn, vitamin E và khoáng chất quý.",
-                hsd: "12 tháng kể từ NSX",
-                cert: "Chuẩn ISO 22000, nông sản sạch 100%"
-            },
-            "Hạnh nhân rang bơ 250g": {
-                badge: "Thượng Hạng Giòn Tan",
-                weight: "250g",
-                packaging: "Hũ cao cấp màng seal",
-                origin: "Nhập khẩu tuyển chọn",
-                ingredients: "Hạnh nhân nguyên vỏ, bơ thực vật cao cấp, muối nhẹ",
-                taste: "Vỏ mỏng dễ tách, giòn rụm đậm vị thơm lừng hương bơ tự nhiên quyến rũ.",
-                benefit: "Giàu chất xơ, vitamin E, chất chống oxy hóa hỗ trợ tim mạch.",
-                hsd: "12 tháng kể từ NSX",
-                cert: "Chuẩn an toàn vệ sinh thực phẩm quốc tế"
-            },
-            "Hạt mix tổng hợp 210g": {
-                badge: "Đa Dạng Dinh Dưỡng",
-                weight: "210g",
-                packaging: "Hũ cao cấp màng seal",
-                origin: "Tuyển chọn nông sản Việt & Nhập khẩu",
-                ingredients: "Hạt macca, hạt điều, hạnh nhân, nho khô Chile, hạt bí...",
-                taste: "Sự hòa quyện giữa béo bùi của hạt dinh dưỡng và chua ngọt dịu của nho khô.",
-                benefit: "Bổ sung đa dạng vi chất, năng lượng lành mạnh cho cả gia đình.",
-                hsd: "12 tháng kể từ NSX",
-                cert: "Chuẩn ISO 22000"
-            },
-            "Nhân macca wasabi": {
-                badge: "Độc Quyền Vị Cay Thanh",
-                weight: "210g - 224g",
-                packaging: "Hũ thủy tinh cao cấp",
-                origin: "LisaFood R&D độc quyền",
-                ingredients: "Nhân macca tách vỏ, bột wasabi Nhật Bản, gia vị chuẩn vị",
-                taste: "Béo ngậy của macca hòa cùng vị cay the thanh mát của wasabi kích thích vị giác.",
-                benefit: "Món khai vị hoàn hảo ngày đầu xuân bên gia đình và bạn bè.",
-                hsd: "12 tháng kể từ NSX",
-                cert: "Công thức độc quyền LisaFood"
-            },
-            "Nho khô 250g": {
-                badge: "Nhập Khẩu Chile Thượng Hạng",
-                weight: "250g",
-                packaging: "Hũ cao cấp màng seal",
-                origin: "Chile",
-                ingredients: "100% Nho khô dẻo tự nhiên không thêm đường",
-                taste: "Trái to mọng nước, vị ngọt thanh mát tự nhiên, dẻo mềm thơm ngon.",
-                benefit: "Giàu sắt, kali, chất xơ tự nhiên hỗ trợ tiêu hóa và bổ máu.",
-                hsd: "12 tháng kể từ NSX",
-                cert: "Chứng nhận nhập khẩu chính ngạch"
-            },
-            "Khô gà lá chanh 200g": {
-                badge: "Đặc Sản Truyền Thống",
-                weight: "200g",
-                packaging: "Hũ cao cấp màng seal",
-                origin: "Việt Nam",
-                ingredients: "Ức gà tươi loại 1, ớt hiểm, lá chanh tươi, nước mắm ngon gia truyền",
-                taste: "Thớ thịt gà xé tơi cay nhẹ đậm đà, thơm lừng hương lá chanh tươi tự nhiên.",
-                benefit: "Hàm lượng đạm cao, ít chất béo, món nhắm tuyệt vời ngày Tết.",
-                hsd: "09 tháng kể từ NSX",
-                cert: "An toàn vệ sinh thực phẩm"
-            },
-            "Khô gà bơ tỏi 200g": {
-                badge: "Thơm Bơ Bùi Ngậy",
-                weight: "200g",
-                packaging: "Hũ cao cấp màng seal",
-                origin: "Việt Nam",
-                ingredients: "Ức gà tươi, tỏi phi giòn tan, bơ hảo hạng, gia vị đậm đà",
-                taste: "Ngọt thanh tự nhiên của thịt gà quyện mùi thơm ngậy của bơ và tỏi phi giòn.",
-                benefit: "Cung cấp năng lượng sạch, giàu protein.",
-                hsd: "09 tháng kể từ NSX",
-                cert: "An toàn vệ sinh thực phẩm"
+                description: [
+                    "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
+                    "Từng hạt điều được tuyển chọn kỹ lưỡng, chú trọng độ đồng đều và chế biến bằng phương pháp rang củi truyền thống, góp phần tạo nên hương thơm đặc trưng, độ giòn hấp dẫn cùng vị bùi béo tự nhiên hòa quyện với vị mặn vừa phải.",
+                    "Quy trình sản xuất được kiểm soát từ khâu nguyên liệu đến thành phẩm, hướng đến chất lượng ổn định và đồng nhất trong từng sản phẩm.",
+                    "Với quy cách hộp 250g tiện lợi cùng thiết kế bao bì kết hợp nét truyền thống Việt Nam và phong cách hiện đại, sang trọng, Hạt Điều Rang Muối Lisa Food phù hợp để thưởng thức hằng ngày, chia sẻ cùng gia đình, bạn bè hoặc làm món quà nhỏ tinh tế trong những dịp đặc biệt."
+                ],
+                specs: [
+                    { label: "Thành phần:", value: "Hạt điều (99,27%), muối (0,73%)." },
+                    { label: "Hướng dẫn sử dụng:", value: "Bóc vỏ trước khi ăn, đậy kín bao bì sau mỗi lần sử dụng." },
+                    { label: "Thông tin cảnh báo an toàn:", value: "Không sử dụng sản phẩm hết hạn, hư hỏng." },
+                    { label: "Bảo quản:", value: "Nơi khô ráo, thoáng mát." },
+                    { label: "NSX & HSD:", value: "Xem trên bao bì." },
+                    { label: "Số TCB:", value: "08/LS/2025" },
+                    { label: "Sản phẩm của:", value: "CÔNG TY TNHH THỰC PHẨM LIÊN SANH" },
+                    { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
+                ]
             }
         };
-
-        function getProductSpecs(name) {
-            if (retailProductDetails[name]) return retailProductDetails[name];
-
-            var weightMatch = name.match(/\b\d{2,3}g\b/i);
-            var weightStr = weightMatch ? weightMatch[0] : "Hũ tiêu chuẩn";
-
-            if (name.indexOf("Hạt điều") !== -1) {
-                return {
-                    badge: "Nông Sản Xuất Khẩu",
-                    weight: weightStr,
-                    packaging: "Hũ cao cấp có màng seal",
-                    origin: "Bình Phước, Việt Nam",
-                    ingredients: "Hạt điều tuyển chọn loại 1, gia vị tự nhiên",
-                    taste: "Hạt to đều giòn rụm bùi béo, thơm ngon chuẩn hương vị truyền thống.",
-                    benefit: "Bổ sung protein, khoáng chất và chất béo lành mạnh.",
-                    hsd: "12 tháng kể từ NSX",
-                    cert: "Chuẩn ISO 22000, 100% không chất bảo quản"
-                };
-            } else if (name.indexOf("Khô gà") !== -1) {
-                return {
-                    badge: "Đặc Sản Đậm Vị",
-                    weight: weightStr,
-                    packaging: "Hũ / Túi cao cấp",
-                    origin: "Việt Nam",
-                    ingredients: "Ức gà tươi loại 1, gia vị gia truyền",
-                    taste: "Vị ngọt thịt đậm đà, hương thơm cay the hấp dẫn.",
-                    benefit: "Món ăn vặt và nhâm nhi tiếp khách ngày Tết thơm ngon.",
-                    hsd: "09 tháng kể từ NSX",
-                    cert: "An toàn vệ sinh thực phẩm"
-                };
-            } else if (name.indexOf("sachi") !== -1 || name.indexOf("Sachi") !== -1) {
-                return {
-                    badge: "Vua Hạt Omega",
-                    weight: weightStr,
-                    packaging: "Hũ / Túi cao cấp",
-                    origin: "Tây Nguyên, Việt Nam",
-                    ingredients: "100% Hạt Sachi rang mộc tự nhiên",
-                    taste: "Bùi ngậy, thơm mộc đặc trưng, không tẩm ướp phụ gia.",
-                    benefit: "Hàm lượng Omega 3-6-9 vượt trội tốt cho não bộ và tim mạch.",
-                    hsd: "12 tháng kể từ NSX",
-                    cert: "Chuẩn nông sản sạch"
-                };
-            }
-
-            return {
-                badge: "Nông Sản Thượng Hạng",
-                weight: weightStr,
-                packaging: "Hũ / Hộp cao cấp",
-                origin: "Việt Nam / Nhập khẩu",
-                ingredients: "Nguyên liệu tuyển chọn tự nhiên 100%",
-                taste: "Hương vị thanh khiết, thơm ngon giàu dưỡng chất.",
-                benefit: "Tốt cho sức khỏe người tiêu dùng, thích hợp làm quà tặng.",
-                hsd: "12 tháng kể từ NSX",
-                cert: "Chuẩn ISO 22000"
-            };
-        }
 
         // --- ĐIỀU KHIỂN POPUP LIGHTBOX ALBUM & CHI TIẾT SẢN PHẨM ---
         var currentAlbum = [];
@@ -5224,29 +5101,29 @@
             currentAlbum = imgList;
             currentAlbumIdx = 0;
 
-            // Chỉ áp dụng khung 2 cột chi tiết sản phẩm cho đúng 1 loại: "Hạt điều rang muối 250g"
-            var isProduct = cardEl && cardEl.classList.contains("pc") && (title.trim().toLowerCase() === "hạt điều rang muối 250g");
+            // Nhận diện sản phẩm dựa theo đường dẫn file ảnh chính (imgList[0])
+            var mainImgSrc = (imgList && imgList.length > 0) ? imgList[0] : "";
+            var productDetail = productDetailsByImage[mainImgSrc];
 
             var classicWrap = document.getElementById("lbClassicWrap");
             var productCard = document.getElementById("lbProductCard");
 
-            currentProduct = {
-                title: title,
-                isProduct: isProduct,
-                cardEl: cardEl
-            };
-
-            if (isProduct) {
-                // CHỈ ÁP DỤNG 2 CỘT CHO SẢN PHẨM LẺ
+            if (productDetail) {
+                // 1. CÓ KHAI BÁO CHI TIẾT THEO FILE ẢNH -> MỞ GIAO DIỆN 2 CỘT CHI TIẾT
                 if (classicWrap) classicWrap.style.display = "none";
                 if (productCard) productCard.style.display = "grid";
 
-                var spEl = cardEl.querySelector("span");
-                var priceStr = spEl ? spEl.textContent.trim() : "";
+                var spEl = cardEl ? cardEl.querySelector("span") : null;
+                var priceStr = spEl ? spEl.textContent.trim() : "177.000đ";
                 var priceNum = parseInt(priceStr.replace(/\D/g, '')) || 0;
 
-                currentProduct.priceStr = priceStr;
-                currentProduct.priceNum = priceNum;
+                currentProduct = {
+                    title: title,
+                    priceStr: priceStr,
+                    priceNum: priceNum,
+                    isProduct: true,
+                    cardEl: cardEl
+                };
 
                 var badgeEl = document.getElementById("lbBadge");
                 var titleEl = document.getElementById("lbTitle");
@@ -5256,44 +5133,35 @@
                 var btnAdd = document.getElementById("lbBtnAdd");
                 var btnAddText = document.getElementById("lbBtnAddText");
 
+                if (badgeEl) badgeEl.textContent = productDetail.badge || "Nông Sản Tuyển Chọn";
                 if (titleEl) titleEl.textContent = title;
                 if (priceEl) priceEl.textContent = priceStr || "Liên hệ báo giá";
                 if (qtyInput) qtyInput.value = "1";
                 if (btnAddText) btnAddText.textContent = "Chọn vào danh sách báo giá";
                 if (btnAdd) btnAdd.classList.remove("added");
 
-                var specs = getProductSpecs(title);
-                if (badgeEl) badgeEl.textContent = specs.badge;
+                // Tạo HTML cho phần mô tả (không cần tiêu đề, từng đoạn nội dung thoáng đãng)
+                var descHtml = "";
+                if (Array.isArray(productDetail.description)) {
+                    descHtml = productDetail.description.map(function (p) {
+                        return "<p>" + p + "</p>";
+                    }).join("");
+                } else if (productDetail.description) {
+                    descHtml = "<p>" + productDetail.description + "</p>";
+                }
+
+                // Tạo HTML cho khung thành phần & thông tin pháp lý
+                var specsHtml = "";
+                if (Array.isArray(productDetail.specs)) {
+                    specsHtml = productDetail.specs.map(function (s) {
+                        return '<div class="lb-spec-item"><b>' + s.label + '</b> ' + s.value + '</div>';
+                    }).join("");
+                }
 
                 if (detailsBox) {
-                    if (title.trim().toLowerCase() === "hạt điều rang muối 250g") {
-                        detailsBox.innerHTML =
-                            '<div class="lb-desc-text">' +
-                            '<p>Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.</p>' +
-                            '<p>Từng hạt điều được tuyển chọn kỹ lưỡng, chú trọng độ đồng đều và chế biến bằng phương pháp rang củi truyền thống, góp phần tạo nên hương thơm đặc trưng, độ giòn hấp dẫn cùng vị bùi béo tự nhiên hòa quyện với vị mặn vừa phải.</p>' +
-                            '<p>Quy trình sản xuất được kiểm soát từ khâu nguyên liệu đến thành phẩm, hướng đến chất lượng ổn định và đồng nhất trong từng sản phẩm.</p>' +
-                            '<p>Với quy cách hộp 250g tiện lợi cùng thiết kế bao bì kết hợp nét truyền thống Việt Nam và phong cách hiện đại, sang trọng, Hạt Điều Rang Muối Lisa Food phù hợp để thưởng thức hằng ngày, chia sẻ cùng gia đình, bạn bè hoặc làm món quà nhỏ tinh tế trong những dịp đặc biệt.</p>' +
-                            '</div>' +
-                            '<div class="lb-specs-table">' +
-                            '<div class="lb-spec-item"><b>Thành phần:</b> Hạt điều (99,27%), muối (0,73%).</div>' +
-                            '<div class="lb-spec-item"><b>Hướng dẫn sử dụng:</b> Bóc vỏ trước khi ăn, đậy kín bao bì sau mỗi lần sử dụng.</div>' +
-                            '<div class="lb-spec-item"><b>Thông tin cảnh báo an toàn:</b> Không sử dụng sản phẩm hết hạn, hư hỏng.</div>' +
-                            '<div class="lb-spec-item"><b>Bảo quản:</b> Nơi khô ráo, thoáng mát.</div>' +
-                            '<div class="lb-spec-item"><b>NSX & HSD:</b> Xem trên bao bì.</div>' +
-                            '<div class="lb-spec-item"><b>Số TCB:</b> 08/LS/2025</div>' +
-                            '<div class="lb-spec-item"><b>Sản phẩm của:</b> CÔNG TY TNHH THỰC PHẨM LIÊN SANH</div>' +
-                            '<div class="lb-spec-item"><b>Địa chỉ:</b> 93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam.</div>' +
-                            '</div>';
-                    } else {
-                        detailsBox.innerHTML =
-                            '<div class="lb-detail-row"><span class="lb-detail-icon">🌿</span><span class="lb-detail-label">Khối lượng:</span><span class="lb-detail-val"><b>' + specs.weight + '</b> (' + specs.packaging + ')</span></div>' +
-                            '<div class="lb-detail-row"><span class="lb-detail-icon">📍</span><span class="lb-detail-label">Xuất xứ:</span><span class="lb-detail-val">' + specs.origin + '</span></div>' +
-                            '<div class="lb-detail-row"><span class="lb-detail-icon">🥣</span><span class="lb-detail-label">Thành phần:</span><span class="lb-detail-val">' + specs.ingredients + '</span></div>' +
-                            '<div class="lb-detail-row"><span class="lb-detail-icon">✨</span><span class="lb-detail-label">Hương vị:</span><span class="lb-detail-val">' + specs.taste + '</span></div>' +
-                            '<div class="lb-detail-row"><span class="lb-detail-icon">❤️</span><span class="lb-detail-label">Dinh dưỡng:</span><span class="lb-detail-val">' + specs.benefit + '</span></div>' +
-                            '<div class="lb-detail-row"><span class="lb-detail-icon">⏳</span><span class="lb-detail-label">HSD & Bảo quản:</span><span class="lb-detail-val">' + specs.hsd + '</span></div>' +
-                            '<div class="lb-detail-row"><span class="lb-detail-icon">🛡️</span><span class="lb-detail-label">Chứng nhận:</span><span class="lb-detail-val">' + specs.cert + '</span></div>';
-                    }
+                    detailsBox.innerHTML =
+                        (descHtml ? '<div class="lb-desc-text">' + descHtml + '</div>' : '') +
+                        (specsHtml ? '<div class="lb-specs-table">' + specsHtml + '</div>' : '');
                 }
 
                 // Dựng thumbnails dưới ảnh sản phẩm lẻ
@@ -5318,7 +5186,12 @@
                     }
                 }
             } else {
-                // CHỖ HAMPER TẾT 2027 & CÁC ẢNH KHÁC: GIỮ NGUYÊN GIAO DIỆN PHÓNG TO ẢNH TRUYỀN THỐNG (KHÔNG ĐỤNG ĐẾN GIAO DIỆN HAMPER)
+                // 2. CHƯA KHAI BÁO CHI TIẾT (TẤT CẢ CÁC MÓN KHÁC & HAMPER): MỞ GIAO DIỆN PHÓNG TO ẢNH TRUYỀN THỐNG
+                currentProduct = {
+                    title: title,
+                    isProduct: false,
+                    cardEl: cardEl
+                };
                 if (productCard) productCard.style.display = "none";
                 if (classicWrap) classicWrap.style.display = "flex";
 

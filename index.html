@@ -4935,7 +4935,8 @@
             currentAlbum = imgList;
             currentAlbumIdx = 0;
 
-            var isProduct = cardEl && cardEl.classList.contains("pc");
+            // Chỉ áp dụng khung 2 cột chi tiết sản phẩm cho đúng 1 loại: "Hạt điều rang muối 250g"
+            var isProduct = cardEl && cardEl.classList.contains("pc") && (title.trim().toLowerCase() === "hạt điều rang muối 250g");
 
             var classicWrap = document.getElementById("lbClassicWrap");
             var productCard = document.getElementById("lbProductCard");

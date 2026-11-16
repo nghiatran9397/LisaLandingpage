@@ -1264,11 +1264,46 @@
         .lb-details-box {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
+        }
+
+        .lb-desc-text {
             font-size: 13.5px;
+            color: #444;
+            line-height: 1.65;
+            margin-bottom: 16px;
+        }
+
+        .lb-desc-text p {
+            margin: 0 0 10px 0;
+            text-align: justify;
+        }
+
+        .lb-desc-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .lb-specs-table {
+            background: #faf7f2;
+            border: 1px solid #ebd9c3;
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 13px;
             color: #3b3b3b;
             line-height: 1.55;
+        }
+
+        .lb-spec-item {
+            display: block;
+        }
+
+        .lb-spec-item b {
+            color: #1a1a1a;
+            font-weight: 700;
         }
 
         .lb-detail-row {
@@ -4977,14 +5012,34 @@
                 if (badgeEl) badgeEl.textContent = specs.badge;
 
                 if (detailsBox) {
-                    detailsBox.innerHTML =
-                        '<div class="lb-detail-row"><span class="lb-detail-icon">🌿</span><span class="lb-detail-label">Khối lượng:</span><span class="lb-detail-val"><b>' + specs.weight + '</b> (' + specs.packaging + ')</span></div>' +
-                        '<div class="lb-detail-row"><span class="lb-detail-icon">📍</span><span class="lb-detail-label">Xuất xứ:</span><span class="lb-detail-val">' + specs.origin + '</span></div>' +
-                        '<div class="lb-detail-row"><span class="lb-detail-icon">🥣</span><span class="lb-detail-label">Thành phần:</span><span class="lb-detail-val">' + specs.ingredients + '</span></div>' +
-                        '<div class="lb-detail-row"><span class="lb-detail-icon">✨</span><span class="lb-detail-label">Hương vị:</span><span class="lb-detail-val">' + specs.taste + '</span></div>' +
-                        '<div class="lb-detail-row"><span class="lb-detail-icon">❤️</span><span class="lb-detail-label">Dinh dưỡng:</span><span class="lb-detail-val">' + specs.benefit + '</span></div>' +
-                        '<div class="lb-detail-row"><span class="lb-detail-icon">⏳</span><span class="lb-detail-label">HSD & Bảo quản:</span><span class="lb-detail-val">' + specs.hsd + '</span></div>' +
-                        '<div class="lb-detail-row"><span class="lb-detail-icon">🛡️</span><span class="lb-detail-label">Chứng nhận:</span><span class="lb-detail-val">' + specs.cert + '</span></div>';
+                    if (title.trim().toLowerCase() === "hạt điều rang muối 250g") {
+                        detailsBox.innerHTML =
+                            '<div class="lb-desc-text">' +
+                            '<p>Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.</p>' +
+                            '<p>Từng hạt điều được tuyển chọn kỹ lưỡng, chú trọng độ đồng đều và chế biến bằng phương pháp rang củi truyền thống, góp phần tạo nên hương thơm đặc trưng, độ giòn hấp dẫn cùng vị bùi béo tự nhiên hòa quyện với vị mặn vừa phải.</p>' +
+                            '<p>Quy trình sản xuất được kiểm soát từ khâu nguyên liệu đến thành phẩm, hướng đến chất lượng ổn định và đồng nhất trong từng sản phẩm.</p>' +
+                            '<p>Với quy cách hộp 250g tiện lợi cùng thiết kế bao bì kết hợp nét truyền thống Việt Nam và phong cách hiện đại, sang trọng, Hạt Điều Rang Muối Lisa Food phù hợp để thưởng thức hằng ngày, chia sẻ cùng gia đình, bạn bè hoặc làm món quà nhỏ tinh tế trong những dịp đặc biệt.</p>' +
+                            '</div>' +
+                            '<div class="lb-specs-table">' +
+                            '<div class="lb-spec-item"><b>Thành phần:</b> Hạt điều (99,27%), muối (0,73%).</div>' +
+                            '<div class="lb-spec-item"><b>Hướng dẫn sử dụng:</b> Bóc vỏ trước khi ăn, đậy kín bao bì sau mỗi lần sử dụng.</div>' +
+                            '<div class="lb-spec-item"><b>Thông tin cảnh báo an toàn:</b> Không sử dụng sản phẩm hết hạn, hư hỏng.</div>' +
+                            '<div class="lb-spec-item"><b>Bảo quản:</b> Nơi khô ráo, thoáng mát.</div>' +
+                            '<div class="lb-spec-item"><b>NSX & HSD:</b> Xem trên bao bì.</div>' +
+                            '<div class="lb-spec-item"><b>Số TCB:</b> 08/LS/2025</div>' +
+                            '<div class="lb-spec-item"><b>Sản phẩm của:</b> CÔNG TY TNHH THỰC PHẨM LIÊN SANH</div>' +
+                            '<div class="lb-spec-item"><b>Địa chỉ:</b> 93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam.</div>' +
+                            '</div>';
+                    } else {
+                        detailsBox.innerHTML =
+                            '<div class="lb-detail-row"><span class="lb-detail-icon">🌿</span><span class="lb-detail-label">Khối lượng:</span><span class="lb-detail-val"><b>' + specs.weight + '</b> (' + specs.packaging + ')</span></div>' +
+                            '<div class="lb-detail-row"><span class="lb-detail-icon">📍</span><span class="lb-detail-label">Xuất xứ:</span><span class="lb-detail-val">' + specs.origin + '</span></div>' +
+                            '<div class="lb-detail-row"><span class="lb-detail-icon">🥣</span><span class="lb-detail-label">Thành phần:</span><span class="lb-detail-val">' + specs.ingredients + '</span></div>' +
+                            '<div class="lb-detail-row"><span class="lb-detail-icon">✨</span><span class="lb-detail-label">Hương vị:</span><span class="lb-detail-val">' + specs.taste + '</span></div>' +
+                            '<div class="lb-detail-row"><span class="lb-detail-icon">❤️</span><span class="lb-detail-label">Dinh dưỡng:</span><span class="lb-detail-val">' + specs.benefit + '</span></div>' +
+                            '<div class="lb-detail-row"><span class="lb-detail-icon">⏳</span><span class="lb-detail-label">HSD & Bảo quản:</span><span class="lb-detail-val">' + specs.hsd + '</span></div>' +
+                            '<div class="lb-detail-row"><span class="lb-detail-icon">🛡️</span><span class="lb-detail-label">Chứng nhận:</span><span class="lb-detail-val">' + specs.cert + '</span></div>';
+                    }
                 }
 
                 // Dựng thumbnails dưới ảnh sản phẩm lẻ

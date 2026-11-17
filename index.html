@@ -1732,6 +1732,21 @@
                 width: 100%;
                 flex: none;
             }
+
+            /* ẨN TOÀN BỘ NÚT CHUYỂN ẢNH TRÊN MOBILE ĐỂ KHÔNG CHE HÌNH VÀ TĂNG TÍNH THẨM MỸ */
+            .lightbox-btn,
+            .lb-nav-btn,
+            .lb-full-zoom-nav {
+                display: none !important;
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .lightbox-btn,
+            .lb-nav-btn,
+            .lb-full-zoom-nav {
+                display: none !important;
+            }
         }
 
         /* Đảm bảo vị trí nút nổi giỏ hàng trên mobile chuẩn chỉnh */
@@ -6073,21 +6088,53 @@
                 }
             });
 
-            // Vuốt cảm ứng trên mobile
-            var touchStartX = 0, touchEndX = 0;
-            var lb = document.getElementById("imgLightbox");
-            if (lb) {
-                lb.addEventListener("touchstart", function (e) {
-                    touchStartX = e.changedTouches[0].screenX;
+            // --- VUỐT CẢM ỨNG CHUYỂN ẢNH TRÊN MOBILE CHO CẢ HAMPER VÀ SẢN PHẨM LẺ ---
+            function attachTouchSwipe(targetEl, onLeft, onRight) {
+                if (!targetEl) return;
+                var startX = 0, startY = 0, startTime = 0;
+
+                targetEl.addEventListener("touchstart", function (e) {
+                    if (!e.changedTouches || e.changedTouches.length === 0) return;
+                    startX = e.changedTouches[0].clientX;
+                    startY = e.changedTouches[0].clientY;
+                    startTime = Date.now();
                 }, { passive: true });
-                lb.addEventListener("touchend", function (e) {
-                    touchEndX = e.changedTouches[0].screenX;
-                    var diff = touchEndX - touchStartX;
-                    if (Math.abs(diff) > 40) {
-                        if (diff < 0) navigateLightbox(1);
-                        else navigateLightbox(-1);
+
+                targetEl.addEventListener("touchend", function (e) {
+                    if (!e.changedTouches || e.changedTouches.length === 0) return;
+                    var endX = e.changedTouches[0].clientX;
+                    var endY = e.changedTouches[0].clientY;
+                    var diffX = endX - startX;
+                    var diffY = endY - startY;
+                    var elapsed = Date.now() - startTime;
+
+                    // Chỉ kích hoạt chuyển ảnh khi vuốt ngang dứt khoát (> 35px, ngang rõ hơn dọc, thời gian < 800ms)
+                    if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY) * 1.3 && elapsed < 800) {
+                        if (diffX < 0) {
+                            onLeft(); // Vuốt sang trái -> Xem ảnh tiếp theo
+                        } else {
+                            onRight(); // Vuốt sang phải -> Xem ảnh trước đó
+                        }
                     }
                 }, { passive: true });
+            }
+
+            // 1. Vuốt chuyển ảnh cho popup phóng to ảnh Hamper Tết
+            var classicWrap = document.getElementById("lbClassicWrap");
+            if (classicWrap) {
+                attachTouchSwipe(classicWrap, function () { navigateLightbox(1); }, function () { navigateLightbox(-1); });
+            }
+
+            // 2. Vuốt chuyển ảnh cho khung ảnh trong popup chi tiết sản phẩm lẻ
+            var productImgWrap = document.querySelector(".lb-main-img-wrap");
+            if (productImgWrap) {
+                attachTouchSwipe(productImgWrap, function () { navigateLightbox(1); }, function () { navigateLightbox(-1); });
+            }
+
+            // 3. Vuốt chuyển ảnh cho màn hình xem to ảnh Full-Screen HD
+            var fullZoomOverlay = document.getElementById("lbFullZoomOverlay");
+            if (fullZoomOverlay) {
+                attachTouchSwipe(fullZoomOverlay, function () { navigateFullZoom(1); }, function () { navigateFullZoom(-1); });
             }
         });
     </script>

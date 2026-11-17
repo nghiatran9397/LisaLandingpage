@@ -78,9 +78,21 @@
         }
 
         .wrap {
-            max-width: 1040px;
+            max-width: 1260px;
             margin: 0 auto;
-            padding: 0 20px
+            padding: 0 24px;
+        }
+
+        @media (min-width: 1440px) {
+            .wrap {
+                max-width: 1320px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .wrap {
+                padding: 0 16px;
+            }
         }
 
         header {
@@ -149,16 +161,16 @@
         }
 
         .hero h1 {
-            font-size: clamp(34px, 6vw, 58px);
+            font-size: clamp(34px, 5vw, 56px);
             margin: 18px 0 14px;
-            max-width: 720px
+            max-width: 880px;
         }
 
         .hero p {
-            max-width: 560px;
+            max-width: 680px;
             font-size: 18px;
             opacity: .92;
-            margin: 0 0 28px
+            margin: 0 0 28px;
         }
 
         .btns {
@@ -462,18 +474,32 @@
         }
 
         .heroimg {
-            max-width: 1040px;
-            margin: -36px auto 0;
-            padding: 0 20px;
+            width: 100%;
+            max-width: 1380px;
+            margin: -48px auto 0;
+            padding: 0 24px;
             position: relative;
-            z-index: 2
+            z-index: 2;
         }
 
         .heroimg img {
             width: 100%;
-            border-radius: 18px;
+            height: auto;
+            border-radius: 20px;
             display: block;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .3)
+            box-shadow: 0 20px 60px rgba(67, 20, 7, 0.28), 0 8px 24px rgba(0, 0, 0, 0.16);
+            border: 1.5px solid rgba(245, 158, 11, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .heroimg {
+                margin: -24px auto 0;
+                padding: 0 16px;
+            }
+
+            .heroimg img {
+                border-radius: 14px;
+            }
         }
 
         .perks {
@@ -2118,13 +2144,19 @@
 
         .ln-navbar-inner {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1260px;
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 24px;
             margin: 0 auto;
+        }
+
+        @media (min-width: 1440px) {
+            .ln-navbar-inner {
+                max-width: 1320px;
+            }
         }
 
         @media (max-width: 768px) {

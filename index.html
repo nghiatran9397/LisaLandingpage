@@ -135,48 +135,80 @@
         .hero {
             background: linear-gradient(135deg, var(--hero), var(--hero2));
             color: #fff;
-            padding: 64px 0 72px;
+            padding: 64px 0 76px;
             position: relative;
-            overflow: hidden
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero .wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .hero::after {
             content: "🌸";
             position: absolute;
-            right: -10px;
-            top: 10px;
-            font-size: 150px;
-            opacity: .12
+            right: 40px;
+            top: 15px;
+            font-size: 160px;
+            opacity: .12;
+            pointer-events: none;
+        }
+
+        .hero::before {
+            content: "🌸";
+            position: absolute;
+            left: 40px;
+            bottom: 20px;
+            font-size: 130px;
+            opacity: .08;
+            pointer-events: none;
+            transform: scaleX(-1);
         }
 
         .tag {
-            display: inline-block;
-            border: 1px solid #f2c75c;
-            color: #f2c75c;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid rgba(242, 199, 92, 0.75);
+            color: #fef3c7;
+            background: rgba(242, 199, 92, 0.12);
             border-radius: 99px;
-            padding: 4px 14px;
+            padding: 6px 18px;
             font-size: 13px;
+            font-weight: 700;
             letter-spacing: .08em;
-            text-transform: uppercase
+            text-transform: uppercase;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
         }
 
         .hero h1 {
-            font-size: clamp(34px, 5vw, 56px);
-            margin: 18px 0 14px;
-            max-width: 880px;
+            font-size: clamp(32px, 4.4vw, 52px);
+            margin: 16px auto 14px;
+            max-width: 980px;
+            line-height: 1.25;
+            text-wrap: balance;
         }
 
         .hero p {
-            max-width: 680px;
+            max-width: 780px;
             font-size: 18px;
-            opacity: .92;
-            margin: 0 0 28px;
+            opacity: .95;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+            text-wrap: balance;
         }
 
         .btns {
             display: flex;
             gap: 12px;
-            flex-wrap: wrap
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
         }
 
         .btn {
@@ -3089,8 +3121,13 @@
             <div class="wrap">
                 <span class="tag">Hamper Tết 2027</span>
                 <h1>Quà tặng cao cấp từ nông sản Việt</h1>
-                <p>Lisa Food tuyển chọn thực phẩm cao cấp từ các nông trại đạt chuẩn, gói trọn lời chúc xuân vào từng
-                    hộp quà sang trọng, sạch và an toàn.</p>
+                <p>Lisa Food tuyển chọn thực phẩm cao cấp từ các nông trại đạt chuẩn, gói trọn lời chúc xuân vào từng hộp quà sang trọng, sạch và an toàn.</p>
+                <div class="btns">
+                    <a class="btn gold" href="#hamper">Xem bộ sưu tập Hamper</a>
+                    <a class="btn ghost" href="#baogia">Nhận báo giá</a>
+                    <a class="btn ghost" href="tel:0393955516">Gọi tư vấn ngay</a>
+                    <a class="btn zalo" href="https://zalo.me/0393955516">Chat Zalo</a>
+                </div>
             </div>
         </div>
         <div class="heroimg"><img src="images/catalogue-tet-2027-lisafood.png" alt="Catalogue Tết 2027 Lisa Food">

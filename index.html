@@ -330,7 +330,19 @@
         }
 
         .mobile-call {
-            display: none
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity .3s ease,
+                transform .3s ease,
+                visibility .3s ease;
+        }
+
+        .mobile-call.is-visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
 
         @media(max-width:600px) {
@@ -2211,151 +2223,6 @@
         /* Đẩy hero xuống 1 chút để không bị che bởi navbar nổi */
         .hero {
             padding-top: 90px !important;
-        }
-
-
-        /* =========================================
-   RESPONSIVE MOBILE - LISAFOOD HAMPER 2027
-   Tối ưu giao diện điện thoại
-========================================= */
-
-        @media (max-width: 600px) {
-
-            /* 1. Kích thước chung */
-            .wrap {
-                padding-left: 16px;
-                padding-right: 16px;
-                width: 100%;
-            }
-
-            body {
-                overflow-x: hidden;
-            }
-
-            /* 2. Thanh menu trên điện thoại */
-            .ln-navbar {
-                top: 8px;
-                padding: 0 10px;
-            }
-
-            .ln-navbar-inner {
-                height: 54px;
-                padding: 0 10px 0 14px;
-                border-radius: 30px;
-            }
-
-            .ln-brand img {
-                height: 32px;
-            }
-
-            .ln-nav-right {
-                gap: 6px;
-            }
-
-            .ln-call-btn {
-                font-size: 11px;
-                padding: 7px 10px;
-                white-space: nowrap;
-            }
-
-            .ln-burger {
-                width: 34px;
-                height: 34px;
-                font-size: 18px;
-                flex-shrink: 0;
-            }
-
-            .ln-mobile-menu {
-                max-width: none;
-                margin-top: 8px;
-            }
-
-            /* 3. Khu vực giới thiệu đầu trang */
-            .hero {
-                padding: 104px 0 42px !important;
-            }
-
-            .hero::after {
-                font-size: 90px;
-                right: -12px;
-                top: 75px;
-            }
-
-            .hero .tag {
-                font-size: 11px;
-                padding: 4px 12px;
-            }
-
-            .hero h1 {
-                font-size: clamp(27px, 8vw, 34px) !important;
-                line-height: 1.25;
-                letter-spacing: -0.025em;
-                margin: 16px 0 14px;
-                max-width: 100%;
-            }
-
-            .hero p {
-                font-size: 14px;
-                line-height: 1.7;
-                margin-bottom: 22px;
-            }
-
-            /* 4. Các nút hành động */
-            .hero .btns {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 9px;
-            }
-
-            .hero .btns .btn {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                min-height: 46px;
-                padding: 10px 8px;
-                font-size: 12px;
-                line-height: 1.35;
-                white-space: normal;
-            }
-
-            .hero .btns .btn:first-child {
-                grid-column: 1 / -1;
-            }
-
-            /* 5. Hình Catalogue */
-            .heroimg {
-                width: calc(100% - 32px);
-                max-width: 100%;
-                margin: 0 auto;
-            }
-
-            .heroimg img {
-                display: block;
-                width: 100%;
-                height: auto;
-                border-radius: 14px;
-            }
-
-            /* 6. Khoảng cách các khu vực */
-            section {
-                padding: 42px 0;
-            }
-
-            .title {
-                margin-bottom: 24px;
-            }
-
-            .title h2 {
-                font-size: 25px;
-                line-height: 1.3;
-            }
-
-            .title p {
-                font-size: 13px;
-                padding: 0 5px;
-            }
-
         }
     </style>
 </head>
@@ -6269,6 +6136,40 @@
                 if (btn) btn.textContent = isOpen ? "✕" : "☰";
             }
         }
+    </script>
+
+    <script>
+
+        // Hiện thanh Gọi ngay - Zalo khi khách cuộn qua phần giới thiệu
+        document.addEventListener("DOMContentLoaded", function () {
+            const mobileCall = document.querySelector(".mobile-call");
+            const hero = document.querySelector(".hero");
+
+            if (!mobileCall || !hero) return;
+
+            function updateMobileCall() {
+                if (window.innerWidth <= 600) {
+                    const heroBottom = hero.getBoundingClientRect().bottom;
+
+                    if (heroBottom <= 100) {
+                        mobileCall.classList.add("is-visible");
+                    } else {
+                        mobileCall.classList.remove("is-visible");
+                    }
+                } else {
+                    mobileCall.classList.remove("is-visible");
+                }
+            }
+
+            window.addEventListener("scroll", updateMobileCall, {
+                passive: true
+            });
+
+            window.addEventListener("resize", updateMobileCall);
+
+            updateMobileCall();
+        });
+
     </script>
 
 </body>

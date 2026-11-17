@@ -2075,7 +2075,7 @@
             box-shadow: 0 4px 12px rgba(249, 115, 22, 0.1) !important;
         }
 
-        /* --- GRAND LUXURY FULL-WIDTH STICKY NAVBAR (ĐẲNG CẤP THƯỢNG LƯU) --- */
+        /* --- GRAND LUXURY FULL-WIDTH STICKY NAVBAR (ĐẲNG CẤP TẾT HOÀNG GIA & THƯỢNG LƯU) --- */
         .ln-navbar {
             position: fixed;
             top: 0;
@@ -2087,19 +2087,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.92);
+            background: linear-gradient(135deg, rgba(125, 22, 17, 0.94) 0%, rgba(148, 28, 22, 0.92) 50%, rgba(115, 20, 15, 0.96) 100%);
             backdrop-filter: blur(24px) saturate(180%);
             -webkit-backdrop-filter: blur(24px) saturate(180%);
-            border-bottom: 1px solid rgba(212, 160, 55, 0.22);
-            box-shadow: 0 4px 20px rgba(67, 20, 7, 0.04);
-            transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border-bottom: 1.5px solid rgba(245, 158, 11, 0.38);
+            box-shadow: 0 4px 25px rgba(60, 10, 8, 0.28);
+            transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
             pointer-events: auto;
         }
 
         .ln-navbar.scrolled {
-            background: rgba(255, 255, 255, 0.96);
-            border-bottom-color: rgba(212, 160, 55, 0.32);
-            box-shadow: 0 8px 30px rgba(67, 20, 7, 0.07);
+            background: linear-gradient(135deg, rgba(108, 18, 14, 0.97) 0%, rgba(132, 24, 19, 0.95) 50%, rgba(98, 16, 12, 0.98) 100%);
+            border-bottom-color: rgba(245, 158, 11, 0.55);
+            box-shadow: 0 8px 32px rgba(50, 8, 6, 0.42);
         }
 
         .ln-navbar.search-open {
@@ -2119,14 +2119,15 @@
 
         @media (max-width: 768px) {
             .ln-navbar {
-                height: 58px;
+                height: 56px;
             }
             .ln-navbar-inner {
-                padding: 0 16px;
+                padding: 0 10px;
+                gap: 4px;
             }
         }
 
-        /* 1. Brand Logo */
+        /* 1. Brand Logo Ánh Kim Hoàng Gia */
         .ln-brand {
             display: flex;
             align-items: center;
@@ -2139,20 +2140,23 @@
             height: 42px;
             width: auto;
             object-fit: contain;
-            transition: transform 0.25s ease;
+            filter: brightness(0) saturate(100%) invert(92%) sepia(35%) saturate(750%) hue-rotate(350deg) brightness(105%) contrast(98%) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+            transition: transform 0.28s ease, filter 0.28s ease;
         }
 
         .ln-brand:hover img {
-            transform: scale(1.04);
+            transform: scale(1.05);
+            filter: brightness(0) saturate(100%) invert(96%) sepia(45%) saturate(950%) hue-rotate(355deg) brightness(112%) drop-shadow(0 4px 12px rgba(245, 158, 11, 0.5));
         }
 
         @media (max-width: 768px) {
             .ln-brand img {
-                height: 35px;
+                height: 28px;
+                max-width: 82px;
             }
         }
 
-        /* 2. Nav Links Desktop */
+        /* 2. Nav Links Desktop & Mobile */
         .ln-nav-links {
             position: relative;
             display: none;
@@ -2167,19 +2171,27 @@
         }
 
         .ln-nav-link {
-            color: #1e293b;
+            color: #fff2dc;
             font-size: 14px;
             font-weight: 600;
             text-decoration: none;
             padding: 8px 18px;
             border-radius: 99px;
+            border: 1px solid rgba(245, 158, 11, 0.22);
+            background: rgba(255, 255, 255, 0.05);
             letter-spacing: 0.01em;
-            transition: all 0.22s ease;
+            transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .ln-nav-link:hover {
-            color: var(--red);
-            background: rgba(179, 38, 30, 0.06);
+        /* Đổ ngả màu chuẩn khuôn viền sản phẩm hamper khi bấm / rê chuột */
+        .ln-nav-link:hover,
+        .ln-nav-link:active {
+            background: linear-gradient(135deg, rgba(254, 215, 170, 0.28) 0%, rgba(251, 146, 60, 0.22) 100%) !important;
+            border-color: #fb923c !important;
+            color: #ffffff !important;
+            text-shadow: 0 0 10px rgba(251, 146, 60, 0.5);
+            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.32), 0 0 0 1px rgba(251, 146, 60, 0.25) !important;
+            transform: translateY(-2px);
         }
 
         .ln-link-desktop {
@@ -2194,10 +2206,10 @@
         .ln-nav-right {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
-        /* Nút Kính Lúp Tìm Kiếm Cao Cấp */
+        /* Nút Kính Lúp Tìm Kiếm Cao Cấp Tết */
         .ln-search-btn {
             display: inline-flex;
             align-items: center;
@@ -2206,32 +2218,35 @@
             height: 38px;
             padding: 0 16px;
             border-radius: 99px;
-            background: rgba(245, 158, 11, 0.1);
-            color: #854d0e;
-            border: 1px solid rgba(212, 160, 55, 0.38);
+            background: rgba(245, 158, 11, 0.16);
+            color: #fff2dc;
+            border: 1px solid rgba(245, 158, 11, 0.35);
             font-size: 13px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
             user-select: none;
             flex-shrink: 0;
         }
 
+        .ln-search-btn svg {
+            stroke: #fff2dc;
+            transition: transform 0.25s ease, stroke 0.25s ease;
+        }
+
         .ln-search-btn:hover,
         .ln-search-btn.active {
-            background: linear-gradient(135deg, #d97706, #b45309);
+            background: linear-gradient(135deg, rgba(254, 215, 170, 0.32) 0%, rgba(251, 146, 60, 0.26) 100%);
             color: #ffffff;
-            border-color: #b45309;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 14px rgba(180, 83, 9, 0.25);
+            border-color: #fb923c !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.38), 0 0 0 1px rgba(251, 146, 60, 0.25);
         }
 
-        .ln-search-btn svg {
-            transition: transform 0.25s ease;
-        }
-
-        .ln-search-btn:hover svg {
+        .ln-search-btn:hover svg,
+        .ln-search-btn.active svg {
             transform: scale(1.1);
+            stroke: #ffffff;
         }
 
         /* Nút Gọi Hotline Thượng Hạng (Desktop) */
@@ -2239,23 +2254,23 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: #8B0000;
+            background: linear-gradient(135deg, #a8201a 0%, #851611 100%);
             color: #fff !important;
             text-decoration: none;
             font-weight: 700;
             font-size: 13px;
             padding: 8px 18px;
             border-radius: 99px;
-            border: 1px solid rgba(242, 199, 92, 0.4);
-            box-shadow: 0 4px 14px rgba(139, 0, 0, 0.25);
-            transition: all 0.25s ease;
+            border: 1px solid rgba(245, 158, 11, 0.45);
+            box-shadow: 0 4px 14px rgba(60, 10, 8, 0.3);
+            transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .ln-call-btn:hover {
-            background: #6d0000;
-            border-color: #f2c75c;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 18px rgba(139, 0, 0, 0.35);
+            background: linear-gradient(135deg, #c53027 0%, #9e1d17 100%);
+            border-color: #fb923c !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4), 0 0 0 1px rgba(251, 146, 60, 0.3);
         }
 
         /* Nút Hamburger trên Mobile */
@@ -2266,17 +2281,21 @@
             width: 38px;
             height: 38px;
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.05);
-            border: 0;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.3);
             cursor: pointer;
-            color: #1e293b;
+            color: #fff2dc;
             font-size: 20px;
-            transition: background 0.2s;
+            transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .ln-burger:hover {
-            background: rgba(179, 38, 30, 0.1);
-            color: var(--red);
+        .ln-burger:hover,
+        .ln-burger:active {
+            background: rgba(254, 215, 170, 0.28);
+            border-color: #fb923c !important;
+            color: #ffffff;
+            transform: scale(1.06);
+            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
         }
 
         @media (min-width: 900px) {
@@ -2285,10 +2304,11 @@
             }
         }
 
-        /* Navbar Mobile chuẩn 5 mục: Logo | Hamper | Sản phẩm | Nút tìm kiếm | Nút 3 gạch */
+        /* Navbar Mobile chuẩn 5 mục Tết: Logo | Hamper | Sản phẩm | Nút tìm kiếm | Nút 3 gạch */
         @media (max-width: 768px) {
             .ln-navbar {
                 height: 56px;
+                background: linear-gradient(135deg, rgba(125, 22, 17, 0.95) 0%, rgba(143, 29, 23, 0.93) 50%, rgba(115, 20, 15, 0.96) 100%);
             }
 
             .ln-navbar-inner {
@@ -2306,7 +2326,7 @@
             .ln-nav-links {
                 display: flex !important;
                 align-items: center;
-                gap: 2px;
+                gap: 3px;
             }
 
             .ln-link-desktop {
@@ -2317,20 +2337,24 @@
                 display: inline-block !important;
                 font-size: 12.5px;
                 font-weight: 700;
-                color: #1e293b;
+                color: #fff2dc;
                 white-space: nowrap;
             }
 
             .ln-nav-link {
-                padding: 6px 9px;
+                padding: 6px 10px;
                 border-radius: 99px;
                 font-size: 12.5px;
+                border: 1px solid rgba(245, 158, 11, 0.22);
+                background: rgba(255, 255, 255, 0.05);
             }
 
             .ln-nav-link:active,
             .ln-nav-link:hover {
-                background: rgba(179, 38, 30, 0.08);
-                color: var(--red);
+                background: linear-gradient(135deg, rgba(254, 215, 170, 0.3) 0%, rgba(251, 146, 60, 0.22) 100%) !important;
+                border-color: #fb923c !important;
+                color: #ffffff !important;
+                box-shadow: 0 3px 12px rgba(249, 115, 22, 0.3) !important;
             }
 
             .ln-desktop-only {
@@ -2352,8 +2376,16 @@
                 height: 35px;
                 padding: 0;
                 border-radius: 50%;
-                background: rgba(245, 158, 11, 0.12);
-                border: 1px solid rgba(212, 160, 55, 0.4);
+                background: rgba(245, 158, 11, 0.16);
+                border: 1px solid rgba(245, 158, 11, 0.38);
+                color: #fff2dc;
+            }
+
+            .ln-search-btn:active,
+            .ln-search-btn:hover {
+                background: rgba(254, 215, 170, 0.32) !important;
+                border-color: #fb923c !important;
+                color: #ffffff !important;
             }
 
             .ln-search-btn span.ln-search-text {
@@ -2363,6 +2395,7 @@
             .ln-search-btn svg {
                 width: 16px;
                 height: 16px;
+                stroke: #fff2dc;
             }
 
             .ln-burger {
@@ -2371,6 +2404,16 @@
                 height: 35px;
                 border-radius: 50%;
                 font-size: 18px;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(245, 158, 11, 0.3);
+                color: #fff2dc;
+            }
+
+            .ln-burger:active,
+            .ln-burger:hover {
+                background: rgba(254, 215, 170, 0.28) !important;
+                border-color: #fb923c !important;
+                color: #ffffff !important;
             }
         }
 
@@ -2826,10 +2869,17 @@
             transition: all 0.2s ease;
         }
 
+        .ln-mobile-link {
+            border: 1px solid transparent;
+        }
+
         .ln-mobile-link:hover,
         .ln-mobile-link:active {
-            background: rgba(179, 38, 30, 0.08);
-            color: var(--red);
+            background: rgba(255, 237, 213, 0.75) !important;
+            border-color: #fb923c !important;
+            color: #b3261e !important;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15) !important;
+            transform: translateX(4px);
         }
 
         @keyframes dropDownAnim {

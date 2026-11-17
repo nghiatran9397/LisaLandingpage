@@ -2182,6 +2182,14 @@
             background: rgba(179, 38, 30, 0.06);
         }
 
+        .ln-link-desktop {
+            display: inline;
+        }
+
+        .ln-link-mobile {
+            display: none;
+        }
+
         /* 3. Nút Thao Tác Bên Phải */
         .ln-nav-right {
             display: flex;
@@ -2277,29 +2285,92 @@
             }
         }
 
-        /* Ẩn hotline trên mobile để thanh navbar tinh tế, thoáng đãng */
+        /* Navbar Mobile chuẩn 5 mục: Logo | Hamper | Sản phẩm | Nút tìm kiếm | Nút 3 gạch */
         @media (max-width: 768px) {
+            .ln-navbar {
+                height: 56px;
+            }
+
+            .ln-navbar-inner {
+                padding: 0 10px;
+                gap: 4px;
+            }
+
+            /* 1. Logo */
+            .ln-brand img {
+                height: 28px;
+                max-width: 82px;
+            }
+
+            /* 2 & 3. Hamper & Sản phẩm */
+            .ln-nav-links {
+                display: flex !important;
+                align-items: center;
+                gap: 2px;
+            }
+
+            .ln-link-desktop {
+                display: none !important;
+            }
+
+            .ln-link-mobile {
+                display: inline-block !important;
+                font-size: 12.5px;
+                font-weight: 700;
+                color: #1e293b;
+                white-space: nowrap;
+            }
+
+            .ln-nav-link {
+                padding: 6px 9px;
+                border-radius: 99px;
+                font-size: 12.5px;
+            }
+
+            .ln-nav-link:active,
+            .ln-nav-link:hover {
+                background: rgba(179, 38, 30, 0.08);
+                color: var(--red);
+            }
+
+            .ln-desktop-only {
+                display: none !important;
+            }
+
+            /* 4 & 5. Nút tìm kiếm & 3 gạch bên phải */
+            .ln-nav-right {
+                gap: 5px;
+                flex-shrink: 0;
+            }
+
             .ln-call-btn {
                 display: none !important;
             }
-            .ln-search-btn {
-                height: 36px;
-                padding: 0 13px;
-                gap: 5px;
-            }
-            .ln-search-btn span.ln-search-text {
-                display: inline-block;
-                font-size: 12.5px;
-            }
-        }
 
-        @media (max-width: 380px) {
             .ln-search-btn {
-                width: 36px;
+                width: 35px;
+                height: 35px;
                 padding: 0;
+                border-radius: 50%;
+                background: rgba(245, 158, 11, 0.12);
+                border: 1px solid rgba(212, 160, 55, 0.4);
             }
+
             .ln-search-btn span.ln-search-text {
                 display: none;
+            }
+
+            .ln-search-btn svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .ln-burger {
+                display: flex !important;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                font-size: 18px;
             }
         }
 
@@ -2796,11 +2867,17 @@
                 <img src="images/logo.png" alt="LisaFood Logo">
             </a>
 
-            <!-- 2, 3, 4. Danh sách 3 mục điều hướng Desktop -->
+            <!-- 2, 3, 4. Danh sách các mục điều hướng (Desktop & Mobile) -->
             <nav class="ln-nav-links">
-                <a href="#hamper" class="ln-nav-link">Bộ sưu tập Hamper</a>
-                <a href="#sanpham" class="ln-nav-link">Sản phẩm lẻ</a>
-                <a href="#baogia" class="ln-nav-link">Nhận báo giá</a>
+                <a href="#hamper" class="ln-nav-link">
+                    <span class="ln-link-desktop">Bộ sưu tập Hamper</span>
+                    <span class="ln-link-mobile">Hamper</span>
+                </a>
+                <a href="#sanpham" class="ln-nav-link">
+                    <span class="ln-link-desktop">Sản phẩm lẻ</span>
+                    <span class="ln-link-mobile">Sản phẩm</span>
+                </a>
+                <a href="#baogia" class="ln-nav-link ln-desktop-only">Nhận báo giá</a>
             </nav>
 
             <!-- Cột bên phải: Nút tìm kiếm sản phẩm lẻ, hotline và menu mobile -->

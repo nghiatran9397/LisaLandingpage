@@ -2256,10 +2256,25 @@
             transform: scale(1.1);
         }
 
-        @media (max-width: 680px) {
+        /* Ẩn nút hotline trên mobile navbar, giữ nút tìm kiếm và menu 3 gạch */
+        @media (max-width: 768px) {
+            .ln-call-btn {
+                display: none !important;
+            }
+            .ln-search-btn {
+                height: 38px;
+                padding: 0 14px;
+                gap: 6px;
+            }
+            .ln-search-btn span.ln-search-text {
+                display: inline-block;
+                font-size: 12.5px;
+            }
+        }
+
+        @media (max-width: 380px) {
             .ln-search-btn {
                 width: 38px;
-                height: 38px;
                 padding: 0;
             }
             .ln-search-btn span.ln-search-text {
@@ -2274,10 +2289,11 @@
 
         .ln-search-panel {
             display: none;
+            position: relative;
             width: 100%;
             max-width: 680px;
             margin-top: 10px;
-            padding: 16px 18px 18px;
+            padding: 14px 16px 16px;
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
@@ -2286,7 +2302,7 @@
             box-shadow: 0 20px 50px rgba(67, 20, 7, 0.18), 0 4px 16px rgba(0, 0, 0, 0.08);
             pointer-events: auto;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             animation: dropDownAnim 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 1500;
         }
@@ -2295,7 +2311,48 @@
             display: flex;
         }
 
-        /* Khung nhập text tìm kiếm */
+        /* Hàng tiêu đề trên cùng của form tìm kiếm */
+        .ln-search-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2px 2px;
+        }
+
+        .ln-search-heading {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #92400e;
+        }
+
+        /* Nút đóng X ở góc trên bên phải */
+        .ln-search-close-corner {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.05);
+            border: 0;
+            color: #64748b;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .ln-search-close-corner:hover {
+            background: rgba(179, 38, 30, 0.12);
+            color: var(--red);
+            transform: scale(1.08);
+        }
+
+        /* Khung nhập text tìm kiếm (rộng rãi, chiếm trọn chiều ngang) */
         .ln-search-bar {
             display: flex;
             align-items: center;
@@ -2303,7 +2360,7 @@
             background: #fff8f0;
             border: 1.5px solid rgba(212, 160, 55, 0.5);
             border-radius: 99px;
-            padding: 4px 6px 4px 16px;
+            padding: 4px 10px 4px 16px;
             transition: all 0.25s ease;
         }
 
@@ -2329,6 +2386,7 @@
             color: #1e293b;
             outline: none;
             padding: 8px 0;
+            min-width: 0;
         }
 
         .ln-search-input::placeholder {
@@ -2341,40 +2399,20 @@
             display: none;
             align-items: center;
             justify-content: center;
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             border: 0;
             background: rgba(148, 163, 184, 0.2);
             color: #475569;
-            font-size: 16px;
+            font-size: 15px;
             cursor: pointer;
             transition: all 0.2s ease;
+            flex-shrink: 0;
         }
 
         .ln-search-clear:hover {
             background: rgba(179, 38, 30, 0.15);
-            color: var(--red);
-        }
-
-        .ln-search-close {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6px 14px;
-            border-radius: 99px;
-            background: rgba(0, 0, 0, 0.05);
-            color: #475569;
-            border: 0;
-            font-size: 12.5px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-        }
-
-        .ln-search-close:hover {
-            background: rgba(179, 38, 30, 0.1);
             color: var(--red);
         }
 
@@ -2418,9 +2456,21 @@
             color: #ffffff;
         }
 
-        /* Thanh meta đếm số lượng kết quả */
+        /* Dòng chú thích khi chưa tìm kiếm */
+        .ln-search-hint {
+            font-size: 12.5px;
+            color: #64748b;
+            background: #faf8f5;
+            border: 1px dashed rgba(212, 160, 55, 0.4);
+            border-radius: 10px;
+            padding: 8px 12px;
+            text-align: center;
+            margin-top: 2px;
+        }
+
+        /* Thanh meta đếm số lượng kết quả (chỉ hiện khi có kết quả tìm kiếm) */
         .ln-search-meta {
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: space-between;
             font-size: 12.5px;
@@ -2555,7 +2605,7 @@
 
         .ln-search-empty {
             text-align: center;
-            padding: 24px 16px;
+            padding: 20px 16px;
             color: #64748b;
             font-size: 13.5px;
         }
@@ -2758,23 +2808,33 @@
 
         <!-- KHUNG TÌM KIẾM SẢN PHẨM LẺ SANG TRỌNG -->
         <div class="ln-search-panel" id="retailSearchPanel">
-            <!-- Thanh nhập tìm kiếm -->
+            <!-- Hàng tiêu đề với nút đóng ở góc trên bên phải -->
+            <div class="ln-search-top-row">
+                <div class="ln-search-heading">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <span>Tìm kiếm sản phẩm lẻ</span>
+                </div>
+                <button type="button" class="ln-search-close-corner" onclick="toggleRetailSearch(false)" aria-label="Đóng tìm kiếm" title="Đóng">✕</button>
+            </div>
+
+            <!-- Thanh nhập tìm kiếm chiếm trọn chiều ngang -->
             <div class="ln-search-bar">
                 <span class="ln-search-icon">
-                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                 </span>
-                <input type="text" id="retailSearchInput" class="ln-search-input" placeholder="Tìm sản phẩm lẻ (hạt điều, macca, khô gà, hạnh nhân...)" autocomplete="off">
+                <input type="text" id="retailSearchInput" class="ln-search-input" placeholder="Tìm hạt điều, macca, khô gà, hạnh nhân..." autocomplete="off">
                 <button type="button" class="ln-search-clear" id="retailSearchClear" onclick="clearRetailSearch()" title="Xóa tìm kiếm">&times;</button>
-                <button type="button" class="ln-search-close" onclick="toggleRetailSearch(false)" title="Đóng tìm kiếm">✕ Đóng</button>
             </div>
 
             <!-- Thẻ gợi ý tìm nhanh -->
             <div class="ln-search-tags">
                 <span class="ln-tags-label">Gợi ý tìm nhanh:</span>
-                <button type="button" class="ln-tag-btn active" data-tag="" onclick="applySearchTag('')">Tất cả (28)</button>
                 <button type="button" class="ln-tag-btn" data-tag="Hạt điều" onclick="applySearchTag('Hạt điều')">Hạt điều</button>
                 <button type="button" class="ln-tag-btn" data-tag="Macca" onclick="applySearchTag('Macca')">Hạt Macca</button>
                 <button type="button" class="ln-tag-btn" data-tag="Hạnh nhân" onclick="applySearchTag('Hạnh nhân')">Hạnh nhân</button>
@@ -2783,13 +2843,18 @@
                 <button type="button" class="ln-tag-btn" data-tag="Nho khô" onclick="applySearchTag('Nho khô')">Nho khô</button>
             </div>
 
-            <!-- Tiêu đề số lượng kết quả -->
-            <div class="ln-search-meta">
-                <span id="retailSearchCount">Tìm thấy 28 sản phẩm lẻ</span>
+            <!-- Dòng chú thích khi chưa tìm kiếm -->
+            <div class="ln-search-hint" id="retailSearchHint">
+                💡 Bấm vào từ khóa gợi ý ở trên hoặc nhập tên sản phẩm để xem nhanh kết quả
+            </div>
+
+            <!-- Tiêu đề số lượng kết quả (chỉ hiện khi có từ khóa) -->
+            <div class="ln-search-meta" id="retailSearchMeta">
+                <span id="retailSearchCount">Tìm thấy 0 sản phẩm</span>
                 <button type="button" class="ln-scroll-grid-btn" onclick="scrollToRetailGrid()">Xem trên kệ hàng ↓</button>
             </div>
 
-            <!-- Danh sách kết quả live -->
+            <!-- Danh sách kết quả live (chỉ render khi có từ khóa) -->
             <div class="ln-search-results" id="retailSearchResults"></div>
         </div>
     </header>
@@ -6822,14 +6887,8 @@
                 if (btn) btn.classList.add("active");
                 if (navbar) navbar.classList.add("search-open");
 
+                // Render dữ liệu theo nội dung ô input hiện tại (không ép mở bàn phím ảo)
                 handleRetailSearch(input ? input.value : "");
-
-                setTimeout(function () {
-                    if (input) {
-                        input.focus();
-                        input.select();
-                    }
-                }, 80);
             } else {
                 panel.classList.remove("open");
                 if (btn) btn.classList.remove("active");
@@ -6847,14 +6906,47 @@
 
             var qClean = removeVietnameseTones(query);
             var resultsWrap = document.getElementById("retailSearchResults");
+            var metaEl = document.getElementById("retailSearchMeta");
             var countEl = document.getElementById("retailSearchCount");
+            var hintEl = document.getElementById("retailSearchHint");
             var banner = document.getElementById("retailFilterBanner");
             var bannerText = document.getElementById("retailFilterBannerText");
             var emptyGrid = document.getElementById("retailGridEmpty");
 
+            // Cập nhật trạng thái active cho các nút gợi ý tìm nhanh
+            var tagBtns = document.querySelectorAll(".ln-tag-btn");
+            tagBtns.forEach(function (tb) {
+                var tagVal = tb.getAttribute("data-tag") || "";
+                if (tagVal && removeVietnameseTones(tagVal) === qClean) {
+                    tb.classList.add("active");
+                } else {
+                    tb.classList.remove("active");
+                }
+            });
+
+            // NẾU CHƯA NHẬP TỪ KHÓA (HOẶC VỪA MỞ TÌM KIẾM):
+            // Không hiển thị danh sách 28 sản phẩm trong ô tìm kiếm theo yêu cầu của khách
+            if (!query.trim()) {
+                if (resultsWrap) resultsWrap.innerHTML = "";
+                if (metaEl) metaEl.style.display = "none";
+                if (hintEl) hintEl.style.display = "block";
+
+                // Đặt lại kệ sản phẩm lẻ (#sanpham) hiển thị tất cả bình thường
+                retailSearchData.forEach(function (item) {
+                    if (item.cardEl) item.cardEl.style.display = "flex";
+                });
+                if (banner) banner.style.display = "none";
+                if (emptyGrid) emptyGrid.style.display = "none";
+                return;
+            }
+
+            // KHI ĐÃ CÓ TỪ KHÓA TÌM KIẾM HOẶC BẤM VÀO THẺ GỢI Ý:
+            if (hintEl) hintEl.style.display = "none";
+            if (metaEl) metaEl.style.display = "flex";
+
             var matched = [];
             retailSearchData.forEach(function (item) {
-                var isMatch = (!qClean) || item.cleanName.indexOf(qClean) !== -1 || item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+                var isMatch = item.cleanName.indexOf(qClean) !== -1 || item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
                 if (isMatch) matched.push(item);
 
                 if (item.cardEl) {
@@ -6863,12 +6955,8 @@
             });
 
             if (banner && bannerText) {
-                if (query.trim()) {
-                    banner.style.display = "block";
-                    bannerText.innerHTML = "🔍 Đang hiển thị " + matched.length + " sản phẩm lẻ theo từ khóa: <b>\"" + escapeHtml(query.trim()) + "\"</b>";
-                } else {
-                    banner.style.display = "none";
-                }
+                banner.style.display = "block";
+                bannerText.innerHTML = "🔍 Đang hiển thị " + matched.length + " sản phẩm lẻ theo từ khóa: <b>\"" + escapeHtml(query.trim()) + "\"</b>";
             }
 
             if (emptyGrid) {
@@ -6879,26 +6967,14 @@
                 countEl.textContent = "Tìm thấy " + matched.length + " sản phẩm lẻ phù hợp";
             }
 
-            var tagBtns = document.querySelectorAll(".ln-tag-btn");
-            tagBtns.forEach(function (tb) {
-                var tagVal = tb.getAttribute("data-tag") || "";
-                if (tagVal === "" && !query.trim()) {
-                    tb.classList.add("active");
-                } else if (tagVal && removeVietnameseTones(tagVal) === qClean) {
-                    tb.classList.add("active");
-                } else {
-                    tb.classList.remove("active");
-                }
-            });
-
             if (!resultsWrap) return;
             resultsWrap.innerHTML = "";
 
             if (matched.length === 0) {
                 resultsWrap.innerHTML = '<div class="ln-search-empty">' +
                     '<p style="font-weight: 700; color: #b45309;">Không tìm thấy sản phẩm nào khớp với \"' + escapeHtml(query) + '\"</p>' +
-                    '<p>Quý khách vui lòng thử tìm từ khóa khác (ví dụ: hạt điều, macca, khô gà...) hoặc bấm xem tất cả.</p>' +
-                    '<button type="button" class="rf-clear-btn" style="margin-top: 10px;" onclick="clearRetailSearch()">Xem lại tất cả 28 sản phẩm</button>' +
+                    '<p>Quý khách vui lòng thử tìm từ khóa khác (ví dụ: hạt điều, macca, khô gà...).</p>' +
+                    '<button type="button" class="rf-clear-btn" style="margin-top: 10px;" onclick="clearRetailSearch()">Xem lại tất cả sản phẩm</button>' +
                     '</div>';
                 return;
             }
@@ -6911,13 +6987,11 @@
                 };
 
                 var displayName = escapeHtml(item.name);
-                if (qClean) {
-                    try {
-                        var safeQ = query.trim().replace(/[.*+?^$${}()|[\]\\]/g, "\\$&");
-                        var reg = new RegExp("(" + safeQ + ")", "gi");
-                        displayName = displayName.replace(reg, "<mark>$1</mark>");
-                    } catch (e) {}
-                }
+                try {
+                    var safeQ = query.trim().replace(/[.*+?^$${}()|[\]\\]/g, "\\$&");
+                    var reg = new RegExp("(" + safeQ + ")", "gi");
+                    displayName = displayName.replace(reg, "<mark>$1</mark>");
+                } catch (e) {}
 
                 row.innerHTML = '<div class="ln-result-left">' +
                     '<img src="' + item.img + '" class="ln-result-thumb" alt="' + escapeHtml(item.name) + '">' +
@@ -6963,9 +7037,13 @@
         function applySearchTag(tag) {
             var input = document.getElementById("retailSearchInput");
             if (input) {
-                input.value = tag;
-                handleRetailSearch(tag);
-                input.focus();
+                if (input.value === tag) {
+                    input.value = "";
+                    handleRetailSearch("");
+                } else {
+                    input.value = tag;
+                    handleRetailSearch(tag);
+                }
             }
         }
 
@@ -6974,7 +7052,6 @@
             if (input) {
                 input.value = "";
                 handleRetailSearch("");
-                input.focus();
             }
         }
 

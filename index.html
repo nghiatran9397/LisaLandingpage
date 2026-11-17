@@ -361,32 +361,37 @@
 
             .mobile-call {
                 display: flex;
-                gap: 10px;
+                gap: 8px;
                 position: fixed;
-                left: 16px;
-                right: 16px;
-                bottom: calc(14px + env(safe-area-inset-bottom, 0px));
-                z-index: 15
+                left: 12px;
+                right: 12px;
+                bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+                z-index: 15;
             }
 
             .mobile-call a {
                 flex: 1;
+                min-height: 42px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 text-align: center;
                 background: var(--red);
                 color: var(--on-red);
                 text-decoration: none;
                 font-weight: 700;
-                padding: 14px;
+                font-size: 13px;
+                padding: 9px 10px;
                 border-radius: 99px;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, .3)
+                box-shadow: 0 4px 12px rgba(0, 0, 0, .22);
             }
 
             .mobile-call a.z {
-                background: #0068ff
+                background: #0068ff;
             }
 
             body {
-                padding-bottom: 80px
+                padding-bottom: 68px;
             }
         }
 

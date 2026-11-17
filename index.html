@@ -3026,290 +3026,6 @@
                 padding-top: 72px !important;
             }
         }
-    
-/* --- MULTI-PRODUCT SHOWCASE BANNER TRÊN TRANG CHỦ --- */
-.showcase-grid {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    margin-bottom: 36px;
-}
-
-.showcase-card {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-    position: relative;
-    text-decoration: none;
-    color: inherit;
-}
-
-.showcase-card:hover {
-    transform: translateY(-5px);
-    border-color: #d97706;
-    box-shadow: 0 14px 34px rgba(180, 83, 9, 0.16);
-}
-
-.showcase-card-img-wrap {
-    position: relative;
-    overflow: hidden;
-    background: #fffdf9;
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-}
-
-.showcase-card-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.showcase-card:hover .showcase-card-img-wrap img {
-    transform: scale(1.08);
-}
-
-.showcase-card-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: linear-gradient(135deg, #8f1d17 0%, #b3261e 100%);
-    color: #ffffff;
-    font-size: 11.5px;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 99px;
-    box-shadow: 0 2px 8px rgba(143, 29, 23, 0.35);
-    border: 1px solid rgba(245, 158, 11, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-}
-
-.showcase-card-body {
-    padding: 16px 18px 20px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.showcase-card-title {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 6px;
-    line-height: 1.35;
-}
-
-.showcase-card-desc {
-    font-size: 13.5px;
-    color: var(--muted);
-    line-height: 1.5;
-    margin-bottom: 14px;
-    flex: 1;
-}
-
-.showcase-card-foot {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 12px;
-    border-top: 1px dashed var(--line);
-}
-
-.showcase-card-price {
-    color: var(--red);
-    font-weight: 800;
-    font-size: 18px;
-}
-
-.showcase-card-cta {
-    font-size: 13px;
-    font-weight: 700;
-    color: #b45309;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    transition: transform 0.2s ease;
-}
-
-.showcase-card:hover .showcase-card-cta {
-    transform: translateX(3px);
-    color: var(--red);
-}
-
-/* Callout Banner */
-.showcase-callout-banner {
-    background: linear-gradient(135deg, #7a1712 0%, #a3221b 50%, #7a1712 100%);
-    border: 2px solid rgba(245, 158, 11, 0.6);
-    border-radius: 24px;
-    padding: 48px 36px;
-    color: #ffffff;
-    box-shadow: 0 20px 60px rgba(67, 20, 7, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.showcase-callout-banner::before {
-    content: "🌸";
-    position: absolute;
-    left: 20px;
-    bottom: -15px;
-    font-size: 130px;
-    opacity: 0.1;
-    pointer-events: none;
-    transform: scaleX(-1);
-}
-
-.showcase-callout-banner::after {
-    content: "✨";
-    position: absolute;
-    right: 25px;
-    top: 15px;
-    font-size: 100px;
-    opacity: 0.12;
-    pointer-events: none;
-}
-
-.showcase-badge-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 18px;
-    background: rgba(245, 158, 11, 0.22);
-    border: 1px solid rgba(245, 158, 11, 0.7);
-    border-radius: 99px;
-    color: #fef08a;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    margin-bottom: 16px;
-}
-
-.showcase-callout-banner h3 {
-    font-size: clamp(24px, 3.6vw, 36px);
-    color: #ffffff;
-    margin-bottom: 14px;
-    font-weight: 700;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.showcase-callout-banner p {
-    font-size: 16.5px;
-    max-width: 760px;
-    margin: 0 auto 28px;
-    opacity: 0.95;
-    line-height: 1.65;
-}
-
-.showcase-perks-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    max-width: 900px;
-    margin: 0 auto 34px;
-}
-
-.showcase-perks-row span {
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(245, 158, 11, 0.4);
-    border-radius: 99px;
-    padding: 8px 18px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #fef9c3;
-    backdrop-filter: blur(8px);
-}
-
-.showcase-btns-row {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.showcase-primary-btn {
-    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%) !important;
-    color: #451a03 !important;
-    font-weight: 800 !important;
-    font-size: 16.5px !important;
-    padding: 16px 36px !important;
-    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.5), 0 0 0 1px rgba(254, 240, 138, 0.6) !important;
-    transition: all 0.25s ease !important;
-}
-
-.showcase-primary-btn:hover {
-    transform: scale(1.03) translateY(-2px) !important;
-    box-shadow: 0 12px 36px rgba(245, 158, 11, 0.65) !important;
-}
-
-.showcase-secondary-btn {
-    border: 2px solid rgba(255, 255, 255, 0.8) !important;
-    color: #ffffff !important;
-    font-size: 15.5px !important;
-    padding: 15px 30px !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    backdrop-filter: blur(8px) !important;
-}
-
-.showcase-secondary-btn:hover {
-    background: rgba(255, 255, 255, 0.18) !important;
-    transform: translateY(-2px) !important;
-}
-
-@media (max-width: 768px) {
-    .showcase-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-    .showcase-card-body {
-        padding: 12px 12px 14px;
-    }
-    .showcase-card-title {
-        font-size: 14.5px;
-    }
-    .showcase-card-desc {
-        display: none;
-    }
-    .showcase-card-price {
-        font-size: 15px;
-    }
-    .showcase-callout-banner {
-        padding: 32px 18px;
-        border-radius: 18px;
-    }
-    .showcase-perks-row span {
-        font-size: 12.5px;
-        padding: 6px 14px;
-    }
-    .showcase-primary-btn, .showcase-secondary-btn {
-        width: 100%;
-        text-align: center;
-        padding: 14px 20px !important;
-        font-size: 15px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .showcase-grid {
-        grid-template-columns: 1fr;
-    }
-    .showcase-card-desc {
-        display: block;
-    }
-}
-
     </style>
 </head>
 
@@ -3329,7 +3045,7 @@
                     <span class="ln-link-desktop">Bộ sưu tập Hamper</span>
                     <span class="ln-link-mobile">Hamper</span>
                 </a>
-                <a href="san-pham/" class="ln-nav-link">
+                <a href="#sanpham" class="ln-nav-link">
                     <span class="ln-link-desktop">Sản phẩm</span>
                     <span class="ln-link-mobile">Sản phẩm</span>
                 </a>
@@ -3371,7 +3087,7 @@
                 <span>🎁 Bộ sưu tập Hamper</span>
                 <span>›</span>
             </a>
-            <a href="san-pham/" class="ln-mobile-link" onclick="toggleMobileNavbar(false)">
+            <a href="#sanpham" class="ln-mobile-link" onclick="toggleMobileNavbar(false)">
                 <span>🥜 Sản phẩm</span>
                 <span>›</span>
             </a>
@@ -4989,162 +4705,464 @@
         <section id="sanpham">
             <div class="wrap">
                 <div class="title">
-                    <span class="tag" style="font-size: clamp(16px, 2.2vw, 24px); padding: 8px 24px; margin-bottom: 12px; gap: 8px; border-width: 2px;">✦ NÔNG SẢN THƯỢNG HẠNG ✦</span>
-                    <h2>Thế Giới Sản Phẩm Tuyển Chọn Lisa Food</h2>
-                    <p>Hạt dinh dưỡng, trái cây sấy và đặc sản Việt Nam chuẩn xuất khẩu ISO 22000 — Linh hồn làm nên đẳng cấp của từng hộp quà Tết sum vầy.</p>
+                    <h2>Sản phẩm</h2>
+                    <p>Hạt dinh dưỡng và khô gà Super Premium.</p>
                     <div class="bar"></div>
                 </div>
-
-                <div class="showcase-grid">
-                    <!-- 1. Hạt điều rang muối 250g -->
-                    <a href="san-pham/?q=hat-dieu" class="showcase-card">
-                        <div class="showcase-card-img-wrap">
-                            <span class="showcase-card-badge">Bán chạy nhất</span>
-                            <img src="images/hat-dieu-rang-muoi-250g.png" alt="Hạt điều rang muối 250g" loading="lazy">
-                        </div>
-                        <div class="showcase-card-body">
-                            <h3 class="showcase-card-title">Hạt điều rang muối 250g</h3>
-                            <p class="showcase-card-desc">Hạt điều Bình Phước loại 1 rang củi truyền thống, vỏ lụa thơm bùi, độ mặn thanh tao vừa vặn.</p>
-                            <div class="showcase-card-foot">
-                                <span class="showcase-card-price">177.000đ</span>
-                                <span class="showcase-card-cta">Khám phá ➔</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- 2. Hạt Macca sấy 250g -->
-                    <a href="san-pham/?cat=macca" class="showcase-card">
-                        <div class="showcase-card-img-wrap">
-                            <span class="showcase-card-badge">Đặc sản Đắk Lắk</span>
-                            <img src="images/hat-macca-say-250g.png" alt="Hạt Macca sấy 250g" loading="lazy">
-                        </div>
-                        <div class="showcase-card-body">
-                            <h3 class="showcase-card-title">Hạt Macca sấy nứt vỏ 250g</h3>
-                            <p class="showcase-card-desc">Nữ hoàng hạt dinh dưỡng từ đại ngàn Tây Nguyên, nứt vỏ tự nhiên, béo ngậy thơm ngọt thanh khiết.</p>
-                            <div class="showcase-card-foot">
-                                <span class="showcase-card-price">172.000đ</span>
-                                <span class="showcase-card-cta">Khám phá ➔</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- 3. Hạnh nhân rang bơ 250g -->
-                    <a href="san-pham/?cat=hanh-nhan-sachi" class="showcase-card">
-                        <div class="showcase-card-img-wrap">
-                            <span class="showcase-card-badge">Nhập khẩu cao cấp</span>
-                            <img src="images/hanh-nhan-rang-bo-250g.png" alt="Hạnh nhân rang bơ 250g" loading="lazy">
-                        </div>
-                        <div class="showcase-card-body">
-                            <h3 class="showcase-card-title">Hạnh nhân rang bơ 250g</h3>
-                            <p class="showcase-card-desc">Từng hạt hạnh nhân tuyển chọn đều tăm tắp, rang bơ nồng nàn, vị giòn tan béo bùi khó quên.</p>
-                            <div class="showcase-card-foot">
-                                <span class="showcase-card-price">160.000đ</span>
-                                <span class="showcase-card-cta">Khám phá ➔</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- 4. Khô gà lá chanh 200g -->
-                    <a href="san-pham/?cat=kho-ga" class="showcase-card">
-                        <div class="showcase-card-img-wrap">
-                            <span class="showcase-card-badge">Super Premium</span>
-                            <img src="images/kho-ga-la-chanh-200g.png" alt="Khô gà lá chanh 200g" loading="lazy">
-                        </div>
-                        <div class="showcase-card-body">
-                            <h3 class="showcase-card-title">Khô gà lá chanh 200g</h3>
-                            <p class="showcase-card-desc">Ức gà tươi xé sợi dai giòn quyện cùng hương lá chanh sấy và vị cay nồng chuẩn vị Tết Việt.</p>
-                            <div class="showcase-card-foot">
-                                <span class="showcase-card-price">151.000đ</span>
-                                <span class="showcase-card-cta">Khám phá ➔</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- 5. Hạt mix tổng hợp 210g -->
-                    <a href="san-pham/?cat=nho-mix" class="showcase-card">
-                        <div class="showcase-card-img-wrap">
-                            <span class="showcase-card-badge">Giàu dưỡng chất</span>
-                            <img src="images/hat-mix-tong-hop-210g.png" alt="Hạt mix tổng hợp 210g" loading="lazy">
-                        </div>
-                        <div class="showcase-card-body">
-                            <h3 class="showcase-card-title">Hạt mix dinh dưỡng 210g</h3>
-                            <p class="showcase-card-desc">Sự kết hợp tinh tế giữa 5 loại hạt vàng dinh dưỡng: Hạt điều, macca, hạnh nhân, hạt dẻ và nho khô.</p>
-                            <div class="showcase-card-foot">
-                                <span class="showcase-card-price">137.000đ</span>
-                                <span class="showcase-card-cta">Khám phá ➔</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- 6. Hạt điều tỏi ớt 200g -->
-                    <a href="san-pham/?q=toi-ot" class="showcase-card">
-                        <div class="showcase-card-img-wrap">
-                            <span class="showcase-card-badge">Đậm đà cay giòn</span>
-                            <img src="images/hat-dieu-toi-ot-200g.png" alt="Hạt điều tỏi ớt 200g" loading="lazy">
-                        </div>
-                        <div class="showcase-card-body">
-                            <h3 class="showcase-card-title">Hạt điều tỏi ớt 200g</h3>
-                            <p class="showcase-card-desc">Vị béo ngậy của hạt điều Bình Phước hòa quyện cùng tép tỏi phi thơm vàng và ớt sấy cay tê hấp dẫn.</p>
-                            <div class="showcase-card-foot">
-                                <span class="showcase-card-price">160.000đ</span>
-                                <span class="showcase-card-cta">Khám phá ➔</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- 7. Hạt điều capuchino 200g -->
-                    <a href="san-pham/?q=capuchino" class="showcase-card">
-                        <div class="showcase-card-img-wrap">
-                            <span class="showcase-card-badge">Hương vị độc đáo</span>
-                            <img src="images/hat-dieu-capuchino-200g.png" alt="Hạt điều capuchino 200g" loading="lazy">
-                        </div>
-                        <div class="showcase-card-body">
-                            <h3 class="showcase-card-title">Hạt điều capuchino 200g</h3>
-                            <p class="showcase-card-desc">Biến tấu mới lạ với lớp phủ cà phê capuchino nồng nàn hương thơm, bùi ngọt quyến rũ.</p>
-                            <div class="showcase-card-foot">
-                                <span class="showcase-card-price">163.000đ</span>
-                                <span class="showcase-card-cta">Khám phá ➔</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- 8. Nho khô Chile 250g -->
-                    <a href="san-pham/?cat=nho-mix" class="showcase-card">
-                        <div class="showcase-card-img-wrap">
-                            <span class="showcase-card-badge">Vị ngọt tự nhiên</span>
-                            <img src="images/nho-kho-250g.png" alt="Nho khô 250g" loading="lazy">
-                        </div>
-                        <div class="showcase-card-body">
-                            <h3 class="showcase-card-title">Nho khô Chile 250g</h3>
-                            <p class="showcase-card-desc">Trái nho to tròn mọng, sấy tự nhiên không đường, vị chua ngọt thanh tao tốt cho sức khỏe cả nhà.</p>
-                            <div class="showcase-card-foot">
-                                <span class="showcase-card-price">110.000đ</span>
-                                <span class="showcase-card-cta">Khám phá ➔</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- CALLOUT BANNER LUXURY -->
-                <div class="showcase-callout-banner">
-                    <span class="showcase-badge-pill">✦ TRỌN BỘ 28+ MÓN NÔNG SẢN THƯỢNG HẠNG ✦</span>
-                    <h3>Khám Phá Toàn Bộ Danh Mục Sản Phẩm Lisa Food</h3>
-                    <p>Quý khách có thể tự do phối hợp các sản phẩm hạt dinh dưỡng & khô gà theo sở thích riêng vào từng mẫu Hamper Tết 2027, hoặc đặt mua lẻ thưởng thức cùng gia đình và biếu tặng bạn bè với chính sách chiết khấu tốt nhất.</p>
-                    <div class="showcase-perks-row">
-                        <span>🌱 100% Nông sản Việt tuyển chọn loại 1</span>
-                        <span>🏆 Đạt chuẩn quốc tế ISO 22000 & HACCP</span>
-                        <span>📦 Đóng gói túi zip, hũ & hộp quà tinh tế</span>
-                        <span>🏷️ Chiết khấu hấp dẫn cho đơn số lượng lớn</span>
-                    </div>
-                    <div class="showcase-btns-row">
-                        <a href="san-pham/" class="btn gold showcase-primary-btn">
-                            <span>Xem Tất Cả 28+ Sản Phẩm Tại Kệ Hàng ➔</span>
-                        </a>
-                        <a href="tel:0393955516" class="btn ghost showcase-secondary-btn">
-                            <span>📞 Hotline Tư Vấn: 0393.955.516</span>
-                        </a>
+                <!-- Banner hiển thị khi đang tìm kiếm / lọc sản phẩm lẻ -->
+                <div class="retail-filter-banner" id="retailFilterBanner" style="display: none;">
+                    <div class="rf-banner-inner">
+                        <span class="rf-banner-text" id="retailFilterBannerText">🔍 Đang lọc theo từ khóa:
+                            <b>""</b></span>
+                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">✕ Bỏ lọc, hiện tất cả
+                            28 sản phẩm</button>
                     </div>
                 </div>
+                <div class="pg" id="retailProductGrid">
+                    <!-- Thông báo khi không tìm thấy sản phẩm lẻ nào -->
+                    <div class="retail-grid-empty" id="retailGridEmpty"
+                        style="display: none; grid-column: 1 / -1; text-align: center; padding: 40px 20px; background: #fffdfa; border: 1.5px dashed #d97706; border-radius: 16px; margin: 10px 0;">
+                        <p style="font-size: 16px; font-weight: 700; color: #78350f; margin: 0 0 6px;">Không tìm thấy
+                            sản phẩm lẻ nào phù hợp</p>
+                        <p style="font-size: 13.5px; color: #94a3b8; margin: 0 0 14px;">Quý khách vui lòng thử tìm từ
+                            khóa khác (ví dụ: hạt điều, macca, khô gà...) hoặc bấm xem lại tất cả.</p>
+                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">Xem lại tất cả 28 sản
+                            phẩm</button>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-250g.png" alt="Hạt điều rang muối 250g"
+                            loading="lazy"><b>Hạt điều rang muối 250g</b><span>177.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều rang muối 250g', 177000, '177.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-macca-say-250g.png" alt="Hạt macca sấy 250g"
+                            loading="lazy"><b>Hạt Macca sấy 250g</b><span>172.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt Macca sấy 250g', 172000, '172.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hanh-nhan-rang-bo-250g.png" alt="Hạnh nhân rang bơ 250g"
+                            loading="lazy"><b>Hạnh nhân rang bơ 250g</b><span>160.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạnh nhân rang bơ 250g', 160000, '160.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-rang-moc-boc-vo-250g.png"
+                            alt="Hạt điều rang mộc bóc vỏ 250g" loading="lazy"><b>Hạt điều rang mộc bóc vỏ
+                            250g</b><span>196.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều rang mộc bóc vỏ 250g', 196000, '196.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-rang-moc-vo-lua-250g.png"
+                            alt="Hạt điều rang mộc vỏ lụa 250g" loading="lazy"><b>Hạt điều rang mộc vỏ lụa
+                            250g</b><span>186.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều rang mộc vỏ lụa 250g', 186000, '186.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-hop-go-500g.png"
+                            alt="Hạt điều rang muối hộp gỗ 500g" loading="lazy"><b>Hạt điều rang muối hộp gỗ
+                            500g</b><span>428.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều rang muối hộp gỗ 500g', 428000, '428.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-210g.png"
+                            alt="Hạt điều rang muối vỏ lụa 210g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
+                            210g</b><span>144.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều rang muối vỏ lụa 210g', 144000, '144.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-boc-vo-210g.png"
+                            alt="Hạt điều rang muối bóc vỏ 210g" loading="lazy"><b>Hạt điều rang muối bóc vỏ
+                            210g</b><span>155.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều rang muối bóc vỏ 210g', 155000, '155.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-mix-tong-hop-210g.png" alt="Hạt mix tổng hợp 210g"
+                            loading="lazy"><b>Hạt mix tổng hợp 210g</b><span>137.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt mix tổng hợp 210g', 137000, '137.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-capuchino-210g.png" alt="Hạt điều capuchino 210g"
+                            loading="lazy"><b>Hạt điều capuchino 210g</b><span>162.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều capuchino 210g', 162000, '162.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-toi-ot-210g.png" alt="Hạt điều tỏi ớt 210g"
+                            loading="lazy"><b>Hạt điều tỏi ớt 210g</b><span>157.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều tỏi ớt 210g', 157000, '157.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-cacao-210g.png" alt="Hạt điều cacao 210g"
+                            loading="lazy"><b>Hạt điều cacao 210g</b><span>160.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều cacao 210g', 160000, '160.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/nhan-macca-wasabi.png" alt="Nhân macca wasabi"
+                            loading="lazy"><b>Nhân macca wasabi</b><span>224.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Nhân macca wasabi', 224000, '224.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-toi-ot-200g.png" alt="Hạt điều tỏi ớt 200g (hũ)"
+                            loading="lazy"><b>Hạt điều tỏi ớt 200g</b><span>160.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều tỏi ớt 200g (hũ)', 160000, '160.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-capuchino-200g.png" alt="Hạt điều capuchino 200g (hũ)"
+                            loading="lazy"><b>Hạt điều capuchino 200g</b><span>163.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều capuchino 200g (hũ)', 163000, '163.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-cacao-200g.png" alt="Hạt điều cacao 200g (hũ)"
+                            loading="lazy"><b>Hạt điều cacao 200g</b><span>163.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều cacao 200g (hũ)', 163000, '163.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-sachi-rang-moc-250g.png" alt="Hạt sachi rang mộc 250g"
+                            loading="lazy"><b>Hạt sachi rang mộc 250g
+                            (hũ)</b><span>145.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt sachi rang mộc 250g', 145000, '145.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/nho-kho-250g.png" alt="Nho khô 250g" loading="lazy"><b>Nho khô
+                            250g</b><span>110.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Nho khô 250g', 110000, '110.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-sachi-rang-moc-100g.png" alt="Hạt sachi rang mộc 100g"
+                            loading="lazy"><b>Hạt sachi rang mộc 100g</b><span>68.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt sachi rang mộc 100g', 68000, '68.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-100g.png"
+                            alt="Hạt điều rang muối vỏ lụa 100g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
+                            100g</b><span>68.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều rang muối vỏ lụa 100g', 68000, '68.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-boc-vo-205g.png"
+                            alt="Hạt điều rang muối bóc vỏ 205g" loading="lazy"><b>Hạt điều rang muối bóc vỏ
+                            205g</b><span>170.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều rang muối bóc vỏ 205g', 170000, '170.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-205g.png"
+                            alt="Hạt điều rang muối vỏ lụa 205g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
+                            205g</b><span>145.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều rang muối vỏ lụa 205g', 145000, '145.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-400g.png"
+                            alt="Hạt điều rang muối vỏ lụa 400g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
+                            400g</b><span>297.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều rang muối vỏ lụa 400g', 297000, '297.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-boc-vo-400g.png"
+                            alt="Hạt điều rang muối bóc vỏ 400g" loading="lazy"><b>Hạt điều rang muối bóc vỏ
+                            400g</b><span>342.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều rang muối bóc vỏ 400g', 342000, '342.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/kho-ga-bo-toi-200g.png" alt="Khô gà bơ tỏi 200g"
+                            loading="lazy"><b>Khô gà bơ tỏi 200g</b><span>160.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Khô gà bơ tỏi 200g', 160000, '160.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/kho-ga-la-chanh-200g.png" alt="Khô gà lá chanh 200g"
+                            loading="lazy"><b>Khô gà lá chanh 200g</b><span>151.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Khô gà lá chanh 200g', 151000, '151.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/kho-ga-bo-toi-100g.png" alt="Khô gà bơ tỏi 100g"
+                            loading="lazy"><b>Khô gà bơ tỏi 100g</b><span>56.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Khô gà bơ tỏi 100g', 56000, '56.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/kho-ga-la-chanh-100g.png" alt="Khô gà lá chanh 100g"
+                            loading="lazy"><b>Khô gà lá chanh 100g</b><span>52.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Khô gà lá chanh 100g', 52000, '52.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="note">Giá niêm yết theo Catalogue Tết 2027. Liên hệ để nhận chính sách chiết khấu cho số lượng
+                    lớn.</p>
             </div>
         </section>
         <section class="alt">
@@ -5506,7 +5524,7 @@
                     hDetail = g("fh");
                 } else if (activeType === "custom_set") {
                     hType = "Thiết kế mẫu hamper theo yêu cầu";
-                    hDetail = "Set mẫu: " + g("fh_custom") + "\n• Sản phẩm phối thêm: " + getSelectedProducts();
+                    hDetail = "Set mẫu: " + g("fh_custom") + "\n• Sản phẩm lẻ phối thêm: " + getSelectedProducts();
                 } else if (activeType === "budget") {
                     hType = "Ngân sách theo yêu cầu";
                     hDetail = "Mức ngân sách yêu cầu: " + g("f_budget");
@@ -5704,7 +5722,6 @@
             if (openBtn) openBtn.style.display = totalCount > 0 ? "flex" : "none";
             if (totalVal) totalVal.textContent = totalPrice.toLocaleString('vi-VN') + "đ";
 
-            // Lưu vào localStorage
             try {
                 localStorage.setItem('lisa_inquiry_list', JSON.stringify(inquiryList));
             } catch (e) {}
@@ -5822,8 +5839,6 @@
                         msgEl.textContent = "✓ Gửi yêu cầu dự toán thành công! Lisa Food sẽ liên hệ lại sớm nhất.";
                         inquiryList = [];
                         updateCartUI();
-                        try { localStorage.removeItem('lisa_inquiry_list'); } catch (e) {}
-                        try { localStorage.removeItem('lisa_inquiry_list'); } catch (e) {}
                         setTimeout(function () { toggleListModal(false); }, 2500);
                     })
                     .catch(function () {
@@ -7284,7 +7299,7 @@
                 var row = document.createElement("div");
                 row.className = "ln-result-item";
                 row.onclick = function () {
-                    window.location.href = 'san-pham/?q=' + encodeURIComponent(item.title);
+                    selectRetailProduct(item.id, item.img);
                 };
 
                 var displayName = escapeHtml(item.name);

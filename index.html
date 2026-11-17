@@ -10,7 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap&subset=vietnamese"
         rel="stylesheet">
-    <title>LisaFood - Hamper Tết 2027</title>
+    <title>LisaFood - Premium Gift</title>
     <!-- Favicon hiển thị logo LisaFood trên tab trình duyệt website -->
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -883,6 +883,7 @@
                 transform: scale(1.085);
                 filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.12));
             }
+
             .hc:hover img {
                 transform: scale(1.06);
             }
@@ -1124,6 +1125,7 @@
             .lb-main-img-wrap {
                 cursor: default;
             }
+
             .lb-main-img-wrap img {
                 cursor: default;
                 pointer-events: auto;
@@ -1171,9 +1173,11 @@
             .lb-zoom-hint-text::before {
                 content: "Chạm để xem to ảnh HD";
             }
+
             .lb-zoom-hint-text {
                 font-size: 0;
             }
+
             .lb-zoom-hint-text::before {
                 font-size: 11.5px;
             }
@@ -1784,6 +1788,7 @@
         }
 
         @media (hover: none) and (pointer: coarse) {
+
             .lightbox-btn,
             .lb-nav-btn,
             .lb-full-zoom-nav {
@@ -2126,6 +2131,7 @@
             .ln-navbar {
                 height: 56px;
             }
+
             .ln-navbar-inner {
                 padding: 0 10px;
                 gap: 4px;
@@ -2655,6 +2661,7 @@
         .ln-search-results::-webkit-scrollbar {
             width: 5px;
         }
+
         .ln-search-results::-webkit-scrollbar-thumb {
             background: rgba(212, 160, 55, 0.4);
             border-radius: 10px;
@@ -2817,11 +2824,13 @@
                 border-color: #d4a037;
                 transform: translateY(-8px) scale(1.05);
             }
+
             50% {
                 box-shadow: 0 0 0 16px rgba(212, 160, 55, 0);
                 border-color: #d4a037;
                 transform: translateY(-8px) scale(1.05);
             }
+
             100% {
                 box-shadow: 0 12px 30px rgba(197, 139, 27, 0.2);
                 border-color: #d4a037;
@@ -2937,8 +2946,11 @@
 
             <!-- Cột bên phải: Nút tìm kiếm sản phẩm lẻ, hotline và menu mobile -->
             <div class="ln-nav-right">
-                <button type="button" class="ln-search-btn" id="navSearchBtn" onclick="toggleRetailSearch(undefined, event)" title="Tìm kiếm sản phẩm lẻ" aria-label="Tìm kiếm sản phẩm lẻ">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <button type="button" class="ln-search-btn" id="navSearchBtn"
+                    onclick="toggleRetailSearch(undefined, event)" title="Tìm kiếm sản phẩm lẻ"
+                    aria-label="Tìm kiếm sản phẩm lẻ">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
@@ -2954,7 +2966,8 @@
         </div>
         <!-- Menu mở rộng trên điện thoại khi bấm icon 3 gạch -->
         <div class="ln-mobile-menu" id="mobileNavMenu">
-            <a href="javascript:void(0)" class="ln-mobile-link" onclick="toggleMobileNavbar(false); toggleRetailSearch(true);">
+            <a href="javascript:void(0)" class="ln-mobile-link"
+                onclick="toggleMobileNavbar(false); toggleRetailSearch(true);">
                 <span>🔍 Tìm kiếm sản phẩm lẻ</span>
                 <span>›</span>
             </a>
@@ -2981,36 +2994,46 @@
             <!-- Hàng tiêu đề với nút đóng ở góc trên bên phải -->
             <div class="ln-search-top-row">
                 <div class="ln-search-heading">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                     <span>Tìm kiếm sản phẩm lẻ</span>
                 </div>
-                <button type="button" class="ln-search-close-corner" onclick="toggleRetailSearch(false)" aria-label="Đóng tìm kiếm" title="Đóng">✕</button>
+                <button type="button" class="ln-search-close-corner" onclick="toggleRetailSearch(false)"
+                    aria-label="Đóng tìm kiếm" title="Đóng">✕</button>
             </div>
 
             <!-- Thanh nhập tìm kiếm chiếm trọn chiều ngang -->
             <div class="ln-search-bar">
                 <span class="ln-search-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                 </span>
-                <input type="text" id="retailSearchInput" class="ln-search-input" placeholder="Tìm hạt điều, macca, khô gà, hạnh nhân..." autocomplete="off">
-                <button type="button" class="ln-search-clear" id="retailSearchClear" onclick="clearRetailSearch()" title="Xóa tìm kiếm">&times;</button>
+                <input type="text" id="retailSearchInput" class="ln-search-input"
+                    placeholder="Tìm hạt điều, macca, khô gà, hạnh nhân..." autocomplete="off">
+                <button type="button" class="ln-search-clear" id="retailSearchClear" onclick="clearRetailSearch()"
+                    title="Xóa tìm kiếm">&times;</button>
             </div>
 
             <!-- Thẻ gợi ý tìm nhanh -->
             <div class="ln-search-tags">
                 <span class="ln-tags-label">Gợi ý tìm nhanh:</span>
-                <button type="button" class="ln-tag-btn" data-tag="Hạt điều" onclick="applySearchTag('Hạt điều')">Hạt điều</button>
-                <button type="button" class="ln-tag-btn" data-tag="Macca" onclick="applySearchTag('Macca')">Hạt Macca</button>
-                <button type="button" class="ln-tag-btn" data-tag="Hạnh nhân" onclick="applySearchTag('Hạnh nhân')">Hạnh nhân</button>
-                <button type="button" class="ln-tag-btn" data-tag="Khô gà" onclick="applySearchTag('Khô gà')">Khô gà</button>
+                <button type="button" class="ln-tag-btn" data-tag="Hạt điều" onclick="applySearchTag('Hạt điều')">Hạt
+                    điều</button>
+                <button type="button" class="ln-tag-btn" data-tag="Macca" onclick="applySearchTag('Macca')">Hạt
+                    Macca</button>
+                <button type="button" class="ln-tag-btn" data-tag="Hạnh nhân" onclick="applySearchTag('Hạnh nhân')">Hạnh
+                    nhân</button>
+                <button type="button" class="ln-tag-btn" data-tag="Khô gà" onclick="applySearchTag('Khô gà')">Khô
+                    gà</button>
                 <button type="button" class="ln-tag-btn" data-tag="Mix" onclick="applySearchTag('Mix')">Hạt mix</button>
-                <button type="button" class="ln-tag-btn" data-tag="Nho khô" onclick="applySearchTag('Nho khô')">Nho khô</button>
+                <button type="button" class="ln-tag-btn" data-tag="Nho khô" onclick="applySearchTag('Nho khô')">Nho
+                    khô</button>
             </div>
 
             <!-- Dòng chú thích khi chưa tìm kiếm -->
@@ -3021,7 +3044,8 @@
             <!-- Tiêu đề số lượng kết quả (chỉ hiện khi có từ khóa) -->
             <div class="ln-search-meta" id="retailSearchMeta">
                 <span id="retailSearchCount">Tìm thấy 0 sản phẩm</span>
-                <button type="button" class="ln-scroll-grid-btn" onclick="scrollToRetailGrid()">Xem trên kệ hàng ↓</button>
+                <button type="button" class="ln-scroll-grid-btn" onclick="scrollToRetailGrid()">Xem trên kệ hàng
+                    ↓</button>
             </div>
 
             <!-- Danh sách kết quả live (chỉ render khi có từ khóa) -->
@@ -4583,16 +4607,22 @@
                 <!-- Banner hiển thị khi đang tìm kiếm / lọc sản phẩm lẻ -->
                 <div class="retail-filter-banner" id="retailFilterBanner" style="display: none;">
                     <div class="rf-banner-inner">
-                        <span class="rf-banner-text" id="retailFilterBannerText">🔍 Đang lọc theo từ khóa: <b>""</b></span>
-                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">✕ Bỏ lọc, hiện tất cả 28 sản phẩm</button>
+                        <span class="rf-banner-text" id="retailFilterBannerText">🔍 Đang lọc theo từ khóa:
+                            <b>""</b></span>
+                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">✕ Bỏ lọc, hiện tất cả
+                            28 sản phẩm</button>
                     </div>
                 </div>
                 <div class="pg" id="retailProductGrid">
                     <!-- Thông báo khi không tìm thấy sản phẩm lẻ nào -->
-                    <div class="retail-grid-empty" id="retailGridEmpty" style="display: none; grid-column: 1 / -1; text-align: center; padding: 40px 20px; background: #fffdfa; border: 1.5px dashed #d97706; border-radius: 16px; margin: 10px 0;">
-                        <p style="font-size: 16px; font-weight: 700; color: #78350f; margin: 0 0 6px;">Không tìm thấy sản phẩm lẻ nào phù hợp</p>
-                        <p style="font-size: 13.5px; color: #94a3b8; margin: 0 0 14px;">Quý khách vui lòng thử tìm từ khóa khác (ví dụ: hạt điều, macca, khô gà...) hoặc bấm xem lại tất cả.</p>
-                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">Xem lại tất cả 28 sản phẩm</button>
+                    <div class="retail-grid-empty" id="retailGridEmpty"
+                        style="display: none; grid-column: 1 / -1; text-align: center; padding: 40px 20px; background: #fffdfa; border: 1.5px dashed #d97706; border-radius: 16px; margin: 10px 0;">
+                        <p style="font-size: 16px; font-weight: 700; color: #78350f; margin: 0 0 6px;">Không tìm thấy
+                            sản phẩm lẻ nào phù hợp</p>
+                        <p style="font-size: 13.5px; color: #94a3b8; margin: 0 0 14px;">Quý khách vui lòng thử tìm từ
+                            khóa khác (ví dụ: hạt điều, macca, khô gà...) hoặc bấm xem lại tất cả.</p>
+                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">Xem lại tất cả 28 sản
+                            phẩm</button>
                     </div>
                     <div class="pc"><img src="images/hat-dieu-rang-muoi-250g.png" alt="Hạt điều rang muối 250g"
                             loading="lazy"><b>Hạt điều rang muối 250g</b><span>177.000đ</span>
@@ -7161,7 +7191,7 @@
                     var safeQ = query.trim().replace(/[.*+?^$${}()|[\]\\]/g, "\\$&");
                     var reg = new RegExp("(" + safeQ + ")", "gi");
                     displayName = displayName.replace(reg, "<mark>$1</mark>");
-                } catch (e) {}
+                } catch (e) { }
 
                 row.innerHTML = '<div class="ln-result-left">' +
                     '<img src="' + item.img + '" class="ln-result-thumb" alt="' + escapeHtml(item.name) + '">' +

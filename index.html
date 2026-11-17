@@ -180,20 +180,53 @@
             transform: scaleX(-1);
         }
 
+        /* Huy hiệu HAMPER TẾT 2027 to lớn, uy nghi, trọng tâm điểm nhấn */
         .tag {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border: 1.5px solid rgba(242, 199, 92, 0.75);
-            color: #fef3c7;
-            background: rgba(242, 199, 92, 0.12);
+            gap: 12px;
+            border: 2px solid rgba(245, 158, 11, 0.85);
+            color: #ffffff;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(125, 22, 17, 0.5) 50%, rgba(245, 158, 11, 0.25) 100%);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             border-radius: 99px;
-            padding: 6px 18px;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: .08em;
+            padding: 10px 28px;
+            font-size: 16px;
+            font-weight: 800 !important;
+            letter-spacing: 0.14em !important;
             text-transform: uppercase;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            text-shadow: 0 0 14px rgba(245, 158, 11, 0.85), 0 2px 4px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(254, 240, 138, 0.35), inset 0 1px 3px rgba(255, 255, 255, 0.35);
+            margin-bottom: 8px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+        }
+
+        .tag::before,
+        .tag::after {
+            content: "✦";
+            color: #fbbf24;
+            font-size: 14px;
+            line-height: 1;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.9);
+            opacity: 0.95;
+        }
+
+        .tag:hover {
+            transform: scale(1.04);
+            border-color: #f59e0b;
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.45), 0 0 0 2px rgba(254, 240, 138, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .tag {
+                padding: 8px 20px;
+                font-size: 13.5px;
+                gap: 8px;
+                letter-spacing: 0.11em !important;
+            }
         }
 
         .hero h1 {
@@ -920,10 +953,7 @@
             letter-spacing: 0.01em !important;
         }
 
-        .tag {
-            font-weight: 600 !important;
-            letter-spacing: 0.08em !important;
-        }
+
 
         /* Thẻ Hamper & Sản phẩm hiệu ứng viền nổi */
         .hc,

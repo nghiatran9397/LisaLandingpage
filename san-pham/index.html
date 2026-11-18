@@ -2586,7 +2586,7 @@
             }
         }
 
-        
+
         /* --- TỐI ƯU GIAO DIỆN HERO CHO MOBILE (GỌN GÀNG, SANG TRỌNG) --- */
         @media (max-width: 768px) {
             .hero {
@@ -3838,7 +3838,8 @@
                 <span>🥜 Sản phẩm</span>
                 <span>›</span>
             </a>
-            <a href="javascript:void(0)" class="ln-mobile-link" onclick="toggleMobileNavbar(false); toggleListModal(true);">
+            <a href="javascript:void(0)" class="ln-mobile-link"
+                onclick="toggleMobileNavbar(false); toggleListModal(true);">
                 <span>📋 Danh sách quan tâm (<span id="menuCartBadge">0</span>)</span>
                 <span>›</span>
             </a>
@@ -3912,7 +3913,12 @@
             <div class="wrap">
                 <span class="tag">Nông Sản Thượng Hạng</span>
                 <h1>Thế Giới Hạt Dinh Dưỡng & Đặc Sản Tuyển Chọn</h1>
-                <p>Nông sản sạch chuẩn ISO 22000 từ Bình Phước & Tây Nguyên. Giữ trọn vị mộc mạc thơm lành, là lựa chọn tinh tế cho sức khỏe và quà biếu.</p>
+                <p>Khởi nguồn từ niềm tin rằng nông sản Việt xứng đáng được trân trọng và nâng tầm, Lisa Food mang đến
+                    hành trình tuyển chọn những sản phẩm chất lượng từ các vùng nguyên liệu giàu giá trị như Bình Phước,
+                    Lâm Đồng và Tây Nguyên. Bằng sự chỉn chu trong chất lượng, tinh tế trong cách lựa chọn và tâm huyết
+                    trong từng sản phẩm, chúng tôi mong muốn đưa những sản vật Việt vượt khỏi giá trị nguyên bản, trở
+                    thành những món quà ý nghĩa, gửi gắm lời chúc sức khỏe, sự trân trọng và những giá trị bền vững đến
+                    mỗi khách hàng.</p>
                 <div class="btns">
                     <a href="#retailGrid" class="btn gold">Khám phá 28+ Sản phẩm ↓</a>
                     <a href="../#hamper" class="btn ghost">Xem BST Hamper Tết ➔</a>
@@ -3925,7 +3931,7 @@
             <div class="wrap">
                 <div class="title">
                     <h2>Danh Mục Sản Phẩm Lisa Food</h2>
-                    <p>Tuyển chọn 28 sản phẩm hạt dinh dưỡng, trái cây sấy và khô gà thượng hạng.</p>
+                    <p>Tuyển chọn 28+ sản phẩm hạt dinh dưỡng, trái cây sấy và khô gà thượng hạng.</p>
                     <div class="bar"></div>
                 </div>
 
@@ -3955,28 +3961,38 @@
                         </button>
                         <button type="button" class="cat-tab-btn" data-cat="hat-dieu"
                             onclick="filterCategory('hat-dieu', this)">
-                            <span>🌰 Hạt điều</span>
+                            <span>Hạt điều</span>
                             <span class="badge-num">17</span>
                         </button>
                         <button type="button" class="cat-tab-btn" data-cat="macca"
                             onclick="filterCategory('macca', this)">
-                            <span>🥜 Hạt Macca</span>
+                            <span>Hạt Macca</span>
                             <span class="badge-num">2</span>
                         </button>
-                        <button type="button" class="cat-tab-btn" data-cat="hanh-nhan-sachi"
-                            onclick="filterCategory('hanh-nhan-sachi', this)">
-                            <span>✨ Hạnh nhân & Sachi</span>
-                            <span class="badge-num">3</span>
+                        <button type="button" class="cat-tab-btn" data-cat="hanh-nhan"
+                            onclick="filterCategory('hanh-nhan', this)">
+                            <span>Hạnh nhân</span>
+                            <span class="badge-num">1</span>
+                        </button>
+                        <button type="button" class="cat-tab-btn" data-cat="sachi"
+                            onclick="filterCategory('sachi', this)">
+                            <span>Hạt Sachi</span>
+                            <span class="badge-num">2</span>
                         </button>
                         <button type="button" class="cat-tab-btn" data-cat="kho-ga"
                             onclick="filterCategory('kho-ga', this)">
-                            <span>🍗 Khô gà</span>
+                            <span>Khô gà</span>
                             <span class="badge-num">4</span>
                         </button>
-                        <button type="button" class="cat-tab-btn" data-cat="nho-mix"
-                            onclick="filterCategory('nho-mix', this)">
-                            <span>🍇 Nho khô & Mix</span>
-                            <span class="badge-num">2</span>
+                        <button type="button" class="cat-tab-btn" data-cat="nho-kho"
+                            onclick="filterCategory('nho-kho', this)">
+                            <span>Nho khô</span>
+                            <span class="badge-num">1</span>
+                        </button>
+                        <button type="button" class="cat-tab-btn" data-cat="hat-mix"
+                            onclick="filterCategory('hat-mix', this)">
+                            <span>Hạt tổng hợp</span>
+                            <span class="badge-num">1</span>
                         </button>
                     </div>
                 </div>
@@ -4281,9 +4297,8 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hanh-nhan-sachi" id="pc_item_16">
-                        <img src="../images/hat-sachi-rang-moc-250g.png" alt="Hạt sachi rang mộc 250g (hũ)"
-                            loading="lazy">
-                        <b>Hạt sachi rang mộc 250g (hũ)</b>
+                        <img src="../images/hat-sachi-rang-moc-250g.png" alt="Hạt sachi rang mộc 250g" loading="lazy">
+                        <b>Hạt sachi rang mộc 250g</b>
                         <span>145.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
                             <div class="qty-ctrl">
@@ -4295,7 +4310,7 @@
                                     onclick="adjustQty(this, 1)">+</button>
                             </div>
                             <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt sachi rang mộc 250g (hũ)', 145000, '145.000đ', this)">Chọn</button>
+                                onclick="addItemToList('Hạt sachi rang mộc 250g', 145000, '145.000đ', this)">Chọn</button>
                         </div>
                     </div>
                     <div class="pc" data-category="nho-mix" id="pc_item_17">
@@ -4593,7 +4608,8 @@
                         📱 Gửi WhatsApp
                     </button>
                 </div>
-                <p style="margin:6px 0 0;text-align:center;font-size:11px;color:var(--muted);">* Lisa Food cam kết bảo mật thông tin và sẽ liên hệ tư vấn chiết khấu doanh nghiệp sớm nhất.</p>
+                <p style="margin:6px 0 0;text-align:center;font-size:11px;color:var(--muted);">* Lisa Food cam kết bảo
+                    mật thông tin và sẽ liên hệ tư vấn chiết khấu doanh nghiệp sớm nhất.</p>
             </div>
         </div>
     </div>

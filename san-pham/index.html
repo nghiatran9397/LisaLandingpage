@@ -183,26 +183,26 @@
             transform: scaleX(-1);
         }
 
-        /* Huy hiệu HAMPER TẾT 2027 khổng lồ, uy nghi, to hơn cả tiêu đề h1 */
+        /* Huy hiệu Nông Sản Thượng Hạng sang trọng, cân đối */
         .tag {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 16px;
-            border: 3px solid rgba(245, 158, 11, 0.9);
+            gap: 10px;
+            border: 2px solid rgba(245, 158, 11, 0.75);
             color: #ffffff;
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.28) 0%, rgba(125, 22, 17, 0.55) 50%, rgba(245, 158, 11, 0.28) 100%);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.22) 0%, rgba(125, 22, 17, 0.5) 50%, rgba(245, 158, 11, 0.22) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 99px;
-            padding: 14px 44px;
-            font-size: clamp(30px, 4.8vw, 56px);
-            font-weight: 800 !important;
-            letter-spacing: 0.12em !important;
+            padding: 8px 24px;
+            font-size: 15px;
+            font-weight: 700 !important;
+            letter-spacing: 0.1em !important;
             text-transform: uppercase;
-            text-shadow: 0 0 18px rgba(245, 158, 11, 0.9), 0 3px 6px rgba(0, 0, 0, 0.45);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35), 0 0 0 2px rgba(254, 240, 138, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.4);
-            margin-bottom: 20px;
+            text-shadow: 0 0 12px rgba(245, 158, 11, 0.8), 0 2px 4px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(254, 240, 138, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.35);
+            margin-bottom: 16px;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             user-select: none;
         }
@@ -211,25 +211,31 @@
         .tag::after {
             content: "✦";
             color: #fbbf24;
-            font-size: clamp(18px, 2.5vw, 26px);
+            font-size: 13px;
             line-height: 1;
-            text-shadow: 0 0 12px rgba(251, 191, 36, 1);
+            text-shadow: 0 0 10px rgba(251, 191, 36, 1);
             opacity: 0.95;
         }
 
         .tag:hover {
             transform: scale(1.03);
             border-color: #f59e0b;
-            box-shadow: 0 12px 46px rgba(245, 158, 11, 0.55), 0 0 0 3px rgba(254, 240, 138, 0.6);
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.45);
         }
 
         @media (max-width: 768px) {
             .tag {
-                padding: 10px 24px;
-                font-size: 20px;
-                gap: 10px;
-                letter-spacing: 0.08em !important;
-                margin-bottom: 14px;
+                padding: 5px 16px !important;
+                font-size: 12px !important;
+                gap: 7px !important;
+                letter-spacing: 0.06em !important;
+                margin-bottom: 10px !important;
+                border-width: 1.5px !important;
+            }
+
+            .tag::before,
+            .tag::after {
+                font-size: 11px !important;
             }
         }
 
@@ -2426,29 +2432,80 @@
             }
         }
 
-        /* Navbar Mobile chuẩn 5 mục Tết: Logo | Hamper | Sản phẩm | Nút tìm kiếm | Nút 3 gạch */
+        
+        /* --- TỐI ƯU GIAO DIỆN HERO CHO MOBILE (GỌN GÀNG, SANG TRỌNG) --- */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 24px 12px 26px !important;
+                padding-top: 66px !important;
+            }
+
+            .hero h1 {
+                font-size: 20px !important;
+                line-height: 1.35 !important;
+                margin: 0 auto 8px !important;
+                max-width: 360px !important;
+                letter-spacing: -0.2px !important;
+            }
+
+            .hero p {
+                font-size: 13px !important;
+                line-height: 1.55 !important;
+                margin: 0 auto 14px !important;
+                opacity: 0.92 !important;
+                max-width: 340px !important;
+            }
+
+            .hero .btns {
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 8px !important;
+            }
+
+            .hero .btns .btn {
+                padding: 8px 16px !important;
+                font-size: 12.5px !important;
+                font-weight: 700 !important;
+                border-radius: 99px !important;
+                white-space: nowrap !important;
+            }
+
+            .hero::before,
+            .hero::after {
+                display: none !important;
+            }
+        }
+
+        /* Navbar Mobile chuẩn sang trọng Apple/iOS: Logo | Segment Switcher (Hamper / Sản phẩm) | Search | Menu */
         @media (max-width: 768px) {
             .ln-navbar {
-                height: 56px;
-                background: linear-gradient(135deg, rgba(125, 22, 17, 0.95) 0%, rgba(143, 29, 23, 0.93) 50%, rgba(115, 20, 15, 0.96) 100%);
+                height: 52px !important;
+                background: linear-gradient(135deg, rgba(125, 22, 17, 0.96) 0%, rgba(143, 29, 23, 0.94) 50%, rgba(115, 20, 15, 0.97) 100%) !important;
             }
 
             .ln-navbar-inner {
-                padding: 0 10px;
-                gap: 4px;
+                padding: 0 10px !important;
+                gap: 6px !important;
+                height: 52px !important;
             }
 
             /* 1. Logo */
             .ln-brand img {
-                height: 28px;
-                max-width: 82px;
+                height: 24px !important;
+                max-width: 75px !important;
             }
 
-            /* 2 & 3. Hamper & Sản phẩm */
+            /* 2 & 3. Hamper & Sản phẩm dạng Segmented Switcher sang trọng */
             .ln-nav-links {
                 display: flex !important;
-                align-items: center;
-                gap: 3px;
+                align-items: center !important;
+                gap: 2px !important;
+                background: rgba(0, 0, 0, 0.28) !important;
+                padding: 2.5px !important;
+                border-radius: 99px !important;
+                border: 1px solid rgba(245, 158, 11, 0.28) !important;
             }
 
             .ln-link-desktop {
@@ -2457,85 +2514,72 @@
 
             .ln-link-mobile {
                 display: inline-block !important;
-                font-size: 12.5px;
-                font-weight: 700;
-                color: #fff2dc;
-                white-space: nowrap;
+                font-size: 11.5px !important;
+                font-weight: 700 !important;
+                white-space: nowrap !important;
             }
 
             .ln-nav-link {
-                padding: 6px 10px;
-                border-radius: 99px;
-                font-size: 12.5px;
-                border: 1px solid rgba(245, 158, 11, 0.22);
-                background: rgba(255, 255, 255, 0.05);
+                padding: 4px 10px !important;
+                border-radius: 99px !important;
+                font-size: 11.5px !important;
+                color: rgba(255, 242, 220, 0.78) !important;
+                border: none !important;
+                background: transparent !important;
+                text-decoration: none !important;
+                transition: all 0.2s ease !important;
             }
 
-            .ln-nav-link:active,
-            .ln-nav-link:hover {
-                background: linear-gradient(135deg, rgba(254, 215, 170, 0.3) 0%, rgba(251, 146, 60, 0.22) 100%) !important;
-                border-color: #fb923c !important;
+            .ln-nav-link.active {
+                background: linear-gradient(135deg, #d97706, #b45309) !important;
                 color: #ffffff !important;
-                box-shadow: 0 3px 12px rgba(249, 115, 22, 0.3) !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
             }
 
             .ln-desktop-only {
                 display: none !important;
             }
 
-            /* 4 & 5. Nút tìm kiếm & 3 gạch bên phải */
+            /* 4. Nhóm nút bên phải: Search + Menu */
             .ln-nav-right {
-                gap: 5px;
-                flex-shrink: 0;
+                gap: 6px !important;
+            }
+
+            .ln-search-btn {
+                width: 32px !important;
+                height: 32px !important;
+                padding: 0 !important;
+                border-radius: 50% !important;
+                background: rgba(245, 158, 11, 0.18) !important;
+                border: 1px solid rgba(245, 158, 11, 0.35) !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .ln-search-btn span.ln-search-text {
+                display: none !important;
+            }
+
+            .ln-search-btn svg {
+                width: 15px !important;
+                height: 15px !important;
+                stroke: #fff2dc !important;
             }
 
             .ln-call-btn {
                 display: none !important;
             }
 
-            .ln-search-btn {
-                width: 35px;
-                height: 35px;
-                padding: 0;
-                border-radius: 50%;
-                background: rgba(245, 158, 11, 0.16);
-                border: 1px solid rgba(245, 158, 11, 0.38);
-                color: #fff2dc;
-            }
-
-            .ln-search-btn:active,
-            .ln-search-btn:hover {
-                background: rgba(254, 215, 170, 0.32) !important;
-                border-color: #fb923c !important;
-                color: #ffffff !important;
-            }
-
-            .ln-search-btn span.ln-search-text {
-                display: none;
-            }
-
-            .ln-search-btn svg {
-                width: 16px;
-                height: 16px;
-                stroke: #fff2dc;
-            }
-
             .ln-burger {
+                width: 32px !important;
+                height: 32px !important;
+                border-radius: 50% !important;
+                font-size: 15px !important;
+                padding: 0 !important;
                 display: flex !important;
-                width: 35px;
-                height: 35px;
-                border-radius: 50%;
-                font-size: 18px;
-                background: rgba(255, 255, 255, 0.08);
-                border: 1px solid rgba(245, 158, 11, 0.3);
-                color: #fff2dc;
-            }
-
-            .ln-burger:active,
-            .ln-burger:hover {
-                background: rgba(254, 215, 170, 0.28) !important;
-                border-color: #fb923c !important;
-                color: #ffffff !important;
+                align-items: center !important;
+                justify-content: center !important;
             }
         }
 
@@ -3708,22 +3752,12 @@
         <!-- HERO SẢN PHẨM -->
         <div class="hero">
             <div class="wrap">
-                <span class="tag">✦ NÔNG SẢN THƯỢNG HẠNG ✦</span>
+                <span class="tag">Nông Sản Thượng Hạng</span>
                 <h1>Thế Giới Hạt Dinh Dưỡng & Đặc Sản Tuyển Chọn</h1>
-                <p>Từ những vùng nguyên liệu giàu giá trị
-                    như Bình Phước, Lâm Đồng và Tây Nguyên, Lisa Food bắt đầu hành trình
-                    tuyển chọn những sản phẩm tự nhiên
-                    giàu dinh dưỡng - từ hạt điều,
-                    macca, sachi đến những sản phẩm
-                    thực phẩm được lựa chọn cho
-                    lối sống khỏe mạnh. Không chạy theo
-                    số lượng, Lisa Food chú trọng vào
-                    từng lựa chọn: nguồn nguyên liệu,
-                    chất lượng, quy trình kiểm soát và
-                    cách sản phẩm được trao đến tay khách hàng.</p>
+                <p>Nông sản sạch chuẩn ISO 22000 từ Bình Phước & Tây Nguyên. Giữ trọn vị mộc mạc thơm lành, là lựa chọn tinh tế cho sức khỏe và quà biếu.</p>
                 <div class="btns">
                     <a href="#retailGrid" class="btn gold">Khám phá 28+ Sản phẩm ↓</a>
-                    <a href="../#hamper" class="btn ghost">Xem Bộ sưu tập Hamper Tết ➔</a>
+                    <a href="../#hamper" class="btn ghost">Xem BST Hamper Tết ➔</a>
                 </div>
             </div>
         </div>

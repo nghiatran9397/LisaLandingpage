@@ -2423,29 +2423,34 @@
             }
         }
 
-        /* Navbar Mobile chuẩn 5 mục Tết: Logo | Hamper | Sản phẩm | Nút tìm kiếm | Nút 3 gạch */
+        /* Navbar Mobile chuẩn sang trọng Apple/iOS: Logo | Segment Switcher (Hamper / Sản phẩm) | Search | Menu */
         @media (max-width: 768px) {
             .ln-navbar {
-                height: 56px;
-                background: linear-gradient(135deg, rgba(125, 22, 17, 0.95) 0%, rgba(143, 29, 23, 0.93) 50%, rgba(115, 20, 15, 0.96) 100%);
+                height: 52px !important;
+                background: linear-gradient(135deg, rgba(125, 22, 17, 0.96) 0%, rgba(143, 29, 23, 0.94) 50%, rgba(115, 20, 15, 0.97) 100%) !important;
             }
 
             .ln-navbar-inner {
-                padding: 0 10px;
-                gap: 4px;
+                padding: 0 10px !important;
+                gap: 6px !important;
+                height: 52px !important;
             }
 
             /* 1. Logo */
             .ln-brand img {
-                height: 28px;
-                max-width: 82px;
+                height: 24px !important;
+                max-width: 75px !important;
             }
 
-            /* 2 & 3. Hamper & Sản phẩm */
+            /* 2 & 3. Hamper & Sản phẩm dạng Segmented Switcher sang trọng */
             .ln-nav-links {
                 display: flex !important;
-                align-items: center;
-                gap: 3px;
+                align-items: center !important;
+                gap: 2px !important;
+                background: rgba(0, 0, 0, 0.28) !important;
+                padding: 2.5px !important;
+                border-radius: 99px !important;
+                border: 1px solid rgba(245, 158, 11, 0.28) !important;
             }
 
             .ln-link-desktop {
@@ -2454,85 +2459,72 @@
 
             .ln-link-mobile {
                 display: inline-block !important;
-                font-size: 12.5px;
-                font-weight: 700;
-                color: #fff2dc;
-                white-space: nowrap;
+                font-size: 11.5px !important;
+                font-weight: 700 !important;
+                white-space: nowrap !important;
             }
 
             .ln-nav-link {
-                padding: 6px 10px;
-                border-radius: 99px;
-                font-size: 12.5px;
-                border: 1px solid rgba(245, 158, 11, 0.22);
-                background: rgba(255, 255, 255, 0.05);
+                padding: 4px 10px !important;
+                border-radius: 99px !important;
+                font-size: 11.5px !important;
+                color: rgba(255, 242, 220, 0.78) !important;
+                border: none !important;
+                background: transparent !important;
+                text-decoration: none !important;
+                transition: all 0.2s ease !important;
             }
 
-            .ln-nav-link:active,
-            .ln-nav-link:hover {
-                background: linear-gradient(135deg, rgba(254, 215, 170, 0.3) 0%, rgba(251, 146, 60, 0.22) 100%) !important;
-                border-color: #fb923c !important;
+            .ln-nav-link.active {
+                background: linear-gradient(135deg, #d97706, #b45309) !important;
                 color: #ffffff !important;
-                box-shadow: 0 3px 12px rgba(249, 115, 22, 0.3) !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
             }
 
             .ln-desktop-only {
                 display: none !important;
             }
 
-            /* 4 & 5. Nút tìm kiếm & 3 gạch bên phải */
+            /* 4. Nhóm nút bên phải: Search + Menu */
             .ln-nav-right {
-                gap: 5px;
-                flex-shrink: 0;
+                gap: 6px !important;
+            }
+
+            .ln-search-btn {
+                width: 32px !important;
+                height: 32px !important;
+                padding: 0 !important;
+                border-radius: 50% !important;
+                background: rgba(245, 158, 11, 0.18) !important;
+                border: 1px solid rgba(245, 158, 11, 0.35) !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .ln-search-btn span.ln-search-text {
+                display: none !important;
+            }
+
+            .ln-search-btn svg {
+                width: 15px !important;
+                height: 15px !important;
+                stroke: #fff2dc !important;
             }
 
             .ln-call-btn {
                 display: none !important;
             }
 
-            .ln-search-btn {
-                width: 35px;
-                height: 35px;
-                padding: 0;
-                border-radius: 50%;
-                background: rgba(245, 158, 11, 0.16);
-                border: 1px solid rgba(245, 158, 11, 0.38);
-                color: #fff2dc;
-            }
-
-            .ln-search-btn:active,
-            .ln-search-btn:hover {
-                background: rgba(254, 215, 170, 0.32) !important;
-                border-color: #fb923c !important;
-                color: #ffffff !important;
-            }
-
-            .ln-search-btn span.ln-search-text {
-                display: none;
-            }
-
-            .ln-search-btn svg {
-                width: 16px;
-                height: 16px;
-                stroke: #fff2dc;
-            }
-
             .ln-burger {
+                width: 32px !important;
+                height: 32px !important;
+                border-radius: 50% !important;
+                font-size: 15px !important;
+                padding: 0 !important;
                 display: flex !important;
-                width: 35px;
-                height: 35px;
-                border-radius: 50%;
-                font-size: 18px;
-                background: rgba(255, 255, 255, 0.08);
-                border: 1px solid rgba(245, 158, 11, 0.3);
-                color: #fff2dc;
-            }
-
-            .ln-burger:active,
-            .ln-burger:hover {
-                background: rgba(254, 215, 170, 0.28) !important;
-                border-color: #fb923c !important;
-                color: #ffffff !important;
+                align-items: center !important;
+                justify-content: center !important;
             }
         }
 
@@ -3066,7 +3058,7 @@
 
             <!-- 2, 3, 4. Danh sách các mục điều hướng (Desktop & Mobile) -->
             <nav class="ln-nav-links">
-                <a href="#hamper" class="ln-nav-link">
+                <a href="#hamper" class="ln-nav-link active">
                     <span class="ln-link-desktop">Bộ sưu tập Hamper</span>
                     <span class="ln-link-mobile">Hamper</span>
                 </a>

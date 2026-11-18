@@ -819,20 +819,182 @@
             display: none;
             position: fixed;
             inset: 0;
-            z-index: 1000;
-            background: rgba(0, 0, 0, .6);
-            backdrop-filter: blur(3px);
+            z-index: 99999 !important;
+            background: rgba(0, 0, 0, 0.72);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             align-items: center;
             justify-content: center;
-            padding: 16px;
+            padding: 14px;
         }
 
         .list-modal.open,
         .list-modal.active {
-            display: flex;
+            display: flex !important;
         }
 
-        
+        .list-modal-content {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 580px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+            position: relative;
+        }
+
+        .list-modal-header {
+            padding: 14px 18px;
+            background: linear-gradient(135deg, var(--hero), var(--hero2));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .list-modal-header h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .list-close {
+            background: rgba(255, 255, 255, 0.15);
+            border: 0;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            line-height: 1;
+            transition: background 0.2s;
+        }
+
+        .list-close:hover {
+            background: rgba(255, 255, 255, 0.28);
+        }
+
+        .list-modal-body {
+            padding: 16px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            flex: 1 1 auto;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* KHÔNG BAO GIỜ CO RÚT HOẶC ẨN DANH SÁCH MÓN */
+        .inquiry-items-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0 !important;
+            min-height: min-content;
+        }
+
+        .inquiry-item-row {
+            background: #fff;
+            border: 1.5px solid var(--line);
+            border-radius: 12px;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            flex-shrink: 0;
+        }
+
+        .inquiry-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .inquiry-item-title {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0 0 4px 0;
+            line-height: 1.35;
+            word-break: break-word;
+        }
+
+        .inquiry-item-price {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--red);
+        }
+
+        .inquiry-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .inquiry-del-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(185, 28, 28, 0.08);
+            border: 1px solid rgba(185, 28, 28, 0.2);
+            color: #b91c1c;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .inquiry-del-btn:hover {
+            background: #b91c1c;
+            color: #ffffff;
+        }
+
+        .list-total-box {
+            background: var(--bg);
+            border: 1.5px solid var(--line);
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .list-total-val {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--red);
+        }
+
+        .list-modal-footer {
+            padding: 12px 16px;
+            border-top: 1px solid var(--line);
+            background: var(--bg);
+            flex-shrink: 0;
+        }
+
         .modal-footer-btns {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -845,17 +1007,18 @@
             padding: 11px 8px;
             border-radius: 99px;
             font-weight: 700;
-            font-size: 12.5px;
+            font-size: 13px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            gap: 6px;
             white-space: nowrap;
-            transition: transform 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
         }
 
         .btn-sub-action:hover {
             transform: scale(1.02);
+            opacity: 0.95;
         }
 
         .btn-sub-action.btn-zalo {
@@ -875,122 +1038,50 @@
 
         @media (max-width: 600px) {
             .list-modal {
-                padding: 12px !important;
+                padding: 10px !important;
             }
 
             .list-modal-content {
                 max-width: 100% !important;
-                border-radius: 14px !important;
+                border-radius: 16px !important;
+                max-height: 94vh !important;
             }
 
-            .modal-footer-btns {
-                grid-template-columns: 1fr !important;
-                gap: 7px !important;
-            }
-
-            .btn-sub-action {
+            .list-modal-header {
                 padding: 12px 14px !important;
+            }
+
+            .list-modal-header h3 {
+                font-size: 15px !important;
+            }
+
+            .list-modal-body {
+                padding: 12px 14px !important;
+                gap: 10px !important;
+            }
+
+            .list-modal-footer {
+                padding: 10px 14px !important;
+            }
+
+            /* Giao diện mobile: Zalo dòng 1 nổi bật, Email và WhatsApp dòng 2 gọn gàng */
+            .modal-footer-btns {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 6px !important;
+            }
+
+            .modal-footer-btns .btn-zalo {
+                grid-column: span 2 !important;
+                padding: 11px 12px !important;
                 font-size: 13.5px !important;
             }
-        }
 
-        .list-modal-content {
-            background: var(--surface);
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            width: 100%;
-            max-width: 600px;
-            max-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+            .modal-footer-btns .btn-mail,
+            .modal-footer-btns .btn-wa {
+                padding: 9px 8px !important;
+                font-size: 12px !important;
+            }
         }
-
-        .list-modal-header {
-            padding: 16px 20px;
-            background: var(--hero);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .list-modal-header h3 {
-            margin: 0;
-            font-size: 18px;
-            color: #fff;
-        }
-
-        .list-close {
-            background: transparent;
-            border: 0;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-            line-height: 1;
-        }
-
-        .list-modal-body {
-            padding: 16px 20px;
-            overflow-y: auto;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .list-items-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-        }
-
-        .list-items-table th {
-            text-align: left;
-            padding: 8px 6px;
-            border-bottom: 2px solid var(--line);
-            color: var(--muted);
-        }
-
-        .list-items-table td {
-            padding: 8px 6px;
-            border-bottom: 1px solid var(--line);
-            vertical-align: middle;
-        }
-
-        .list-item-del {
-            color: var(--red);
-            background: none;
-            border: 0;
-            cursor: pointer;
-            font-size: 16px;
-            padding: 2px 6px;
-        }
-
-        .list-total-box {
-            background: var(--bg);
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            padding: 12px 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .list-total-val {
-            font-size: 18px;
-            color: var(--red);
-        }
-
-        .list-modal-footer {
-            padding: 14px 20px;
-            border-top: 1px solid var(--line);
-            background: var(--bg);
-        }
-
 
         /* --- CHUẨN HÓA FONT CHỮ LUXURY & CLEAN STYLE --- */
         * {

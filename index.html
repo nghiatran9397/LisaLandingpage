@@ -822,6 +822,68 @@
             display: flex;
         }
 
+        
+        .modal-footer-btns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .btn-sub-action {
+            border: 0;
+            cursor: pointer;
+            padding: 11px 8px;
+            border-radius: 99px;
+            font-weight: 700;
+            font-size: 12.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            white-space: nowrap;
+            transition: transform 0.2s;
+        }
+
+        .btn-sub-action:hover {
+            transform: scale(1.02);
+        }
+
+        .btn-sub-action.btn-zalo {
+            background: #0068ff;
+            color: #fff;
+        }
+
+        .btn-sub-action.btn-mail {
+            background: var(--red);
+            color: var(--on-red);
+        }
+
+        .btn-sub-action.btn-wa {
+            background: #25D366;
+            color: #fff;
+        }
+
+        @media (max-width: 600px) {
+            .list-modal {
+                padding: 12px !important;
+            }
+
+            .list-modal-content {
+                max-width: 100% !important;
+                border-radius: 14px !important;
+            }
+
+            .modal-footer-btns {
+                grid-template-columns: 1fr !important;
+                gap: 7px !important;
+            }
+
+            .btn-sub-action {
+                padding: 12px 14px !important;
+                font-size: 13.5px !important;
+            }
+        }
+
         .list-modal-content {
             background: var(--surface);
             border: 1px solid var(--line);
@@ -3106,6 +3168,10 @@
             </a>
             <a href="san-pham/" class="ln-mobile-link" onclick="toggleMobileNavbar(false)">
                 <span>🥜 Sản phẩm</span>
+                <span>›</span>
+            </a>
+            <a href="javascript:void(0)" class="ln-mobile-link" onclick="toggleMobileNavbar(false); toggleListModal(true);">
+                <span>📋 Danh sách quan tâm (<span id="menuCartBadge">0</span>)</span>
                 <span>›</span>
             </a>
             <a href="#baogia" class="ln-mobile-link" onclick="toggleMobileNavbar(false)">
@@ -5657,22 +5723,21 @@
                     style="margin:0;font-size:13px;min-height:1.2em;text-align:center;font-weight:700;"></p>
             </div>
             <div class="list-modal-footer">
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;">
-                    <button type="button" class="btn sub" onclick="submitModalOrder('email')"
-                        style="background:var(--red);color:var(--on-red);border:0;cursor:pointer;padding:12px;border-radius:99px;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;gap:6px;">
-                        📩 Gửi dự toán qua Email
+                <div class="modal-footer-btns">
+                    <button type="button" class="btn-sub-action btn-zalo" onclick="submitModalOrder('zalo')">
+                        💬 Gửi qua Zalo
                     </button>
-                    <button type="button" class="btn sub" onclick="submitModalOrder('whatsapp')"
-                        style="background:#25D366;color:#fff;border:0;cursor:pointer;padding:12px;border-radius:99px;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;gap:6px;">
-                        💬 Gửi danh sách qua WhatsApp
+                    <button type="button" class="btn-sub-action btn-mail" onclick="submitModalOrder('email')">
+                        📩 Gửi qua Email
+                    </button>
+                    <button type="button" class="btn-sub-action btn-wa" onclick="submitModalOrder('whatsapp')">
+                        📱 Gửi WhatsApp
                     </button>
                 </div>
-                <p style="margin:6px 0 0;text-align:center;font-size:11px;color:var(--muted);">* Lisa Food cam kết bảo
-                    mật thông tin và sẽ liên hệ tư vấn chiết khấu doanh nghiệp sớm nhất.</p>
+                <p style="margin:6px 0 0;text-align:center;font-size:11px;color:var(--muted);">* Lisa Food cam kết bảo mật thông tin và sẽ liên hệ tư vấn chiết khấu doanh nghiệp sớm nhất.</p>
             </div>
         </div>
     </div>
-
 
     <script>
         // --- QUẢN LÝ DANH SÁCH QUAN TÂM & DỰ TOÁN ---
@@ -5738,6 +5803,8 @@
             });
 
             if (badge) badge.textContent = totalCount;
+            var menuBadge = document.getElementById("menuCartBadge");
+            if (menuBadge) menuBadge.textContent = totalCount;
             if (openBtn) openBtn.style.display = totalCount > 0 ? "flex" : "none";
             if (totalVal) totalVal.textContent = totalPrice.toLocaleString('vi-VN') + "đ";
 
@@ -5806,13 +5873,23 @@
             var note = (document.getElementById("m_note").value || "").trim();
 
             if (inquiryList.length === 0) {
-                msgEl.style.color = "var(--red)";
-                msgEl.textContent = "Danh sách hiện đang trống, vui lòng chọn ít nhất 1 mẫu quà.";
+                if (msgEl) {
+                    msgEl.style.color = "var(--red)";
+                    msgEl.textContent = "Danh sách hiện đang trống, vui lòng chọn ít nhất 1 mẫu quà.";
+                } else {
+                    alert("Danh sách đang trống, vui lòng chọn ít nhất 1 mẫu quà!");
+                }
                 return;
             }
             if (phone.replace(/\D/g, "").length < 9) {
-                msgEl.style.color = "var(--red)";
-                msgEl.textContent = "Vui lòng nhập số điện thoại hợp lệ (tối thiểu 9 số).";
+                if (msgEl) {
+                    msgEl.style.color = "var(--red)";
+                    msgEl.textContent = "Vui lòng nhập số điện thoại hợp lệ (tối thiểu 9 số).";
+                } else {
+                    alert("Vui lòng nhập số điện thoại hợp lệ (tối thiểu 9 số)!");
+                }
+                var pInput = document.getElementById("m_phone");
+                if (pInput) pInput.focus();
                 return;
             }
 
@@ -5824,48 +5901,67 @@
                 linesText.push("• " + item.qty + "x " + item.title + " (" + sub.toLocaleString('vi-VN') + "đ)");
             });
 
-            var summaryText = "[PHIẾU YÊU CẦU DỰ TOÁN QUÀ TẾT]\n" +
+            var summaryText = "[PHIẾU YÊU CẦU DỰ TOÁN QUÀ TẾT LISA FOOD]\n" +
                 "• Khách hàng: " + (name || "(Chưa điền)") + "\n" +
                 "• Số điện thoại: " + phone + "\n" +
                 "• Đơn vị / Ghi chú: " + (note || "Không có") + "\n" +
                 "• Danh sách mẫu quà quan tâm:\n" + linesText.join("\n") + "\n" +
                 "• TỔNG DỰ TOÁN THAM KHẢO: " + totalPrice.toLocaleString('vi-VN') + "đ";
 
-            if (channel === 'whatsapp') {
+            if (channel === 'zalo') {
+                try {
+                    navigator.clipboard.writeText(summaryText);
+                } catch (e) { }
+                if (msgEl) {
+                    msgEl.style.color = "#0068ff";
+                    msgEl.textContent = "Đã sao chép nội dung báo giá! Đang mở cửa sổ chat Zalo 0393.955.516...";
+                }
+                setTimeout(function () {
+                    window.open("https://zalo.me/0393955516", "_blank");
+                }, 400);
+            } else if (channel === 'whatsapp') {
                 var waUrl = "https://api.whatsapp.com/send?phone=84907560668&text=" + encodeURIComponent(summaryText);
-                msgEl.style.color = "#25D366";
-                msgEl.textContent = "Đang kết nối WhatsApp với danh sách đã soạn sẵn...";
+                if (msgEl) {
+                    msgEl.style.color = "#25D366";
+                    msgEl.textContent = "Đang kết nối WhatsApp với danh sách đã soạn sẵn...";
+                }
                 window.open(waUrl, "_blank");
-            } else if (channel === 'email') {
-                msgEl.style.color = "var(--gold)";
-                msgEl.textContent = "Đang gửi danh sách dự toán đến sale@lisafood.vn...";
+            } else if (channel === 'email' || channel === 'mail') {
+                if (msgEl) {
+                    msgEl.style.color = "var(--gold)";
+                    msgEl.textContent = "Đang gửi danh sách dự toán đến sale@lisafood.vn...";
+                }
 
                 fetch("https://formsubmit.co/ajax/sale@lisafood.vn", {
                     method: "POST",
                     headers: { "Content-Type": "application/json", "Accept": "application/json" },
                     body: JSON.stringify({
                         _subject: "[Lisa Food Hamper] Yêu cầu dự toán từ " + (name || phone),
-                        "Họ và tên": name,
+                        "Họ và tên": name || "Chưa cung cấp",
                         "Số điện thoại": phone,
-                        "Đơn vị / Ghi chú": note,
-                        "Danh sách mẫu quan tâm": linesText.join(" | "),
-                        "Tổng dự toán tham khảo": totalPrice.toLocaleString('vi-VN') + "đ"
+                        "Đơn vị / Ghi chú": note || "Không có",
+                        "Danh sách quà": linesText.join("\n"),
+                        "Tổng tiền tham khảo": totalPrice.toLocaleString('vi-VN') + "đ"
                     })
                 })
                     .then(function (res) { return res.json(); })
-                    .then(function () {
-                        msgEl.style.color = "#2e7d32";
-                        msgEl.textContent = "✓ Gửi yêu cầu dự toán thành công! Lisa Food sẽ liên hệ lại sớm nhất.";
+                    .then(function (data) {
+                        if (msgEl) {
+                            msgEl.style.color = "#2e7d32";
+                            msgEl.textContent = "✓ Đã gửi thành công! Lisa Food sẽ liên hệ lại sớm nhất.";
+                        }
                         inquiryList = [];
                         updateCartUI();
-                        setTimeout(function () { toggleListModal(false); }, 2500);
+                        setTimeout(function () { toggleListModal(false); }, 2200);
                     })
                     .catch(function () {
                         var a = document.createElement("a");
-                        a.href = "mailto:sale@lisafood.vn?subject=" + encodeURIComponent("Yêu cầu dự toán hamper Tết 2027") + "&body=" + encodeURIComponent(summaryText);
-                        document.body.appendChild(a); a.click(); a.remove();
-                        msgEl.style.color = "#2e7d32";
-                        msgEl.textContent = "Đã mở ứng dụng Email để hoàn tất gửi đến sale@lisafood.vn.";
+                        a.href = "mailto:sale@lisafood.vn?subject=" + encodeURIComponent("[Lisa Food Hamper] Dự toán") + "&body=" + encodeURIComponent(summaryText);
+                        a.click();
+                        if (msgEl) {
+                            msgEl.style.color = "var(--gold)";
+                            msgEl.textContent = "Đã mở ứng dụng Mail của quý khách.";
+                        }
                     });
             }
         }
@@ -7909,16 +8005,41 @@
                 }
             });
 
+            // KHI CHƯA NHẬP TỪ KHÓA: Hiển thị ngay tất cả các mẫu quà & sản phẩm, không bắt khách hàng phải gõ
             if (!query.trim()) {
-                if (resultsWrap) resultsWrap.innerHTML = "";
-                if (metaEl) metaEl.style.display = "none";
-                if (hintEl) hintEl.style.display = "block";
+                if (hintEl) hintEl.style.display = "none";
+                if (metaEl) metaEl.style.display = "flex";
+                if (countEl) countEl.textContent = "Tất cả các mẫu quà & sản phẩm nổi bật (Chạm để xem nhanh):";
 
                 retailSearchData.forEach(function (item) {
                     if (item.cardEl) item.cardEl.style.display = "";
                 });
                 if (banner) banner.style.display = "none";
                 if (emptyGrid) emptyGrid.style.display = "none";
+
+                if (resultsWrap) {
+                    resultsWrap.innerHTML = "";
+                    retailSearchData.forEach(function (item) {
+                        var itemEl = document.createElement("div");
+                        itemEl.className = "ln-result-item";
+                        itemEl.onclick = function () {
+                            selectRetailProduct(item.id, item.img);
+                        };
+
+                        var badgeClass = item.type === "hamper" ? "badge-hamper" : "badge-product";
+                        itemEl.innerHTML =
+                            '<div class="ln-result-left">' +
+                            '  <img class="ln-result-thumb" src="' + item.img + '" alt="' + escapeHtml(item.name) + '">' +
+                            '  <div class="ln-result-info">' +
+                            '    <div class="ln-result-name">' + escapeHtml(item.name) + ' <span class="ln-result-badge ' + badgeClass + '">' + item.badge + '</span></div>' +
+                            '    <div class="ln-result-price">' + item.price + '</div>' +
+                            '  </div>' +
+                            '</div>' +
+                            '<span class="ln-result-btn">Xem ngay ➔</span>';
+
+                        resultsWrap.appendChild(itemEl);
+                    });
+                }
                 return;
             }
 

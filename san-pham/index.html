@@ -11,7 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap&subset=vietnamese"
         rel="stylesheet">
     <title>Sản Phẩm Cao Cấp - Lisa Food | Nông Sản Tuyển Chọn Loại 1</title>
-    <meta name="description" content="Thế giới hạt dinh dưỡng, trái cây sấy và đặc sản Việt Nam đạt chuẩn ISO 22000 & HACCP. Tuyển chọn loại 1 thơm ngon, mộc mạc và an lành từ Lisa Food.">
+    <meta name="description"
+        content="Thế giới hạt dinh dưỡng, trái cây sấy và đặc sản Việt Nam đạt chuẩn ISO 22000 & HACCP. Tuyển chọn loại 1 thơm ngon, mộc mạc và an lành từ Lisa Food.">
     <link rel="canonical" href="https://hamper.lisafoodglobal.com/san-pham/">
     <!-- Favicon hiển thị logo Lisa Food trên tab trình duyệt website -->
     <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon.png?v=2027_official_gold">
@@ -2778,7 +2779,7 @@
             border-radius: 10px;
         }
 
-        
+
         .ln-result-badge {
             display: inline-block;
             font-size: 10px;
@@ -3053,300 +3054,308 @@
                 padding-top: 72px !important;
             }
         }
-    
-/* --- MULTI-PRODUCT SHOWCASE BANNER TRÊN TRANG CHỦ --- */
-.showcase-grid {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    margin-bottom: 36px;
-}
 
-.showcase-card {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-    position: relative;
-    text-decoration: none;
-    color: inherit;
-}
+        /* --- MULTI-PRODUCT SHOWCASE BANNER TRÊN TRANG CHỦ --- */
+        .showcase-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            margin-bottom: 36px;
+        }
 
-.showcase-card:hover {
-    transform: translateY(-5px);
-    border-color: #d97706;
-    box-shadow: 0 14px 34px rgba(180, 83, 9, 0.16);
-}
+        .showcase-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+        }
 
-.showcase-card-img-wrap {
-    position: relative;
-    overflow: hidden;
-    background: #fffdf9;
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-}
+        .showcase-card:hover {
+            transform: translateY(-5px);
+            border-color: #d97706;
+            box-shadow: 0 14px 34px rgba(180, 83, 9, 0.16);
+        }
 
-.showcase-card-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
+        .showcase-card-img-wrap {
+            position: relative;
+            overflow: hidden;
+            background: #fffdf9;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
 
-.showcase-card:hover .showcase-card-img-wrap img {
-    transform: scale(1.08);
-}
+        .showcase-card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-.showcase-card-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: linear-gradient(135deg, #8f1d17 0%, #b3261e 100%);
-    color: #ffffff;
-    font-size: 11.5px;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 99px;
-    box-shadow: 0 2px 8px rgba(143, 29, 23, 0.35);
-    border: 1px solid rgba(245, 158, 11, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-}
+        .showcase-card:hover .showcase-card-img-wrap img {
+            transform: scale(1.08);
+        }
 
-.showcase-card-body {
-    padding: 16px 18px 20px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
+        .showcase-card-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: linear-gradient(135deg, #8f1d17 0%, #b3261e 100%);
+            color: #ffffff;
+            font-size: 11.5px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 99px;
+            box-shadow: 0 2px 8px rgba(143, 29, 23, 0.35);
+            border: 1px solid rgba(245, 158, 11, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
 
-.showcase-card-title {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 6px;
-    line-height: 1.35;
-}
+        .showcase-card-body {
+            padding: 16px 18px 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
 
-.showcase-card-desc {
-    font-size: 13.5px;
-    color: var(--muted);
-    line-height: 1.5;
-    margin-bottom: 14px;
-    flex: 1;
-}
+        .showcase-card-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
+            line-height: 1.35;
+        }
 
-.showcase-card-foot {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 12px;
-    border-top: 1px dashed var(--line);
-}
+        .showcase-card-desc {
+            font-size: 13.5px;
+            color: var(--muted);
+            line-height: 1.5;
+            margin-bottom: 14px;
+            flex: 1;
+        }
 
-.showcase-card-price {
-    color: var(--red);
-    font-weight: 800;
-    font-size: 18px;
-}
+        .showcase-card-foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 12px;
+            border-top: 1px dashed var(--line);
+        }
 
-.showcase-card-cta {
-    font-size: 13px;
-    font-weight: 700;
-    color: #b45309;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    transition: transform 0.2s ease;
-}
+        .showcase-card-price {
+            color: var(--red);
+            font-weight: 800;
+            font-size: 18px;
+        }
 
-.showcase-card:hover .showcase-card-cta {
-    transform: translateX(3px);
-    color: var(--red);
-}
+        .showcase-card-cta {
+            font-size: 13px;
+            font-weight: 700;
+            color: #b45309;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: transform 0.2s ease;
+        }
 
-/* Callout Banner */
-.showcase-callout-banner {
-    background: linear-gradient(135deg, #7a1712 0%, #a3221b 50%, #7a1712 100%);
-    border: 2px solid rgba(245, 158, 11, 0.6);
-    border-radius: 24px;
-    padding: 48px 36px;
-    color: #ffffff;
-    box-shadow: 0 20px 60px rgba(67, 20, 7, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    margin-top: 10px;
-}
+        .showcase-card:hover .showcase-card-cta {
+            transform: translateX(3px);
+            color: var(--red);
+        }
 
-.showcase-callout-banner::before {
-    content: "🌸";
-    position: absolute;
-    left: 20px;
-    bottom: -15px;
-    font-size: 130px;
-    opacity: 0.1;
-    pointer-events: none;
-    transform: scaleX(-1);
-}
+        /* Callout Banner */
+        .showcase-callout-banner {
+            background: linear-gradient(135deg, #7a1712 0%, #a3221b 50%, #7a1712 100%);
+            border: 2px solid rgba(245, 158, 11, 0.6);
+            border-radius: 24px;
+            padding: 48px 36px;
+            color: #ffffff;
+            box-shadow: 0 20px 60px rgba(67, 20, 7, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            margin-top: 10px;
+        }
 
-.showcase-callout-banner::after {
-    content: "✨";
-    position: absolute;
-    right: 25px;
-    top: 15px;
-    font-size: 100px;
-    opacity: 0.12;
-    pointer-events: none;
-}
+        .showcase-callout-banner::before {
+            content: "🌸";
+            position: absolute;
+            left: 20px;
+            bottom: -15px;
+            font-size: 130px;
+            opacity: 0.1;
+            pointer-events: none;
+            transform: scaleX(-1);
+        }
 
-.showcase-badge-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 18px;
-    background: rgba(245, 158, 11, 0.22);
-    border: 1px solid rgba(245, 158, 11, 0.7);
-    border-radius: 99px;
-    color: #fef08a;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    margin-bottom: 16px;
-}
+        .showcase-callout-banner::after {
+            content: "✨";
+            position: absolute;
+            right: 25px;
+            top: 15px;
+            font-size: 100px;
+            opacity: 0.12;
+            pointer-events: none;
+        }
 
-.showcase-callout-banner h3 {
-    font-size: clamp(24px, 3.6vw, 36px);
-    color: #ffffff;
-    margin-bottom: 14px;
-    font-weight: 700;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
+        .showcase-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            background: rgba(245, 158, 11, 0.22);
+            border: 1px solid rgba(245, 158, 11, 0.7);
+            border-radius: 99px;
+            color: #fef08a;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
 
-.showcase-callout-banner p {
-    font-size: 16.5px;
-    max-width: 760px;
-    margin: 0 auto 28px;
-    opacity: 0.95;
-    line-height: 1.65;
-}
+        .showcase-callout-banner h3 {
+            font-size: clamp(24px, 3.6vw, 36px);
+            color: #ffffff;
+            margin-bottom: 14px;
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
 
-.showcase-perks-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    max-width: 900px;
-    margin: 0 auto 34px;
-}
+        .showcase-callout-banner p {
+            font-size: 16.5px;
+            max-width: 760px;
+            margin: 0 auto 28px;
+            opacity: 0.95;
+            line-height: 1.65;
+        }
 
-.showcase-perks-row span {
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(245, 158, 11, 0.4);
-    border-radius: 99px;
-    padding: 8px 18px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #fef9c3;
-    backdrop-filter: blur(8px);
-}
+        .showcase-perks-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto 34px;
+        }
 
-.showcase-btns-row {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-}
+        .showcase-perks-row span {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            border-radius: 99px;
+            padding: 8px 18px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fef9c3;
+            backdrop-filter: blur(8px);
+        }
 
-.showcase-primary-btn {
-    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%) !important;
-    color: #451a03 !important;
-    font-weight: 800 !important;
-    font-size: 16.5px !important;
-    padding: 16px 36px !important;
-    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.5), 0 0 0 1px rgba(254, 240, 138, 0.6) !important;
-    transition: all 0.25s ease !important;
-}
+        .showcase-btns-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+        }
 
-.showcase-primary-btn:hover {
-    transform: scale(1.03) translateY(-2px) !important;
-    box-shadow: 0 12px 36px rgba(245, 158, 11, 0.65) !important;
-}
+        .showcase-primary-btn {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%) !important;
+            color: #451a03 !important;
+            font-weight: 800 !important;
+            font-size: 16.5px !important;
+            padding: 16px 36px !important;
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.5), 0 0 0 1px rgba(254, 240, 138, 0.6) !important;
+            transition: all 0.25s ease !important;
+        }
 
-.showcase-secondary-btn {
-    border: 2px solid rgba(255, 255, 255, 0.8) !important;
-    color: #ffffff !important;
-    font-size: 15.5px !important;
-    padding: 15px 30px !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    backdrop-filter: blur(8px) !important;
-}
+        .showcase-primary-btn:hover {
+            transform: scale(1.03) translateY(-2px) !important;
+            box-shadow: 0 12px 36px rgba(245, 158, 11, 0.65) !important;
+        }
 
-.showcase-secondary-btn:hover {
-    background: rgba(255, 255, 255, 0.18) !important;
-    transform: translateY(-2px) !important;
-}
+        .showcase-secondary-btn {
+            border: 2px solid rgba(255, 255, 255, 0.8) !important;
+            color: #ffffff !important;
+            font-size: 15.5px !important;
+            padding: 15px 30px !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+            backdrop-filter: blur(8px) !important;
+        }
 
-@media (max-width: 768px) {
-    .showcase-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-    .showcase-card-body {
-        padding: 12px 12px 14px;
-    }
-    .showcase-card-title {
-        font-size: 14.5px;
-    }
-    .showcase-card-desc {
-        display: none;
-    }
-    .showcase-card-price {
-        font-size: 15px;
-    }
-    .showcase-callout-banner {
-        padding: 32px 18px;
-        border-radius: 18px;
-    }
-    .showcase-perks-row span {
-        font-size: 12.5px;
-        padding: 6px 14px;
-    }
-    .showcase-primary-btn, .showcase-secondary-btn {
-        width: 100%;
-        text-align: center;
-        padding: 14px 20px !important;
-        font-size: 15px !important;
-    }
-}
+        .showcase-secondary-btn:hover {
+            background: rgba(255, 255, 255, 0.18) !important;
+            transform: translateY(-2px) !important;
+        }
 
-@media (max-width: 480px) {
-    .showcase-grid {
-        grid-template-columns: 1fr;
-    }
-    .showcase-card-desc {
-        display: block;
-    }
-}
+        @media (max-width: 768px) {
+            .showcase-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
 
+            .showcase-card-body {
+                padding: 12px 12px 14px;
+            }
+
+            .showcase-card-title {
+                font-size: 14.5px;
+            }
+
+            .showcase-card-desc {
+                display: none;
+            }
+
+            .showcase-card-price {
+                font-size: 15px;
+            }
+
+            .showcase-callout-banner {
+                padding: 32px 18px;
+                border-radius: 18px;
+            }
+
+            .showcase-perks-row span {
+                font-size: 12.5px;
+                padding: 6px 14px;
+            }
+
+            .showcase-primary-btn,
+            .showcase-secondary-btn {
+                width: 100%;
+                text-align: center;
+                padding: 14px 20px !important;
+                font-size: 15px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-card-desc {
+                display: block;
+            }
+        }
     </style>
-    
-<style>
-/* CSS DÀNH RIÊNG CHO TRANG SẢN PHẨM /san-pham/ */
-.ln-nav-link.active {
-    background: rgba(245, 158, 11, 0.22) !important;
-    border-color: rgba(245, 158, 11, 0.85) !important;
-    color: #fef08a !important;
-    box-shadow: 0 0 16px rgba(245, 158, 11, 0.45);
-}
+
+    <style>
+        /* CSS DÀNH RIÊNG CHO TRANG SẢN PHẨM /san-pham/ */
+        .ln-nav-link.active {
+            background: rgba(245, 158, 11, 0.22) !important;
+            border-color: rgba(245, 158, 11, 0.85) !important;
+            color: #fef08a !important;
+            box-shadow: 0 0 16px rgba(245, 158, 11, 0.45);
+        }
 
 
         /* --- THANH TÌM KIẾM TRỰC TIẾP TRÊN TRANG SẢN PHẨM --- */
@@ -3414,155 +3423,157 @@
         }
 
         .cat-filter-section {
-    margin: 0 0 32px;
-}
+            margin: 0 0 32px;
+        }
 
-.cat-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 24px;
-}
+        .cat-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+        }
 
-.cat-tab-btn {
-    appearance: none;
-    background: #ffffff;
-    border: 1.5px solid #e2d3be;
-    color: #4a3b32;
-    padding: 10px 22px;
-    border-radius: 99px;
-    font-size: 14.5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.22s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
+        .cat-tab-btn {
+            appearance: none;
+            background: #ffffff;
+            border: 1.5px solid #e2d3be;
+            color: #4a3b32;
+            padding: 10px 22px;
+            border-radius: 99px;
+            font-size: 14.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
 
-.cat-tab-btn:hover {
-    border-color: #b45309;
-    color: #b45309;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(180, 83, 9, 0.12);
-}
+        .cat-tab-btn:hover {
+            border-color: #b45309;
+            color: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(180, 83, 9, 0.12);
+        }
 
-.cat-tab-btn.active {
-    background: linear-gradient(135deg, #8f1d17 0%, #b3261e 100%);
-    color: #ffffff;
-    border-color: #d97706;
-    box-shadow: 0 6px 20px rgba(179, 38, 30, 0.35);
-}
+        .cat-tab-btn.active {
+            background: linear-gradient(135deg, #8f1d17 0%, #b3261e 100%);
+            color: #ffffff;
+            border-color: #d97706;
+            box-shadow: 0 6px 20px rgba(179, 38, 30, 0.35);
+        }
 
-.cat-tab-btn .badge-num {
-    background: rgba(245, 158, 11, 0.2);
-    color: inherit;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 99px;
-}
+        .cat-tab-btn .badge-num {
+            background: rgba(245, 158, 11, 0.2);
+            color: inherit;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 99px;
+        }
 
-.cat-tab-btn.active .badge-num {
-    background: rgba(255, 255, 255, 0.25);
-    color: #ffffff;
-}
+        .cat-tab-btn.active .badge-num {
+            background: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+        }
 
-.hamper-cross-banner {
-    background: linear-gradient(135deg, #7a1712 0%, #9e2019 50%, #7a1712 100%);
-    border: 2px solid rgba(245, 158, 11, 0.55);
-    border-radius: 20px;
-    padding: 44px 32px;
-    color: #ffffff;
-    text-align: center;
-    margin: 54px 0 20px;
-    box-shadow: 0 16px 48px rgba(67, 20, 7, 0.28);
-    position: relative;
-    overflow: hidden;
-}
+        .hamper-cross-banner {
+            background: linear-gradient(135deg, #7a1712 0%, #9e2019 50%, #7a1712 100%);
+            border: 2px solid rgba(245, 158, 11, 0.55);
+            border-radius: 20px;
+            padding: 44px 32px;
+            color: #ffffff;
+            text-align: center;
+            margin: 54px 0 20px;
+            box-shadow: 0 16px 48px rgba(67, 20, 7, 0.28);
+            position: relative;
+            overflow: hidden;
+        }
 
-.hamper-cross-banner::before {
-    content: "🎁";
-    position: absolute;
-    right: 30px;
-    top: 15px;
-    font-size: 120px;
-    opacity: 0.12;
-    pointer-events: none;
-}
+        .hamper-cross-banner::before {
+            content: "🎁";
+            position: absolute;
+            right: 30px;
+            top: 15px;
+            font-size: 120px;
+            opacity: 0.12;
+            pointer-events: none;
+        }
 
-.hamper-cross-banner h3 {
-    font-size: clamp(22px, 3.2vw, 32px);
-    color: #fef08a;
-    margin-bottom: 12px;
-    font-weight: 700;
-}
+        .hamper-cross-banner h3 {
+            font-size: clamp(22px, 3.2vw, 32px);
+            color: #fef08a;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
 
-.hamper-cross-banner p {
-    font-size: 16px;
-    max-width: 680px;
-    margin: 0 auto 26px;
-    opacity: 0.95;
-    line-height: 1.6;
-}
+        .hamper-cross-banner p {
+            font-size: 16px;
+            max-width: 680px;
+            margin: 0 auto 26px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
 
-.trust-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 24px;
-}
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 24px;
+        }
 
-.trust-card {
-    background: #ffffff;
-    border: 1px solid #ead9bd;
-    border-radius: 16px;
-    padding: 24px 20px;
-    text-align: center;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-    transition: transform 0.2s ease;
-}
+        .trust-card {
+            background: #ffffff;
+            border: 1px solid #ead9bd;
+            border-radius: 16px;
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease;
+        }
 
-.trust-card:hover {
-    transform: translateY(-3px);
-}
+        .trust-card:hover {
+            transform: translateY(-3px);
+        }
 
-.trust-card .trust-ic {
-    font-size: 34px;
-    margin-bottom: 12px;
-    display: inline-block;
-}
+        .trust-card .trust-ic {
+            font-size: 34px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
 
-.trust-card h4 {
-    font-size: 17px;
-    margin-bottom: 8px;
-    color: #78350f;
-}
+        .trust-card h4 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            color: #78350f;
+        }
 
-.trust-card p {
-    font-size: 14px;
-    color: #6f6154;
-    margin: 0;
-    line-height: 1.5;
-}
+        .trust-card p {
+            font-size: 14px;
+            color: #6f6154;
+            margin: 0;
+            line-height: 1.5;
+        }
 
-@media (max-width: 768px) {
-    .cat-tab-btn {
-        padding: 8px 14px;
-        font-size: 13px;
-        gap: 6px;
-    }
-    .hamper-cross-banner {
-        padding: 28px 18px;
-    }
-    .trust-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
+        @media (max-width: 768px) {
+            .cat-tab-btn {
+                padding: 8px 14px;
+                font-size: 13px;
+                gap: 6px;
+            }
+
+            .hamper-cross-banner {
+                padding: 28px 18px;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
 </head>
 
@@ -3666,12 +3677,17 @@
 
             <div class="ln-search-tags">
                 <span class="ln-tags-label">Gợi ý tìm nhanh:</span>
-                <button type="button" class="ln-tag-btn" data-tag="Hạt điều" onclick="applySearchTag('Hạt điều')">Hạt điều</button>
-                <button type="button" class="ln-tag-btn" data-tag="Macca" onclick="applySearchTag('Macca')">Hạt Macca</button>
-                <button type="button" class="ln-tag-btn" data-tag="Hạnh nhân" onclick="applySearchTag('Hạnh nhân')">Hạnh nhân</button>
-                <button type="button" class="ln-tag-btn" data-tag="Khô gà" onclick="applySearchTag('Khô gà')">Khô gà</button>
+                <button type="button" class="ln-tag-btn" data-tag="Hạt điều" onclick="applySearchTag('Hạt điều')">Hạt
+                    điều</button>
+                <button type="button" class="ln-tag-btn" data-tag="Macca" onclick="applySearchTag('Macca')">Hạt
+                    Macca</button>
+                <button type="button" class="ln-tag-btn" data-tag="Hạnh nhân" onclick="applySearchTag('Hạnh nhân')">Hạnh
+                    nhân</button>
+                <button type="button" class="ln-tag-btn" data-tag="Khô gà" onclick="applySearchTag('Khô gà')">Khô
+                    gà</button>
                 <button type="button" class="ln-tag-btn" data-tag="Mix" onclick="applySearchTag('Mix')">Hạt mix</button>
-                <button type="button" class="ln-tag-btn" data-tag="Nho khô" onclick="applySearchTag('Nho khô')">Nho khô</button>
+                <button type="button" class="ln-tag-btn" data-tag="Nho khô" onclick="applySearchTag('Nho khô')">Nho
+                    khô</button>
             </div>
 
             <div class="ln-search-hint" id="retailSearchHint">
@@ -3680,7 +3696,8 @@
 
             <div class="ln-search-meta" id="retailSearchMeta">
                 <span id="retailSearchCount">Tìm thấy 0 sản phẩm</span>
-                <button type="button" class="ln-scroll-grid-btn" onclick="scrollToRetailGrid()">Xem trên kệ hàng ↓</button>
+                <button type="button" class="ln-scroll-grid-btn" onclick="scrollToRetailGrid()">Xem trên kệ hàng
+                    ↓</button>
             </div>
 
             <div class="ln-search-results" id="retailSearchResults"></div>
@@ -3693,7 +3710,11 @@
             <div class="wrap">
                 <span class="tag">✦ NÔNG SẢN THƯỢNG HẠNG ✦</span>
                 <h1>Thế Giới Hạt Dinh Dưỡng & Đặc Sản Tuyển Chọn</h1>
-                <p>Hạt điều Bình Phước, Macca Đắk Lắk, Hạnh nhân rang bơ và Khô gà Super Premium đạt chuẩn ISO 22000. Giữ trọn vị mộc mạc thơm lành, là lựa chọn tinh tế cho ngày Tết đoàn viên và quà biếu doanh nghiệp.</p>
+                <p>Từ những vùng nguyên liệu giàu giá trị như Bình Phước, Lâm Đồng và Tây Nguyên, Lisa Food bắt đầu hành
+                    trình tuyển chọn những sản phẩm tự nhiên giàu dinh dưỡng - từ hạt điều, macca, sachi đến những sản
+                    phẩm thực phẩm được lựa chọn cho lối sống khỏe mạnh. Không chạy theo số lượng, Lisa Food chú trọng
+                    vào từng lựa chọn: nguồn nguyên liệu, chất lượng, quy trình kiểm soát và cách sản phẩm được trao đến
+                    tay khách hàng.</p>
                 <div class="btns">
                     <a href="#retailGrid" class="btn gold">Khám phá 28+ Sản phẩm ↓</a>
                     <a href="../#hamper" class="btn ghost">Xem Bộ sưu tập Hamper Tết ➔</a>
@@ -3712,43 +3733,50 @@
 
                 <!-- BỘ LỌC PHÂN LOẠI DANH MỤC SẢN PHẨM -->
                 <div class="cat-filter-section">
-                                    <!-- THANH TÌM KIẾM TRỰC TIẾP TRÊN TRANG -->
-                <div class="cat-search-box-row">
-                    <div class="cat-search-inline-bar">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                        <input type="text" id="catInlineSearchInput" class="cat-inline-input"
-                            placeholder="Tìm kiếm sản phẩm hạt điều, macca, khô gà, hạnh nhân..." autocomplete="off">
-                        <button type="button" class="cat-inline-clear" id="catInlineClear" onclick="clearRetailSearch()"
-                            title="Xóa tìm kiếm">&times;</button>
+                    <!-- THANH TÌM KIẾM TRỰC TIẾP TRÊN TRANG -->
+                    <div class="cat-search-box-row">
+                        <div class="cat-search-inline-bar">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b45309"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input type="text" id="catInlineSearchInput" class="cat-inline-input"
+                                placeholder="Tìm kiếm sản phẩm hạt điều, macca, khô gà, hạnh nhân..."
+                                autocomplete="off">
+                            <button type="button" class="cat-inline-clear" id="catInlineClear"
+                                onclick="clearRetailSearch()" title="Xóa tìm kiếm">&times;</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="cat-tabs" id="catTabsWrap">
-                        <button type="button" class="cat-tab-btn active" data-cat="all" onclick="filterCategory('all', this)">
+                    <div class="cat-tabs" id="catTabsWrap">
+                        <button type="button" class="cat-tab-btn active" data-cat="all"
+                            onclick="filterCategory('all', this)">
                             <span>Tất cả sản phẩm</span>
                             <span class="badge-num" id="catCountAll">28</span>
                         </button>
-                        <button type="button" class="cat-tab-btn" data-cat="hat-dieu" onclick="filterCategory('hat-dieu', this)">
+                        <button type="button" class="cat-tab-btn" data-cat="hat-dieu"
+                            onclick="filterCategory('hat-dieu', this)">
                             <span>🌰 Hạt điều</span>
                             <span class="badge-num">17</span>
                         </button>
-                        <button type="button" class="cat-tab-btn" data-cat="macca" onclick="filterCategory('macca', this)">
+                        <button type="button" class="cat-tab-btn" data-cat="macca"
+                            onclick="filterCategory('macca', this)">
                             <span>🥜 Hạt Macca</span>
                             <span class="badge-num">2</span>
                         </button>
-                        <button type="button" class="cat-tab-btn" data-cat="hanh-nhan-sachi" onclick="filterCategory('hanh-nhan-sachi', this)">
+                        <button type="button" class="cat-tab-btn" data-cat="hanh-nhan-sachi"
+                            onclick="filterCategory('hanh-nhan-sachi', this)">
                             <span>✨ Hạnh nhân & Sachi</span>
                             <span class="badge-num">3</span>
                         </button>
-                        <button type="button" class="cat-tab-btn" data-cat="kho-ga" onclick="filterCategory('kho-ga', this)">
+                        <button type="button" class="cat-tab-btn" data-cat="kho-ga"
+                            onclick="filterCategory('kho-ga', this)">
                             <span>🍗 Khô gà</span>
                             <span class="badge-num">4</span>
                         </button>
-                        <button type="button" class="cat-tab-btn" data-cat="nho-mix" onclick="filterCategory('nho-mix', this)">
+                        <button type="button" class="cat-tab-btn" data-cat="nho-mix"
+                            onclick="filterCategory('nho-mix', this)">
                             <span>🍇 Nho khô & Mix</span>
                             <span class="badge-num">2</span>
                         </button>
@@ -3759,7 +3787,8 @@
                 <div class="retail-filter-banner" id="retailFilterBanner" style="display: none;">
                     <div class="rf-banner-inner">
                         <span class="rf-banner-text" id="retailFilterBannerText">🔍 Đang lọc theo: <b>""</b></span>
-                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">✕ Bỏ lọc, hiện tất cả 28 sản phẩm</button>
+                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">✕ Bỏ lọc, hiện tất cả
+                            28 sản phẩm</button>
                     </div>
                 </div>
 
@@ -3768,11 +3797,14 @@
                     <!-- Thông báo khi không tìm thấy sản phẩm nào -->
                     <div class="retail-grid-empty" id="retailGridEmpty"
                         style="display: none; grid-column: 1 / -1; text-align: center; padding: 40px 20px; background: #fffdfa; border: 1.5px dashed #d97706; border-radius: 16px; margin: 10px 0;">
-                        <p style="font-size: 16px; font-weight: 700; color: #78350f; margin: 0 0 6px;">Không tìm thấy sản phẩm nào phù hợp</p>
-                        <p style="font-size: 13.5px; color: #94a3b8; margin: 0 0 14px;">Quý khách vui lòng thử tìm từ khóa khác hoặc bấm xem lại tất cả.</p>
-                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">Xem lại tất cả 28 sản phẩm</button>
+                        <p style="font-size: 16px; font-weight: 700; color: #78350f; margin: 0 0 6px;">Không tìm thấy
+                            sản phẩm nào phù hợp</p>
+                        <p style="font-size: 13.5px; color: #94a3b8; margin: 0 0 14px;">Quý khách vui lòng thử tìm từ
+                            khóa khác hoặc bấm xem lại tất cả.</p>
+                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">Xem lại tất cả 28 sản
+                            phẩm</button>
                     </div>
-                    
+
                     <div class="pc" data-category="hat-dieu" id="pc_item_0">
                         <img src="../images/hat-dieu-rang-muoi-250g.png" alt="Hạt điều rang muối 250g" loading="lazy">
                         <b>Hạt điều rang muối 250g</b>
@@ -3825,7 +3857,8 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_3">
-                        <img src="../images/hat-dieu-rang-moc-boc-vo-250g.png" alt="Hạt điều rang mộc bóc vỏ 250g" loading="lazy">
+                        <img src="../images/hat-dieu-rang-moc-boc-vo-250g.png" alt="Hạt điều rang mộc bóc vỏ 250g"
+                            loading="lazy">
                         <b>Hạt điều rang mộc bóc vỏ 250g</b>
                         <span>196.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -3842,7 +3875,8 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_4">
-                        <img src="../images/hat-dieu-rang-moc-vo-lua-250g.png" alt="Hạt điều rang mộc vỏ lụa 250g" loading="lazy">
+                        <img src="../images/hat-dieu-rang-moc-vo-lua-250g.png" alt="Hạt điều rang mộc vỏ lụa 250g"
+                            loading="lazy">
                         <b>Hạt điều rang mộc vỏ lụa 250g</b>
                         <span>186.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -3859,7 +3893,8 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_5">
-                        <img src="../images/hat-dieu-rang-muoi-hop-go-500g.png" alt="Hạt điều rang muối hộp gỗ 500g" loading="lazy">
+                        <img src="../images/hat-dieu-rang-muoi-hop-go-500g.png" alt="Hạt điều rang muối hộp gỗ 500g"
+                            loading="lazy">
                         <b>Hạt điều rang muối hộp gỗ 500g</b>
                         <span>428.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -3876,7 +3911,8 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_6">
-                        <img src="../images/hat-dieu-rang-muoi-vo-lua-210g.png" alt="Hạt điều rang muối vỏ lụa 210g" loading="lazy">
+                        <img src="../images/hat-dieu-rang-muoi-vo-lua-210g.png" alt="Hạt điều rang muối vỏ lụa 210g"
+                            loading="lazy">
                         <b>Hạt điều rang muối vỏ lụa 210g</b>
                         <span>144.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -3893,7 +3929,8 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_7">
-                        <img src="../images/hat-dieu-rang-muoi-boc-vo-210g.png" alt="Hạt điều rang muối bóc vỏ 210g" loading="lazy">
+                        <img src="../images/hat-dieu-rang-muoi-boc-vo-210g.png" alt="Hạt điều rang muối bóc vỏ 210g"
+                            loading="lazy">
                         <b>Hạt điều rang muối bóc vỏ 210g</b>
                         <span>155.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4046,7 +4083,8 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hanh-nhan-sachi" id="pc_item_16">
-                        <img src="../images/hat-sachi-rang-moc-250g.png" alt="Hạt sachi rang mộc 250g (hũ)" loading="lazy">
+                        <img src="../images/hat-sachi-rang-moc-250g.png" alt="Hạt sachi rang mộc 250g (hũ)"
+                            loading="lazy">
                         <b>Hạt sachi rang mộc 250g (hũ)</b>
                         <span>145.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4097,7 +4135,8 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_19">
-                        <img src="../images/hat-dieu-rang-muoi-vo-lua-100g.png" alt="Hạt điều rang muối vỏ lụa 100g" loading="lazy">
+                        <img src="../images/hat-dieu-rang-muoi-vo-lua-100g.png" alt="Hạt điều rang muối vỏ lụa 100g"
+                            loading="lazy">
                         <b>Hạt điều rang muối vỏ lụa 100g</b>
                         <span>68.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4114,7 +4153,8 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_20">
-                        <img src="../images/hat-dieu-rang-muoi-boc-vo-205g.png" alt="Hạt điều rang muối bóc vỏ 205g" loading="lazy">
+                        <img src="../images/hat-dieu-rang-muoi-boc-vo-205g.png" alt="Hạt điều rang muối bóc vỏ 205g"
+                            loading="lazy">
                         <b>Hạt điều rang muối bóc vỏ 205g</b>
                         <span>170.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4131,7 +4171,8 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_21">
-                        <img src="../images/hat-dieu-rang-muoi-vo-lua-205g.png" alt="Hạt điều rang muối vỏ lụa 205g" loading="lazy">
+                        <img src="../images/hat-dieu-rang-muoi-vo-lua-205g.png" alt="Hạt điều rang muối vỏ lụa 205g"
+                            loading="lazy">
                         <b>Hạt điều rang muối vỏ lụa 205g</b>
                         <span>145.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4148,7 +4189,8 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_22">
-                        <img src="../images/hat-dieu-rang-muoi-vo-lua-400g.png" alt="Hạt điều rang muối vỏ lụa 400g" loading="lazy">
+                        <img src="../images/hat-dieu-rang-muoi-vo-lua-400g.png" alt="Hạt điều rang muối vỏ lụa 400g"
+                            loading="lazy">
                         <b>Hạt điều rang muối vỏ lụa 400g</b>
                         <span>297.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4165,7 +4207,8 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_23">
-                        <img src="../images/hat-dieu-rang-muoi-boc-vo-400g.png" alt="Hạt điều rang muối bóc vỏ 400g" loading="lazy">
+                        <img src="../images/hat-dieu-rang-muoi-boc-vo-400g.png" alt="Hạt điều rang muối bóc vỏ 400g"
+                            loading="lazy">
                         <b>Hạt điều rang muối bóc vỏ 400g</b>
                         <span>342.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4250,12 +4293,15 @@
                         </div>
                     </div>
                 </div>
-                <p class="note">Giá niêm yết theo Catalogue Tết 2027. Quý khách vui lòng liên hệ hotline để nhận chính sách chiết khấu tốt nhất cho số lượng lớn.</p>
+                <p class="note">Giá niêm yết theo Catalogue Tết 2027. Quý khách vui lòng liên hệ hotline để nhận chính
+                    sách chiết khấu tốt nhất cho số lượng lớn.</p>
 
                 <!-- BANNER ĐIỀU HƯỚNG SANG HAMPER TẾT -->
                 <div class="hamper-cross-banner">
                     <h3>🎁 Phối Hợp Vào Hộp Quà Hamper Tết 2027</h3>
-                    <p>Quý khách có thể tự do phối hợp các loại hạt dinh dưỡng & khô gà theo sở thích riêng vào từng mẫu Hamper Tết. Lisa Food hỗ trợ thiết kế thiệp chúc xuân và khắc laser logo thương hiệu miễn phí cho doanh nghiệp.</p>
+                    <p>Quý khách có thể tự do phối hợp các loại hạt dinh dưỡng & khô gà theo sở thích riêng vào từng mẫu
+                        Hamper Tết. Lisa Food hỗ trợ thiết kế thiệp chúc xuân và khắc laser logo thương hiệu miễn phí
+                        cho doanh nghiệp.</p>
                     <div class="btns">
                         <a href="../#hamper" class="btn gold">Khám Phá Bộ Sưu Tập Hamper ➔</a>
                         <a href="../#baogia" class="btn ghost">Đăng Ký Nhận Báo Giá</a>
@@ -4295,7 +4341,8 @@
         </div>
     </footer>
 
-    <div class="mobile-call"><a href="tel:0393955516">📞 Gọi ngay</a><a class="z" href="https://zalo.me/0393955516">💬 Zalo</a></div>
+    <div class="mobile-call"><a href="tel:0393955516">📞 Gọi ngay</a><a class="z" href="https://zalo.me/0393955516">💬
+            Zalo</a></div>
 
     <!-- Nút ghim nổi: Danh sách quan tâm / Dự toán -->
     <button type="button" class="float-list-btn" id="openModalBtn" onclick="toggleListModal(true)"
@@ -4479,1103 +4526,1103 @@
 
     <!-- LIGHTBOX & PRODUCT DETAILS SCRIPT -->
     <script>
-// --- BẢNG DỮ LIỆU CHI TIẾT SẢN PHẨM GẮN THEO FILE ẢNH (KEYED BY IMAGE PATH) ---
+        // --- BẢNG DỮ LIỆU CHI TIẾT SẢN PHẨM GẮN THEO FILE ẢNH (KEYED BY IMAGE PATH) ---
         // Thầy có thể nhập tay thông tin từng sản phẩm vào bảng này dựa theo tên file ảnh.
         // - Sản phẩm nào có khai báo trong bảng này: Sẽ tự động mở giao diện 2 cột với nội dung chuẩn.
         // - Sản phẩm nào chưa khai báo: Sẽ tự động mở chế độ phóng to ảnh truyền thống.
         var productDetailsByImage = {
             "../images/hamper-happy-new-year.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Happy New Year",
-          "price": "590.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Happy New Year",
+                "price": "590.000đ",
+                "description": [
                     "Happy New Year - Khởi đầu rực rỡ, vạn sự hanh thông",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạt điều rang muối 250g, Hạt Macca sấy 250g, Khô gà lá chanh 100g, Nho khô Chile 250g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạt điều rang muối 250g, Hạt Macca sấy 250g, Khô gà lá chanh 100g, Nho khô Chile 250g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-happy-new-year.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Happy New Year",
-          "price": "590.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Happy New Year",
+                "price": "590.000đ",
+                "description": [
                     "Happy New Year - Khởi đầu rực rỡ, vạn sự hanh thông",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạt điều rang muối 250g, Hạt Macca sấy 250g, Khô gà lá chanh 100g, Nho khô Chile 250g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạt điều rang muối 250g, Hạt Macca sấy 250g, Khô gà lá chanh 100g, Nho khô Chile 250g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-sac-xuan-01-a-2.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Sắc Xuân 01 (A)",
-          "price": "1.022.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Sắc Xuân 01 (A)",
+                "price": "1.022.000đ",
+                "description": [
                     "Hộp quà ô cửa sổ mỹ thuật 2 tầng sang trọng, kèm túi xách đồng bộ",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạt điều Capuchino 210g, Hạt mix tổng hợp 200g, Nhân Macca Wasabi 210g, Hạt điều tỏi ớt 210g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạt điều Capuchino 210g, Hạt mix tổng hợp 200g, Nhân Macca Wasabi 210g, Hạt điều tỏi ớt 210g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-sac-xuan-01-a-2.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Sắc Xuân 01 (A)",
-          "price": "1.022.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Sắc Xuân 01 (A)",
+                "price": "1.022.000đ",
+                "description": [
                     "Hộp quà ô cửa sổ mỹ thuật 2 tầng sang trọng, kèm túi xách đồng bộ",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạt điều Capuchino 210g, Hạt mix tổng hợp 200g, Nhân Macca Wasabi 210g, Hạt điều tỏi ớt 210g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạt điều Capuchino 210g, Hạt mix tổng hợp 200g, Nhân Macca Wasabi 210g, Hạt điều tỏi ớt 210g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-sac-xuan-01-b.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Sắc Xuân 01 (B)",
-          "price": "1.154.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Sắc Xuân 01 (B)",
+                "price": "1.154.000đ",
+                "description": [
                     "Bộ quà 6 món hũ thủy tinh Super Premium thượng hạng kèm túi xách",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạt Macca sấy 250g, Hạnh nhân rang bơ 250g, Hạt điều Capuchino 200g, Hạt điều Cacao 200g, Hạt mix tổng hợp 230g, Nho khô Chile 250g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạt Macca sấy 250g, Hạnh nhân rang bơ 250g, Hạt điều Capuchino 200g, Hạt điều Cacao 200g, Hạt mix tổng hợp 230g, Nho khô Chile 250g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-sac-xuan-01-b.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Sắc Xuân 01 (B)",
-          "price": "1.154.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Sắc Xuân 01 (B)",
+                "price": "1.154.000đ",
+                "description": [
                     "Bộ quà 6 món hũ thủy tinh Super Premium thượng hạng kèm túi xách",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạt Macca sấy 250g, Hạnh nhân rang bơ 250g, Hạt điều Capuchino 200g, Hạt điều Cacao 200g, Hạt mix tổng hợp 230g, Nho khô Chile 250g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạt Macca sấy 250g, Hạnh nhân rang bơ 250g, Hạt điều Capuchino 200g, Hạt điều Cacao 200g, Hạt mix tổng hợp 230g, Nho khô Chile 250g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-sac-xuan-02-a.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Sắc Xuân 02 (A)",
-          "price": "1.043.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Sắc Xuân 02 (A)",
+                "price": "1.043.000đ",
+                "description": [
                     "Kết hợp hoàn mỹ cùng Rượu Vang Ý, Chi-lê, Pháp nhập khẩu",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Rượu vang Ý / Chi-lê / Pháp 750ml, Hạt điều rang muối 250g, Hạt Macca sấy 250g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Rượu vang Ý / Chi-lê / Pháp 750ml, Hạt điều rang muối 250g, Hạt Macca sấy 250g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-sac-xuan-02-a.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Sắc Xuân 02 (A)",
-          "price": "1.043.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Sắc Xuân 02 (A)",
+                "price": "1.043.000đ",
+                "description": [
                     "Kết hợp hoàn mỹ cùng Rượu Vang Ý, Chi-lê, Pháp nhập khẩu",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Rượu vang Ý / Chi-lê / Pháp 750ml, Hạt điều rang muối 250g, Hạt Macca sấy 250g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Rượu vang Ý / Chi-lê / Pháp 750ml, Hạt điều rang muối 250g, Hạt Macca sấy 250g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-sac-xuan-02-b.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Sắc Xuân 02 (B)",
-          "price": "999.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Sắc Xuân 02 (B)",
+                "price": "999.000đ",
+                "description": [
                     "Món quà trọn vẹn sức khỏe dưới 1 triệu đồng cho doanh nghiệp",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạt điều rang muối 250g, Hạt Macca sấy 250g, Khô gà lá chanh 200g, Khô gà bơ tỏi 200g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạt điều rang muối 250g, Hạt Macca sấy 250g, Khô gà lá chanh 200g, Khô gà bơ tỏi 200g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-sac-xuan-02-b.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Sắc Xuân 02 (B)",
-          "price": "999.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Sắc Xuân 02 (B)",
+                "price": "999.000đ",
+                "description": [
                     "Món quà trọn vẹn sức khỏe dưới 1 triệu đồng cho doanh nghiệp",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạt điều rang muối 250g, Hạt Macca sấy 250g, Khô gà lá chanh 200g, Khô gà bơ tỏi 200g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạt điều rang muối 250g, Hạt Macca sấy 250g, Khô gà lá chanh 200g, Khô gà bơ tỏi 200g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-ngoc-vu-khai-loc-a.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Ngọc Vũ Khai Lộc (A)",
-          "price": "955.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Ngọc Vũ Khai Lộc (A)",
+                "price": "955.000đ",
+                "description": [
                     "Thiết kế hộp lục giác tích hợp đèn LED phát sáng nghệ thuật & Rượu\r\n                                sake",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Rượu sake Masuki Aka 300ml, Hạt điều tỏi ớt 210g, Hạt điều Cacao 210g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Rượu sake Masuki Aka 300ml, Hạt điều tỏi ớt 210g, Hạt điều Cacao 210g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-ngoc-vu-khai-loc-a.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Ngọc Vũ Khai Lộc (A)",
-          "price": "955.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Ngọc Vũ Khai Lộc (A)",
+                "price": "955.000đ",
+                "description": [
                     "Thiết kế hộp lục giác tích hợp đèn LED phát sáng nghệ thuật & Rượu\r\n                                sake",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Rượu sake Masuki Aka 300ml, Hạt điều tỏi ớt 210g, Hạt điều Cacao 210g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Rượu sake Masuki Aka 300ml, Hạt điều tỏi ớt 210g, Hạt điều Cacao 210g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-ngoc-vu-khai-loc-b.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Ngọc Vũ Khai Lộc (B)",
-          "price": "899.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Ngọc Vũ Khai Lộc (B)",
+                "price": "899.000đ",
+                "description": [
                     "Hộp quà lục giác mỹ thuật có đèn cùng bộ 4 món hạt dinh dưỡng",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Nho khô Chile 250g, Hạt mix tổng hợp 230g, Hạt Sachi rang mộc 250g, Nhân Macca Wasabi 210g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Nho khô Chile 250g, Hạt mix tổng hợp 230g, Hạt Sachi rang mộc 250g, Nhân Macca Wasabi 210g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-ngoc-vu-khai-loc-b.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Ngọc Vũ Khai Lộc (B)",
-          "price": "899.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Ngọc Vũ Khai Lộc (B)",
+                "price": "899.000đ",
+                "description": [
                     "Hộp quà lục giác mỹ thuật có đèn cùng bộ 4 món hạt dinh dưỡng",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Nho khô Chile 250g, Hạt mix tổng hợp 230g, Hạt Sachi rang mộc 250g, Nhân Macca Wasabi 210g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Nho khô Chile 250g, Hạt mix tổng hợp 230g, Hạt Sachi rang mộc 250g, Nhân Macca Wasabi 210g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-xuan-hoan-ca.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Xuân Hoan Ca",
-          "price": "1.380.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Xuân Hoan Ca",
+                "price": "1.380.000đ",
+                "description": [
                     "Hộp mỹ thuật hoa văn xanh lam quý phái cùng vang trắng Paolini\r\n                                Lucido",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Rượu vang trắng Paolini Lucido 750ml, Hạnh nhân rang bơ 250g, Hạt điều rang muối 250g, Hạt điều tỏi ớt 210g, Hạt điều Cacao 210g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Rượu vang trắng Paolini Lucido 750ml, Hạnh nhân rang bơ 250g, Hạt điều rang muối 250g, Hạt điều tỏi ớt 210g, Hạt điều Cacao 210g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-xuan-hoan-ca.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Xuân Hoan Ca",
-          "price": "1.380.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Xuân Hoan Ca",
+                "price": "1.380.000đ",
+                "description": [
                     "Hộp mỹ thuật hoa văn xanh lam quý phái cùng vang trắng Paolini\r\n                                Lucido",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Rượu vang trắng Paolini Lucido 750ml, Hạnh nhân rang bơ 250g, Hạt điều rang muối 250g, Hạt điều tỏi ớt 210g, Hạt điều Cacao 210g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Rượu vang trắng Paolini Lucido 750ml, Hạnh nhân rang bơ 250g, Hạt điều rang muối 250g, Hạt điều tỏi ớt 210g, Hạt điều Cacao 210g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-huong-xuan.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Hương Xuân",
-          "price": "1.314.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Hương Xuân",
+                "price": "1.314.000đ",
+                "description": [
                     "Thiết kế biểu tượng Linh Dương thịnh vượng - 6 món thượng hạng",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạnh nhân rang bơ 250g, Hạt điều rang muối 250g, Hạt Macca sấy 250g, Hạt điều Capuchino 200g, Hạt điều Cacao 200g, Hạt điều tỏi ớt 200g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạnh nhân rang bơ 250g, Hạt điều rang muối 250g, Hạt Macca sấy 250g, Hạt điều Capuchino 200g, Hạt điều Cacao 200g, Hạt điều tỏi ớt 200g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-huong-xuan.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Hương Xuân",
-          "price": "1.314.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Hương Xuân",
+                "price": "1.314.000đ",
+                "description": [
                     "Thiết kế biểu tượng Linh Dương thịnh vượng - 6 món thượng hạng",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạnh nhân rang bơ 250g, Hạt điều rang muối 250g, Hạt Macca sấy 250g, Hạt điều Capuchino 200g, Hạt điều Cacao 200g, Hạt điều tỏi ớt 200g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạnh nhân rang bơ 250g, Hạt điều rang muối 250g, Hạt Macca sấy 250g, Hạt điều Capuchino 200g, Hạt điều Cacao 200g, Hạt điều tỏi ớt 200g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-xuan-dong-day.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Xuân Đong Đầy",
-          "price": "1.055.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Xuân Đong Đầy",
+                "price": "1.055.000đ",
+                "description": [
                     "Bộ 5 loại hạt dinh dưỡng thanh lành cho gia đình sum vầy",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạt Sachi rang mộc 200g, Hạt điều Capuchino 210g, Hạt điều Cacao 210g, Hạt điều tỏi ớt 210g, Hạt mix tổng hợp 200g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạt Sachi rang mộc 200g, Hạt điều Capuchino 210g, Hạt điều Cacao 210g, Hạt điều tỏi ớt 210g, Hạt mix tổng hợp 200g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-xuan-dong-day.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Xuân Đong Đầy",
-          "price": "1.055.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Xuân Đong Đầy",
+                "price": "1.055.000đ",
+                "description": [
                     "Bộ 5 loại hạt dinh dưỡng thanh lành cho gia đình sum vầy",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạt Sachi rang mộc 200g, Hạt điều Capuchino 210g, Hạt điều Cacao 210g, Hạt điều tỏi ớt 210g, Hạt mix tổng hợp 200g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạt Sachi rang mộc 200g, Hạt điều Capuchino 210g, Hạt điều Cacao 210g, Hạt điều tỏi ớt 210g, Hạt mix tổng hợp 200g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-xuan-nhu-y.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Xuân Như Ý",
-          "price": "1.655.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Xuân Như Ý",
+                "price": "1.655.000đ",
+                "description": [
                     "Hộp gỗ mỹ thuật kèm Cà phê hòa tan Sâm Ngọc Linh quý hiếm",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Cà phê hòa tan Sâm Ngọc Linh 144g, Hạt điều Cacao 210g, Hạt điều tỏi ớt 210g, Hạt điều Capuchino 210g, Hạt mix tổng hợp 200g, Khô gà lá chanh 200g, Khô gà bơ tỏi 200g, Nhân Macca Wasabi 230g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Cà phê hòa tan Sâm Ngọc Linh 144g, Hạt điều Cacao 210g, Hạt điều tỏi ớt 210g, Hạt điều Capuchino 210g, Hạt mix tổng hợp 200g, Khô gà lá chanh 200g, Khô gà bơ tỏi 200g, Nhân Macca Wasabi 230g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-xuan-nhu-y.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Xuân Như Ý",
-          "price": "1.655.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Xuân Như Ý",
+                "price": "1.655.000đ",
+                "description": [
                     "Hộp gỗ mỹ thuật kèm Cà phê hòa tan Sâm Ngọc Linh quý hiếm",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Cà phê hòa tan Sâm Ngọc Linh 144g, Hạt điều Cacao 210g, Hạt điều tỏi ớt 210g, Hạt điều Capuchino 210g, Hạt mix tổng hợp 200g, Khô gà lá chanh 200g, Khô gà bơ tỏi 200g, Nhân Macca Wasabi 230g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Cà phê hòa tan Sâm Ngọc Linh 144g, Hạt điều Cacao 210g, Hạt điều tỏi ớt 210g, Hạt điều Capuchino 210g, Hạt mix tổng hợp 200g, Khô gà lá chanh 200g, Khô gà bơ tỏi 200g, Nhân Macca Wasabi 230g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-tet-lac-hong.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Tết Lạc Hồng",
-          "price": "1.682.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Tết Lạc Hồng",
+                "price": "1.682.000đ",
+                "description": [
                     "Kiệt tác quà Tết mang đậm hồn cốt dân tộc Lạc Hồng thịnh vượng",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạnh nhân rang bơ 250g, Hạt điều rang muối 250g, Hạt Macca sấy 250g, Hạt mix tổng hợp 200g, Khô gà lá chanh 100g, Hạt Sachi rang mộc 200g, Nho khô Chile 250g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạnh nhân rang bơ 250g, Hạt điều rang muối 250g, Hạt Macca sấy 250g, Hạt mix tổng hợp 200g, Khô gà lá chanh 100g, Hạt Sachi rang mộc 200g, Nho khô Chile 250g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-tet-lac-hong.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Tết Lạc Hồng",
-          "price": "1.682.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Tết Lạc Hồng",
+                "price": "1.682.000đ",
+                "description": [
                     "Kiệt tác quà Tết mang đậm hồn cốt dân tộc Lạc Hồng thịnh vượng",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Hạnh nhân rang bơ 250g, Hạt điều rang muối 250g, Hạt Macca sấy 250g, Hạt mix tổng hợp 200g, Khô gà lá chanh 100g, Hạt Sachi rang mộc 200g, Nho khô Chile 250g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Hạnh nhân rang bơ 250g, Hạt điều rang muối 250g, Hạt Macca sấy 250g, Hạt mix tổng hợp 200g, Khô gà lá chanh 100g, Hạt Sachi rang mộc 200g, Nho khô Chile 250g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-tet-viet.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Tết Việt",
-          "price": "1.435.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Tết Việt",
+                "price": "1.435.000đ",
+                "description": [
                     "Tết Việt - Hạc vàng khai niên, phú quý cát tường",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Rượu mơ Moriko 500ml, Hạt điều tỏi ớt 210g, Hạt điều Cacao 210g, Hạt điều Capuchino 210g, Nhân Macca Wasabi 200g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Rượu mơ Moriko 500ml, Hạt điều tỏi ớt 210g, Hạt điều Cacao 210g, Hạt điều Capuchino 210g, Nhân Macca Wasabi 200g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-tet-viet.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Tết Việt",
-          "price": "1.435.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Tết Việt",
+                "price": "1.435.000đ",
+                "description": [
                     "Tết Việt - Hạc vàng khai niên, phú quý cát tường",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Rượu mơ Moriko 500ml, Hạt điều tỏi ớt 210g, Hạt điều Cacao 210g, Hạt điều Capuchino 210g, Nhân Macca Wasabi 200g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Rượu mơ Moriko 500ml, Hạt điều tỏi ớt 210g, Hạt điều Cacao 210g, Hạt điều Capuchino 210g, Nhân Macca Wasabi 200g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "../images/hamper-phuong-vu-nghinh-xuan.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Phượng Vũ Nghinh Xuân",
-          "price": "1.010.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Phượng Vũ Nghinh Xuân",
+                "price": "1.010.000đ",
+                "description": [
                     "Phượng Vũ Nghinh Xuân - Sắc phượng tung bay, đón mùa thịnh vượng",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Trái cây nhúng Sô-cô-la 120g, Hạt mix tổng hợp 200g, Hạt điều Cacao 210g, Hạt điều Capuchino 210g, Hạt điều tỏi ớt 210g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Trái cây nhúng Sô-cô-la 120g, Hạt mix tổng hợp 200g, Hạt điều Cacao 210g, Hạt điều Capuchino 210g, Hạt điều tỏi ớt 210g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hamper-phuong-vu-nghinh-xuan.png": {
-          "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
-          "title": "Phượng Vũ Nghinh Xuân",
-          "price": "1.010.000đ",
-          "description": [
+                "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
+                "title": "Phượng Vũ Nghinh Xuân",
+                "price": "1.010.000đ",
+                "description": [
                     "Phượng Vũ Nghinh Xuân - Sắc phượng tung bay, đón mùa thịnh vượng",
                     "Hộp quà Tết cao cấp Lisa Food được thiết kế trang trọng, kết hợp hài hòa giữa nông sản thượng hạng thuần Việt và phong vị Tết hiện đại. Mỗi sản phẩm bên trong đều được tuyển chọn nghiêm ngặt từ quy chuẩn nhà máy ISO 22000, gửi gắm trọn vẹn lời chúc khởi niên đắc lộc, vạn sự hanh thông đến đối tác và gia đình."
-          ],
-          "specs": [
+                ],
+                "specs": [
                     {
-                              "label": "Thành phần tuyển chọn:",
-                              "value": "Trái cây nhúng Sô-cô-la 120g, Hạt mix tổng hợp 200g, Hạt điều Cacao 210g, Hạt điều Capuchino 210g, Hạt điều tỏi ớt 210g."
+                        "label": "Thành phần tuyển chọn:",
+                        "value": "Trái cây nhúng Sô-cô-la 120g, Hạt mix tổng hợp 200g, Hạt điều Cacao 210g, Hạt điều Capuchino 210g, Hạt điều tỏi ớt 210g."
                     },
                     {
-                              "label": "Quy cách đóng gói:",
-                              "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
+                        "label": "Quy cách đóng gói:",
+                        "value": "Hộp quà mỹ thuật cao cấp dập nhũ vàng 24K, kèm túi xách đồng bộ sang trọng."
                     },
                     {
-                              "label": "Chính sách doanh nghiệp:",
-                              "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
+                        "label": "Chính sách doanh nghiệp:",
+                        "value": "Hỗ trợ khắc Laser logo công ty, in thiệp chúc Tết riêng & xuất hóa đơn VAT đầy đủ."
                     },
                     {
-                              "label": "Tiêu chuẩn an toàn:",
-                              "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
+                        "label": "Tiêu chuẩn an toàn:",
+                        "value": "100% nông sản đạt chuẩn ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch."
                     },
                     {
-                              "label": "Bảo quản:",
-                              "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
+                        "label": "Bảo quản:",
+                        "value": "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp."
                     },
                     {
-                              "label": "Sản phẩm của:",
-                              "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
+                        "label": "Sản phẩm của:",
+                        "value": "CÔNG TY TNHH THỰC PHẨM LIÊN SANH (LISA FOOD)"
                     },
                     {
-                              "label": "Hotline / Zalo:",
-                              "value": "0393.955.516"
+                        "label": "Hotline / Zalo:",
+                        "value": "0393.955.516"
                     }
-          ]
-},
+                ]
+            },
             "images/hat-dieu-rang-muoi-vo-lua-100g.png": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
@@ -6568,7 +6615,7 @@
                     var src = img.getAttribute("src");
                     var cleanSrc = src.replace(/^\.\.\//, '');
                     var rawAlbum = existingMultiImages[src] || existingMultiImages[cleanSrc] || [src];
-                    var album = rawAlbum.map(function(u) { return u.startsWith('../') ? u : '../' + u; });
+                    var album = rawAlbum.map(function (u) { return u.startsWith('../') ? u : '../' + u; });
                     openAlbumLightbox(album, title, card);
                 });
             });
@@ -6683,7 +6730,7 @@
                 attachTouchSwipe(fullZoomOverlay, function () { navigateFullZoom(1); }, function () { navigateFullZoom(-1); });
             }
         });
-    
+
     </script>
 
     <!-- Script tương tác giỏ hàng, lọc danh mục, lightbox và tìm kiếm -->
@@ -6696,7 +6743,7 @@
                 var parsed = JSON.parse(savedCart);
                 if (Array.isArray(parsed)) inquiryList = parsed;
             }
-        } catch (e) {}
+        } catch (e) { }
 
         function adjustQty(btn, delta) {
             var ctrl = btn.parentElement;
@@ -6753,7 +6800,7 @@
             // Lưu vào localStorage
             try {
                 localStorage.setItem('lisa_inquiry_list', JSON.stringify(inquiryList));
-            } catch (e) {}
+            } catch (e) { }
 
             if (badge) badge.textContent = totalCount;
             if (openBtn) openBtn.style.display = totalCount > 0 ? "flex" : "none";
@@ -6850,7 +6897,7 @@
                 try {
                     navigator.clipboard.writeText(text);
                     alert("Đã sao chép nội dung yêu cầu báo giá! Lisa Food đang chuyển quý khách đến cửa sổ chat Zalo...");
-                } catch (e) {}
+                } catch (e) { }
                 window.open("https://zalo.me/0393955516", "_blank");
             } else if (channel === 'mail') {
                 var btn = event ? event.target : null;
@@ -6866,19 +6913,19 @@
                         order_details: text
                     })
                 })
-                .then(function (res) { return res.json(); })
-                .then(function () {
-                    alert("Yêu cầu báo giá của quý khách đã được gửi thành công! Lisa Food sẽ liên hệ lại sớm nhất.");
-                    inquiryList = [];
-                    updateCartUI();
-                    setTimeout(function () { toggleListModal(false); }, 1500);
-                })
-                .catch(function () {
-                    alert("Đã có lỗi kết nối, quý khách vui lòng liên hệ trực tiếp hotline 0393.955.516 hoặc Zalo!");
-                })
-                .finally(function () {
-                    if (btn) btn.disabled = false;
-                });
+                    .then(function (res) { return res.json(); })
+                    .then(function () {
+                        alert("Yêu cầu báo giá của quý khách đã được gửi thành công! Lisa Food sẽ liên hệ lại sớm nhất.");
+                        inquiryList = [];
+                        updateCartUI();
+                        setTimeout(function () { toggleListModal(false); }, 1500);
+                    })
+                    .catch(function () {
+                        alert("Đã có lỗi kết nối, quý khách vui lòng liên hệ trực tiếp hotline 0393.955.516 hoặc Zalo!");
+                    })
+                    .finally(function () {
+                        if (btn) btn.disabled = false;
+                    });
             }
         }
 
@@ -6931,7 +6978,7 @@
         var retailSearchQuery = '';
         var retailSearchData = [];
 
-                function escapeHtml(str) {
+        function escapeHtml(str) {
             if (!str) return "";
             return String(str)
                 .replace(/&/g, "&amp;")
@@ -6946,7 +6993,7 @@
             return String(str).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         }
 
-function removeVietnameseTones(str) {
+        function removeVietnameseTones(str) {
             str = str || '';
             return str
                 .normalize('NFD')
@@ -7234,7 +7281,7 @@ function removeVietnameseTones(str) {
                 }
             });
 
-            });
+        });
     </script>
 </body>
 

@@ -6931,7 +6931,22 @@
         var retailSearchQuery = '';
         var retailSearchData = [];
 
-        function removeVietnameseTones(str) {
+                function escapeHtml(str) {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        function escapeRegex(str) {
+            if (!str) return "";
+            return String(str).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        }
+
+function removeVietnameseTones(str) {
             str = str || '';
             return str
                 .normalize('NFD')

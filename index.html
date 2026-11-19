@@ -3917,20 +3917,6 @@
             border-bottom: 1px solid rgba(245, 158, 11, 0.15);
         }
 
-        .why-kicker {
-            display: inline-block;
-            font-size: 11.5px;
-            font-weight: 800;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: #b45309;
-            background: linear-gradient(135deg, rgba(254, 240, 138, 0.35) 0%, rgba(251, 146, 60, 0.15) 100%);
-            border: 1px solid rgba(245, 158, 11, 0.35);
-            padding: 5px 14px;
-            border-radius: 99px;
-            margin-bottom: 12px;
-        }
-
         .why-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -3945,7 +3931,7 @@
             background: #ffffff !important;
             border: 1px solid #ffedd5 !important;
             border-radius: 20px !important;
-            padding: 30px 22px 26px;
+            padding: 28px 24px 26px;
             overflow: hidden !important;
             box-shadow: 0 10px 25px -5px rgba(67, 20, 7, 0.04), 0 8px 10px -6px rgba(67, 20, 7, 0.04) !important;
             display: flex;
@@ -3968,7 +3954,7 @@
             z-index: 3;
         }
 
-        /* Vệt sáng ánh kim quét qua thẻ khi rê chuột (Đồng nhất Hamper & Showcase) */
+        /* Vệt sáng ánh kim quét qua thẻ khi rê chuột */
         .why-card::after {
             content: "";
             position: absolute;
@@ -4006,62 +3992,12 @@
             opacity: 1;
         }
 
-        /* Chữ số chỉ mục chìm mờ sang trọng */
-        .why-number {
-            position: absolute;
-            top: 14px;
-            right: 18px;
-            font-size: 46px;
-            font-weight: 900;
-            color: rgba(245, 158, 11, 0.12);
-            font-family: inherit;
-            line-height: 1;
-            pointer-events: none;
-            user-select: none;
-            transition: color 0.4s ease, transform 0.4s ease;
-            z-index: 1;
-        }
-
-        .why-card:hover .why-number {
-            color: rgba(245, 158, 11, 0.28);
-            transform: translateY(-2px) scale(1.06);
-        }
-
-        /* Biểu tượng / Emoji trong khung vàng hoàng gia */
-        .why-icon-wrap {
-            width: 54px;
-            height: 54px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-            border: 1.5px solid rgba(245, 158, 11, 0.35);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 18px;
-            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.14);
-            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
-            position: relative;
-            z-index: 2;
-        }
-
-        .why-emoji {
-            font-size: 26px;
-            line-height: 1;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
-        }
-
-        .why-card:hover .why-icon-wrap {
-            transform: scale(1.1) translateY(-3px);
-            box-shadow: 0 10px 22px rgba(245, 158, 11, 0.28);
-            border-color: #f59e0b;
-        }
-
         /* Tiêu đề giá trị cốt lõi */
         .why-card-title {
             font-size: 18px;
             font-weight: 700;
             color: #7d1611;
-            line-height: 1.4;
+            line-height: 1.45;
             margin: 0 0 16px 0;
             position: relative;
             z-index: 2;
@@ -4085,29 +4021,43 @@
         }
 
         .why-card-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
+            position: relative;
+            padding-left: 26px;
             font-size: 13.5px;
             color: #4b382a;
             line-height: 1.55;
+            transition: transform 0.2s ease, color 0.2s ease;
         }
 
-        .why-bullet-icon {
-            flex-shrink: 0;
-            margin-top: 3px;
-            display: inline-flex;
+        .why-card-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            color: #b45309;
+            font-size: 10.5px;
+            font-weight: 800;
+            display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.25s ease;
+            line-height: 1;
+            box-shadow: 0 2px 5px rgba(245, 158, 11, 0.15);
+            transition: transform 0.25s ease, background 0.2s ease;
         }
 
-        .why-card:hover .why-bullet-icon {
-            transform: scale(1.18);
+        .why-card:hover .why-card-list li::before {
+            transform: scale(1.1);
+            background: #fde68a;
         }
 
-        .why-card-list li span:last-child {
-            flex: 1;
+        .why-card-list li:hover {
+            color: #1f2937;
+            transform: translateX(2px);
         }
 
         @media (max-width: 1024px) {
@@ -4122,7 +4072,6 @@
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
-
             .why-card {
                 padding: 24px 20px 22px;
             }
@@ -4293,7 +4242,7 @@
         <section class="why-us-section" id="visaochon">
             <div class="wrap">
                 <div class="title">
-                    <span class="why-kicker">✨ Vì sao chọn Lisa Food ?</span>
+                    <h2>Vì sao chọn Lisa Food ?</h2>
                     <p>Di sản Việt Nam · Tiêu chuẩn quốc tế · Hợp tác toàn cầu</p>
                     <div class="bar"></div>
                 </div>
@@ -4301,172 +4250,44 @@
                     <!-- Thẻ 1: Nguyên liệu -->
                     <div class="why-card">
                         <div class="spotlight-glow"></div>
-                        <div class="why-icon-wrap">
-                            <span class="why-emoji">🌱 Nguyên liệu tuyển chọn kỹ lưỡng </span>
-                        </div>
+                        <h3 class="why-card-title">🌱 Nguyên liệu tuyển chọn kỹ lưỡng</h3>
                         <ul class="why-card-list">
-                            <li>
-                                <span class="why-bullet-icon">
-                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b"
-                                            stroke-width="1.5" />
-                                        <path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>Nguồn nông sản Việt Nam cao cấp</span>
-                            </li>
-                            <li>
-                                <span class="why-bullet-icon">
-                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b"
-                                            stroke-width="1.5" />
-                                        <path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>Giữ trọn chất lượng và giá trị dinh dưỡng</span>
-                            </li>
-                            <li>
-                                <span class="why-bullet-icon">
-                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b"
-                                            stroke-width="1.5" />
-                                        <path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>Chọn lọc cho thị trường xuất khẩu khó tính</span>
-                            </li>
+                            <li>Nguồn nông sản Việt Nam cao cấp</li>
+                            <li>Giữ trọn chất lượng và giá trị dinh dưỡng</li>
+                            <li>Chọn lọc cho thị trường xuất khẩu khó tính</li>
                         </ul>
                     </div>
 
                     <!-- Thẻ 2: ISO 22000 -->
                     <div class="why-card">
                         <div class="spotlight-glow"></div>
-                        <div class="why-icon-wrap">
-                            <span class="why-emoji">🛡️ Sản xuất đạt chứng nhận ISO 22000</span>
-                        </div>
+                        <h3 class="why-card-title">🛡️ Sản xuất đạt chứng nhận ISO 22000</h3>
                         <ul class="why-card-list">
-                            <li>
-                                <span class="why-bullet-icon">
-                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b"
-                                            stroke-width="1.5" />
-                                        <path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>Hệ thống quản lý an toàn thực phẩm được chứng nhận</span>
-                            </li>
-                            <li>
-                                <span class="why-bullet-icon">
-                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b"
-                                            stroke-width="1.5" />
-                                        <path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>Kiểm soát toàn bộ quy trình</span>
-                            </li>
-                            <li>
-                                <span class="why-bullet-icon">
-                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b"
-                                            stroke-width="1.5" />
-                                        <path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>Từ nguyên liệu thô đến thành phẩm</span>
-                            </li>
+                            <li>Hệ thống quản lý an toàn thực phẩm được chứng nhận</li>
+                            <li>Kiểm soát toàn bộ quy trình</li>
+                            <li>Từ nguyên liệu thô đến thành phẩm</li>
                         </ul>
                     </div>
 
                     <!-- Thẻ 3: Quà tặng B2B -->
                     <div class="why-card">
                         <div class="spotlight-glow"></div>
-                        <div class="why-icon-wrap">
-                            <span class="why-emoji">🎁 Giải pháp quà tặng doanh nghiệp cao cấp </span>
-                        </div>
+                        <h3 class="why-card-title">🎁 Giải pháp quà tặng doanh nghiệp cao cấp</h3>
                         <ul class="why-card-list">
-                            <li>
-                                <span class="why-bullet-icon">
-                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b"
-                                            stroke-width="1.5" />
-                                        <path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>Bộ sưu tập quà tặng được thiết kế tinh tế</span>
-                            </li>
-                            <li>
-                                <span class="why-bullet-icon">
-                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b"
-                                            stroke-width="1.5" />
-                                        <path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>Dành cho khách hàng, đối tác và nhân viên</span>
-                            </li>
-                            <li>
-                                <span class="why-bullet-icon">
-                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b"
-                                            stroke-width="1.5" />
-                                        <path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>Trình bày sang trọng, mang dấu ấn thương hiệu</span>
-                            </li>
+                            <li>Bộ sưu tập quà tặng được thiết kế tinh tế</li>
+                            <li>Dành cho khách hàng, đối tác và nhân viên</li>
+                            <li>Trình bày sang trọng, mang dấu ấn thương hiệu</li>
                         </ul>
                     </div>
 
                     <!-- Thẻ 4: Hợp tác lâu dài -->
                     <div class="why-card">
                         <div class="spotlight-glow"></div>
-                        <div class="why-icon-wrap">
-                            <span class="why-emoji">🤝 Hợp tác chiến lược lâu dài</span>
-                        </div>
+                        <h3 class="why-card-title">🤝 Hợp tác chiến lược lâu dài</h3>
                         <ul class="why-card-list">
-                            <li>
-                                <span class="why-bullet-icon">
-                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b"
-                                            stroke-width="1.5" />
-                                        <path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>Hợp tác dựa trên sự tin cậy</span>
-                            </li>
-                            <li>
-                                <span class="why-bullet-icon">
-                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b"
-                                            stroke-width="1.5" />
-                                        <path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>Cùng phát triển bền vững</span>
-                            </li>
-                            <li>
-                                <span class="why-bullet-icon">
-                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
-                                        <circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b"
-                                            stroke-width="1.5" />
-                                        <path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>Xây dựng mối quan hệ lâu bền</span>
-                            </li>
+                            <li>Hợp tác dựa trên sự tin cậy</li>
+                            <li>Cùng phát triển bền vững</li>
+                            <li>Xây dựng mối quan hệ lâu bền</li>
                         </ul>
                     </div>
                 </div>

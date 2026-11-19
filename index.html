@@ -3509,7 +3509,127 @@
             transform: translateY(-2px) scale(1.03);
             box-shadow: 0 10px 28px rgba(245, 158, 11, 0.45), 0 0 0 2px rgba(254, 240, 138, 0.6) !important;
         }
+
+        /* --- BANNER ĐIỀU HƯỚNG NÔNG SẢN THƯỢNG HẠNG (SHOWCASE CTA) --- */
+        .showcase-cta-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin: 36px 0 20px;
+            padding: 28px 36px;
+            background: linear-gradient(135deg, rgba(125, 22, 17, 0.95) 0%, rgba(143, 29, 23, 0.92) 50%, rgba(115, 20, 15, 0.96) 100%);
+            border: 2px solid rgba(245, 158, 11, 0.65);
+            border-radius: 20px;
+            box-shadow: 0 16px 40px rgba(125, 22, 17, 0.25), 0 0 0 1px rgba(254, 240, 138, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .showcase-cta-banner::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .sc-cta-tag {
+            display: inline-block;
+            color: #fbbf24;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .sc-cta-title {
+            color: #ffffff;
+            font-size: clamp(20px, 2.2vw, 26px);
+            font-weight: 700;
+            margin: 0 0 8px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .sc-cta-desc {
+            color: #fed7aa;
+            font-size: 14.5px;
+            line-height: 1.6;
+            margin: 0;
+            max-width: 680px;
+        }
+
+        .sc-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #ffffff !important;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 99px;
+            border: 1.5px solid rgba(254, 240, 138, 0.6);
+            box-shadow: 0 8px 24px rgba(217, 119, 6, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+            text-decoration: none !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            flex-shrink: 0;
+        }
+
+        .sc-cta-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(217, 119, 6, 0.55), 0 0 0 3px rgba(254, 240, 138, 0.4);
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #ffffff !important;
+        }
+
+        .sc-cta-btn .sc-cta-arrow {
+            font-size: 17px;
+            transition: transform 0.25s ease;
+        }
+
+        .sc-cta-btn:hover .sc-cta-arrow {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .showcase-cta-banner {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 22px 20px;
+                gap: 18px;
+                text-align: center;
+            }
+
+            .sc-cta-desc {
+                font-size: 13.5px;
+            }
+
+            .sc-cta-btn {
+                justify-content: center;
+                width: 100%;
+                padding: 13px 20px;
+                font-size: 14.5px;
+            }
+        }
+
     </style>
+    <!-- Tự động fallback về PNG nếu trình duyệt không tải được WebP -->
+    <script>
+        document.addEventListener("error", function (e) {
+            if (e.target && e.target.tagName === "IMG" && e.target.src && /\.webp(\?.*)?$/i.test(e.target.src)) {
+                if (!e.target.dataset.triedPng) {
+                    e.target.dataset.triedPng = "1";
+                    e.target.src = e.target.src.replace(/\.webp(\?.*)?$/i, ".png$1");
+                }
+            }
+        }, true);
+    </script>
 </head>
 
 <body>
@@ -3519,7 +3639,7 @@
         <div class="ln-navbar-inner">
             <!-- 1. Logo Lisa Food khi bấm trỏ về header (#top) -->
             <a href="#top" class="ln-brand">
-                <img src="images/logo.png" alt="Lisa Food Logo">
+                <img src="images/logo.webp" alt="Lisa Food Logo">
             </a>
 
             <!-- 2, 3, 4. Danh sách các mục điều hướng (Desktop & Mobile) -->
@@ -3659,7 +3779,7 @@
                     hộp quà sang trọng, sạch và an toàn.</p>
             </div>
         </div>
-        <div class="heroimg"><img src="images/catalogue-tet-2027-lisafood-1.png" alt="Catalogue Tết 2027 Lisa Food">
+        <div class="heroimg"><img src="images/catalogue-tet-2027-lisafood-1.webp" alt="Catalogue Tết 2027 Lisa Food">
         </div>
         <section>
             <div class="wrap">
@@ -3714,7 +3834,7 @@
                 </div>
                 <div class="hg">
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-happy-new-year.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-happy-new-year.webp"
                             alt="Hamper Happy New Year" loading="lazy">
                         <div class="hb">
                             <h3>Happy New Year</h3>
@@ -3806,7 +3926,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-01-a-2.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-01-a-2.webp"
                             alt="Hamper Sắc Xuân 01 (A)" loading="lazy">
                         <div class="hb">
                             <h3>Sắc Xuân 01 (A)</h3>
@@ -3899,7 +4019,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-01-b.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-01-b.webp"
                             alt="Hamper Sắc Xuân 01 (B)" loading="lazy">
                         <div class="hb">
                             <h3>Sắc Xuân 01 (B)</h3>
@@ -4020,7 +4140,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-02-a.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-02-a.webp"
                             alt="Hamper Sắc Xuân 02 (A)" loading="lazy">
                         <div class="hb">
                             <h3>Sắc Xuân 02 (A)</h3>
@@ -4097,7 +4217,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-02-b.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-02-b.webp"
                             alt="Hamper Sắc Xuân 02 (B)" loading="lazy">
                         <div class="hb">
                             <h3>Sắc Xuân 02 (B)</h3>
@@ -4188,7 +4308,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-ngoc-vu-khai-loc-a.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-ngoc-vu-khai-loc-a.webp"
                             alt="Hamper Ngọc Vũ Khai Lộc (A)" loading="lazy">
                         <div class="hb">
                             <h3>Ngọc Vũ Khai Lộc (A)</h3>
@@ -4267,7 +4387,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-ngoc-vu-khai-loc-b.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-ngoc-vu-khai-loc-b.webp"
                             alt="Hamper Ngọc Vũ Khai Lộc (B)" loading="lazy">
                         <div class="hb">
                             <h3>Ngọc Vũ Khai Lộc (B)</h3>
@@ -4359,7 +4479,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-xuan-hoan-ca.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-xuan-hoan-ca.webp"
                             alt="Hamper Xuân Hoan Ca" loading="lazy">
                         <div class="hb">
                             <h3>Xuân Hoan Ca</h3>
@@ -4466,7 +4586,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-huong-xuan.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-huong-xuan.webp"
                             alt="Hamper Hương Xuân" loading="lazy">
                         <div class="hb">
                             <h3>Hương Xuân</h3>
@@ -4586,7 +4706,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-xuan-dong-day.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-xuan-dong-day.webp"
                             alt="Hamper Xuân Đong Đầy" loading="lazy">
                         <div class="hb">
                             <h3>Xuân Đong Đầy</h3>
@@ -4692,7 +4812,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-xuan-nhu-y.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-xuan-nhu-y.webp"
                             alt="Hamper Xuân Như Ý" loading="lazy">
                         <div class="hb">
                             <h3>Xuân Như Ý</h3>
@@ -4839,7 +4959,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-tet-lac-hong.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-tet-lac-hong.webp"
                             alt="Hamper Tết Lạc Hồng" loading="lazy">
                         <div class="hb">
                             <h3>Tết Lạc Hồng</h3>
@@ -4973,7 +5093,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-tet-viet.png" alt="Hamper Tết Việt"
+                        <div class="spotlight-glow"></div><img src="images/hamper-tet-viet.webp" alt="Hamper Tết Việt"
                             loading="lazy">
                         <div class="hb">
                             <h3>Tết Việt</h3>
@@ -5078,7 +5198,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-phuong-vu-nghinh-xuan.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-phuong-vu-nghinh-xuan.webp"
                             alt="Hamper Phượng Vũ Nghinh Xuân" loading="lazy">
                         <div class="hb">
                             <h3>Phượng Vũ Nghinh Xuân</h3>
@@ -5184,7 +5304,7 @@
                         </div>
                     </article>
                     <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-huong-xuan-1.png"
+                        <div class="spotlight-glow"></div><img src="images/hamper-huong-xuan-1.webp"
                             alt="Hamper Hương Xuân (A)" loading="lazy">
                         <div class="hb">
                             <h3>Hương Xuân (A)</h3>
@@ -5323,34 +5443,30 @@
                         doanh nghiệp</span></div>
             </div>
         </section>
-        <section id="sanpham">
+                <section id="sanpham">
             <div class="wrap">
                 <div class="title">
-                    <h2>Sản phẩm</h2>
-                    <p>Hạt dinh dưỡng và khô gà Super Premium.</p>
+                    <span class="sub-kicker" style="display:inline-block;color:#c58b1b;font-size:13px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:6px;">✦ NÔNG SẢN NGUYÊN BẢN ✦</span>
+                    <h2>Nông Sản Tuyển Chọn Lisa Food</h2>
+                    <p>Di sản nông sản Việt nguyên bản hội tụ trong từng set quà Hamper Tết 2027 · Quy chuẩn nhà máy ISO 22000:2018</p>
                     <div class="bar"></div>
                 </div>
                 <!-- Banner hiển thị khi đang tìm kiếm / lọc sản phẩm lẻ -->
                 <div class="retail-filter-banner" id="retailFilterBanner" style="display: none;">
                     <div class="rf-banner-inner">
-                        <span class="rf-banner-text" id="retailFilterBannerText">🔍 Đang lọc theo từ khóa:
-                            <b>""</b></span>
-                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">✕ Bỏ lọc, hiện tất cả
-                            28 sản phẩm</button>
+                        <span class="rf-banner-text" id="retailFilterBannerText">🔍 Đang lọc theo từ khóa: <b>""</b></span>
+                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">✕ Bỏ lọc, hiện tất cả</button>
                     </div>
                 </div>
                 <div class="pg" id="retailProductGrid">
                     <!-- Thông báo khi không tìm thấy sản phẩm lẻ nào -->
                     <div class="retail-grid-empty" id="retailGridEmpty"
                         style="display: none; grid-column: 1 / -1; text-align: center; padding: 40px 20px; background: #fffdfa; border: 1.5px dashed #d97706; border-radius: 16px; margin: 10px 0;">
-                        <p style="font-size: 16px; font-weight: 700; color: #78350f; margin: 0 0 6px;">Không tìm thấy
-                            sản phẩm lẻ nào phù hợp</p>
-                        <p style="font-size: 13.5px; color: #94a3b8; margin: 0 0 14px;">Quý khách vui lòng thử tìm từ
-                            khóa khác (ví dụ: hạt điều, macca, khô gà...) hoặc bấm xem lại tất cả.</p>
-                        <button type="button" class="rf-clear-btn" onclick="clearRetailSearch()">Xem lại tất cả 28 sản
-                            phẩm</button>
+                        <p style="font-size: 16px; font-weight: 700; color: #78350f; margin: 0 0 6px;">Không tìm thấy sản phẩm nào phù hợp</p>
+                        <p style="font-size: 13.5px; color: #94a3b8; margin: 0 0 14px;">Quý khách vui lòng thử tìm từ khóa khác hoặc bấm xem toàn bộ sản phẩm trên trang Nông Sản.</p>
+                        <a href="san-pham/" class="rf-clear-btn" style="text-decoration:none;display:inline-block;">Xem trang Nông Sản Thượng Hạng ➔</a>
                     </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-250g.png" alt="Hạt điều rang muối 250g"
+                    <div class="pc"><img src="images/hat-dieu-rang-muoi-250g.webp" alt="Hạt điều rang muối 250g"
                             loading="lazy"><b>Hạt điều rang muối 250g</b><span>177.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
                             <div class="qty-ctrl">
@@ -5365,7 +5481,7 @@
                                 onclick="addItemToList('Hạt điều rang muối 250g', 177000, '177.000đ', this)">Chọn</button>
                         </div>
                     </div>
-                    <div class="pc"><img src="images/hat-macca-say-250g.png" alt="Hạt macca sấy 250g"
+                    <div class="pc"><img src="images/hat-macca-say-250g.webp" alt="Hạt macca sấy 250g"
                             loading="lazy"><b>Hạt Macca sấy 250g</b><span>172.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
                             <div class="qty-ctrl">
@@ -5380,7 +5496,7 @@
                                 onclick="addItemToList('Hạt Macca sấy 250g', 172000, '172.000đ', this)">Chọn</button>
                         </div>
                     </div>
-                    <div class="pc"><img src="images/hanh-nhan-rang-bo-250g.png" alt="Hạnh nhân rang bơ 250g"
+                    <div class="pc"><img src="images/hanh-nhan-rang-bo-250g.webp" alt="Hạnh nhân rang bơ 250g"
                             loading="lazy"><b>Hạnh nhân rang bơ 250g</b><span>160.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
                             <div class="qty-ctrl">
@@ -5395,378 +5511,7 @@
                                 onclick="addItemToList('Hạnh nhân rang bơ 250g', 160000, '160.000đ', this)">Chọn</button>
                         </div>
                     </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-moc-boc-vo-250g.png"
-                            alt="Hạt điều rang mộc bóc vỏ 250g" loading="lazy"><b>Hạt điều rang mộc bóc vỏ
-                            250g</b><span>196.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều rang mộc bóc vỏ 250g', 196000, '196.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-moc-vo-lua-250g.png"
-                            alt="Hạt điều rang mộc vỏ lụa 250g" loading="lazy"><b>Hạt điều rang mộc vỏ lụa
-                            250g</b><span>186.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều rang mộc vỏ lụa 250g', 186000, '186.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-hop-go-500g.png"
-                            alt="Hạt điều rang muối hộp gỗ 500g" loading="lazy"><b>Hạt điều rang muối hộp gỗ
-                            500g</b><span>428.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều rang muối hộp gỗ 500g', 428000, '428.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-210g.png"
-                            alt="Hạt điều rang muối vỏ lụa 210g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
-                            210g</b><span>144.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều rang muối vỏ lụa 210g', 144000, '144.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-boc-vo-210g.png"
-                            alt="Hạt điều rang muối bóc vỏ 210g" loading="lazy"><b>Hạt điều rang muối bóc vỏ
-                            210g</b><span>155.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều rang muối bóc vỏ 210g', 155000, '155.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-mix-tong-hop-210g.png" alt="Hạt mix tổng hợp 210g"
-                            loading="lazy"><b>Hạt mix tổng hợp 210g</b><span>137.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt mix tổng hợp 210g', 137000, '137.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-capuchino-210g.png" alt="Hạt điều capuchino 210g"
-                            loading="lazy"><b>Hạt điều capuchino 210g</b><span>162.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều capuchino 210g', 162000, '162.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-toi-ot-210g.png" alt="Hạt điều tỏi ớt 210g"
-                            loading="lazy"><b>Hạt điều tỏi ớt 210g</b><span>157.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều tỏi ớt 210g', 157000, '157.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-cacao-210g.png" alt="Hạt điều cacao 210g"
-                            loading="lazy"><b>Hạt điều cacao 210g</b><span>160.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều cacao 210g', 160000, '160.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/nhan-macca-wasabi.png" alt="Nhân macca wasabi"
-                            loading="lazy"><b>Nhân macca wasabi</b><span>224.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Nhân macca wasabi', 224000, '224.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-toi-ot-200g.png" alt="Hạt điều tỏi ớt 200g (hũ)"
-                            loading="lazy"><b>Hạt điều tỏi ớt 200g</b><span>160.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều tỏi ớt 200g (hũ)', 160000, '160.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-capuchino-200g.png" alt="Hạt điều capuchino 200g (hũ)"
-                            loading="lazy"><b>Hạt điều capuchino 200g</b><span>163.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều capuchino 200g (hũ)', 163000, '163.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-cacao-200g.png" alt="Hạt điều cacao 200g (hũ)"
-                            loading="lazy"><b>Hạt điều cacao 200g</b><span>163.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều cacao 200g (hũ)', 163000, '163.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-sachi-rang-moc-250g.png" alt="Hạt sachi rang mộc 250g"
-                            loading="lazy"><b>Hạt sachi rang mộc 250g
-                            (hũ)</b><span>145.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt sachi rang mộc 250g', 145000, '145.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/nho-kho-250g.png" alt="Nho khô 250g" loading="lazy"><b>Nho khô
-                            250g</b><span>110.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Nho khô 250g', 110000, '110.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-sachi-rang-moc-100g.png" alt="Hạt sachi rang mộc 100g"
-                            loading="lazy"><b>Hạt sachi rang mộc 100g</b><span>68.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt sachi rang mộc 100g', 68000, '68.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-100g.png"
-                            alt="Hạt điều rang muối vỏ lụa 100g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
-                            100g</b><span>68.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều rang muối vỏ lụa 100g', 68000, '68.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-boc-vo-205g.png"
-                            alt="Hạt điều rang muối bóc vỏ 205g" loading="lazy"><b>Hạt điều rang muối bóc vỏ
-                            205g</b><span>170.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều rang muối bóc vỏ 205g', 170000, '170.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-205g.png"
-                            alt="Hạt điều rang muối vỏ lụa 205g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
-                            205g</b><span>145.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều rang muối vỏ lụa 205g', 145000, '145.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-vo-lua-400g.png"
-                            alt="Hạt điều rang muối vỏ lụa 400g" loading="lazy"><b>Hạt điều rang muối vỏ lụa
-                            400g</b><span>297.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều rang muối vỏ lụa 400g', 297000, '297.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/hat-dieu-rang-muoi-boc-vo-400g.png"
-                            alt="Hạt điều rang muối bóc vỏ 400g" loading="lazy"><b>Hạt điều rang muối bóc vỏ
-                            400g</b><span>342.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Hạt điều rang muối bóc vỏ 400g', 342000, '342.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/kho-ga-bo-toi-200g.png" alt="Khô gà bơ tỏi 200g"
-                            loading="lazy"><b>Khô gà bơ tỏi 200g</b><span>160.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Khô gà bơ tỏi 200g', 160000, '160.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/kho-ga-la-chanh-200g.png" alt="Khô gà lá chanh 200g"
-                            loading="lazy"><b>Khô gà lá chanh 200g</b><span>151.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Khô gà lá chanh 200g', 151000, '151.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/kho-ga-bo-toi-100g.png" alt="Khô gà bơ tỏi 100g"
-                            loading="lazy"><b>Khô gà bơ tỏi 100g</b><span>56.000đ</span>
-                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
-                            <div class="qty-ctrl">
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, -1)">-</button>
-                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
-                                    readonly>
-                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
-                                    onclick="adjustQty(this, 1)">+</button>
-                            </div>
-                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
-                                onclick="addItemToList('Khô gà bơ tỏi 100g', 56000, '56.000đ', this)">Chọn</button>
-                        </div>
-                    </div>
-                    <div class="pc"><img src="images/kho-ga-la-chanh-100g.png" alt="Khô gà lá chanh 100g"
+                    <div class="pc"><img src="images/kho-ga-la-chanh-100g.webp" alt="Khô gà lá chanh 100g"
                             loading="lazy"><b>Khô gà lá chanh 100g</b><span>52.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
                             <div class="qty-ctrl">
@@ -5781,9 +5526,54 @@
                                 onclick="addItemToList('Khô gà lá chanh 100g', 52000, '52.000đ', this)">Chọn</button>
                         </div>
                     </div>
+                    <div class="pc"><img src="images/nho-kho-250g.webp" alt="Nho khô 250g" loading="lazy"><b>Nho khô
+                            250g</b><span>110.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Nho khô 250g', 110000, '110.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
+                    <div class="pc"><img src="images/hat-dieu-capuchino-210g.webp" alt="Hạt điều capuchino 210g"
+                            loading="lazy"><b>Hạt điều capuchino 210g</b><span>162.000đ</span>
+                        <div class="qty-box" style="margin-top:6px;padding-top:6px;">
+                            <div class="qty-ctrl">
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, -1)">-</button>
+                                <input type="text" class="qty-val" style="width:26px;font-size:12px;" value="1"
+                                    readonly>
+                                <button type="button" class="qty-btn" style="width:24px;height:24px;font-size:14px;"
+                                    onclick="adjustQty(this, 1)">+</button>
+                            </div>
+                            <button type="button" class="btn-add-list" style="padding:4px 6px;font-size:11px;"
+                                onclick="addItemToList('Hạt điều capuchino 210g', 162000, '162.000đ', this)">Chọn</button>
+                        </div>
+                    </div>
                 </div>
-                <p class="note">Giá niêm yết theo Catalogue Tết 2027. Liên hệ để nhận chính sách chiết khấu cho số lượng
-                    lớn.</p>
+
+                <!-- BANNER SANG TRỌNG ĐIỀU HƯỚNG SANG TRANG 28+ NÔNG SẢN THƯỢNG HẠNG -->
+                <div class="showcase-cta-banner">
+                    <div class="sc-cta-left">
+                        <span class="sc-cta-tag">✨ DANH MỤC ĐẦY ĐỦ 28+ MÓN</span>
+                        <h3 class="sc-cta-title">Khám Phá Toàn Bộ Nông Sản Thượng Hạng</h3>
+                        <p class="sc-cta-desc">Xem trọn vẹn 17 dòng Hạt điều đa vị, Hạt Macca nứt vỏ &amp; Wasabi, Hạnh nhân, Hạt Sachi, Khô gà giòn cay và Nho khô hảo hạng đạt chuẩn quốc tế ISO 22000:2018.</p>
+                    </div>
+                    <div class="sc-cta-right">
+                        <a href="san-pham/" class="sc-cta-btn">
+                            <span>Khám phá toàn bộ 28+ sản phẩm</span>
+                            <span class="sc-cta-arrow">➔</span>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="note">Giá niêm yết theo Catalogue Tết 2027. Liên hệ để nhận chính sách chiết khấu cho số lượng lớn.</p>
             </div>
         </section>
         <section class="alt">
@@ -6058,7 +5848,7 @@
 
     <footer>
         <div class="wrap">
-            <p><img class="flogo" src="images/logo.png" alt="Lisa Food"></p>
+            <p><img class="flogo" src="images/logo.webp" alt="Lisa Food"></p>
             <p>Hotline / Zalo: 0393.955.516</p>
             <p><a href="https://lisafoodglobal.com">Về Lisa Food</a><a href="https://lisafood.vn/san-pham">Sản
                     phẩm</a><a href="https://lisafood.vn/tin-tuc">Tin tức</a><a href="https://lisafood.vn/lien-he">Liên
@@ -6639,7 +6429,7 @@
         // - Sản phẩm nào có khai báo trong bảng này: Sẽ tự động mở giao diện 2 cột với nội dung chuẩn.
         // - Sản phẩm nào chưa khai báo: Sẽ tự động mở chế độ phóng to ảnh truyền thống.
         var productDetailsByImage = {
-            "images/hamper-happy-new-year.png": {
+            "images/hamper-happy-new-year.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Happy New Year",
                 "price": "590.000đ",
@@ -6678,7 +6468,7 @@
                     }
                 ]
             },
-            "images/hamper-sac-xuan-01-a-2.png": {
+            "images/hamper-sac-xuan-01-a-2.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Sắc Xuân 01 (A)",
                 "price": "1.022.000đ",
@@ -6717,7 +6507,7 @@
                     }
                 ]
             },
-            "images/hamper-sac-xuan-01-b.png": {
+            "images/hamper-sac-xuan-01-b.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Sắc Xuân 01 (B)",
                 "price": "1.154.000đ",
@@ -6756,7 +6546,7 @@
                     }
                 ]
             },
-            "images/hamper-sac-xuan-02-a.png": {
+            "images/hamper-sac-xuan-02-a.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Sắc Xuân 02 (A)",
                 "price": "1.043.000đ",
@@ -6795,7 +6585,7 @@
                     }
                 ]
             },
-            "images/hamper-sac-xuan-02-b.png": {
+            "images/hamper-sac-xuan-02-b.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Sắc Xuân 02 (B)",
                 "price": "999.000đ",
@@ -6834,7 +6624,7 @@
                     }
                 ]
             },
-            "images/hamper-ngoc-vu-khai-loc-a.png": {
+            "images/hamper-ngoc-vu-khai-loc-a.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Ngọc Vũ Khai Lộc (A)",
                 "price": "955.000đ",
@@ -6873,7 +6663,7 @@
                     }
                 ]
             },
-            "images/hamper-ngoc-vu-khai-loc-b.png": {
+            "images/hamper-ngoc-vu-khai-loc-b.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Ngọc Vũ Khai Lộc (B)",
                 "price": "899.000đ",
@@ -6912,7 +6702,7 @@
                     }
                 ]
             },
-            "images/hamper-xuan-hoan-ca.png": {
+            "images/hamper-xuan-hoan-ca.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Xuân Hoan Ca",
                 "price": "1.380.000đ",
@@ -6951,7 +6741,7 @@
                     }
                 ]
             },
-            "images/hamper-huong-xuan.png": {
+            "images/hamper-huong-xuan.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Hương Xuân",
                 "price": "1.314.000đ",
@@ -6990,7 +6780,7 @@
                     }
                 ]
             },
-            "images/hamper-xuan-dong-day.png": {
+            "images/hamper-xuan-dong-day.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Xuân Đong Đầy",
                 "price": "1.055.000đ",
@@ -7029,7 +6819,7 @@
                     }
                 ]
             },
-            "images/hamper-xuan-nhu-y.png": {
+            "images/hamper-xuan-nhu-y.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Xuân Như Ý",
                 "price": "1.655.000đ",
@@ -7068,7 +6858,7 @@
                     }
                 ]
             },
-            "images/hamper-tet-lac-hong.png": {
+            "images/hamper-tet-lac-hong.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Tết Lạc Hồng",
                 "price": "1.682.000đ",
@@ -7107,7 +6897,7 @@
                     }
                 ]
             },
-            "images/hamper-tet-viet.png": {
+            "images/hamper-tet-viet.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Tết Việt",
                 "price": "1.435.000đ",
@@ -7146,7 +6936,7 @@
                     }
                 ]
             },
-            "images/hamper-phuong-vu-nghinh-xuan.png": {
+            "images/hamper-phuong-vu-nghinh-xuan.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Phượng Vũ Nghinh Xuân",
                 "price": "1.010.000đ",
@@ -7185,7 +6975,7 @@
                     }
                 ]
             },
-            "images/hamper-huong-xuan-1.png": {
+            "images/hamper-huong-xuan-1.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Hương Xuân (A)",
                 //"price": "1.010.000đ",
@@ -7224,7 +7014,7 @@
                     }
                 ]
             },
-            "images/hat-dieu-rang-muoi-vo-lua-100g.png": {
+            "images/hat-dieu-rang-muoi-vo-lua-100g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -7242,7 +7032,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-vo-lua-205g.png": {
+            "images/hat-dieu-rang-muoi-vo-lua-205g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -7260,7 +7050,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-vo-lua-210g.png": {
+            "images/hat-dieu-rang-muoi-vo-lua-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -7278,7 +7068,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-250g.png": {
+            "images/hat-dieu-rang-muoi-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -7296,7 +7086,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-vo-lua-400g.png": {
+            "images/hat-dieu-rang-muoi-vo-lua-400g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -7314,7 +7104,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-hop-go-500g.png": {
+            "images/hat-dieu-rang-muoi-hop-go-500g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -7332,7 +7122,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-boc-vo-205g.png": {
+            "images/hat-dieu-rang-muoi-boc-vo-205g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -7350,7 +7140,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-boc-vo-210g.png": {
+            "images/hat-dieu-rang-muoi-boc-vo-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -7368,7 +7158,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-boc-vo-400g.png": {
+            "images/hat-dieu-rang-muoi-boc-vo-400g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -7386,7 +7176,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-moc-vo-lua-250g.png": {
+            "images/hat-dieu-rang-moc-vo-lua-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang mộc vỏ lụa Lisa Food được tuyển chọn kỹ lưỡng, chế biến bằng phương pháp rang mộc nhằm làm nổi bật hương vị tự nhiên của hạt điều.",
@@ -7404,7 +7194,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-moc-boc-vo-250g.png": {
+            "images/hat-dieu-rang-moc-boc-vo-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang mộc bóc vỏ Lisa Food được tuyển chọn kỹ lưỡng và chế biến bằng phương pháp rang mộc nhằm làm nổi bật hương vị tự nhiên của hạt điều.",
@@ -7422,7 +7212,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-cacao-210g.png": {
+            "images/hat-dieu-cacao-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Cacao Lisa Food mang đến sự kết hợp độc đáo giữa vị béo bùi của hạt điều tuyển chọn và hương thơm đặc trưng của cacao.",
@@ -7439,7 +7229,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-cacao-200g.png": {
+            "images/hat-dieu-cacao-200g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Cacao Lisa Food mang đến sự kết hợp độc đáo giữa vị béo bùi của hạt điều tuyển chọn và hương thơm đặc trưng của cacao.",
@@ -7456,7 +7246,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-capuchino-210g.png": {
+            "images/hat-dieu-capuchino-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Capuchino Lisa Food là sự kết hợp giữa hạt điều tuyển chọn và hương vị cà phê thơm đặc trưng, mang đến trải nghiệm thưởng thức mới lạ và hấp dẫn.",
@@ -7473,7 +7263,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-capuchino-200g.png": {
+            "images/hat-dieu-capuchino-200g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Capuchino Lisa Food là sự kết hợp giữa hạt điều tuyển chọn và hương vị cà phê thơm đặc trưng, mang đến trải nghiệm thưởng thức mới lạ và hấp dẫn.",
@@ -7490,7 +7280,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-toi-ot-210g.png": {
+            "images/hat-dieu-toi-ot-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Tỏi Ớt Lisa Food là sự kết hợp giữa vị béo bùi đặc trưng của hạt điều và hương thơm nồng nàn của tỏi, hòa quyện cùng vị cay kích thích vị giác của ớt.",
@@ -7507,7 +7297,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-toi-ot-200g.png": {
+            "images/hat-dieu-toi-ot-200g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Tỏi Ớt Lisa Food là sự kết hợp giữa vị béo bùi đặc trưng của hạt điều và hương thơm nồng nàn của tỏi, hòa quyện cùng vị cay kích thích vị giác của ớt.",
@@ -7524,7 +7314,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-toi-ot-210g.png": {
+            "images/hat-dieu-toi-ot-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Tỏi Ớt Lisa Food là sự kết hợp giữa vị béo bùi đặc trưng của hạt điều và hương thơm nồng nàn của tỏi, hòa quyện cùng vị cay kích thích vị giác của ớt.",
@@ -7541,7 +7331,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-sachi-rang-moc-100g.png": {
+            "images/hat-sachi-rang-moc-100g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt Sachi rang mộc Lisa Food từ nguồn nguyên liệu Sachi Tây Nguyên, sản phẩm hướng đến những khách hàng yêu thích thực phẩm có nguồn gốc thực vật và quan tâm đến chế độ ăn uống cân bằng.",
@@ -7559,7 +7349,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-sachi-rang-moc-250g.png": {
+            "images/hat-sachi-rang-moc-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt Sachi rang mộc Lisa Food từ nguồn nguyên liệu Sachi Tây Nguyên, sản phẩm hướng đến những khách hàng yêu thích thực phẩm có nguồn gốc thực vật và quan tâm đến chế độ ăn uống cân bằng.",
@@ -7577,7 +7367,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-macca-say-250g.png": {
+            "images/hat-macca-say-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt macca sấy nứt vỏ Lisa Food được tuyển chọn nhằm mang đến sản phẩm có hương vị thơm ngon và chất lượng ổn định.",
@@ -7595,7 +7385,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/nhan-macca-wasabi.png": {
+            "images/nhan-macca-wasabi.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Nhân Macca Wasabi Lisa Food mang đến sự kết hợp thú vị giữa nhân hạt macca và hương vị wasabi đặc trưng.",
@@ -7612,7 +7402,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hanh-nhan-rang-bo-250g.png": {
+            "images/hanh-nhan-rang-bo-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạnh nhân rang bơ Lisa Food là sự kết hợp hài hòa giữa hạt hạnh nhân được tuyển chọn kỹ lưỡng và bơ thơm béo, tạo nên hương vị hấp dẫn cùng độ giòn bùi đặc trưng.",
@@ -7630,7 +7420,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/nho-kho-250g.png": {
+            "images/nho-kho-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Nho khô Chile Lisa Food mang đến hương vị ngọt dịu tự nhiên cùng kết cấu mềm dai hấp dẫn, là lựa chọn phù hợp cho những ai yêu thích các món ăn nhẹ tiện lợi.",
@@ -7647,7 +7437,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-mix-tong-hop-210g.png": {
+            "images/hat-mix-tong-hop-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt Tổng Hợp Lisa Food là sự kết hợp đa dạng các loại hạt như hạt điều, hạnh nhân, macca và các loại hạt khác, mang đến hương vị phong phú cùng độ bùi béo đặc trưng.",
@@ -7688,7 +7478,9 @@
 
             // Nhận diện sản phẩm dựa theo đường dẫn file ảnh chính (imgList[0])
             var mainImgSrc = (imgList && imgList.length > 0) ? imgList[0] : "";
-            var productDetail = productDetailsByImage[mainImgSrc];
+            var productDetail = productDetailsByImage[mainImgSrc] || 
+        productDetailsByImage[mainImgSrc.replace(/\.webp$/i, '.png')] || 
+        productDetailsByImage[mainImgSrc.replace(/\.png$/i, '.webp')];
 
             var classicWrap = document.getElementById("lbClassicWrap");
             var productCard = document.getElementById("lbProductCard");
@@ -8049,200 +7841,200 @@
         }
 
         var existingMultiImages = {
-            "images/hamper-happy-new-year.png": [
-                "images/hamper-happy-new-year.png"
+            "images/hamper-happy-new-year.webp": [
+                "images/hamper-happy-new-year.webp"
             ],
-            "images/hamper-sac-xuan-01-a-2.png": [
-                "images/hamper-sac-xuan-01-a-2.png"
+            "images/hamper-sac-xuan-01-a-2.webp": [
+                "images/hamper-sac-xuan-01-a-2.webp"
             ],
-            "images/hamper-sac-xuan-01-b.png": [
-                "images/hamper-sac-xuan-01-b.png"
+            "images/hamper-sac-xuan-01-b.webp": [
+                "images/hamper-sac-xuan-01-b.webp"
             ],
-            "images/hamper-sac-xuan-02-a.png": [
-                "images/hamper-sac-xuan-02-a.png"
+            "images/hamper-sac-xuan-02-a.webp": [
+                "images/hamper-sac-xuan-02-a.webp"
             ],
-            "images/hamper-sac-xuan-02-b.png": [
-                "images/hamper-sac-xuan-02-b.png"
+            "images/hamper-sac-xuan-02-b.webp": [
+                "images/hamper-sac-xuan-02-b.webp"
             ],
-            "images/hamper-ngoc-vu-khai-loc-a.png": [
-                "images/hamper-ngoc-vu-khai-loc-a.png",
-                "images/hamper-ngoc-vu-khai-loc-a-1.png"
+            "images/hamper-ngoc-vu-khai-loc-a.webp": [
+                "images/hamper-ngoc-vu-khai-loc-a.webp",
+                "images/hamper-ngoc-vu-khai-loc-a-1.webp"
             ],
-            "images/hamper-ngoc-vu-khai-loc-b.png": [
-                "images/hamper-ngoc-vu-khai-loc-b.png",
-                "images/hamper-ngoc-vu-khai-loc-b-1.png"
+            "images/hamper-ngoc-vu-khai-loc-b.webp": [
+                "images/hamper-ngoc-vu-khai-loc-b.webp",
+                "images/hamper-ngoc-vu-khai-loc-b-1.webp"
             ],
-            "images/hamper-xuan-hoan-ca.png": [
-                "images/hamper-xuan-hoan-ca.png"
+            "images/hamper-xuan-hoan-ca.webp": [
+                "images/hamper-xuan-hoan-ca.webp"
             ],
-            "images/hamper-huong-xuan.png": [
-                "images/hamper-huong-xuan.png"
+            "images/hamper-huong-xuan.webp": [
+                "images/hamper-huong-xuan.webp"
             ],
-            "images/hamper-xuan-dong-day.png": [
-                "images/hamper-xuan-dong-day.png",
-                "images/hamper-xuan-dong-day-1.png"
+            "images/hamper-xuan-dong-day.webp": [
+                "images/hamper-xuan-dong-day.webp",
+                "images/hamper-xuan-dong-day-1.webp"
             ],
-            "images/hamper-xuan-nhu-y.png": [
-                "images/hamper-xuan-nhu-y.png",
-                "images/hamper-xuan-nhu-y-1.png"
+            "images/hamper-xuan-nhu-y.webp": [
+                "images/hamper-xuan-nhu-y.webp",
+                "images/hamper-xuan-nhu-y-1.webp"
             ],
-            "images/hamper-tet-lac-hong.png": [
-                "images/hamper-tet-lac-hong.png",
-                "images/hamper-tet-lac-hong-1.png",
-                "images/hamper-tet-lac-hong-2.png"
+            "images/hamper-tet-lac-hong.webp": [
+                "images/hamper-tet-lac-hong.webp",
+                "images/hamper-tet-lac-hong-1.webp",
+                "images/hamper-tet-lac-hong-2.webp"
             ],
-            "images/hamper-tet-viet.png": [
-                "images/hamper-tet-viet.png",
-                "images/hamper-tet-viet-1.png",
-                "images/hamper-tet-viet-2.png",
-                "images/hamper-tet-viet-3.png",
-                "images/hamper-tet-viet-4.png"
+            "images/hamper-tet-viet.webp": [
+                "images/hamper-tet-viet.webp",
+                "images/hamper-tet-viet-1.webp",
+                "images/hamper-tet-viet-2.webp",
+                "images/hamper-tet-viet-3.webp",
+                "images/hamper-tet-viet-4.webp"
             ],
-            "images/hamper-phuong-vu-nghinh-xuan.png": [
-                "images/hamper-phuong-vu-nghinh-xuan.png",
-                "images/hamper-phuong-vu-nghinh-xuan-1.png"
+            "images/hamper-phuong-vu-nghinh-xuan.webp": [
+                "images/hamper-phuong-vu-nghinh-xuan.webp",
+                "images/hamper-phuong-vu-nghinh-xuan-1.webp"
             ],
-            "images/hat-dieu-rang-muoi-250g.png": [
-                "images/hat-dieu-rang-muoi-250g.png",
-                "images/hat-dieu-rang-muoi-250g-2.png",
-                "images/hat-dieu-rang-muoi-250g-3.png"
+            "images/hat-dieu-rang-muoi-250g.webp": [
+                "images/hat-dieu-rang-muoi-250g.webp",
+                "images/hat-dieu-rang-muoi-250g-2.webp",
+                "images/hat-dieu-rang-muoi-250g-3.webp"
             ],
-            "images/hat-macca-say-250g.png": [
-                "images/hat-macca-say-250g.png",
-                "images/hat-macca-say-250g-2.png",
-                "images/hat-macca-say-250g-3.png"
+            "images/hat-macca-say-250g.webp": [
+                "images/hat-macca-say-250g.webp",
+                "images/hat-macca-say-250g-2.webp",
+                "images/hat-macca-say-250g-3.webp"
             ],
-            "images/hanh-nhan-rang-bo-250g.png": [
-                "images/hanh-nhan-rang-bo-250g.png",
-                "images/hanh-nhan-rang-bo-250g-2.png",
-                "images/hanh-nhan-rang-bo-250g-3.png"
+            "images/hanh-nhan-rang-bo-250g.webp": [
+                "images/hanh-nhan-rang-bo-250g.webp",
+                "images/hanh-nhan-rang-bo-250g-2.webp",
+                "images/hanh-nhan-rang-bo-250g-3.webp"
             ],
-            "images/hat-dieu-rang-moc-boc-vo-250g.png": [
-                "images/hat-dieu-rang-moc-boc-vo-250g.png",
-                "images/hat-dieu-rang-moc-boc-vo-250g-2.png",
+            "images/hat-dieu-rang-moc-boc-vo-250g.webp": [
+                "images/hat-dieu-rang-moc-boc-vo-250g.webp",
+                "images/hat-dieu-rang-moc-boc-vo-250g-2.webp",
             ],
-            "images/hat-dieu-rang-moc-vo-lua-250g.png": [
-                "images/hat-dieu-rang-moc-vo-lua-250g.png",
-                "images/hat-dieu-rang-moc-vo-lua-250g-2.png",
+            "images/hat-dieu-rang-moc-vo-lua-250g.webp": [
+                "images/hat-dieu-rang-moc-vo-lua-250g.webp",
+                "images/hat-dieu-rang-moc-vo-lua-250g-2.webp",
             ],
-            "images/hat-dieu-rang-muoi-hop-go-500g.png": [
-                "images/hat-dieu-rang-muoi-hop-go-500g.png",
-                "images/hat-dieu-rang-muoi-hop-go-500g-2.png",
+            "images/hat-dieu-rang-muoi-hop-go-500g.webp": [
+                "images/hat-dieu-rang-muoi-hop-go-500g.webp",
+                "images/hat-dieu-rang-muoi-hop-go-500g-2.webp",
             ],
-            "images/hat-dieu-rang-muoi-vo-lua-210g.png": [
-                "images/hat-dieu-rang-muoi-vo-lua-210g.png",
-                "images/hat-dieu-rang-muoi-vo-lua-210g-2.png",
-                "images/hat-dieu-rang-muoi-vo-lua-210g-3.png"
+            "images/hat-dieu-rang-muoi-vo-lua-210g.webp": [
+                "images/hat-dieu-rang-muoi-vo-lua-210g.webp",
+                "images/hat-dieu-rang-muoi-vo-lua-210g-2.webp",
+                "images/hat-dieu-rang-muoi-vo-lua-210g-3.webp"
             ],
-            "images/hat-dieu-rang-muoi-boc-vo-210g.png": [
-                "images/hat-dieu-rang-muoi-boc-vo-210g.png",
-                "images/hat-dieu-rang-muoi-boc-vo-210g-2.png"
+            "images/hat-dieu-rang-muoi-boc-vo-210g.webp": [
+                "images/hat-dieu-rang-muoi-boc-vo-210g.webp",
+                "images/hat-dieu-rang-muoi-boc-vo-210g-2.webp"
             ],
-            "images/hat-mix-tong-hop-210g.png": [
-                "images/hat-mix-tong-hop-210g.png",
-                "images/hat-mix-tong-hop-210g-2.png"
+            "images/hat-mix-tong-hop-210g.webp": [
+                "images/hat-mix-tong-hop-210g.webp",
+                "images/hat-mix-tong-hop-210g-2.webp"
             ],
-            "images/hat-dieu-capuchino-210g.png": [
-                "images/hat-dieu-capuchino-210g.png",
-                "images/hat-dieu-capuchino-210g-2.png"
+            "images/hat-dieu-capuchino-210g.webp": [
+                "images/hat-dieu-capuchino-210g.webp",
+                "images/hat-dieu-capuchino-210g-2.webp"
             ],
-            "images/hat-dieu-toi-ot-210g.png": [
-                "images/hat-dieu-toi-ot-210g.png",
-                "images/hat-dieu-toi-ot-210g-2.png"
+            "images/hat-dieu-toi-ot-210g.webp": [
+                "images/hat-dieu-toi-ot-210g.webp",
+                "images/hat-dieu-toi-ot-210g-2.webp"
             ],
-            "images/hat-dieu-cacao-210g.png": [
-                "images/hat-dieu-cacao-210g.png",
-                "images/hat-dieu-cacao-210g-2.png"
+            "images/hat-dieu-cacao-210g.webp": [
+                "images/hat-dieu-cacao-210g.webp",
+                "images/hat-dieu-cacao-210g-2.webp"
             ],
-            "images/nhan-macca-wasabi.png": [
-                "images/nhan-macca-wasabi.png",
-                "images/nhan-macca-wasabi-2.png"
+            "images/nhan-macca-wasabi.webp": [
+                "images/nhan-macca-wasabi.webp",
+                "images/nhan-macca-wasabi-2.webp"
             ],
-            "images/hat-dieu-toi-ot-200g.png": [
-                "images/hat-dieu-toi-ot-200g.png",
-                "images/hat-dieu-toi-ot-200g-2.png"
+            "images/hat-dieu-toi-ot-200g.webp": [
+                "images/hat-dieu-toi-ot-200g.webp",
+                "images/hat-dieu-toi-ot-200g-2.webp"
             ],
-            "images/hat-dieu-capuchino-200g.png": [
-                "images/hat-dieu-capuchino-200g.png",
-                "images/hat-dieu-capuchino-200g-2.png"
+            "images/hat-dieu-capuchino-200g.webp": [
+                "images/hat-dieu-capuchino-200g.webp",
+                "images/hat-dieu-capuchino-200g-2.webp"
             ],
-            "images/hat-dieu-cacao-200g.png": [
-                "images/hat-dieu-cacao-200g.png",
-                "images/hat-dieu-cacao-200g-2.png"
+            "images/hat-dieu-cacao-200g.webp": [
+                "images/hat-dieu-cacao-200g.webp",
+                "images/hat-dieu-cacao-200g-2.webp"
             ],
-            "images/hat-sachi-rang-moc-250g.png": [
-                "images/hat-sachi-rang-moc-250g.png",
-                "images/hat-sachi-rang-moc-250g-2.png"
+            "images/hat-sachi-rang-moc-250g.webp": [
+                "images/hat-sachi-rang-moc-250g.webp",
+                "images/hat-sachi-rang-moc-250g-2.webp"
             ],
-            "images/nho-kho-250g.png": [
-                "images/nho-kho-250g.png",
-                "images/nho-kho-250g-2.png",
-                "images/nho-kho-250g-3.png"
+            "images/nho-kho-250g.webp": [
+                "images/nho-kho-250g.webp",
+                "images/nho-kho-250g-2.webp",
+                "images/nho-kho-250g-3.webp"
             ],
-            "images/hat-sachi-rang-moc-100g.png": [
-                "images/hat-sachi-rang-moc-100g.png",
-                "images/hat-sachi-rang-moc-100g-2.png"
+            "images/hat-sachi-rang-moc-100g.webp": [
+                "images/hat-sachi-rang-moc-100g.webp",
+                "images/hat-sachi-rang-moc-100g-2.webp"
             ],
-            "images/hat-dieu-rang-muoi-vo-lua-100g.png": [
-                "images/hat-dieu-rang-muoi-vo-lua-100g.png",
-                "images/hat-dieu-rang-muoi-vo-lua-100g-2.png"
+            "images/hat-dieu-rang-muoi-vo-lua-100g.webp": [
+                "images/hat-dieu-rang-muoi-vo-lua-100g.webp",
+                "images/hat-dieu-rang-muoi-vo-lua-100g-2.webp"
             ],
-            "images/hat-dieu-rang-muoi-boc-vo-205g.png": [
-                "images/hat-dieu-rang-muoi-boc-vo-205g.png",
-                "images/hat-dieu-rang-muoi-boc-vo-205g-2.png"
+            "images/hat-dieu-rang-muoi-boc-vo-205g.webp": [
+                "images/hat-dieu-rang-muoi-boc-vo-205g.webp",
+                "images/hat-dieu-rang-muoi-boc-vo-205g-2.webp"
             ],
-            "images/hat-dieu-rang-muoi-vo-lua-205g.png": [
-                "images/hat-dieu-rang-muoi-vo-lua-205g.png",
-                "images/hat-dieu-rang-muoi-vo-lua-205g-2.png"
+            "images/hat-dieu-rang-muoi-vo-lua-205g.webp": [
+                "images/hat-dieu-rang-muoi-vo-lua-205g.webp",
+                "images/hat-dieu-rang-muoi-vo-lua-205g-2.webp"
             ],
-            "images/hat-dieu-rang-muoi-vo-lua-400g.png": [
-                "images/hat-dieu-rang-muoi-vo-lua-400g.png",
-                "images/hat-dieu-rang-muoi-vo-lua-400g-2.png"
+            "images/hat-dieu-rang-muoi-vo-lua-400g.webp": [
+                "images/hat-dieu-rang-muoi-vo-lua-400g.webp",
+                "images/hat-dieu-rang-muoi-vo-lua-400g-2.webp"
             ],
-            "images/hat-dieu-rang-muoi-boc-vo-400g.png": [
-                "images/hat-dieu-rang-muoi-boc-vo-400g.png",
-                "images/hat-dieu-rang-muoi-boc-vo-400g-2.png"
+            "images/hat-dieu-rang-muoi-boc-vo-400g.webp": [
+                "images/hat-dieu-rang-muoi-boc-vo-400g.webp",
+                "images/hat-dieu-rang-muoi-boc-vo-400g-2.webp"
             ],
-            "images/kho-ga-bo-toi-200g.png": [
-                "images/kho-ga-bo-toi-200g.png",
-                "images/kho-ga-bo-toi-200g-2.png",
-                "images/kho-ga-bo-toi-200g-3.png"
+            "images/kho-ga-bo-toi-200g.webp": [
+                "images/kho-ga-bo-toi-200g.webp",
+                "images/kho-ga-bo-toi-200g-2.webp",
+                "images/kho-ga-bo-toi-200g-3.webp"
             ],
-            "images/kho-ga-la-chanh-200g.png": [
-                "images/kho-ga-la-chanh-200g.png",
-                "images/kho-ga-la-chanh-200g-2.png",
-                "images/kho-ga-la-chanh-200g-3.png"
+            "images/kho-ga-la-chanh-200g.webp": [
+                "images/kho-ga-la-chanh-200g.webp",
+                "images/kho-ga-la-chanh-200g-2.webp",
+                "images/kho-ga-la-chanh-200g-3.webp"
             ],
-            "images/kho-ga-bo-toi-100g.png": [
-                "images/kho-ga-bo-toi-100g.png",
-                "images/kho-ga-bo-toi-100g-2.png"
+            "images/kho-ga-bo-toi-100g.webp": [
+                "images/kho-ga-bo-toi-100g.webp",
+                "images/kho-ga-bo-toi-100g-2.webp"
             ],
-            "images/kho-ga-la-chanh-100g.png": [
-                "images/kho-ga-la-chanh-100g.png",
-                "images/kho-ga-la-chanh-100g-2.png"
+            "images/kho-ga-la-chanh-100g.webp": [
+                "images/kho-ga-la-chanh-100g.webp",
+                "images/kho-ga-la-chanh-100g-2.webp"
             ],
-            "images/catalogue-tet-2027-lisafood-1.png": [
-                "images/catalogue-tet-2027-lisafood-1.png",
-                "images/hamper-huong-xuan-1.png",
-                "images/hamper-ngoc-vu-khai-loc-a-1.png",
-                "images/hamper-tet-lac-hong-2.png",
-                "images/hamper-tet-viet-3.png",
-                "images/hamper-xuan-dong-day-1.png",
-                "images/hamper-xuan-nhu-y-1.png",
+            "images/catalogue-tet-2027-lisafood-1.webp": [
+                "images/catalogue-tet-2027-lisafood-1.webp",
+                "images/hamper-huong-xuan-1.webp",
+                "images/hamper-ngoc-vu-khai-loc-a-1.webp",
+                "images/hamper-tet-lac-hong-2.webp",
+                "images/hamper-tet-viet-3.webp",
+                "images/hamper-xuan-dong-day-1.webp",
+                "images/hamper-xuan-nhu-y-1.webp",
             ],
-            "images/hamper-sac-xuan-01-a-2.png": [
-                "images/hamper-sac-xuan-01-a-2.png"
+            "images/hamper-sac-xuan-01-a-2.webp": [
+                "images/hamper-sac-xuan-01-a-2.webp"
             ],
-            "images/hamper-tet-viet.png": [
-                "images/hamper-tet-viet.png",
-                "images/hamper-tet-viet-2.png",
-                "images/hamper-tet-viet-3.png",
+            "images/hamper-tet-viet.webp": [
+                "images/hamper-tet-viet.webp",
+                "images/hamper-tet-viet-2.webp",
+                "images/hamper-tet-viet-3.webp",
             ],
-            "images/hamper-huong-xuan-1.png": [
-                "images/hamper-huong-xuan-1.png",
-                "images/hamper-huong-xuan-2.png",
-                "images/hamper-huong-xuan-3.png",
-                "images/hamper-huong-xuan-4.png"
+            "images/hamper-huong-xuan-1.webp": [
+                "images/hamper-huong-xuan-1.webp",
+                "images/hamper-huong-xuan-2.webp",
+                "images/hamper-huong-xuan-3.webp",
+                "images/hamper-huong-xuan-4.webp"
             ]
         };
 
@@ -8254,7 +8046,9 @@
 
                 function preloadCardAlbum() {
                     var src = img.getAttribute("src");
-                    var album = existingMultiImages[src];
+                    var album = existingMultiImages[src] || 
+        existingMultiImages[src.replace(/\.webp$/i, '.png')] || 
+        existingMultiImages[src.replace(/\.png$/i, '.webp')];
                     if (album) {
                         album.forEach(function (url) {
                             preloadImgUrl(url);
@@ -8272,7 +8066,9 @@
                     else if (img.alt) title = img.alt;
 
                     var src = img.getAttribute("src");
-                    var album = existingMultiImages[src] || [src];
+                    var album = existingMultiImages[src] || 
+        existingMultiImages[src.replace(/\.webp$/i, '.png')] || 
+        existingMultiImages[src.replace(/\.png$/i, '.webp')] || [src];
                     openAlbumLightbox(album, title, card);
                 });
             });

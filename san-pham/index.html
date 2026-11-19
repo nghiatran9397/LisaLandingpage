@@ -4084,6 +4084,17 @@
         }
     </style>
 
+    <!-- Tự động fallback về PNG nếu trình duyệt không tải được WebP -->
+    <script>
+        document.addEventListener("error", function (e) {
+            if (e.target && e.target.tagName === "IMG" && e.target.src && /\.webp(\?.*)?$/i.test(e.target.src)) {
+                if (!e.target.dataset.triedPng) {
+                    e.target.dataset.triedPng = "1";
+                    e.target.src = e.target.src.replace(/\.webp(\?.*)?$/i, ".png$1");
+                }
+            }
+        }, true);
+    </script>
 </head>
 
 <body>
@@ -4093,7 +4104,7 @@
         <div class="ln-navbar-inner">
             <!-- 1. Logo Lisa Food khi bấm trỏ về trang chủ -->
             <a href="../" class="ln-brand" title="Về trang chủ Lisa Food">
-                <img src="../images/logo.png" alt="Lisa Food Logo">
+                <img src="../images/logo.webp" alt="Lisa Food Logo">
             </a>
 
             <!-- 2, 3, 4. Danh sách các mục điều hướng (Desktop & Mobile) -->
@@ -4331,7 +4342,7 @@
                     </div>
 
                     <div class="pc" data-category="hat-dieu" id="pc_item_0">
-                        <img src="../images/hat-dieu-rang-muoi-250g.png" alt="Hạt điều rang muối 250g" loading="lazy">
+                        <img src="../images/hat-dieu-rang-muoi-250g.webp" alt="Hạt điều rang muối 250g" loading="lazy">
                         <b>Hạt điều rang muối 250g</b>
                         <span>177.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4348,7 +4359,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="macca" id="pc_item_1">
-                        <img src="../images/hat-macca-say-250g.png" alt="Hạt Macca sấy 250g" loading="lazy">
+                        <img src="../images/hat-macca-say-250g.webp" alt="Hạt Macca sấy 250g" loading="lazy">
                         <b>Hạt Macca sấy 250g</b>
                         <span>172.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4365,7 +4376,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hanh-nhan-sachi" id="pc_item_2">
-                        <img src="../images/hanh-nhan-rang-bo-250g.png" alt="Hạnh nhân rang bơ 250g" loading="lazy">
+                        <img src="../images/hanh-nhan-rang-bo-250g.webp" alt="Hạnh nhân rang bơ 250g" loading="lazy">
                         <b>Hạnh nhân rang bơ 250g</b>
                         <span>160.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4382,7 +4393,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_3">
-                        <img src="../images/hat-dieu-rang-moc-boc-vo-250g.png" alt="Hạt điều rang mộc bóc vỏ 250g"
+                        <img src="../images/hat-dieu-rang-moc-boc-vo-250g.webp" alt="Hạt điều rang mộc bóc vỏ 250g"
                             loading="lazy">
                         <b>Hạt điều rang mộc bóc vỏ 250g</b>
                         <span>196.000đ</span>
@@ -4400,7 +4411,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_4">
-                        <img src="../images/hat-dieu-rang-moc-vo-lua-250g.png" alt="Hạt điều rang mộc vỏ lụa 250g"
+                        <img src="../images/hat-dieu-rang-moc-vo-lua-250g.webp" alt="Hạt điều rang mộc vỏ lụa 250g"
                             loading="lazy">
                         <b>Hạt điều rang mộc vỏ lụa 250g</b>
                         <span>186.000đ</span>
@@ -4418,7 +4429,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_5">
-                        <img src="../images/hat-dieu-rang-muoi-hop-go-500g.png" alt="Hạt điều rang muối hộp gỗ 500g"
+                        <img src="../images/hat-dieu-rang-muoi-hop-go-500g.webp" alt="Hạt điều rang muối hộp gỗ 500g"
                             loading="lazy">
                         <b>Hạt điều rang muối hộp gỗ 500g</b>
                         <span>428.000đ</span>
@@ -4436,7 +4447,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_6">
-                        <img src="../images/hat-dieu-rang-muoi-vo-lua-210g.png" alt="Hạt điều rang muối vỏ lụa 210g"
+                        <img src="../images/hat-dieu-rang-muoi-vo-lua-210g.webp" alt="Hạt điều rang muối vỏ lụa 210g"
                             loading="lazy">
                         <b>Hạt điều rang muối vỏ lụa 210g</b>
                         <span>144.000đ</span>
@@ -4454,7 +4465,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_7">
-                        <img src="../images/hat-dieu-rang-muoi-boc-vo-210g.png" alt="Hạt điều rang muối bóc vỏ 210g"
+                        <img src="../images/hat-dieu-rang-muoi-boc-vo-210g.webp" alt="Hạt điều rang muối bóc vỏ 210g"
                             loading="lazy">
                         <b>Hạt điều rang muối bóc vỏ 210g</b>
                         <span>155.000đ</span>
@@ -4472,7 +4483,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="nho-mix" id="pc_item_8">
-                        <img src="../images/hat-mix-tong-hop-210g.png" alt="Hạt mix tổng hợp 210g" loading="lazy">
+                        <img src="../images/hat-mix-tong-hop-210g.webp" alt="Hạt mix tổng hợp 210g" loading="lazy">
                         <b>Hạt mix tổng hợp 210g</b>
                         <span>137.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4489,7 +4500,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_9">
-                        <img src="../images/hat-dieu-capuchino-210g.png" alt="Hạt điều capuchino 210g" loading="lazy">
+                        <img src="../images/hat-dieu-capuchino-210g.webp" alt="Hạt điều capuchino 210g" loading="lazy">
                         <b>Hạt điều capuchino 210g</b>
                         <span>162.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4506,7 +4517,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_10">
-                        <img src="../images/hat-dieu-toi-ot-210g.png" alt="Hạt điều tỏi ớt 210g" loading="lazy">
+                        <img src="../images/hat-dieu-toi-ot-210g.webp" alt="Hạt điều tỏi ớt 210g" loading="lazy">
                         <b>Hạt điều tỏi ớt 210g</b>
                         <span>157.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4523,7 +4534,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_11">
-                        <img src="../images/hat-dieu-cacao-210g.png" alt="Hạt điều cacao 210g" loading="lazy">
+                        <img src="../images/hat-dieu-cacao-210g.webp" alt="Hạt điều cacao 210g" loading="lazy">
                         <b>Hạt điều cacao 210g</b>
                         <span>160.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4540,7 +4551,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="macca" id="pc_item_12">
-                        <img src="../images/nhan-macca-wasabi.png" alt="Nhân macca wasabi" loading="lazy">
+                        <img src="../images/nhan-macca-wasabi.webp" alt="Nhân macca wasabi" loading="lazy">
                         <b>Nhân macca wasabi</b>
                         <span>224.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4557,7 +4568,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_13">
-                        <img src="../images/hat-dieu-toi-ot-200g.png" alt="Hạt điều tỏi ớt 200g" loading="lazy">
+                        <img src="../images/hat-dieu-toi-ot-200g.webp" alt="Hạt điều tỏi ớt 200g" loading="lazy">
                         <b>Hạt điều tỏi ớt 200g</b>
                         <span>160.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4574,7 +4585,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_14">
-                        <img src="../images/hat-dieu-capuchino-200g.png" alt="Hạt điều capuchino 200g" loading="lazy">
+                        <img src="../images/hat-dieu-capuchino-200g.webp" alt="Hạt điều capuchino 200g" loading="lazy">
                         <b>Hạt điều capuchino 200g</b>
                         <span>163.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4591,7 +4602,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_15">
-                        <img src="../images/hat-dieu-cacao-200g.png" alt="Hạt điều cacao 200g" loading="lazy">
+                        <img src="../images/hat-dieu-cacao-200g.webp" alt="Hạt điều cacao 200g" loading="lazy">
                         <b>Hạt điều cacao 200g</b>
                         <span>163.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4608,7 +4619,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hanh-nhan-sachi" id="pc_item_16">
-                        <img src="../images/hat-sachi-rang-moc-250g.png" alt="Hạt sachi rang mộc 250g" loading="lazy">
+                        <img src="../images/hat-sachi-rang-moc-250g.webp" alt="Hạt sachi rang mộc 250g" loading="lazy">
                         <b>Hạt sachi rang mộc 250g</b>
                         <span>145.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4625,7 +4636,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="nho-mix" id="pc_item_17">
-                        <img src="../images/nho-kho-250g.png" alt="Nho khô 250g" loading="lazy">
+                        <img src="../images/nho-kho-250g.webp" alt="Nho khô 250g" loading="lazy">
                         <b>Nho khô 250g</b>
                         <span>110.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4642,7 +4653,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hanh-nhan-sachi" id="pc_item_18">
-                        <img src="../images/hat-sachi-rang-moc-100g.png" alt="Hạt sachi rang mộc 100g" loading="lazy">
+                        <img src="../images/hat-sachi-rang-moc-100g.webp" alt="Hạt sachi rang mộc 100g" loading="lazy">
                         <b>Hạt sachi rang mộc 100g</b>
                         <span>68.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4659,7 +4670,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_19">
-                        <img src="../images/hat-dieu-rang-muoi-vo-lua-100g.png" alt="Hạt điều rang muối vỏ lụa 100g"
+                        <img src="../images/hat-dieu-rang-muoi-vo-lua-100g.webp" alt="Hạt điều rang muối vỏ lụa 100g"
                             loading="lazy">
                         <b>Hạt điều rang muối vỏ lụa 100g</b>
                         <span>68.000đ</span>
@@ -4677,7 +4688,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_20">
-                        <img src="../images/hat-dieu-rang-muoi-boc-vo-205g.png" alt="Hạt điều rang muối bóc vỏ 205g"
+                        <img src="../images/hat-dieu-rang-muoi-boc-vo-205g.webp" alt="Hạt điều rang muối bóc vỏ 205g"
                             loading="lazy">
                         <b>Hạt điều rang muối bóc vỏ 205g</b>
                         <span>170.000đ</span>
@@ -4695,7 +4706,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_21">
-                        <img src="../images/hat-dieu-rang-muoi-vo-lua-205g.png" alt="Hạt điều rang muối vỏ lụa 205g"
+                        <img src="../images/hat-dieu-rang-muoi-vo-lua-205g.webp" alt="Hạt điều rang muối vỏ lụa 205g"
                             loading="lazy">
                         <b>Hạt điều rang muối vỏ lụa 205g</b>
                         <span>145.000đ</span>
@@ -4713,7 +4724,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_22">
-                        <img src="../images/hat-dieu-rang-muoi-vo-lua-400g.png" alt="Hạt điều rang muối vỏ lụa 400g"
+                        <img src="../images/hat-dieu-rang-muoi-vo-lua-400g.webp" alt="Hạt điều rang muối vỏ lụa 400g"
                             loading="lazy">
                         <b>Hạt điều rang muối vỏ lụa 400g</b>
                         <span>297.000đ</span>
@@ -4731,7 +4742,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="hat-dieu" id="pc_item_23">
-                        <img src="../images/hat-dieu-rang-muoi-boc-vo-400g.png" alt="Hạt điều rang muối bóc vỏ 400g"
+                        <img src="../images/hat-dieu-rang-muoi-boc-vo-400g.webp" alt="Hạt điều rang muối bóc vỏ 400g"
                             loading="lazy">
                         <b>Hạt điều rang muối bóc vỏ 400g</b>
                         <span>342.000đ</span>
@@ -4749,7 +4760,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="kho-ga" id="pc_item_24">
-                        <img src="../images/kho-ga-bo-toi-200g.png" alt="Khô gà bơ tỏi 200g" loading="lazy">
+                        <img src="../images/kho-ga-bo-toi-200g.webp" alt="Khô gà bơ tỏi 200g" loading="lazy">
                         <b>Khô gà bơ tỏi 200g</b>
                         <span>160.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4766,7 +4777,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="kho-ga" id="pc_item_25">
-                        <img src="../images/kho-ga-la-chanh-200g.png" alt="Khô gà lá chanh 200g" loading="lazy">
+                        <img src="../images/kho-ga-la-chanh-200g.webp" alt="Khô gà lá chanh 200g" loading="lazy">
                         <b>Khô gà lá chanh 200g</b>
                         <span>151.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4783,7 +4794,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="kho-ga" id="pc_item_26">
-                        <img src="../images/kho-ga-bo-toi-100g.png" alt="Khô gà bơ tỏi 100g" loading="lazy">
+                        <img src="../images/kho-ga-bo-toi-100g.webp" alt="Khô gà bơ tỏi 100g" loading="lazy">
                         <b>Khô gà bơ tỏi 100g</b>
                         <span>56.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4800,7 +4811,7 @@
                         </div>
                     </div>
                     <div class="pc" data-category="kho-ga" id="pc_item_27">
-                        <img src="../images/kho-ga-la-chanh-100g.png" alt="Khô gà lá chanh 100g" loading="lazy">
+                        <img src="../images/kho-ga-la-chanh-100g.webp" alt="Khô gà lá chanh 100g" loading="lazy">
                         <b>Khô gà lá chanh 100g</b>
                         <span>52.000đ</span>
                         <div class="qty-box" style="margin-top:6px;padding-top:6px;">
@@ -4856,7 +4867,7 @@
 
     <footer>
         <div class="wrap">
-            <p><img class="flogo" src="../images/logo.png" alt="Lisa Food"></p>
+            <p><img class="flogo" src="../images/logo.webp" alt="Lisa Food"></p>
             <p>Hotline / Zalo: 0393.955.516</p>
             <p><a href="https://lisafoodglobal.com">Về Lisa Food</a><a href="https://lisafood.vn/san-pham">Sản
                     phẩm</a><a href="https://lisafood.vn/tin-tuc">Tin tức</a><a href="https://lisafood.vn/lien-he">Liên
@@ -5056,7 +5067,7 @@
         // - Sản phẩm nào có khai báo trong bảng này: Sẽ tự động mở giao diện 2 cột với nội dung chuẩn.
         // - Sản phẩm nào chưa khai báo: Sẽ tự động mở chế độ phóng to ảnh truyền thống.
         var productDetailsByImage = {
-            "../images/hamper-happy-new-year.png": {
+            "../images/hamper-happy-new-year.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Happy New Year",
                 "price": "590.000đ",
@@ -5095,7 +5106,7 @@
                     }
                 ]
             },
-            "images/hamper-happy-new-year.png": {
+            "images/hamper-happy-new-year.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Happy New Year",
                 "price": "590.000đ",
@@ -5134,7 +5145,7 @@
                     }
                 ]
             },
-            "../images/hamper-sac-xuan-01-a-2.png": {
+            "../images/hamper-sac-xuan-01-a-2.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Sắc Xuân 01 (A)",
                 "price": "1.022.000đ",
@@ -5173,7 +5184,7 @@
                     }
                 ]
             },
-            "images/hamper-sac-xuan-01-a-2.png": {
+            "images/hamper-sac-xuan-01-a-2.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Sắc Xuân 01 (A)",
                 "price": "1.022.000đ",
@@ -5212,7 +5223,7 @@
                     }
                 ]
             },
-            "../images/hamper-sac-xuan-01-b.png": {
+            "../images/hamper-sac-xuan-01-b.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Sắc Xuân 01 (B)",
                 "price": "1.154.000đ",
@@ -5251,7 +5262,7 @@
                     }
                 ]
             },
-            "images/hamper-sac-xuan-01-b.png": {
+            "images/hamper-sac-xuan-01-b.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Sắc Xuân 01 (B)",
                 "price": "1.154.000đ",
@@ -5290,7 +5301,7 @@
                     }
                 ]
             },
-            "../images/hamper-sac-xuan-02-a.png": {
+            "../images/hamper-sac-xuan-02-a.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Sắc Xuân 02 (A)",
                 "price": "1.043.000đ",
@@ -5329,7 +5340,7 @@
                     }
                 ]
             },
-            "images/hamper-sac-xuan-02-a.png": {
+            "images/hamper-sac-xuan-02-a.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Sắc Xuân 02 (A)",
                 "price": "1.043.000đ",
@@ -5368,7 +5379,7 @@
                     }
                 ]
             },
-            "../images/hamper-sac-xuan-02-b.png": {
+            "../images/hamper-sac-xuan-02-b.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Sắc Xuân 02 (B)",
                 "price": "999.000đ",
@@ -5407,7 +5418,7 @@
                     }
                 ]
             },
-            "images/hamper-sac-xuan-02-b.png": {
+            "images/hamper-sac-xuan-02-b.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Sắc Xuân 02 (B)",
                 "price": "999.000đ",
@@ -5446,7 +5457,7 @@
                     }
                 ]
             },
-            "../images/hamper-ngoc-vu-khai-loc-a.png": {
+            "../images/hamper-ngoc-vu-khai-loc-a.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Ngọc Vũ Khai Lộc (A)",
                 "price": "955.000đ",
@@ -5485,7 +5496,7 @@
                     }
                 ]
             },
-            "images/hamper-ngoc-vu-khai-loc-a.png": {
+            "images/hamper-ngoc-vu-khai-loc-a.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Ngọc Vũ Khai Lộc (A)",
                 "price": "955.000đ",
@@ -5524,7 +5535,7 @@
                     }
                 ]
             },
-            "../images/hamper-ngoc-vu-khai-loc-b.png": {
+            "../images/hamper-ngoc-vu-khai-loc-b.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Ngọc Vũ Khai Lộc (B)",
                 "price": "899.000đ",
@@ -5563,7 +5574,7 @@
                     }
                 ]
             },
-            "images/hamper-ngoc-vu-khai-loc-b.png": {
+            "images/hamper-ngoc-vu-khai-loc-b.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Ngọc Vũ Khai Lộc (B)",
                 "price": "899.000đ",
@@ -5602,7 +5613,7 @@
                     }
                 ]
             },
-            "../images/hamper-xuan-hoan-ca.png": {
+            "../images/hamper-xuan-hoan-ca.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Xuân Hoan Ca",
                 "price": "1.380.000đ",
@@ -5641,7 +5652,7 @@
                     }
                 ]
             },
-            "images/hamper-xuan-hoan-ca.png": {
+            "images/hamper-xuan-hoan-ca.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Xuân Hoan Ca",
                 "price": "1.380.000đ",
@@ -5680,7 +5691,7 @@
                     }
                 ]
             },
-            "../images/hamper-huong-xuan.png": {
+            "../images/hamper-huong-xuan.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Hương Xuân",
                 "price": "1.314.000đ",
@@ -5719,7 +5730,7 @@
                     }
                 ]
             },
-            "images/hamper-huong-xuan.png": {
+            "images/hamper-huong-xuan.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Hương Xuân",
                 "price": "1.314.000đ",
@@ -5758,7 +5769,7 @@
                     }
                 ]
             },
-            "../images/hamper-xuan-dong-day.png": {
+            "../images/hamper-xuan-dong-day.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Xuân Đong Đầy",
                 "price": "1.055.000đ",
@@ -5797,7 +5808,7 @@
                     }
                 ]
             },
-            "images/hamper-xuan-dong-day.png": {
+            "images/hamper-xuan-dong-day.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Xuân Đong Đầy",
                 "price": "1.055.000đ",
@@ -5836,7 +5847,7 @@
                     }
                 ]
             },
-            "../images/hamper-xuan-nhu-y.png": {
+            "../images/hamper-xuan-nhu-y.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Xuân Như Ý",
                 "price": "1.655.000đ",
@@ -5875,7 +5886,7 @@
                     }
                 ]
             },
-            "images/hamper-xuan-nhu-y.png": {
+            "images/hamper-xuan-nhu-y.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Xuân Như Ý",
                 "price": "1.655.000đ",
@@ -5914,7 +5925,7 @@
                     }
                 ]
             },
-            "../images/hamper-tet-lac-hong.png": {
+            "../images/hamper-tet-lac-hong.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Tết Lạc Hồng",
                 "price": "1.682.000đ",
@@ -5953,7 +5964,7 @@
                     }
                 ]
             },
-            "images/hamper-tet-lac-hong.png": {
+            "images/hamper-tet-lac-hong.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Tết Lạc Hồng",
                 "price": "1.682.000đ",
@@ -5992,7 +6003,7 @@
                     }
                 ]
             },
-            "../images/hamper-tet-viet.png": {
+            "../images/hamper-tet-viet.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Tết Việt",
                 "price": "1.435.000đ",
@@ -6031,7 +6042,7 @@
                     }
                 ]
             },
-            "images/hamper-tet-viet.png": {
+            "images/hamper-tet-viet.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Tết Việt",
                 "price": "1.435.000đ",
@@ -6070,7 +6081,7 @@
                     }
                 ]
             },
-            "../images/hamper-phuong-vu-nghinh-xuan.png": {
+            "../images/hamper-phuong-vu-nghinh-xuan.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Phượng Vũ Nghinh Xuân",
                 "price": "1.010.000đ",
@@ -6109,7 +6120,7 @@
                     }
                 ]
             },
-            "images/hamper-phuong-vu-nghinh-xuan.png": {
+            "images/hamper-phuong-vu-nghinh-xuan.webp": {
                 "badge": "🎁 BỘ SƯU TẬP HAMPER TẾT 2027",
                 "title": "Phượng Vũ Nghinh Xuân",
                 "price": "1.010.000đ",
@@ -6148,7 +6159,7 @@
                     }
                 ]
             },
-            "images/hat-dieu-rang-muoi-vo-lua-100g.png": {
+            "images/hat-dieu-rang-muoi-vo-lua-100g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -6166,7 +6177,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-vo-lua-205g.png": {
+            "images/hat-dieu-rang-muoi-vo-lua-205g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -6184,7 +6195,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-vo-lua-210g.png": {
+            "images/hat-dieu-rang-muoi-vo-lua-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -6202,7 +6213,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-250g.png": {
+            "images/hat-dieu-rang-muoi-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -6220,7 +6231,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-vo-lua-400g.png": {
+            "images/hat-dieu-rang-muoi-vo-lua-400g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -6238,7 +6249,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-hop-go-500g.png": {
+            "images/hat-dieu-rang-muoi-hop-go-500g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -6256,7 +6267,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-boc-vo-205g.png": {
+            "images/hat-dieu-rang-muoi-boc-vo-205g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -6274,7 +6285,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-boc-vo-210g.png": {
+            "images/hat-dieu-rang-muoi-boc-vo-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -6292,7 +6303,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-muoi-boc-vo-400g.png": {
+            "images/hat-dieu-rang-muoi-boc-vo-400g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang muối Lisa Food được chế biến tại nhà máy đạt tiêu chuẩn ISO 22000 tại Bình Phước - vùng đất nổi tiếng với nguồn hạt điều chất lượng của Việt Nam.",
@@ -6310,7 +6321,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-moc-vo-lua-250g.png": {
+            "images/hat-dieu-rang-moc-vo-lua-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang mộc vỏ lụa Lisa Food được tuyển chọn kỹ lưỡng, chế biến bằng phương pháp rang mộc nhằm làm nổi bật hương vị tự nhiên của hạt điều.",
@@ -6328,7 +6339,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-rang-moc-boc-vo-250g.png": {
+            "images/hat-dieu-rang-moc-boc-vo-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều rang mộc bóc vỏ Lisa Food được tuyển chọn kỹ lưỡng và chế biến bằng phương pháp rang mộc nhằm làm nổi bật hương vị tự nhiên của hạt điều.",
@@ -6346,7 +6357,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-cacao-210g.png": {
+            "images/hat-dieu-cacao-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Cacao Lisa Food mang đến sự kết hợp độc đáo giữa vị béo bùi của hạt điều tuyển chọn và hương thơm đặc trưng của cacao.",
@@ -6363,7 +6374,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-cacao-200g.png": {
+            "images/hat-dieu-cacao-200g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Cacao Lisa Food mang đến sự kết hợp độc đáo giữa vị béo bùi của hạt điều tuyển chọn và hương thơm đặc trưng của cacao.",
@@ -6380,7 +6391,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-capuchino-210g.png": {
+            "images/hat-dieu-capuchino-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Capuchino Lisa Food là sự kết hợp giữa hạt điều tuyển chọn và hương vị cà phê thơm đặc trưng, mang đến trải nghiệm thưởng thức mới lạ và hấp dẫn.",
@@ -6397,7 +6408,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-capuchino-200g.png": {
+            "images/hat-dieu-capuchino-200g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Capuchino Lisa Food là sự kết hợp giữa hạt điều tuyển chọn và hương vị cà phê thơm đặc trưng, mang đến trải nghiệm thưởng thức mới lạ và hấp dẫn.",
@@ -6414,7 +6425,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-toi-ot-210g.png": {
+            "images/hat-dieu-toi-ot-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Tỏi Ớt Lisa Food là sự kết hợp giữa vị béo bùi đặc trưng của hạt điều và hương thơm nồng nàn của tỏi, hòa quyện cùng vị cay kích thích vị giác của ớt.",
@@ -6431,7 +6442,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-toi-ot-200g.png": {
+            "images/hat-dieu-toi-ot-200g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Tỏi Ớt Lisa Food là sự kết hợp giữa vị béo bùi đặc trưng của hạt điều và hương thơm nồng nàn của tỏi, hòa quyện cùng vị cay kích thích vị giác của ớt.",
@@ -6448,7 +6459,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-dieu-toi-ot-210g.png": {
+            "images/hat-dieu-toi-ot-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt điều Tỏi Ớt Lisa Food là sự kết hợp giữa vị béo bùi đặc trưng của hạt điều và hương thơm nồng nàn của tỏi, hòa quyện cùng vị cay kích thích vị giác của ớt.",
@@ -6465,7 +6476,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-sachi-rang-moc-100g.png": {
+            "images/hat-sachi-rang-moc-100g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt Sachi rang mộc Lisa Food từ nguồn nguyên liệu Sachi Tây Nguyên, sản phẩm hướng đến những khách hàng yêu thích thực phẩm có nguồn gốc thực vật và quan tâm đến chế độ ăn uống cân bằng.",
@@ -6483,7 +6494,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-sachi-rang-moc-250g.png": {
+            "images/hat-sachi-rang-moc-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt Sachi rang mộc Lisa Food từ nguồn nguyên liệu Sachi Tây Nguyên, sản phẩm hướng đến những khách hàng yêu thích thực phẩm có nguồn gốc thực vật và quan tâm đến chế độ ăn uống cân bằng.",
@@ -6501,7 +6512,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-macca-say-250g.png": {
+            "images/hat-macca-say-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt macca sấy nứt vỏ Lisa Food được tuyển chọn nhằm mang đến sản phẩm có hương vị thơm ngon và chất lượng ổn định.",
@@ -6519,7 +6530,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/nhan-macca-wasabi.png": {
+            "images/nhan-macca-wasabi.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Nhân Macca Wasabi Lisa Food mang đến sự kết hợp thú vị giữa nhân hạt macca và hương vị wasabi đặc trưng.",
@@ -6536,7 +6547,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hanh-nhan-rang-bo-250g.png": {
+            "images/hanh-nhan-rang-bo-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạnh nhân rang bơ Lisa Food là sự kết hợp hài hòa giữa hạt hạnh nhân được tuyển chọn kỹ lưỡng và bơ thơm béo, tạo nên hương vị hấp dẫn cùng độ giòn bùi đặc trưng.",
@@ -6554,7 +6565,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/nho-kho-250g.png": {
+            "images/nho-kho-250g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Nho khô Chile Lisa Food mang đến hương vị ngọt dịu tự nhiên cùng kết cấu mềm dai hấp dẫn, là lựa chọn phù hợp cho những ai yêu thích các món ăn nhẹ tiện lợi.",
@@ -6571,7 +6582,7 @@
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
             },
-            "images/hat-mix-tong-hop-210g.png": {
+            "images/hat-mix-tong-hop-210g.webp": {
                 badge: "Nông Sản Tuyển Chọn Loại 1",
                 description: [
                     "Hạt Tổng Hợp Lisa Food là sự kết hợp đa dạng các loại hạt như hạt điều, hạnh nhân, macca và các loại hạt khác, mang đến hương vị phong phú cùng độ bùi béo đặc trưng.",
@@ -6613,7 +6624,14 @@
             // Nhận diện sản phẩm dựa theo đường dẫn file ảnh chính (imgList[0])
             var mainImgSrc = (imgList && imgList.length > 0) ? imgList[0] : "";
             var cleanKey = mainImgSrc.replace(/^\.\.\//, '');
-            var productDetail = productDetailsByImage[cleanKey] || productDetailsByImage[mainImgSrc] || productDetailsByImage['images/' + cleanKey];
+            var cleanKeyPng = cleanKey.replace(/\.webp$/i, '.png');
+            var cleanKeyWebp = cleanKey.replace(/\.png$/i, '.webp');
+            var productDetail = productDetailsByImage[cleanKey] || 
+                                productDetailsByImage[cleanKeyWebp] || 
+                                productDetailsByImage[cleanKeyPng] || 
+                                productDetailsByImage[mainImgSrc] || 
+                                productDetailsByImage['images/' + cleanKey] ||
+                                productDetailsByImage['images/' + cleanKeyWebp];
 
             var classicWrap = document.getElementById("lbClassicWrap");
             var productCard = document.getElementById("lbProductCard");
@@ -6974,141 +6992,141 @@
         }
 
         var existingMultiImages = {
-            "images/hat-dieu-rang-muoi-250g.png": [
-                "images/hat-dieu-rang-muoi-250g.png",
-                "images/hat-dieu-rang-muoi-250g-2.png",
-                "images/hat-dieu-rang-muoi-250g-3.png"
+            "images/hat-dieu-rang-muoi-250g.webp": [
+                "images/hat-dieu-rang-muoi-250g.webp",
+                "images/hat-dieu-rang-muoi-250g-2.webp",
+                "images/hat-dieu-rang-muoi-250g-3.webp"
             ],
-            "images/hat-macca-say-250g.png": [
-                "images/hat-macca-say-250g.png",
-                "images/hat-macca-say-250g-2.png",
-                "images/hat-macca-say-250g-3.png"
+            "images/hat-macca-say-250g.webp": [
+                "images/hat-macca-say-250g.webp",
+                "images/hat-macca-say-250g-2.webp",
+                "images/hat-macca-say-250g-3.webp"
             ],
-            "images/hanh-nhan-rang-bo-250g.png": [
-                "images/hanh-nhan-rang-bo-250g.png",
-                "images/hanh-nhan-rang-bo-250g-2.png",
-                "images/hanh-nhan-rang-bo-250g-3.png"
+            "images/hanh-nhan-rang-bo-250g.webp": [
+                "images/hanh-nhan-rang-bo-250g.webp",
+                "images/hanh-nhan-rang-bo-250g-2.webp",
+                "images/hanh-nhan-rang-bo-250g-3.webp"
             ],
-            "images/hat-dieu-rang-moc-boc-vo-250g.png": [
-                "images/hat-dieu-rang-moc-boc-vo-250g.png",
-                "images/hat-dieu-rang-moc-boc-vo-250g-2.png",
+            "images/hat-dieu-rang-moc-boc-vo-250g.webp": [
+                "images/hat-dieu-rang-moc-boc-vo-250g.webp",
+                "images/hat-dieu-rang-moc-boc-vo-250g-2.webp",
             ],
-            "images/hat-dieu-rang-moc-vo-lua-250g.png": [
-                "images/hat-dieu-rang-moc-vo-lua-250g.png",
-                "images/hat-dieu-rang-moc-vo-lua-250g-2.png",
+            "images/hat-dieu-rang-moc-vo-lua-250g.webp": [
+                "images/hat-dieu-rang-moc-vo-lua-250g.webp",
+                "images/hat-dieu-rang-moc-vo-lua-250g-2.webp",
             ],
-            "images/hat-dieu-rang-muoi-hop-go-500g.png": [
-                "images/hat-dieu-rang-muoi-hop-go-500g.png",
-                "images/hat-dieu-rang-muoi-hop-go-500g-2.png",
+            "images/hat-dieu-rang-muoi-hop-go-500g.webp": [
+                "images/hat-dieu-rang-muoi-hop-go-500g.webp",
+                "images/hat-dieu-rang-muoi-hop-go-500g-2.webp",
             ],
-            "images/hat-dieu-rang-muoi-vo-lua-210g.png": [
-                "images/hat-dieu-rang-muoi-vo-lua-210g.png",
-                "images/hat-dieu-rang-muoi-vo-lua-210g-2.png",
-                "images/hat-dieu-rang-muoi-vo-lua-210g-3.png"
+            "images/hat-dieu-rang-muoi-vo-lua-210g.webp": [
+                "images/hat-dieu-rang-muoi-vo-lua-210g.webp",
+                "images/hat-dieu-rang-muoi-vo-lua-210g-2.webp",
+                "images/hat-dieu-rang-muoi-vo-lua-210g-3.webp"
             ],
-            "images/hat-dieu-rang-muoi-boc-vo-210g.png": [
-                "images/hat-dieu-rang-muoi-boc-vo-210g.png",
-                "images/hat-dieu-rang-muoi-boc-vo-210g-2.png"
+            "images/hat-dieu-rang-muoi-boc-vo-210g.webp": [
+                "images/hat-dieu-rang-muoi-boc-vo-210g.webp",
+                "images/hat-dieu-rang-muoi-boc-vo-210g-2.webp"
             ],
-            "images/hat-mix-tong-hop-210g.png": [
-                "images/hat-mix-tong-hop-210g.png",
-                "images/hat-mix-tong-hop-210g-2.png"
+            "images/hat-mix-tong-hop-210g.webp": [
+                "images/hat-mix-tong-hop-210g.webp",
+                "images/hat-mix-tong-hop-210g-2.webp"
             ],
-            "images/hat-dieu-capuchino-210g.png": [
-                "images/hat-dieu-capuchino-210g.png",
-                "images/hat-dieu-capuchino-210g-2.png"
+            "images/hat-dieu-capuchino-210g.webp": [
+                "images/hat-dieu-capuchino-210g.webp",
+                "images/hat-dieu-capuchino-210g-2.webp"
             ],
-            "images/hat-dieu-toi-ot-210g.png": [
-                "images/hat-dieu-toi-ot-210g.png",
-                "images/hat-dieu-toi-ot-210g-2.png"
+            "images/hat-dieu-toi-ot-210g.webp": [
+                "images/hat-dieu-toi-ot-210g.webp",
+                "images/hat-dieu-toi-ot-210g-2.webp"
             ],
-            "images/hat-dieu-cacao-210g.png": [
-                "images/hat-dieu-cacao-210g.png",
-                "images/hat-dieu-cacao-210g-2.png"
+            "images/hat-dieu-cacao-210g.webp": [
+                "images/hat-dieu-cacao-210g.webp",
+                "images/hat-dieu-cacao-210g-2.webp"
             ],
-            "images/nhan-macca-wasabi.png": [
-                "images/nhan-macca-wasabi.png",
-                "images/nhan-macca-wasabi-2.png"
+            "images/nhan-macca-wasabi.webp": [
+                "images/nhan-macca-wasabi.webp",
+                "images/nhan-macca-wasabi-2.webp"
             ],
-            "images/hat-dieu-toi-ot-200g.png": [
-                "images/hat-dieu-toi-ot-200g.png",
-                "images/hat-dieu-toi-ot-200g-2.png"
+            "images/hat-dieu-toi-ot-200g.webp": [
+                "images/hat-dieu-toi-ot-200g.webp",
+                "images/hat-dieu-toi-ot-200g-2.webp"
             ],
-            "images/hat-dieu-capuchino-200g.png": [
-                "images/hat-dieu-capuchino-200g.png",
-                "images/hat-dieu-capuchino-200g-2.png"
+            "images/hat-dieu-capuchino-200g.webp": [
+                "images/hat-dieu-capuchino-200g.webp",
+                "images/hat-dieu-capuchino-200g-2.webp"
             ],
-            "images/hat-dieu-cacao-200g.png": [
-                "images/hat-dieu-cacao-200g.png",
-                "images/hat-dieu-cacao-200g-2.png"
+            "images/hat-dieu-cacao-200g.webp": [
+                "images/hat-dieu-cacao-200g.webp",
+                "images/hat-dieu-cacao-200g-2.webp"
             ],
-            "images/hat-sachi-rang-moc-250g.png": [
-                "images/hat-sachi-rang-moc-250g.png",
-                "images/hat-sachi-rang-moc-250g-2.png"
+            "images/hat-sachi-rang-moc-250g.webp": [
+                "images/hat-sachi-rang-moc-250g.webp",
+                "images/hat-sachi-rang-moc-250g-2.webp"
             ],
-            "images/nho-kho-250g.png": [
-                "images/nho-kho-250g.png",
-                "images/nho-kho-250g-2.png",
-                "images/nho-kho-250g-3.png"
+            "images/nho-kho-250g.webp": [
+                "images/nho-kho-250g.webp",
+                "images/nho-kho-250g-2.webp",
+                "images/nho-kho-250g-3.webp"
             ],
-            "images/hat-sachi-rang-moc-100g.png": [
-                "images/hat-sachi-rang-moc-100g.png",
-                "images/hat-sachi-rang-moc-100g-2.png"
+            "images/hat-sachi-rang-moc-100g.webp": [
+                "images/hat-sachi-rang-moc-100g.webp",
+                "images/hat-sachi-rang-moc-100g-2.webp"
             ],
-            "images/hat-dieu-rang-muoi-vo-lua-100g.png": [
-                "images/hat-dieu-rang-muoi-vo-lua-100g.png",
-                "images/hat-dieu-rang-muoi-vo-lua-100g-2.png"
+            "images/hat-dieu-rang-muoi-vo-lua-100g.webp": [
+                "images/hat-dieu-rang-muoi-vo-lua-100g.webp",
+                "images/hat-dieu-rang-muoi-vo-lua-100g-2.webp"
             ],
-            "images/hat-dieu-rang-muoi-boc-vo-205g.png": [
-                "images/hat-dieu-rang-muoi-boc-vo-205g.png",
-                "images/hat-dieu-rang-muoi-boc-vo-205g-2.png"
+            "images/hat-dieu-rang-muoi-boc-vo-205g.webp": [
+                "images/hat-dieu-rang-muoi-boc-vo-205g.webp",
+                "images/hat-dieu-rang-muoi-boc-vo-205g-2.webp"
             ],
-            "images/hat-dieu-rang-muoi-vo-lua-205g.png": [
-                "images/hat-dieu-rang-muoi-vo-lua-205g.png",
-                "images/hat-dieu-rang-muoi-vo-lua-205g-2.png"
+            "images/hat-dieu-rang-muoi-vo-lua-205g.webp": [
+                "images/hat-dieu-rang-muoi-vo-lua-205g.webp",
+                "images/hat-dieu-rang-muoi-vo-lua-205g-2.webp"
             ],
-            "images/hat-dieu-rang-muoi-vo-lua-400g.png": [
-                "images/hat-dieu-rang-muoi-vo-lua-400g.png",
-                "images/hat-dieu-rang-muoi-vo-lua-400g-2.png"
+            "images/hat-dieu-rang-muoi-vo-lua-400g.webp": [
+                "images/hat-dieu-rang-muoi-vo-lua-400g.webp",
+                "images/hat-dieu-rang-muoi-vo-lua-400g-2.webp"
             ],
-            "images/hat-dieu-rang-muoi-boc-vo-400g.png": [
-                "images/hat-dieu-rang-muoi-boc-vo-400g.png",
-                "images/hat-dieu-rang-muoi-boc-vo-400g-2.png"
+            "images/hat-dieu-rang-muoi-boc-vo-400g.webp": [
+                "images/hat-dieu-rang-muoi-boc-vo-400g.webp",
+                "images/hat-dieu-rang-muoi-boc-vo-400g-2.webp"
             ],
-            "images/kho-ga-bo-toi-200g.png": [
-                "images/kho-ga-bo-toi-200g.png",
-                "images/kho-ga-bo-toi-200g-2.png",
-                "images/kho-ga-bo-toi-200g-3.png"
+            "images/kho-ga-bo-toi-200g.webp": [
+                "images/kho-ga-bo-toi-200g.webp",
+                "images/kho-ga-bo-toi-200g-2.webp",
+                "images/kho-ga-bo-toi-200g-3.webp"
             ],
-            "images/kho-ga-la-chanh-200g.png": [
-                "images/kho-ga-la-chanh-200g.png",
-                "images/kho-ga-la-chanh-200g-2.png",
-                "images/kho-ga-la-chanh-200g-3.png"
+            "images/kho-ga-la-chanh-200g.webp": [
+                "images/kho-ga-la-chanh-200g.webp",
+                "images/kho-ga-la-chanh-200g-2.webp",
+                "images/kho-ga-la-chanh-200g-3.webp"
             ],
-            "images/kho-ga-bo-toi-100g.png": [
-                "images/kho-ga-bo-toi-100g.png",
-                "images/kho-ga-bo-toi-100g-2.png"
+            "images/kho-ga-bo-toi-100g.webp": [
+                "images/kho-ga-bo-toi-100g.webp",
+                "images/kho-ga-bo-toi-100g-2.webp"
             ],
-            "images/kho-ga-la-chanh-100g.png": [
-                "images/kho-ga-la-chanh-100g.png",
-                "images/kho-ga-la-chanh-100g-2.png"
+            "images/kho-ga-la-chanh-100g.webp": [
+                "images/kho-ga-la-chanh-100g.webp",
+                "images/kho-ga-la-chanh-100g-2.webp"
             ],
-            "images/catalogue-tet-2027-lisafood.png": [
-                "images/catalogue-tet-2027-lisafood.png",
-                "images/hamper-huong-xuan-1.png",
-                "images/hamper-ngoc-vu-khai-loc-a-1.png",
-                "images/hamper-tet-lac-hong-2.png",
-                "images/hamper-tet-viet-3.png",
-                "images/hamper-xuan-dong-day-1.png",
-                "images/hamper-xuan-nhu-y-1.png",
+            "images/catalogue-tet-2027-lisafood.webp": [
+                "images/catalogue-tet-2027-lisafood.webp",
+                "images/hamper-huong-xuan-1.webp",
+                "images/hamper-ngoc-vu-khai-loc-a-1.webp",
+                "images/hamper-tet-lac-hong-2.webp",
+                "images/hamper-tet-viet-3.webp",
+                "images/hamper-xuan-dong-day-1.webp",
+                "images/hamper-xuan-nhu-y-1.webp",
             ],
-            "images/hamper-sac-xuan-01-a-2.png": [
-                "images/hamper-sac-xuan-01-a-2.png"
+            "images/hamper-sac-xuan-01-a-2.webp": [
+                "images/hamper-sac-xuan-01-a-2.webp"
             ],
-            "images/hamper-tet-viet.png": [
-                "images/hamper-tet-viet.png",
-                "images/hamper-tet-viet-2.png",
-                "images/hamper-tet-viet-3.png",
+            "images/hamper-tet-viet.webp": [
+                "images/hamper-tet-viet.webp",
+                "images/hamper-tet-viet-2.webp",
+                "images/hamper-tet-viet-3.webp",
             ]
         };
 
@@ -7139,7 +7157,11 @@
 
                     var src = img.getAttribute("src");
                     var cleanSrc = src.replace(/^\.\.\//, '');
-                    var rawAlbum = existingMultiImages[src] || existingMultiImages[cleanSrc] || [src];
+                    var cleanSrcPng = cleanSrc.replace(/\.webp$/i, '.png');
+                    var cleanSrcWebp = cleanSrc.replace(/\.png$/i, '.webp');
+                    var rawAlbum = existingMultiImages[src] || existingMultiImages[cleanSrc] || 
+                                   existingMultiImages[cleanSrcWebp] || existingMultiImages[cleanSrcPng] || 
+                                   existingMultiImages[src.replace(/\.webp$/i, '.png')] || [src];
                     var album = rawAlbum.map(function (u) { return u.startsWith('../') ? u : '../' + u; });
                     openAlbumLightbox(album, title, card);
                 });

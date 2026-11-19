@@ -3431,6 +3431,84 @@
         .qty-btn:active {
             transform: scale(0.86);
         }
+
+        /* BƯỚC 5: HÀO QUANG TẾT HUYỀN ẢO KHU VỰC HERO (AMBIENT HOLIDAY GLOW) */
+        @keyframes heroAmbientShift {
+            0% {
+                background-position: center center, 15% 65%, 85% 20%, center center;
+            }
+            50% {
+                background-position: center center, 25% 75%, 75% 30%, center center;
+            }
+            100% {
+                background-position: center center, 18% 60%, 82% 22%, center center;
+            }
+        }
+
+        @keyframes blossomFloatLeft {
+            0%, 100% {
+                transform: scaleX(-1) translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: scaleX(-1) translateY(-14px) rotate(5deg);
+            }
+        }
+
+        @keyframes blossomFloatRight {
+            0%, 100% {
+                transform: scaleX(-1) translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: scaleX(-1) translateY(12px) rotate(-4deg);
+            }
+        }
+
+        .hero {
+            background:
+                radial-gradient(ellipse 65% 55% at 50% 35%, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.08) 45%, rgba(0, 0, 0, 0) 75%),
+                radial-gradient(circle 420px at 20% 70%, rgba(225, 29, 72, 0.14) 0%, rgba(0, 0, 0, 0) 70%),
+                radial-gradient(circle 380px at 80% 25%, rgba(251, 191, 36, 0.16) 0%, rgba(0, 0, 0, 0) 65%),
+                linear-gradient(135deg, var(--hero) 0%, #8f1d17 50%, var(--hero2) 100%) !important;
+            background-size: 100% 100%, 140% 140%, 140% 140%, 100% 100% !important;
+            animation: heroAmbientShift 16s ease-in-out infinite alternate !important;
+        }
+
+        .hero::before {
+            animation: blossomFloatLeft 10s ease-in-out infinite !important;
+        }
+
+        .hero::after {
+            animation: blossomFloatRight 12s ease-in-out infinite !important;
+        }
+
+        /* Nút CTA chính 'Khám phá ngay' lướt tia sáng vàng kim */
+        .btns .btn.gold {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .btns .btn.gold::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            pointer-events: none;
+        }
+
+        .btns .btn.gold:hover::after {
+            left: 170%;
+            transition: left 0.75s ease;
+        }
+
+        .btns .btn.gold:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 10px 28px rgba(245, 158, 11, 0.45), 0 0 0 2px rgba(254, 240, 138, 0.6) !important;
+        }
     </style>
 </head>
 

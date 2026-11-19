@@ -3197,6 +3197,20 @@
                 padding-top: 72px !important;
             }
         }
+
+        /* Hiệu ứng cuộn trang mượt mà chuẩn Luxury (Lenis) */
+        html.lenis, html.lenis body {
+            height: auto;
+        }
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -3274,7 +3288,7 @@
         </div>
 
         <!-- KHUNG TÌM KIẾM SẢN PHẨM LẺ SANG TRỌNG -->
-        <div class="ln-search-panel" id="retailSearchPanel">
+        <div class="ln-search-panel" id="retailSearchPanel" data-lenis-prevent>
             <!-- Hàng tiêu đề với nút đóng ở góc trên bên phải -->
             <div class="ln-search-top-row">
                 <div class="ln-search-heading">
@@ -5916,7 +5930,7 @@
     </button>
 
     <!-- Modal Danh sách dự toán khảo sát -->
-    <div class="list-modal" id="listModal" onclick="if(event.target===this) toggleListModal(false)">
+    <div class="list-modal" id="listModal" data-lenis-prevent onclick="if(event.target===this) toggleListModal(false)">
         <div class="list-modal-content">
             <div class="list-modal-header">
                 <h3>📋 Danh sách sản phẩm quan tâm & Dự toán</h3>
@@ -6196,7 +6210,7 @@
 
 
     <!-- MODAL LIGHTBOX: PHÓNG TO ẢNH HAMPER (TRUYỀN THỐNG) & 2 CỘT CHO SẢN PHẨM LẺ -->
-    <div class="img-lightbox" id="imgLightbox" onclick="closeLightbox(event)">
+    <div class="img-lightbox" id="imgLightbox" data-lenis-prevent onclick="closeLightbox(event)">
         <!-- 1. GIAO DIỆN PHÓNG TO ẢNH TRUYỀN THỐNG (DÀNH CHO HAMPER TẾT 2027) -->
         <div class="lightbox-wrap" id="lbClassicWrap" style="display: none;">
             <button type="button" class="lightbox-close" onclick="closeLightbox()">&times;</button>
@@ -8497,6 +8511,46 @@
             updateMobileCall();
         });
 
+    </script>
+
+    <!-- HIỆU ỨNG CUỘN TRANG MƯỢT MÀ CHUẨN LUXURY (BƯỚC 1 - LENIS) -->
+    <script src="js/lenis.min.js"></script>
+    <script>
+        (function () {
+            if (typeof Lenis === "undefined") return;
+            var lenis = new Lenis({
+                duration: 1.15,
+                easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+                orientation: "vertical",
+                gestureOrientation: "vertical",
+                smoothWheel: true,
+                wheelMultiplier: 0.95,
+                touchMultiplier: 1.2,
+                infinite: false
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            window.lisaLenis = lenis;
+
+            // Xử lý các liên kết nhảy neo (#) trên trang mượt mà
+            document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+                anchor.addEventListener("click", function (e) {
+                    var targetId = this.getAttribute("href");
+                    if (targetId && targetId !== "#" && targetId !== "#top") {
+                        var targetEl = document.querySelector(targetId);
+                        if (targetEl) {
+                            e.preventDefault();
+                            lenis.scrollTo(targetEl, { offset: -60 });
+                        }
+                    }
+                });
+            });
+        })();
     </script>
 
 </body>

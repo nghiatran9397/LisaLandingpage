@@ -3906,6 +3906,227 @@
                 font-size: 14.5px;
             }
         }
+    
+        /* --- SECTION: VÌ SAO CHỌN LISA FOOD (CHUẨN DOANH NGHIỆP CAO CẤP) --- */
+        .why-us-section {
+            position: relative;
+            background: radial-gradient(circle at 50% 0%, rgba(254, 240, 138, 0.12) 0%, #fffdfa 40%, #ffffff 100%);
+            padding: 72px 0 68px;
+            overflow: hidden;
+            border-top: 1px solid rgba(245, 158, 11, 0.15);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.15);
+        }
+
+        .why-kicker {
+            display: inline-block;
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #b45309;
+            background: linear-gradient(135deg, rgba(254, 240, 138, 0.35) 0%, rgba(251, 146, 60, 0.15) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            padding: 5px 14px;
+            border-radius: 99px;
+            margin-bottom: 12px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            margin-top: 36px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-card {
+            position: relative !important;
+            background: #ffffff !important;
+            border: 1px solid #ffedd5 !important;
+            border-radius: 20px !important;
+            padding: 30px 22px 26px;
+            overflow: hidden !important;
+            box-shadow: 0 10px 25px -5px rgba(67, 20, 7, 0.04), 0 8px 10px -6px rgba(67, 20, 7, 0.04) !important;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
+        }
+
+        /* Thanh ánh kim cạnh đáy thẻ tự động mở rộng khi hover */
+        .why-card::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3.5px;
+            background: linear-gradient(90deg, #d97706 0%, #fbbf24 50%, #d97706 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 3;
+        }
+
+        /* Vệt sáng ánh kim quét qua thẻ khi rê chuột (Đồng nhất Hamper & Showcase) */
+        .why-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -160%;
+            width: 75%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(254, 240, 138, 0.45) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            pointer-events: none;
+            z-index: 4;
+            opacity: 0;
+        }
+
+        .why-card:hover::after {
+            left: 180%;
+            opacity: 1;
+            transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px) !important;
+            border-color: rgba(245, 158, 11, 0.85) !important;
+            box-shadow: 0 24px 48px -10px rgba(180, 83, 9, 0.2), 0 0 0 1px rgba(245, 158, 11, 0.35) !important;
+        }
+
+        .why-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .why-card:hover .spotlight-glow {
+            opacity: 1;
+        }
+
+        /* Chữ số chỉ mục chìm mờ sang trọng */
+        .why-number {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            font-size: 46px;
+            font-weight: 900;
+            color: rgba(245, 158, 11, 0.12);
+            font-family: inherit;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            transition: color 0.4s ease, transform 0.4s ease;
+            z-index: 1;
+        }
+
+        .why-card:hover .why-number {
+            color: rgba(245, 158, 11, 0.28);
+            transform: translateY(-2px) scale(1.06);
+        }
+
+        /* Biểu tượng / Emoji trong khung vàng hoàng gia */
+        .why-icon-wrap {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border: 1.5px solid rgba(245, 158, 11, 0.35);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.14);
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-emoji {
+            font-size: 26px;
+            line-height: 1;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+        }
+
+        .why-card:hover .why-icon-wrap {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 10px 22px rgba(245, 158, 11, 0.28);
+            border-color: #f59e0b;
+        }
+
+        /* Tiêu đề giá trị cốt lõi */
+        .why-card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #7d1611;
+            line-height: 1.4;
+            margin: 0 0 16px 0;
+            position: relative;
+            z-index: 2;
+            transition: color 0.3s ease;
+        }
+
+        .why-card:hover .why-card-title {
+            color: #9e2019;
+        }
+
+        /* Danh sách luận điểm cam kết */
+        .why-card-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-card-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13.5px;
+            color: #4b382a;
+            line-height: 1.55;
+        }
+
+        .why-bullet-icon {
+            flex-shrink: 0;
+            margin-top: 3px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.25s ease;
+        }
+
+        .why-card:hover .why-bullet-icon {
+            transform: scale(1.18);
+        }
+
+        .why-card-list li span:last-child {
+            flex: 1;
+        }
+
+        @media (max-width: 1024px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .why-card {
+                padding: 24px 20px 22px;
+            }
+        }
+
     </style>
     <!-- Tự động fallback về PNG nếu trình duyệt không tải được WebP -->
     <script>
@@ -4069,44 +4290,132 @@
         </div>
         <div class="heroimg"><img src="images/catalogue-tet-2027-lisafood-1.webp" alt="Catalogue Tết 2027 Lisa Food">
         </div>
-        <section>
+        <section class="why-us-section" id="visaochon">
             <div class="wrap">
                 <div class="title">
+                    <span class="why-kicker">✨ NĂNG LỰC CỐT LÕI &amp; UY TÍN B2B</span>
                     <h2>Vì sao chọn Lisa Food ?</h2>
                     <p>Di sản Việt Nam · Tiêu chuẩn quốc tế · Hợp tác toàn cầu</p>
                     <div class="bar"></div>
                 </div>
-                <div class="grid g4">
-                    <div class="card">
-                        <div class="ic">🌱 Nguyên liệu tuyển chọn kỹ lưỡng</div>
-                        <ul class="wl">
-                            <li>Nguồn nông sản Việt Nam cao cấp</li>
-                            <li>Giữ trọn chất lượng và giá trị dinh dưỡng</li>
-                            <li>Chọn lọc cho thị trường xuất khẩu khó tính</li>
+                <div class="why-grid">
+                    <!-- Thẻ 1: Nguyên liệu -->
+                    <div class="why-card">
+                        <div class="spotlight-glow"></div>
+                        <span class="why-number">01</span>
+                        <div class="why-icon-wrap">
+                            <span class="why-emoji">🌱</span>
+                        </div>
+                        <h3 class="why-card-title">Nguyên liệu tuyển chọn kỹ lưỡng</h3>
+                        <ul class="why-card-list">
+                            <li>
+                                <span class="why-bullet-icon">
+                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Nguồn nông sản Việt Nam cao cấp</span>
+                            </li>
+                            <li>
+                                <span class="why-bullet-icon">
+                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Giữ trọn chất lượng và giá trị dinh dưỡng</span>
+                            </li>
+                            <li>
+                                <span class="why-bullet-icon">
+                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Chọn lọc cho thị trường xuất khẩu khó tính</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="card">
-                        <div class="ic">🛡️ Sản xuất đạt chứng nhận ISO 22000</div>
-                        <ul class="wl">
-                            <li>Hệ thống quản lý an toàn thực phẩm được chứng nhận</li>
-                            <li>Kiểm soát toàn bộ quy trình</li>
-                            <li>Từ nguyên liệu thô đến thành phẩm</li>
+
+                    <!-- Thẻ 2: ISO 22000 -->
+                    <div class="why-card">
+                        <div class="spotlight-glow"></div>
+                        <span class="why-number">02</span>
+                        <div class="why-icon-wrap">
+                            <span class="why-emoji">🛡️</span>
+                        </div>
+                        <h3 class="why-card-title">Sản xuất đạt chứng nhận ISO 22000</h3>
+                        <ul class="why-card-list">
+                            <li>
+                                <span class="why-bullet-icon">
+                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Hệ thống quản lý an toàn thực phẩm được chứng nhận</span>
+                            </li>
+                            <li>
+                                <span class="why-bullet-icon">
+                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Kiểm soát toàn bộ quy trình</span>
+                            </li>
+                            <li>
+                                <span class="why-bullet-icon">
+                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Từ nguyên liệu thô đến thành phẩm</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="card">
-                        <div class="ic">🎁 Giải pháp quà tặng doanh nghiệp cao cấp</div>
-                        <ul class="wl">
-                            <li>Bộ sưu tập quà tặng được thiết kế tinh tế</li>
-                            <li>Dành cho khách hàng, đối tác và nhân viên</li>
-                            <li>Trình bày sang trọng, mang dấu ấn thương hiệu</li>
+
+                    <!-- Thẻ 3: Quà tặng B2B -->
+                    <div class="why-card">
+                        <div class="spotlight-glow"></div>
+                        <span class="why-number">03</span>
+                        <div class="why-icon-wrap">
+                            <span class="why-emoji">🎁</span>
+                        </div>
+                        <h3 class="why-card-title">Giải pháp quà tặng doanh nghiệp cao cấp</h3>
+                        <ul class="why-card-list">
+                            <li>
+                                <span class="why-bullet-icon">
+                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Bộ sưu tập quà tặng được thiết kế tinh tế</span>
+                            </li>
+                            <li>
+                                <span class="why-bullet-icon">
+                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Dành cho khách hàng, đối tác và nhân viên</span>
+                            </li>
+                            <li>
+                                <span class="why-bullet-icon">
+                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Trình bày sang trọng, mang dấu ấn thương hiệu</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="card">
-                        <div class="ic">🤝 Hợp tác chiến lược lâu dài</div>
-                        <ul class="wl">
-                            <li>Hợp tác dựa trên sự tin cậy</li>
-                            <li>Cùng phát triển bền vững</li>
-                            <li>Xây dựng mối quan hệ lâu bền</li>
+
+                    <!-- Thẻ 4: Hợp tác lâu dài -->
+                    <div class="why-card">
+                        <div class="spotlight-glow"></div>
+                        <span class="why-number">04</span>
+                        <div class="why-icon-wrap">
+                            <span class="why-emoji">🤝</span>
+                        </div>
+                        <h3 class="why-card-title">Hợp tác chiến lược lâu dài</h3>
+                        <ul class="why-card-list">
+                            <li>
+                                <span class="why-bullet-icon">
+                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Hợp tác dựa trên sự tin cậy</span>
+                            </li>
+                            <li>
+                                <span class="why-bullet-icon">
+                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Cùng phát triển bền vững</span>
+                            </li>
+                            <li>
+                                <span class="why-bullet-icon">
+                                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><path d="M6 10l3 3 5-6" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Xây dựng mối quan hệ lâu bền</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -8430,7 +8739,7 @@
     <script>
         // --- LOGIC TÍNH TOÁN VỊ TRÍ CHUỘT SPOTLIGHT (CHÍNH XÁC TỪ SPOTLIGHTCARD.JSX) ---
         document.addEventListener("DOMContentLoaded", function () {
-            var cards = document.querySelectorAll(".hc, .story-card");
+            var cards = document.querySelectorAll(".hc, .story-card, .why-card");
             cards.forEach(function (card) {
                 card.addEventListener("mousemove", function (e) {
                     var rect = card.getBoundingClientRect();
@@ -9151,7 +9460,7 @@
             if (!("IntersectionObserver" in window)) return;
 
             var revealTargets = document.querySelectorAll(
-                ".title, .grid > .card, .hg > .hc, .pg > .pc, .trust-card, .hamper-cross-banner, .cta-banner, .box"
+                ".title, .grid > .card, .hg > .hc, .pg > .pc, .trust-card, .hamper-cross-banner, .cta-banner, .box, .why-card"
             );
 
             var revealObserver = new IntersectionObserver(function (entries) {
@@ -9171,7 +9480,7 @@
 
                 // Thêm độ trễ so le nhẹ cho các thẻ con cùng hàng
                 var parent = el.parentElement;
-                if (parent && (parent.classList.contains("hg") || parent.classList.contains("pg") || parent.classList.contains("grid") || parent.classList.contains("trust-grid"))) {
+                if (parent && (parent.classList.contains("hg") || parent.classList.contains("pg") || parent.classList.contains("grid") || parent.classList.contains("trust-grid") || parent.classList.contains("why-grid"))) {
                     var siblings = Array.prototype.indexOf.call(parent.children, el);
                     if (siblings >= 0) {
                         var delay = (siblings % 4) * 0.07;

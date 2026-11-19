@@ -4076,6 +4076,524 @@
                 padding: 24px 20px 22px;
             }
         }
+    
+        /* --- BƯỚC ĐẶT QUÀ TẾT DỄ DÀNG (STEP ORDER SECTION) --- */
+        .step-order-section {
+            background: radial-gradient(circle at 50% 10%, rgba(254, 240, 138, 0.1) 0%, #fffcf7 40%, #fdfbf7 100%) !important;
+            padding: 72px 0 68px !important;
+            border-top: 1px solid rgba(245, 158, 11, 0.15);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-kicker {
+            display: inline-block;
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #b45309;
+            background: linear-gradient(135deg, rgba(254, 240, 138, 0.35) 0%, rgba(251, 146, 60, 0.15) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            padding: 5px 14px;
+            border-radius: 99px;
+            margin-bottom: 12px;
+        }
+
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+            margin-top: 36px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-card {
+            position: relative !important;
+            background: #ffffff !important;
+            border: 1px solid #ffedd5 !important;
+            border-radius: 20px !important;
+            padding: 32px 26px 28px;
+            overflow: hidden !important;
+            box-shadow: 0 10px 25px -5px rgba(67, 20, 7, 0.04), 0 8px 10px -6px rgba(67, 20, 7, 0.04) !important;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
+        }
+
+        /* Thanh viền hoàng gia mở rộng khi hover */
+        .step-card::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3.5px;
+            background: linear-gradient(90deg, #d97706 0%, #fbbf24 50%, #d97706 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 3;
+        }
+
+        /* Vệt sáng ánh kim quét qua thẻ khi rê chuột */
+        .step-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -160%;
+            width: 75%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(254, 240, 138, 0.45) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            pointer-events: none;
+            z-index: 4;
+            opacity: 0;
+        }
+
+        .step-card:hover::after {
+            left: 180%;
+            opacity: 1;
+            transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-8px) !important;
+            border-color: rgba(245, 158, 11, 0.85) !important;
+            box-shadow: 0 24px 48px -10px rgba(180, 83, 9, 0.2), 0 0 0 1px rgba(245, 158, 11, 0.35) !important;
+        }
+
+        .step-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .step-card:hover .spotlight-glow {
+            opacity: 1;
+        }
+
+        .step-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-badge {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7d1611 0%, #a8201a 100%);
+            color: #fef08a;
+            border: 2px solid #f59e0b;
+            box-shadow: 0 6px 18px rgba(180, 83, 9, 0.28);
+            font-size: 22px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+
+        .step-card:hover .step-badge {
+            transform: scale(1.12) rotate(-6deg);
+            box-shadow: 0 10px 24px rgba(245, 158, 11, 0.38);
+        }
+
+        .step-tag {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            color: #b45309;
+            background: #fff8ef;
+            border: 1px solid #fed7aa;
+            padding: 4px 11px;
+            border-radius: 99px;
+        }
+
+        .step-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #7d1611;
+            margin: 0 0 10px 0;
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-card:hover h3 {
+            color: #9e2019;
+        }
+
+        .step-card p {
+            font-size: 14.5px;
+            color: #4b382a;
+            line-height: 1.6;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 900px) {
+            .step-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .step-card {
+                padding: 24px 20px;
+            }
+        }
+
+        /* --- FORM BÁO GIÁ SANG TRỌNG (#baogia) --- */
+        #baogia {
+            padding: 72px 0 68px !important;
+            background: linear-gradient(180deg, #fdfbf7 0%, #fffdfa 50%, #ffffff 100%) !important;
+        }
+
+        .fm {
+            max-width: 720px !important;
+            margin: 36px auto 0 !important;
+            background: #ffffff !important;
+            border: 1.5px solid rgba(245, 158, 11, 0.35) !important;
+            border-radius: 24px !important;
+            padding: 38px 34px 34px !important;
+            box-shadow: 0 20px 50px -12px rgba(180, 83, 9, 0.12), 0 0 0 1px rgba(254, 240, 138, 0.35) !important;
+            display: grid !important;
+            gap: 18px !important;
+            position: relative !important;
+            overflow: hidden !important;
+            transition: box-shadow 0.35s ease, border-color 0.35s ease !important;
+        }
+
+        .fm:hover {
+            box-shadow: 0 25px 60px -12px rgba(180, 83, 9, 0.18), 0 0 0 1px rgba(245, 158, 11, 0.45) !important;
+            border-color: rgba(245, 158, 11, 0.6) !important;
+        }
+
+        .fm input,
+        .fm select,
+        .fm textarea {
+            font: inherit !important;
+            color: #1f2937 !important;
+            background: #fffdfa !important;
+            border: 1.5px solid #fed7aa !important;
+            border-radius: 12px !important;
+            padding: 12px 15px !important;
+            width: 100% !important;
+            font-size: 14.5px !important;
+            transition: all 0.25s ease !important;
+        }
+
+        .fm input:focus,
+        .fm select:focus,
+        .fm textarea:focus {
+            outline: none !important;
+            border-color: #d97706 !important;
+            background: #ffffff !important;
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.18) !important;
+        }
+
+        /* --- CTA BANNER CAO CẤP TẾT 2027 --- */
+        .cta {
+            background: linear-gradient(135deg, #7d1611 0%, #9e2019 50%, #6e100c 100%) !important;
+            color: #fff !important;
+            text-align: center !important;
+            border-radius: 24px !important;
+            padding: 56px 30px !important;
+            border: 2px solid rgba(245, 158, 11, 0.65) !important;
+            box-shadow: 0 24px 60px rgba(125, 22, 17, 0.32), 0 0 0 1px rgba(254, 240, 138, 0.3) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .cta::before {
+            content: "";
+            position: absolute;
+            top: -40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta h2 {
+            font-size: clamp(26px, 3.8vw, 38px) !important;
+            font-weight: 800 !important;
+            margin-bottom: 12px !important;
+            color: #ffffff !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta p {
+            color: #fef08a !important;
+            font-size: 16px !important;
+            opacity: 0.95 !important;
+            margin: 0 auto 26px !important;
+            max-width: 560px !important;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta .phone {
+            display: inline-block !important;
+            font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+            font-size: clamp(32px, 5.5vw, 46px) !important;
+            color: #fbbf24 !important;
+            text-decoration: none !important;
+            margin: 0 0 24px !important;
+            font-weight: 800 !important;
+            letter-spacing: 0.04em !important;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35) !important;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease !important;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta .phone:hover {
+            color: #fef08a !important;
+            transform: scale(1.04) !important;
+        }
+
+        .cta .btns .btn {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta .btns .btn:hover {
+            transform: translateY(-2px) !important;
+        }
+
+        .cta .btns .btn.gold {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+            color: #ffffff !important;
+            border: 1.5px solid #fef08a !important;
+            box-shadow: 0 8px 24px rgba(217, 119, 6, 0.45) !important;
+        }
+        .cta .btns .btn.gold:hover {
+            box-shadow: 0 12px 28px rgba(217, 119, 6, 0.6) !important;
+        }
+
+        .cta .btns .btn.zalo {
+            background: linear-gradient(135deg, #0084ff 0%, #0068ff 100%) !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            box-shadow: 0 8px 24px rgba(0, 104, 255, 0.38) !important;
+        }
+        .cta .btns .btn.zalo:hover {
+            box-shadow: 0 12px 28px rgba(0, 104, 255, 0.55) !important;
+        }
+
+        .cta .btns .btn.ghost {
+            background: rgba(255, 255, 255, 0.12) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+            color: #ffffff !important;
+            backdrop-filter: blur(8px) !important;
+        }
+        .cta .btns .btn.ghost:hover {
+            background: rgba(255, 255, 255, 0.22) !important;
+            border-color: #ffffff !important;
+        }
+
+        /* --- FOOTER ĐẲNG CẤP DOANH NGHIỆP --- */
+        footer.luxury-footer {
+            background: linear-gradient(180deg, #2b0806 0%, #170302 100%) !important;
+            color: #fed7aa !important;
+            padding: 56px 0 32px !important;
+            border-top: 3px solid rgba(245, 158, 11, 0.75) !important;
+            position: relative !important;
+            overflow: hidden !important;
+            font-size: 14px !important;
+            text-align: left !important;
+        }
+
+        footer.luxury-footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 180px;
+            background: radial-gradient(ellipse at center top, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .footer-main-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1.3fr;
+            gap: 36px;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .f-col.brand-col .flogo {
+            height: 76px !important;
+            width: auto !important;
+            background: #7a1712 !important;
+            border-radius: 12px !important;
+            padding: 8px 14px !important;
+            margin-bottom: 14px !important;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+            border: 1px solid rgba(245, 158, 11, 0.35) !important;
+            display: inline-block !important;
+        }
+
+        .f-brand-desc {
+            color: #cbd5e1 !important;
+            font-size: 13.5px !important;
+            line-height: 1.6 !important;
+            margin: 0 !important;
+            max-width: 340px !important;
+        }
+
+        .f-col-title {
+            color: #fbbf24 !important;
+            font-size: 12.5px !important;
+            font-weight: 800 !important;
+            letter-spacing: 0.12em !important;
+            text-transform: uppercase !important;
+            margin: 0 0 16px 0 !important;
+            position: relative !important;
+            padding-bottom: 8px !important;
+        }
+
+        .f-col-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 32px;
+            height: 2px;
+            background: #f59e0b;
+            border-radius: 2px;
+        }
+
+        .f-links {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+        }
+
+        .f-links a {
+            color: #fed7aa !important;
+            text-decoration: none !important;
+            font-size: 14px !important;
+            transition: all 0.25s ease !important;
+            display: inline-block !important;
+            margin: 0 !important;
+        }
+
+        .f-links a:hover {
+            color: #ffffff !important;
+            transform: translateX(4px) !important;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.5) !important;
+        }
+
+        .f-hotline-p {
+            margin: 0 0 8px 0 !important;
+            font-size: 14.5px !important;
+        }
+
+        .f-hotline-label {
+            color: #fed7aa !important;
+            margin-right: 6px !important;
+        }
+
+        .f-hotline-link {
+            color: #fef08a !important;
+            font-size: 18px !important;
+            font-weight: 800 !important;
+            text-decoration: none !important;
+            transition: color 0.25s ease, text-shadow 0.25s ease !important;
+        }
+
+        .f-hotline-link:hover {
+            color: #ffffff !important;
+            text-shadow: 0 0 12px rgba(245, 158, 11, 0.8) !important;
+        }
+
+        .f-email-p {
+            color: #cbd5e1 !important;
+            font-size: 13.5px !important;
+            margin: 0 0 10px 0 !important;
+        }
+
+        .f-email-p a {
+            color: #fed7aa !important;
+            text-decoration: underline !important;
+            transition: color 0.25s ease !important;
+        }
+
+        .f-email-p a:hover {
+            color: #ffffff !important;
+        }
+
+        .f-serve-note {
+            color: #fbbf24 !important;
+            font-size: 12.5px !important;
+            font-weight: 600 !important;
+            margin: 0 !important;
+            line-height: 1.5 !important;
+        }
+
+        .footer-divider {
+            height: 1px !important;
+            background: rgba(245, 158, 11, 0.22) !important;
+            margin: 36px 0 20px !important;
+            position: relative !important;
+            z-index: 1 !important;
+        }
+
+        .footer-bottom-bar {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 16px !important;
+            font-size: 13px !important;
+            color: #94a3b8 !important;
+            position: relative !important;
+            z-index: 1 !important;
+        }
+
+        .footer-bottom-bar p {
+            margin: 0 !important;
+        }
+
+        .f-cert {
+            color: #fbbf24 !important;
+            font-weight: 600 !important;
+        }
+
+        @media (max-width: 860px) {
+            .footer-main-grid {
+                grid-template-columns: 1fr !important;
+                gap: 28px !important;
+            }
+            .f-brand-desc {
+                max-width: 100% !important;
+            }
+            .footer-bottom-bar {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 8px !important;
+            }
+        }
+
     </style>
     <!-- Tự động fallback về PNG nếu trình duyệt không tải được WebP -->
     <script>
@@ -5998,25 +6516,38 @@
                 </div>
             </div>
         </section>
-        <section class="alt">
+        <section class="alt step-order-section" id="quytrinh">
             <div class="wrap">
                 <div class="title">
+                    <span class="step-kicker">✨ QUY TRÌNH 3 BƯỚC NHANH CHÓNG</span>
                     <h2>Đặt quà Tết dễ dàng</h2>
                     <div class="bar"></div>
                 </div>
-                <div class="grid g3">
-                    <div class="card">
-                        <div class="ic num">1</div>
+                <div class="step-grid">
+                    <div class="step-card">
+                        <div class="spotlight-glow"></div>
+                        <div class="step-card-header">
+                            <div class="step-badge">1</div>
+                            <span class="step-tag">BƯỚC 1</span>
+                        </div>
                         <h3>Chọn mẫu hamper</h3>
                         <p>Xem bộ sưu tập và chọn mẫu hợp ngân sách, đối tượng nhận quà.</p>
                     </div>
-                    <div class="card">
-                        <div class="ic num">2</div>
+                    <div class="step-card">
+                        <div class="spotlight-glow"></div>
+                        <div class="step-card-header">
+                            <div class="step-badge">2</div>
+                            <span class="step-tag">BƯỚC 2</span>
+                        </div>
                         <h3>Liên hệ tư vấn</h3>
                         <p>Gọi hotline để nhận báo giá, số lượng và tùy chỉnh nội dung hộp quà.</p>
                     </div>
-                    <div class="card">
-                        <div class="ic num">3</div>
+                    <div class="step-card">
+                        <div class="spotlight-glow"></div>
+                        <div class="step-card-header">
+                            <div class="step-badge">3</div>
+                            <span class="step-tag">BƯỚC 3</span>
+                        </div>
                         <h3>Nhận quà tận nơi</h3>
                         <p>Lisa Food chuẩn bị và giao quà để bạn trao tay trọn vẹn lời chúc xuân.</p>
                     </div>
@@ -6268,14 +6799,44 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="luxury-footer">
         <div class="wrap">
-            <p><img class="flogo" src="images/logo.webp" alt="Lisa Food"></p>
-            <p>Hotline / Zalo: 0393.955.516</p>
-            <p><a href="https://lisafoodglobal.com">Về Lisa Food</a><a href="https://lisafood.vn/san-pham">Sản
-                    phẩm</a><a href="https://lisafood.vn/tin-tuc">Tin tức</a><a href="https://lisafood.vn/lien-he">Liên
-                    hệ</a></p>
-            <p>Bản quyền thuộc về Lisa Food</p>
+            <div class="footer-main-grid">
+                <!-- Cột 1: Thông tin thương hiệu -->
+                <div class="f-col brand-col">
+                    <img class="flogo" src="images/logo.webp" alt="Lisa Food">
+                    <p class="f-brand-desc">Quà tặng cao cấp từ nông sản Việt. Kết tinh di sản truyền thống và chuẩn mực an toàn thực phẩm quốc tế ISO 22000.</p>
+                </div>
+
+                <!-- Cột 2: Liên kết hệ thống -->
+                <div class="f-col nav-col">
+                    <h4 class="f-col-title">LIÊN KẾT NHANH</h4>
+                    <ul class="f-links">
+                        <li><a href="https://lisafoodglobal.com" target="_blank" rel="noopener">Về Lisa Food ↗</a></li>
+                        <li><a href="https://lisafood.vn/san-pham" target="_blank" rel="noopener">Sản phẩm ↗</a></li>
+                        <li><a href="https://lisafood.vn/tin-tuc" target="_blank" rel="noopener">Tin tức ↗</a></li>
+                        <li><a href="https://lisafood.vn/lien-he" target="_blank" rel="noopener">Liên hệ ↗</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột 3: Tư vấn B2B & Hotline -->
+                <div class="f-col contact-col">
+                    <h4 class="f-col-title">TƯ VẤN QUÀ TẶNG DOANH NGHIỆP</h4>
+                    <p class="f-hotline-p">
+                        <span class="f-hotline-label">Hotline / Zalo:</span>
+                        <a href="tel:0393955516" class="f-hotline-link">0393.955.516</a>
+                    </p>
+                    <p class="f-email-p">Email báo giá: <a href="mailto:sale@lisafood.vn">sale@lisafood.vn</a></p>
+                    <p class="f-serve-note">✨ Phục vụ 24/7 mùa Tết 2027 · Khắc logo doanh nghiệp</p>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom-bar">
+                <p class="f-copy">© 2027 Lisa Food. Bản quyền thuộc về Lisa Food.</p>
+                <p class="f-cert">Đạt tiêu chuẩn xuất khẩu &amp; An toàn thực phẩm ISO 22000</p>
+            </div>
         </div>
     </footer>
     <div class="mobile-call"><a href="tel:0393955516">📞 Gọi ngay</a><a class="z" href="https://zalo.me/0393955516">💬
@@ -8611,7 +9172,7 @@
     <script>
         // --- LOGIC TÍNH TOÁN VỊ TRÍ CHUỘT SPOTLIGHT (CHÍNH XÁC TỪ SPOTLIGHTCARD.JSX) ---
         document.addEventListener("DOMContentLoaded", function () {
-            var cards = document.querySelectorAll(".hc, .story-card, .why-card");
+            var cards = document.querySelectorAll(".hc, .story-card, .why-card, .step-card");
             cards.forEach(function (card) {
                 card.addEventListener("mousemove", function (e) {
                     var rect = card.getBoundingClientRect();
@@ -9332,7 +9893,7 @@
             if (!("IntersectionObserver" in window)) return;
 
             var revealTargets = document.querySelectorAll(
-                ".title, .grid > .card, .hg > .hc, .pg > .pc, .trust-card, .hamper-cross-banner, .cta-banner, .box, .why-card"
+                ".title, .grid > .card, .hg > .hc, .pg > .pc, .trust-card, .hamper-cross-banner, .cta-banner, .box, .why-card, .step-card"
             );
 
             var revealObserver = new IntersectionObserver(function (entries) {
@@ -9352,7 +9913,7 @@
 
                 // Thêm độ trễ so le nhẹ cho các thẻ con cùng hàng
                 var parent = el.parentElement;
-                if (parent && (parent.classList.contains("hg") || parent.classList.contains("pg") || parent.classList.contains("grid") || parent.classList.contains("trust-grid") || parent.classList.contains("why-grid"))) {
+                if (parent && (parent.classList.contains("hg") || parent.classList.contains("pg") || parent.classList.contains("grid") || parent.classList.contains("trust-grid") || parent.classList.contains("why-grid") || parent.classList.contains("step-grid"))) {
                     var siblings = Array.prototype.indexOf.call(parent.children, el);
                     if (siblings >= 0) {
                         var delay = (siblings % 4) * 0.07;

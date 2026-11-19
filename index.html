@@ -3519,24 +3519,53 @@
         }
 
         .story-card {
-            background: #ffffff;
-            border: 1.5px solid #ecdac3;
-            border-radius: 20px;
+            background: #ffffff !important;
+            border: 1px solid #ffedd5 !important;
+            border-radius: 20px !important;
             padding: 24px 22px 24px 20px;
-            box-shadow: 0 10px 30px rgba(125, 22, 17, 0.05);
+            box-shadow: 0 10px 25px -5px rgba(67, 20, 7, 0.04), 0 8px 10px -6px rgba(67, 20, 7, 0.04) !important;
             display: flex !important;
             flex-direction: row !important;
             align-items: center;
             gap: 22px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative !important;
+            overflow: hidden !important;
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
         }
 
+        /* Vệt sáng ánh kim hoàng gia quét qua thẻ khi rê chuột (Đồng nhất 100% với Hamper và Sản phẩm) */
+        .story-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -160%;
+            width: 75%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(254, 240, 138, 0.42) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            pointer-events: none;
+            z-index: 4;
+            opacity: 0;
+        }
+
+        .story-card:hover::after {
+            left: 180%;
+            opacity: 1;
+            transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+        }
+
+        /* Nổi khối 3D & viền vàng hổ phách phát sáng nhẹ khi hover */
         .story-card:hover {
-            transform: translateY(-4px);
-            border-color: #d97706;
-            box-shadow: 0 18px 44px rgba(217, 119, 6, 0.16);
+            transform: translateY(-7px) !important;
+            border-color: rgba(245, 158, 11, 0.85) !important;
+            box-shadow: 0 22px 45px -10px rgba(180, 83, 9, 0.22), 0 0 0 1px rgba(245, 158, 11, 0.35) !important;
+        }
+
+        .story-card:hover .spotlight-glow {
+            opacity: 1;
         }
 
         /* Hào quang vàng kim dịu mát phía sau ảnh sản phẩm */
@@ -3551,6 +3580,13 @@
             background: radial-gradient(circle, rgba(245, 158, 11, 0.16) 0%, rgba(255, 250, 242, 0.4) 60%, transparent 80%);
             pointer-events: none;
             z-index: 0;
+            transition: opacity 0.45s ease, transform 0.45s ease;
+        }
+
+        .story-card:hover::before {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.15);
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.26) 0%, rgba(255, 250, 242, 0.55) 60%, transparent 80%);
         }
 
         /* KHU VỰC HÌNH ẢNH: LỒNG GHÉP TRỰC DIỆN, KHÔNG HỘP CHỮ NHẬT CÔ LẬP */
@@ -3561,7 +3597,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .story-card-visual img {
@@ -3571,11 +3607,15 @@
             height: auto;
             object-fit: contain;
             filter: drop-shadow(0 12px 24px rgba(67, 20, 7, 0.18));
-            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease !important;
+            will-change: transform;
+            user-select: none;
         }
 
+        /* Zoom ảnh sản phẩm từ tốn, mượt mà và tăng chiều sâu bóng đổ khi hover */
         .story-card:hover .story-card-visual img {
-            transform: scale(1.08) rotate(-1.5deg);
+            transform: scale(1.06) translateY(-3px) !important;
+            filter: drop-shadow(0 18px 30px rgba(180, 83, 9, 0.26)) brightness(1.03) !important;
         }
 
         /* KHU VỰC NỘI DUNG */
@@ -3584,7 +3624,7 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            z-index: 1;
+            z-index: 2;
             min-width: 0;
         }
 
@@ -3604,6 +3644,12 @@
             margin: 0 0 10px 0 !important;
             box-shadow: none !important;
             line-height: 1.2;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .story-card:hover .story-card-badge {
+            border-color: #f59e0b !important;
+            background: rgba(245, 158, 11, 0.22) !important;
         }
 
         .story-card h3 {
@@ -3612,6 +3658,11 @@
             color: #7d1611;
             margin: 0 0 5px 0;
             line-height: 1.3;
+            transition: color 0.3s ease;
+        }
+
+        .story-card:hover h3 {
+            color: #9e2019;
         }
 
         .story-card-sub {
@@ -3648,28 +3699,41 @@
             font-weight: 600;
             padding: 3px 9px;
             border-radius: 6px;
+            transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .story-card-pills span:hover {
+            background: rgba(255, 237, 213, 0.85) !important;
+            border-color: #fb923c !important;
+            color: #c2410c !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
         }
 
         .story-card-link {
             align-self: flex-start;
             display: inline-flex;
             align-items: center;
-            gap: 7px;
+            gap: 8px;
             background: linear-gradient(135deg, #7d1611 0%, #9e2019 100%);
             color: #ffffff !important;
             font-size: 13.5px;
             font-weight: 700;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 99px;
+            border: 1px solid rgba(245, 158, 11, 0.35);
             text-decoration: none !important;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 12px rgba(125, 22, 17, 0.22);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 14px rgba(125, 22, 17, 0.22);
+            position: relative;
+            z-index: 5;
         }
 
         .story-card-link:hover {
-            background: linear-gradient(135deg, #9e2019 0%, #b3261e 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(125, 22, 17, 0.35);
+            background: linear-gradient(135deg, #9e2019 0%, #c53027 100%);
+            border-color: #f59e0b;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 22px rgba(180, 83, 9, 0.38), 0 0 0 1px rgba(245, 158, 11, 0.35);
             color: #ffffff !important;
         }
 
@@ -3679,7 +3743,7 @@
         }
 
         .story-card-link:hover .sc-cta-arrow {
-            transform: translateX(3px);
+            transform: translateX(4px);
         }
 
         /* --- BANNER ĐIỀU HƯỚNG NÔNG SẢN THƯỢNG HẠNG (SHOWCASE CTA) --- */
@@ -5666,6 +5730,7 @@
                 <div class="story-showcase-grid">
                     <!-- Khối 1: Thực phẩm hạt -->
                     <div class="story-card">
+                        <div class="spotlight-glow"></div>
                         <div class="story-card-visual">
                             <img src="images/hat-dieu-rang-muoi-250g.webp" alt="Hạt điều rang muối 250g - Nông Sản Thượng Hạng Lisa Food" loading="lazy">
                         </div>
@@ -5690,6 +5755,7 @@
 
                     <!-- Khối 2: Thực phẩm khô -->
                     <div class="story-card">
+                        <div class="spotlight-glow"></div>
                         <div class="story-card-visual">
                             <img src="images/kho-ga-la-chanh-100g.webp" alt="Khô gà lá chanh 100g - Đặc Sản Thượng Hạng Lisa Food" loading="lazy">
                         </div>
@@ -8343,7 +8409,7 @@
     <script>
         // --- LOGIC TÍNH TOÁN VỊ TRÍ CHUỘT SPOTLIGHT (CHÍNH XÁC TỪ SPOTLIGHTCARD.JSX) ---
         document.addEventListener("DOMContentLoaded", function () {
-            var cards = document.querySelectorAll(".hc");
+            var cards = document.querySelectorAll(".hc, .story-card");
             cards.forEach(function (card) {
                 card.addEventListener("mousemove", function (e) {
                     var rect = card.getBoundingClientRect();

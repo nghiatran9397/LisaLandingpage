@@ -3861,6 +3861,27 @@
         .btn-add-list:active {
             transform: scale(0.96) !important;
         }
+
+        /* BƯỚC 3: HIỆU ỨNG XUẤT HIỆN SO LE KHI CUỘN TRANG (SCROLL REVEAL & FADE UP) */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.is-revealed {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-on-scroll {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
     </style>
 
 </head>
@@ -7688,6 +7709,47 @@
                 });
             });
         })();
+    </script>
+
+    <!-- HIỆU ỨNG XUẤT HIỆN SO LE KHI CUỘN (BƯỚC 3 - SCROLL REVEAL) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (!("IntersectionObserver" in window)) return;
+
+            var revealTargets = document.querySelectorAll(
+                ".title, .grid > .card, .pg > .pc, .trust-card, .hamper-cross-banner"
+            );
+
+            var revealObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-revealed");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.08,
+                rootMargin: "0px 0px -30px 0px"
+            });
+
+            revealTargets.forEach(function (el) {
+                el.classList.add("reveal-on-scroll");
+
+                // Thêm độ trễ so le nhẹ cho các thẻ con cùng hàng
+                var parent = el.parentElement;
+                if (parent && (parent.classList.contains("pg") || parent.classList.contains("trust-grid") || parent.classList.contains("grid"))) {
+                    var siblings = Array.prototype.indexOf.call(parent.children, el);
+                    if (siblings >= 0) {
+                        var delay = (siblings % 4) * 0.07;
+                        if (delay > 0) {
+                            el.style.transitionDelay = delay + "s";
+                        }
+                    }
+                }
+
+                revealObserver.observe(el);
+            });
+        });
     </script>
 </body>
 

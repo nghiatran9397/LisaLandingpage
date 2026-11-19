@@ -3786,6 +3786,81 @@
         .lenis.lenis-stopped {
             overflow: hidden;
         }
+
+        /* BƯỚC 2: HIỆU ỨNG THẺ QUÀ ÁNH KIM & ZOOM ẢNH TỪ TỪ (LUXURY CARD HOVER & SHIMMER) */
+        .hc,
+        .pc {
+            position: relative !important;
+            overflow: hidden !important;
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
+        }
+
+        /* Vệt sáng ánh kim hoàng gia quét qua hộp quà */
+        .hc::after,
+        .pc::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -160%;
+            width: 75%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(254, 240, 138, 0.42) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            pointer-events: none;
+            z-index: 4;
+            opacity: 0;
+        }
+
+        .hc:hover::after,
+        .pc:hover::after {
+            left: 180%;
+            opacity: 1;
+            transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+        }
+
+        /* Nổi khối 3D & viền vàng phát sáng nhẹ */
+        .hc:hover {
+            transform: translateY(-7px) !important;
+            border-color: rgba(245, 158, 11, 0.85) !important;
+            box-shadow: 0 22px 45px -10px rgba(180, 83, 9, 0.22), 0 0 0 1px rgba(245, 158, 11, 0.35) !important;
+        }
+
+        .pc:hover {
+            transform: translateY(-5px) !important;
+            border-color: rgba(245, 158, 11, 0.8) !important;
+            box-shadow: 0 16px 32px -8px rgba(180, 83, 9, 0.18), 0 0 0 1px rgba(245, 158, 11, 0.28) !important;
+        }
+
+        /* Zoom ảnh sản phẩm mượt mà, từ tốn như trong catalog luxury */
+        .hc img,
+        .pc img {
+            transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease !important;
+        }
+
+        .hc:hover img,
+        .pc:hover img {
+            transform: scale(1.045) !important;
+            filter: brightness(1.02);
+        }
+
+        /* Nút chọn món nảy nhẹ khi tương tác */
+        .btn-add-list {
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background 0.2s ease !important;
+        }
+
+        .btn-add-list:hover {
+            transform: scale(1.06) !important;
+            box-shadow: 0 4px 12px rgba(180, 83, 9, 0.3) !important;
+        }
+
+        .btn-add-list:active {
+            transform: scale(0.96) !important;
+        }
     </style>
 
 </head>

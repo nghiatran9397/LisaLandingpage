@@ -3882,6 +3882,128 @@
                 transition: none !important;
             }
         }
+
+        /* BƯỚC 4: CHUYỂN ĐỘNG MODAL & GIỎ HÀNG MƯỢT MÀ (APPLE SPRING TRANSITION) */
+        @keyframes modalSpringIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.93) translateY(24px);
+            }
+            65% {
+                transform: scale(1.015) translateY(-2px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes lightboxSpringIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.94) translateY(16px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes panelSpringSlide {
+            0% {
+                opacity: 0;
+                transform: translateY(-12px) scale(0.98);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes floatBtnPulse {
+            0%, 100% {
+                box-shadow: 0 8px 24px rgba(0, 0, 0, .35), 0 0 0 0 rgba(245, 158, 11, 0.55);
+            }
+            50% {
+                box-shadow: 0 10px 28px rgba(0, 0, 0, .4), 0 0 0 7px rgba(245, 158, 11, 0);
+            }
+        }
+
+        /* Nền kính mờ sâu và chuyển động đàn hồi cho Modal Danh Sách */
+        .list-modal {
+            backdrop-filter: blur(14px) !important;
+            -webkit-backdrop-filter: blur(14px) !important;
+            transition: background 0.3s ease;
+        }
+
+        .list-modal.open .list-modal-content,
+        .list-modal.active .list-modal-content {
+            animation: modalSpringIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            box-shadow: 0 25px 65px -12px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(245, 158, 11, 0.3) !important;
+        }
+
+        /* Chuyển động đàn hồi cho Lightbox ảnh HD */
+        .img-lightbox {
+            backdrop-filter: blur(14px) !important;
+            -webkit-backdrop-filter: blur(14px) !important;
+        }
+
+        .img-lightbox.active .lightbox-modal-card,
+        .img-lightbox.active .lightbox-wrap {
+            animation: lightboxSpringIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Chuyển động trượt êm cho Search Dropdown */
+        .ln-search-panel.active {
+            animation: panelSpringSlide 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(245, 158, 11, 0.3) !important;
+        }
+
+        /* Nút nổi giỏ hàng nhịp thở ánh kim */
+        .float-list-btn {
+            animation: floatBtnPulse 3.5s infinite ease-in-out !important;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+        }
+
+        .float-list-btn:hover {
+            transform: scale(1.05) translateY(-2px) !important;
+        }
+
+        .float-list-btn:active {
+            transform: scale(0.96) !important;
+        }
+
+        /* Nút đóng xoay nhẹ khi hover */
+        .list-close,
+        .lightbox-close,
+        .lightbox-close-btn {
+            transition: transform 0.25s ease, background-color 0.2s ease, color 0.2s ease !important;
+        }
+
+        .list-close:hover,
+        .lightbox-close:hover,
+        .lightbox-close-btn:hover {
+            transform: rotate(90deg) scale(1.1) !important;
+        }
+
+        /* Hàng sản phẩm trong popup dự toán trượt nhẹ khi hover */
+        .inquiry-item-row {
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+        }
+
+        .inquiry-item-row:hover {
+            transform: translateX(3px);
+            border-color: rgba(245, 158, 11, 0.5) !important;
+        }
+
+        /* Nút tăng giảm số lượng (+ / -) nảy xúc giác */
+        .qty-btn {
+            transition: transform 0.15s ease, background 0.15s ease !important;
+        }
+
+        .qty-btn:active {
+            transform: scale(0.86);
+        }
     </style>
 
 </head>

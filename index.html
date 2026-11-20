@@ -2341,6 +2341,365 @@
             box-shadow: 0 4px 12px rgba(249, 115, 22, 0.1) !important;
         }
 
+        /* Hiệu ứng tương tác cho viên thành phần có hỗ trợ xem nhanh ảnh (.exact-item-pill.has-preview) */
+        .exact-item-pill.has-preview {
+            cursor: pointer !important;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+        }
+
+        .exact-item-pill.has-preview:hover {
+            background: linear-gradient(135deg, rgba(255, 247, 237, 0.95), rgba(254, 243, 199, 0.9)) !important;
+            border-color: #f59e0b !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.22) !important;
+        }
+
+        .exact-item-pill.has-preview:active {
+            transform: scale(0.98) !important;
+        }
+
+        .exact-item-right-wrap {
+            display: flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+        }
+
+        .pill-preview-eye {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 20px !important;
+            height: 20px !important;
+            border-radius: 6px !important;
+            background: rgba(245, 158, 11, 0.15) !important;
+            color: #b45309 !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .exact-item-pill.has-preview:hover .pill-preview-eye {
+            background: #d97706 !important;
+            color: #ffffff !important;
+            transform: scale(1.1) !important;
+        }
+
+        .pill-tap-hint {
+            font-size: 11px;
+            font-weight: 600;
+            color: #b45309;
+            background: rgba(245, 158, 11, 0.14);
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-left: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            vertical-align: middle;
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            animation: pulseHint 2.5s infinite;
+        }
+
+        @keyframes pulseHint {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 1; transform: scale(1.03); }
+        }
+
+        /* --- QUICK VIEW BOTTOM SHEET CHO THÀNH PHẦN HAMPER (MOBILE & DESKTOP) --- */
+        .ingredient-sheet-overlay {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.68);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 2100;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .ingredient-sheet-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .ingredient-sheet-card {
+            background: #ffffff;
+            border-radius: 20px;
+            max-width: 580px;
+            width: 100%;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(245, 158, 11, 0.25);
+            overflow: hidden;
+            position: relative;
+            transform: scale(0.92) translateY(20px);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ingredient-sheet-overlay.active .ingredient-sheet-card {
+            transform: scale(1) translateY(0);
+        }
+
+        .sheet-drag-handle {
+            display: none;
+            width: 44px;
+            height: 5px;
+            background: #cbd5e1;
+            border-radius: 999px;
+            margin: 12px auto 4px;
+        }
+
+        .sheet-close-btn {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(241, 245, 249, 0.95);
+            border: 1px solid rgba(203, 213, 225, 0.8);
+            color: #475569;
+            font-size: 20px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.2s ease;
+        }
+
+        .sheet-close-btn:hover {
+            background: #fee2e2;
+            color: #dc2626;
+            border-color: #fca5a5;
+            transform: rotate(90deg);
+        }
+
+        .sheet-content-grid {
+            display: grid;
+            grid-template-columns: 230px 1fr;
+            gap: 0;
+        }
+
+        .sheet-img-wrap {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .sheet-img-wrap img {
+            max-width: 100%;
+            max-height: 210px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.12));
+            transition: transform 0.3s ease;
+        }
+
+        .sheet-img-wrap:hover img {
+            transform: scale(1.05);
+        }
+
+        .sheet-img-tag {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.8);
+            color: #f8fafc;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 3px 9px;
+            border-radius: 999px;
+            white-space: nowrap;
+            backdrop-filter: blur(4px);
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .sheet-info-col {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .sheet-badge-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .sheet-hamper-tag {
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 6px;
+            letter-spacing: 0.3px;
+            border: 1px solid #fde68a;
+        }
+
+        .sheet-iso-tag {
+            background: #ecfdf5;
+            color: #065f46;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid #a7f3d0;
+        }
+
+        .sheet-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 0 0 8px;
+            line-height: 1.3;
+        }
+
+        .sheet-weight-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff7ed;
+            color: #c2410c;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 8px;
+            border: 1px solid #ffedd5;
+            margin-bottom: 12px;
+            align-self: flex-start;
+        }
+
+        .sheet-desc {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #475569;
+            margin: 0 0 18px;
+        }
+
+        .sheet-action-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sheet-view-more-btn {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .sheet-view-more-btn:hover {
+            background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+            box-shadow: 0 6px 16px rgba(5, 150, 105, 0.35);
+            transform: translateY(-1px);
+        }
+
+        .sheet-dismiss-btn {
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: #f1f5f9;
+            color: #475569;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sheet-dismiss-btn:hover {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+
+        /* --- RESPONSIVE BOTTOM SHEET CHO MOBILE (<= 640px) --- */
+        @media (max-width: 640px) {
+            .ingredient-sheet-overlay {
+                align-items: flex-end;
+                padding: 0;
+            }
+
+            .ingredient-sheet-card {
+                border-radius: 22px 22px 0 0;
+                max-width: 100%;
+                max-height: 85vh;
+                transform: translateY(100%);
+                box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.25);
+            }
+
+            .ingredient-sheet-overlay.active .ingredient-sheet-card {
+                transform: translateY(0);
+            }
+
+            .sheet-drag-handle {
+                display: block;
+            }
+
+            .sheet-content-grid {
+                grid-template-columns: 1fr;
+                max-height: calc(85vh - 35px);
+                overflow-y: auto;
+            }
+
+            .sheet-img-wrap {
+                padding: 20px 16px 16px;
+                border-right: none;
+                border-bottom: 1px solid #f1f5f9;
+            }
+
+            .sheet-img-wrap img {
+                max-height: 180px;
+            }
+
+            .sheet-info-col {
+                padding: 18px 20px 28px;
+            }
+
+            .sheet-title {
+                font-size: 18px;
+            }
+
+            .sheet-action-row {
+                flex-direction: column-reverse;
+                gap: 8px;
+            }
+
+            .sheet-view-more-btn,
+            .sheet-dismiss-btn {
+                width: 100%;
+                padding: 11px 16px;
+            }
+        }
+
         /* --- GRAND LUXURY FULL-WIDTH STICKY NAVBAR (ĐẲNG CẤP TẾT HOÀNG GIA & THƯỢNG LƯU) --- */
         .ln-navbar {
             position: fixed;
@@ -4935,10 +5294,16 @@
                                         <path d="m3.3 7 8.7 5 8.7-5"></path>
                                         <path d="M12 22V12"></path>
                                     </svg>
-                                    Thành phần tuyển chọn bên trong:
+                                    Thành phần tuyển chọn bên trong: <span class="pill-tap-hint">🔍 Chạm xem ảnh</span>
                                 </p>
                                 <div class="exact-items-grid">
-                                    <div class="exact-item-pill">
+                                    <div class="exact-item-pill has-preview"
+                                        data-preview-img="images/hat-dieu-rang-muoi-250g.webp"
+                                        data-preview-title="Hạt điều rang muối"
+                                        data-preview-weight="250g"
+                                        data-preview-desc="Hạt điều rang củi Bình Phước tuyển chọn loại 1, giòn bùi béo tự nhiên, vị mặn thanh vừa vặn chuẩn tiêu chuẩn ISO 22000."
+                                        data-preview-hamper="Happy New Year"
+                                        title="Nhấp để xem ảnh sản phẩm">
                                         <span class="exact-item-left">
                                             <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
                                                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -4950,9 +5315,25 @@
                                             </svg>
                                             <span>Hạt điều rang muối</span>
                                         </span>
-                                        <span class="exact-item-weight">250g</span>
+                                        <span class="exact-item-right-wrap">
+                                            <span class="exact-item-weight">250g</span>
+                                            <span class="pill-preview-eye" title="Xem ảnh">
+                                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </span>
+                                        </span>
                                     </div>
-                                    <div class="exact-item-pill">
+                                    <div class="exact-item-pill has-preview"
+                                        data-preview-img="images/hat-macca-say-250g.webp"
+                                        data-preview-title="Hạt Macca sấy"
+                                        data-preview-weight="250g"
+                                        data-preview-desc="Macca nứt vỏ tự nhiên hạt to đều, giòn ngậy thơm béo, sấy công nghệ cao giữ trọn dưỡng chất quý giá."
+                                        data-preview-hamper="Happy New Year"
+                                        title="Nhấp để xem ảnh sản phẩm">
                                         <span class="exact-item-left">
                                             <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
                                                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -4964,9 +5345,25 @@
                                             </svg>
                                             <span>Hạt Macca sấy</span>
                                         </span>
-                                        <span class="exact-item-weight">250g</span>
+                                        <span class="exact-item-right-wrap">
+                                            <span class="exact-item-weight">250g</span>
+                                            <span class="pill-preview-eye" title="Xem ảnh">
+                                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </span>
+                                        </span>
                                     </div>
-                                    <div class="exact-item-pill">
+                                    <div class="exact-item-pill has-preview"
+                                        data-preview-img="images/kho-ga-la-chanh-100g.webp"
+                                        data-preview-title="Khô gà lá chanh"
+                                        data-preview-weight="100g"
+                                        data-preview-desc="100% thịt ức gà tươi xé sợi tẩm ướp nước mắm nhĩ, ớt hiểm giòn cay quyện hương lá chanh tươi ngào ngạt."
+                                        data-preview-hamper="Happy New Year"
+                                        title="Nhấp để xem ảnh sản phẩm">
                                         <span class="exact-item-left">
                                             <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
                                                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -4978,9 +5375,25 @@
                                             </svg>
                                             <span>Khô gà lá chanh</span>
                                         </span>
-                                        <span class="exact-item-weight">100g</span>
+                                        <span class="exact-item-right-wrap">
+                                            <span class="exact-item-weight">100g</span>
+                                            <span class="pill-preview-eye" title="Xem ảnh">
+                                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </span>
+                                        </span>
                                     </div>
-                                    <div class="exact-item-pill">
+                                    <div class="exact-item-pill has-preview"
+                                        data-preview-img="images/nho-kho-250g.webp"
+                                        data-preview-title="Nho khô Chile"
+                                        data-preview-weight="250g"
+                                        data-preview-desc="Nho khô 3 màu nhập khẩu Chile, vị ngọt thanh tự nhiên, dẻo mềm giàu vitamin và khoáng chất tốt cho sức khỏe."
+                                        data-preview-hamper="Happy New Year"
+                                        title="Nhấp để xem ảnh sản phẩm">
                                         <span class="exact-item-left">
                                             <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
                                                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -4992,7 +5405,17 @@
                                             </svg>
                                             <span>Nho khô Chile</span>
                                         </span>
-                                        <span class="exact-item-weight">250g</span>
+                                        <span class="exact-item-right-wrap">
+                                            <span class="exact-item-weight">250g</span>
+                                            <span class="pill-preview-eye" title="Xem ảnh">
+                                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </span>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -7499,6 +7922,47 @@
         </div>
     </div>
 
+    <!-- QUICK VIEW BOTTOM SHEET CHO THÀNH PHẦN HAMPER (MOBILE & DESKTOP) -->
+    <div id="ingredientQuickView" class="ingredient-sheet-overlay" data-lenis-prevent onclick="closeIngredientQuickView(event)">
+        <div class="ingredient-sheet-card" onclick="event.stopPropagation()">
+            <!-- Thanh kéo cảm ứng trên Mobile -->
+            <div class="sheet-drag-handle"></div>
+            <button type="button" class="sheet-close-btn" onclick="closeIngredientQuickView(event)" aria-label="Đóng popup">&times;</button>
+
+            <div class="sheet-content-grid">
+                <div class="sheet-img-wrap">
+                    <img id="sheetImg" src="" alt="Thành phần tuyển chọn Lisa Food" loading="lazy">
+                    <span class="sheet-img-tag">Thành phần tuyển chọn</span>
+                </div>
+                <div class="sheet-info-col">
+                    <div class="sheet-badge-row">
+                        <span class="sheet-hamper-tag" id="sheetHamperTag">🎁 HAMPER HAPPY NEW YEAR</span>
+                        <span class="sheet-iso-tag">🛡️ Chuẩn ISO 22000</span>
+                    </div>
+                    <h3 id="sheetTitle" class="sheet-title">Tên thành phần</h3>
+                    <div class="sheet-weight-pill">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Quy cách: <b id="sheetWeight">250g</b></span>
+                    </div>
+                    <p id="sheetDesc" class="sheet-desc">Nông sản tuyển chọn loại 1 hảo hạng, bảo toàn độ tươi bùi và hàm lượng dinh dưỡng cao cấp bên trong set quà Tết.</p>
+                    <div class="sheet-action-row">
+                        <button type="button" class="sheet-view-more-btn" id="sheetViewMoreBtn" onclick="openIngredientFullAlbum()">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <span>Xem chi tiết & nhiều góc ảnh</span>
+                        </button>
+                        <button type="button" class="sheet-dismiss-btn" onclick="closeIngredientQuickView(event)">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         // --- BẢNG DỮ LIỆU CHI TIẾT SẢN PHẨM GẮN THEO FILE ẢNH (KEYED BY IMAGE PATH) ---
@@ -8530,6 +8994,24 @@
                     { label: "Sản phẩm của:", value: "CÔNG TY TNHH THỰC PHẨM LIÊN SANH" },
                     { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
                 ]
+            },
+            "images/kho-ga-la-chanh-100g.webp": {
+                badge: "Đặc Sản Ăn Liền Loại 1",
+                description: [
+                    "Khô gà lá chanh Lisa Food được chế biến từ 100% thịt ức gà tươi sạch đạt chuẩn kiểm định an toàn vệ sinh thực phẩm.",
+                    "Từng sợi thịt gà xé đều tay, tẩm ướp cùng nước mắm nguyên chất, ớt hiểm giòn cay và lá chanh tươi thái sợi thơm dịu, tạo nên vị ngọt cay mặn mà đậm đà khó cưỡng.",
+                    "Sản phẩm được sấy giòn vừa tới trên dây chuyền hiện đại đạt chứng nhận ISO 22000, không phẩm màu độc hại, giữ trọn hương vị tươi mới và độ dai ngọt tự nhiên.",
+                    "Quy cách túi 100g nhỏ gọn, tiện lợi, là thành phần khai vị tuyệt vời trong các set quà Hamper Tết 2027 hoặc làm món nhâm nhi sum vầy ngày Tết."
+                ],
+                specs: [
+                    { label: "Thành phần:", value: "Thịt gà tươi (95%), lá chanh tươi (2%), ớt hiểm, sả, đường, muối, tỏi, gia vị tự nhiên." },
+                    { label: "Hướng dẫn sử dụng:", value: "Sử dụng trực tiếp, đậy kín bao bì sau mỗi lần sử dụng." },
+                    { label: "Thông tin cảnh báo an toàn:", value: "Không sử dụng sản phẩm hết hạn hoặc ẩm mốc." },
+                    { label: "Bảo quản:", value: "Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp." },
+                    { label: "NSX & HSD:", value: "Xem trên bao bì." },
+                    { label: "Sản phẩm của:", value: "CÔNG TY TNHH THỰC PHẨM LIÊN SANH" },
+                    { label: "Địa chỉ:", value: "93/29/17 Đường Cầu Ba Phụ, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam." }
+                ]
             }
         };
 
@@ -9259,6 +9741,115 @@
             if (fullZoomOverlay) {
                 attachTouchSwipe(fullZoomOverlay, function () { navigateFullZoom(1); }, function () { navigateFullZoom(-1); });
             }
+        });
+
+        // --- TÍNH NĂNG XEM NHANH ẢNH THÀNH PHẦN TRONG HAMPER (BOTTOM SHEET / MODAL) ---
+        function openIngredientQuickView(pillEl) {
+            if (!pillEl) return;
+            var img = pillEl.getAttribute("data-preview-img");
+            var title = pillEl.getAttribute("data-preview-title") || "Thành phần tuyển chọn";
+            var weight = pillEl.getAttribute("data-preview-weight") || "";
+            var desc = pillEl.getAttribute("data-preview-desc") || "Nông sản loại 1 tuyển chọn kỹ lưỡng, quy trình chế biến đạt tiêu chuẩn an toàn thực phẩm ISO 22000, giữ trọn vị tươi mới bên trong Hamper.";
+            var hamper = pillEl.getAttribute("data-preview-hamper") || "HAPPY NEW YEAR";
+
+            var sheet = document.getElementById("ingredientQuickView");
+            var sheetImg = document.getElementById("sheetImg");
+            var sheetTitle = document.getElementById("sheetTitle");
+            var sheetWeight = document.getElementById("sheetWeight");
+            var sheetDesc = document.getElementById("sheetDesc");
+            var sheetHamperTag = document.getElementById("sheetHamperTag");
+            var viewMoreBtn = document.getElementById("sheetViewMoreBtn");
+
+            if (!sheet || !sheetImg) return;
+
+            sheetImg.src = img;
+            sheetImg.alt = title;
+            if (sheetTitle) sheetTitle.textContent = title;
+            if (sheetWeight) sheetWeight.textContent = weight;
+            if (sheetDesc) sheetDesc.textContent = desc;
+            if (sheetHamperTag) sheetHamperTag.textContent = "🎁 HAMPER " + hamper.toUpperCase();
+
+            if (viewMoreBtn) {
+                viewMoreBtn.setAttribute("data-target-img", img);
+                viewMoreBtn.setAttribute("data-target-title", title);
+            }
+
+            sheet.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeIngredientQuickView(e) {
+            if (e && e.target) {
+                var isOverlay = e.target.classList.contains("ingredient-sheet-overlay");
+                var isCloseBtn = e.target.classList.contains("sheet-close-btn") || e.target.closest(".sheet-close-btn");
+                var isDismissBtn = e.target.classList.contains("sheet-dismiss-btn") || e.target.closest(".sheet-dismiss-btn");
+                if (!isOverlay && !isCloseBtn && !isDismissBtn) {
+                    return;
+                }
+            }
+            var sheet = document.getElementById("ingredientQuickView");
+            if (sheet) {
+                sheet.classList.remove("active");
+                var lb = document.getElementById("imgLightbox");
+                if (!lb || !lb.classList.contains("active")) {
+                    document.body.style.overflow = "";
+                }
+            }
+        }
+
+        function openIngredientFullAlbum() {
+            var viewMoreBtn = document.getElementById("sheetViewMoreBtn");
+            var img = viewMoreBtn ? viewMoreBtn.getAttribute("data-target-img") : "";
+            var title = viewMoreBtn ? viewMoreBtn.getAttribute("data-target-title") : "";
+            if (!img) return;
+
+            closeIngredientQuickView();
+
+            var album = (typeof existingMultiImages !== "undefined" && (existingMultiImages[img] || existingMultiImages[img.replace(/\.webp$/i, '.png')] || existingMultiImages[img.replace(/\.png$/i, '.webp')])) || [img];
+
+            if (typeof openAlbumLightbox === "function") {
+                openAlbumLightbox(album, title, null);
+            }
+        }
+
+        // Tự động lắng nghe sự kiện click/tap vào bất kỳ pill thành phần nào có ảnh xem trước
+        document.addEventListener("click", function (e) {
+            var pill = e.target.closest(".exact-item-pill[data-preview-img]");
+            if (pill) {
+                e.preventDefault();
+                e.stopPropagation();
+                openIngredientQuickView(pill);
+            }
+        });
+
+        // Hỗ trợ phím Escape đóng quick view
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+                var sheet = document.getElementById("ingredientQuickView");
+                if (sheet && sheet.classList.contains("active")) {
+                    closeIngredientQuickView();
+                }
+            }
+        });
+
+        // Hỗ trợ vuốt xuống trên mobile để đóng bottom sheet
+        document.addEventListener("DOMContentLoaded", function () {
+            var sheetCard = document.querySelector(".ingredient-sheet-card");
+            if (!sheetCard) return;
+            var startY = 0;
+            sheetCard.addEventListener("touchstart", function (e) {
+                if (e.touches && e.touches.length > 0) {
+                    startY = e.touches[0].clientY;
+                }
+            }, { passive: true });
+            sheetCard.addEventListener("touchend", function (e) {
+                if (e.changedTouches && e.changedTouches.length > 0) {
+                    var endY = e.changedTouches[0].clientY;
+                    if (endY - startY > 60) {
+                        closeIngredientQuickView();
+                    }
+                }
+            }, { passive: true });
         });
     </script>
 

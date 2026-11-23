@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Unify Header & Footer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Be Vietnam Pro', sans-serif; }
+        body { background: #faf7f2; padding: 30px 20px; }
+        .container { max-width: 1260px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+
+        h2 { text-align: center; color: #7d1611; font-size: 20px; font-weight: 800; margin-bottom: 12px; }
+
+        /* --- MẪU CHUẨN NAVBAR (HEADER HIỆN TẠI) --- */
+        .preview-header {
+            width: 100%;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, rgba(125, 22, 17, 0.94) 0%, rgba(148, 28, 22, 0.92) 50%, rgba(115, 20, 15, 0.96) 100%);
+            border-bottom: 1.5px solid rgba(245, 158, 11, 0.38);
+            border-radius: 16px;
+            padding: 0 24px;
+            box-shadow: 0 4px 25px rgba(60, 10, 8, 0.28);
+        }
+
+        .preview-header .brand img {
+            height: 42px;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+        }
+
+        .preview-header .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .preview-header .nav-link {
+            color: #fff2dc;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 99px;
+            border: 1px solid rgba(245, 158, 11, 0.22);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .preview-header .nav-link.active {
+            background: linear-gradient(135deg, rgba(254, 215, 170, 0.28) 0%, rgba(251, 146, 60, 0.22) 100%);
+            border-color: #fb923c;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.32);
+        }
+
+        .preview-header .call-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #a8201a 0%, #851611 100%);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 8px 18px;
+            border-radius: 99px;
+            border: 1px solid rgba(245, 158, 11, 0.45);
+            box-shadow: 0 4px 14px rgba(60, 10, 8, 0.3);
+        }
+
+        /* --- FOOTER ĐỒNG NHẤT 100% CÙNG MẪU VỚI HEADER --- */
+        .unified-footer {
+            width: 100%;
+            background: linear-gradient(135deg, rgba(125, 22, 17, 0.96) 0%, rgba(148, 28, 22, 0.94) 50%, rgba(115, 20, 15, 0.97) 100%);
+            border-top: 1.5px solid rgba(245, 158, 11, 0.45);
+            border-radius: 20px;
+            padding: 56px 40px 32px;
+            box-shadow: 0 -8px 32px rgba(60, 10, 8, 0.25);
+            color: #fff2dc;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .unified-footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #fbbf24, #f59e0b, #fbbf24, transparent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1.3fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .f-brand-logo {
+            height: 42px;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+            margin-bottom: 16px;
+        }
+
+        .f-desc {
+            color: rgba(255, 242, 220, 0.88);
+            font-size: 13.5px;
+            line-height: 1.7;
+            max-width: 360px;
+        }
+
+        .f-tet-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(245, 158, 11, 0.16);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #fff2dc;
+            padding: 5px 14px;
+            border-radius: 99px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 14px;
+        }
+
+        .f-title {
+            color: #fbbf24;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .f-title::after {
+            content: "";
+            display: inline-block;
+            height: 2px;
+            width: 24px;
+            background: #f59e0b;
+            border-radius: 2px;
+        }
+
+        .f-links-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .f-links-list a {
+            color: rgba(255, 242, 220, 0.88);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .f-links-list a:hover {
+            color: #fbbf24;
+            transform: translateX(4px);
+        }
+
+        /* Nút Hotline đồng bộ 100% với ln-call-btn của Header */
+        .f-hotline-box {
+            margin-bottom: 14px;
+        }
+
+        .f-hotline-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #a8201a 0%, #851611 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 18px;
+            padding: 10px 22px;
+            border-radius: 99px;
+            border: 1.5px solid rgba(245, 158, 11, 0.55);
+            box-shadow: 0 4px 18px rgba(60, 10, 8, 0.35);
+            transition: all 0.25s ease;
+            margin-top: 6px;
+        }
+
+        .f-hotline-btn:hover {
+            background: linear-gradient(135deg, #c53027 0%, #9e1d17 100%);
+            border-color: #fb923c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(249, 115, 22, 0.45);
+        }
+
+        .f-email-line {
+            color: rgba(255, 242, 220, 0.88);
+            font-size: 13.5px;
+            margin-bottom: 12px;
+        }
+
+        .f-email-line a {
+            color: #fbbf24;
+            text-decoration: underline;
+        }
+
+        .f-note-badge {
+            background: rgba(0, 0, 0, 0.22);
+            border: 1px solid rgba(245, 158, 11, 0.28);
+            border-left: 3px solid #f59e0b;
+            color: #fff2dc;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .f-divider {
+            height: 1px;
+            background: rgba(245, 158, 11, 0.22);
+            margin: 36px 0 20px;
+        }
+
+        .f-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: rgba(255, 242, 220, 0.75);
+        }
+
+        .f-bottom .blessing {
+            color: #fbbf24;
+            font-weight: 700;
+        }
+
+        .f-bottom .cert {
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        @media (max-width: 860px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .f-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div>
+            <h2>HEADER HIỆN TẠI (MẪU CHUẨN NAVBAR)</h2>
+            <header class="preview-header">
+                <a href="#" class="brand">
+                    <img src="/images/logo.webp" alt="Lisa Food">
+                </a>
+                <nav class="nav-links">
+                    <a href="#" class="nav-link active">Bộ sưu tập Hamper</a>
+                    <a href="#" class="nav-link">Sản phẩm</a>
+                    <a href="#" class="nav-link">Nhận báo giá</a>
+                    <a href="#" class="nav-link">Liên hệ</a>
+                </nav>
+                <div>
+                    <a href="tel:0393955516" class="call-btn">📞 0393.955.516</a>
+                </div>
+            </header>
+        </div>
+
+        <div>
+            <h2>FOOTER ĐƯỢC ĐỒNG NHẤT 100% CÙNG MẪU VỚI HEADER (TONE SUR TONE)</h2>
+            <footer class="unified-footer">
+                <div class="footer-grid">
+                    <div>
+                        <img class="f-brand-logo" src="/images/logo.webp" alt="Lisa Food">
+                        <p class="f-desc">Quà tặng cao cấp từ nông sản Việt. Kết tinh di sản truyền thống và chuẩn mực an toàn thực phẩm quốc tế ISO 22000 trao gửi vạn lộc xuân.</p>
+                        <div class="f-tet-tag">🧧 Xuân Như Ý · Vạn Sự Khởi Sắc 2027</div>
+                    </div>
+                    <div>
+                        <h4 class="f-title">LIÊN KẾT NHANH</h4>
+                        <ul class="f-links-list">
+                            <li><a href="https://lisafoodglobal.com" target="_blank">Về Lisa Food ↗</a></li>
+                            <li><a href="https://lisafood.vn/san-pham" target="_blank">Sản phẩm Hamper Tết ↗</a></li>
+                            <li><a href="https://lisafood.vn/tin-tuc" target="_blank">Cẩm nang Quà Tết ↗</a></li>
+                            <li><a href="https://lisafood.vn/lien-he" target="_blank">Liên hệ đặt quà ↗</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="f-title">TƯ VẤN QUÀ TẶNG TẾT DOANH NGHIỆP</h4>
+                        <div class="f-hotline-box">
+                            <span style="font-size:13px;color:rgba(255,242,220,0.85);display:block;">Hotline tư vấn 24/7 &amp; Zalo:</span>
+                            <a href="tel:0393955516" class="f-hotline-btn">📞 0393.955.516</a>
+                        </div>
+                        <p class="f-email-line">Email báo giá: <a href="mailto:sale@lisafood.vn">sale@lisafood.vn</a></p>
+                        <div class="f-note-badge">✨ Phục vụ 24/7 mùa Tết 2027 · Khắc logo doanh nghiệp · Giao quà tận nơi</div>
+                    </div>
+                </div>
+                <div class="f-divider"></div>
+                <div class="f-bottom">
+                    <p>© 2027 Lisa Food. <span class="blessing">🌸 Kính chúc Quý khách Năm Mới An Khang Thịnh Vượng!</span></p>
+                    <p class="cert">Đạt tiêu chuẩn xuất khẩu &amp; An toàn thực phẩm ISO 22000</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+</html>

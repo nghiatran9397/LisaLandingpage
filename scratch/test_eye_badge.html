@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Eye Badge on Hamper & Product Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Be Vietnam Pro', sans-serif; }
+        body { background: #faf7f2; padding: 40px 20px; }
+        .grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+
+        /* THE CARD */
+        .hc {
+            position: relative;
+            background: #ffffff;
+            border: 1px solid #ffedd5;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(67, 20, 7, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .hc:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 35px -8px rgba(249, 115, 22, 0.15);
+            border-color: #fdba74;
+        }
+
+        .hc img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 640/340;
+            object-fit: cover;
+            cursor: zoom-in;
+            transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .hc:hover img {
+            transform: scale(1.045);
+        }
+
+        .hb { padding: 18px 20px; }
+        .hb h3 { font-size: 20px; color: #1f2937; margin-bottom: 6px; }
+        .pr { font-size: 18px; font-weight: 800; color: #b91c1c; margin-bottom: 12px; }
+
+        /* --- STYLES CHO CON MẮT GÓC HÌNH (EYE BADGE) --- */
+
+        /* OPTION 1: PILL BADGE LUXURY (ICON MẮT + "XEM ẢNH") */
+        .card-eye-btn-pill {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            z-index: 10;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 99px;
+            background: rgba(26, 12, 10, 0.72);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(245, 158, 11, 0.5);
+            color: #fff2dc;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            transition: all 0.28s cubic-bezier(0.165, 0.84, 0.44, 1);
+            user-select: none;
+        }
+
+        .card-eye-btn-pill svg {
+            stroke: #fef08a;
+            transition: transform 0.25s ease;
+        }
+
+        .card-eye-btn-pill:hover {
+            background: linear-gradient(135deg, #a8201a 0%, #851611 100%);
+            border-color: #fb923c;
+            color: #ffffff;
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
+        }
+
+        .card-eye-btn-pill:hover svg {
+            stroke: #ffffff;
+            transform: scale(1.15);
+        }
+
+        /* OPTION 2: CIRCLE BUTTON LUXURY (ICON MẮT TRÒN ÁNH KIM) */
+        .card-eye-btn-circle {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            z-index: 10;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(26, 12, 10, 0.72);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1.5px solid rgba(245, 158, 11, 0.55);
+            color: #fef08a;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            transition: all 0.28s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .card-eye-btn-circle:hover {
+            background: linear-gradient(135deg, #a8201a 0%, #851611 100%);
+            border-color: #fb923c;
+            color: #ffffff;
+            transform: scale(1.12);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
+        }
+
+        /* OPTION 3: EXPANDABLE PILL (MẶC ĐỊNH LÀ ICON TRÒN, RÊ CHUỘT NỞ RA CHỮ "XEM CHI TIẾT") */
+        .card-eye-btn-expand {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            z-index: 10;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            height: 34px;
+            padding: 0 10px;
+            border-radius: 99px;
+            background: rgba(26, 12, 10, 0.72);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(245, 158, 11, 0.5);
+            color: #fff2dc;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .card-eye-btn-expand svg {
+            stroke: #fde047;
+            flex-shrink: 0;
+        }
+
+        .card-eye-btn-expand:hover {
+            background: linear-gradient(135deg, #a8201a 0%, #851611 100%);
+            border-color: #fb923c;
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align:center;color:#7d1611;margin-bottom:30px;font-size:24px;">THỬ NGHIỆM CÁC KIỂU "CON MẮT" Ở GÓC HÌNH SẢN PHẨM</h2>
+
+    <div class="grid">
+        <!-- Kiểu 1: Pill có chữ "Xem ảnh" luôn hiển thị rõ ràng -->
+        <article class="hc">
+            <button type="button" class="card-eye-btn-pill" title="Nhấp xem phóng to ảnh & chi tiết">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span>Xem ảnh</span>
+            </button>
+            <img src="/images/hamper-happy-new-year.webp" alt="Hamper Happy New Year">
+            <div class="hb">
+                <h3>1. Kiểu Pill có chữ "Xem ảnh" (Rõ ràng nhất)</h3>
+                <div class="pr">590.000đ</div>
+                <p style="color:#6b7280;font-size:13px;">Khách hàng nhìn vào biết ngay bấm vào để xem to ảnh HD.</p>
+            </div>
+        </article>
+
+        <!-- Kiểu 2: Nút tròn con mắt ánh kim -->
+        <article class="hc">
+            <button type="button" class="card-eye-btn-circle" title="Nhấp xem phóng to ảnh & chi tiết">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+            </button>
+            <img src="/images/hamper-sac-xuan-01-a-2.webp" alt="Hamper Sắc Xuân">
+            <div class="hb">
+                <h3>2. Kiểu Nút tròn Icon mắt (Gọn gàng tinh tế)</h3>
+                <div class="pr">1.022.000đ</div>
+                <p style="color:#6b7280;font-size:13px;">Icon con mắt đặt trong vòng tròn kính mờ viền vàng kim.</p>
+            </div>
+        </article>
+
+        <!-- Kiểu 3: Pill gọn có chữ "Chi tiết" -->
+        <article class="hc">
+            <button type="button" class="card-eye-btn-expand" title="Nhấp xem phóng to ảnh & chi tiết">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span>Chi tiết</span>
+            </button>
+            <img src="/images/hamper-sac-xuan-01-b.webp" alt="Hamper Sắc Xuân 01 B">
+            <div class="hb">
+                <h3>3. Kiểu Pill "Chi tiết"</h3>
+                <div class="pr">1.154.000đ</div>
+                <p style="color:#6b7280;font-size:13px;">Nhấn mạnh tính năng mở xem thông tin chi tiết hamper.</p>
+            </div>
+        </article>
+    </div>
+
+</body>
+</html>

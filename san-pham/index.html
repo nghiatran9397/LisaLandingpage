@@ -5356,30 +5356,30 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- 3. OVERLAY XEM TO ẢNH FULL-SCREEN HD (CHO PHÉP XEM TO TỪNG BỨC HÌNH) -->
-        <div class="lb-full-zoom-overlay" id="lbFullZoomOverlay" onclick="closeFullZoom(event)">
-            <div class="lb-full-zoom-top">
-                <div class="lb-full-zoom-title-box">
-                    <h4 class="lb-full-zoom-title" id="lbFullZoomTitle">Hạt điều rang muối 250g</h4>
-                    <p class="lb-full-zoom-subtitle" id="lbFullZoomSub">Ảnh chi tiết chất lượng cao HD</p>
-                </div>
-                <button type="button" class="lb-full-zoom-close" onclick="closeFullZoom()">&times;</button>
+    <!-- 3. OVERLAY XEM TO ẢNH FULL-SCREEN HD (CHO PHÉP XEM TO TỪNG BỨC HÌNH, NẰM ĐỘC LẬP BÊN NGOÀI LIGHTBOX ĐỂ TRÁNH BUBBLING) -->
+    <div class="lb-full-zoom-overlay" id="lbFullZoomOverlay" data-lenis-prevent onclick="closeFullZoom(event)">
+        <div class="lb-full-zoom-top">
+            <div class="lb-full-zoom-title-box">
+                <h4 class="lb-full-zoom-title" id="lbFullZoomTitle">Hạt điều rang muối 250g</h4>
+                <p class="lb-full-zoom-subtitle" id="lbFullZoomSub">Ảnh chi tiết chất lượng cao HD</p>
             </div>
-
-            <button type="button" class="lb-full-zoom-nav lb-full-zoom-prev" id="lbFullPrev"
-                onclick="navigateFullZoom(-1, event)">&#10094;</button>
-
-            <div class="lb-full-zoom-body">
-                <img class="lb-full-zoom-img" id="lbFullZoomImg" src="" alt="Full Zoom preview"
-                    onclick="closeFullZoom(event)">
-            </div>
-
-            <button type="button" class="lb-full-zoom-nav lb-full-zoom-next" id="lbFullNext"
-                onclick="navigateFullZoom(1, event)">&#10095;</button>
-
-            <div class="lb-full-zoom-thumbs" id="lbFullZoomThumbs"></div>
+            <button type="button" class="lb-full-zoom-close" onclick="closeFullZoom(event)" aria-label="Đóng ảnh phóng to">&times;</button>
         </div>
+
+        <button type="button" class="lb-full-zoom-nav lb-full-zoom-prev" id="lbFullPrev"
+            onclick="navigateFullZoom(-1, event)">&#10094;</button>
+
+        <div class="lb-full-zoom-body">
+            <img class="lb-full-zoom-img" id="lbFullZoomImg" src="" alt="Full Zoom preview"
+                onclick="closeFullZoom(event)">
+        </div>
+
+        <button type="button" class="lb-full-zoom-nav lb-full-zoom-next" id="lbFullNext"
+            onclick="navigateFullZoom(1, event)">&#10095;</button>
+
+        <div class="lb-full-zoom-thumbs" id="lbFullZoomThumbs"></div>
     </div>
 
     <!-- LIGHTBOX & PRODUCT DETAILS SCRIPT -->
@@ -7283,22 +7283,39 @@
         }
 
         function closeFullZoom(e) {
-            if (e && e.target && e.target.classList.contains("lb-full-zoom-nav")) {
-                return;
+            if (e) {
+                if (e.stopPropagation) e.stopPropagation();
+                if (e.target && (e.target.classList.contains("lb-full-zoom-nav") || e.target.closest(".lb-full-zoom-nav") || e.target.closest(".lb-full-zoom-thumbs") || e.target.closest(".lb-full-zoom-title-box"))) {
+                    return;
+                }
             }
             var overlay = document.getElementById("lbFullZoomOverlay");
             if (overlay) {
                 overlay.classList.remove("active");
             }
+            // Đảm bảo không làm mất trạng thái overflow: hidden nếu modal chi tiết bên dưới vẫn đang mở
+            var lb = document.getElementById("imgLightbox");
+            if (lb && lb.classList.contains("active")) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "";
+            }
         }
 
         function closeLightbox(e) {
-            if (e && e.target) {
-                var pCard = document.getElementById("lbProductCard");
-                var cWrap = document.getElementById("lbClassicWrap");
-                if ((pCard && pCard.contains(e.target) && !e.target.closest(".lightbox-close-btn")) ||
-                    (cWrap && cWrap.contains(e.target) && !e.target.closest(".lightbox-close") && !e.target.classList.contains("lightbox-wrap"))) {
+            if (e) {
+                var fZoom = document.getElementById("lbFullZoomOverlay");
+                // Nếu đang mở hoặc vừa thao tác trên màn hình phóng to HD full zoom -> tuyệt đối không đóng lightbox chi tiết bên dưới
+                if (fZoom && (fZoom.classList.contains("active") || (e.target && fZoom.contains(e.target)))) {
                     return;
+                }
+                if (e.target) {
+                    var pCard = document.getElementById("lbProductCard");
+                    var cWrap = document.getElementById("lbClassicWrap");
+                    if ((pCard && pCard.contains(e.target) && !e.target.closest(".lightbox-close-btn")) ||
+                        (cWrap && cWrap.contains(e.target) && !e.target.closest(".lightbox-close") && !e.target.classList.contains("lightbox-wrap"))) {
+                        return;
+                    }
                 }
             }
             var lb = document.getElementById("imgLightbox");
@@ -7507,13 +7524,17 @@
                 });
             });
 
-            // Phím mũi tên
+            // Phím mũi tên & phím Escape
             document.addEventListener("keydown", function (e) {
                 var fullZoom = document.getElementById("lbFullZoomOverlay");
                 if (fullZoom && fullZoom.classList.contains("active")) {
                     if (e.key === "ArrowLeft") navigateFullZoom(-1);
                     if (e.key === "ArrowRight") navigateFullZoom(1);
-                    if (e.key === "Escape") closeFullZoom();
+                    if (e.key === "Escape") {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        closeFullZoom(e);
+                    }
                     return;
                 }
 
@@ -7521,7 +7542,10 @@
                 if (lb && lb.classList.contains("active")) {
                     if (e.key === "ArrowLeft") navigateLightbox(-1);
                     if (e.key === "ArrowRight") navigateLightbox(1);
-                    if (e.key === "Escape") closeLightbox();
+                    if (e.key === "Escape") {
+                        e.preventDefault();
+                        closeLightbox();
+                    }
                 }
             });
 

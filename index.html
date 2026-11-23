@@ -425,22 +425,6 @@
             margin: 0 8px
         }
 
-        .mobile-call {
-            display: none;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: opacity .3s ease,
-                transform .3s ease,
-                visibility .3s ease;
-        }
-
-        .mobile-call.is-visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
         @media(max-width:600px) {
             section {
                 padding: 44px 0
@@ -448,36 +432,6 @@
 
             .hero {
                 padding: 44px 0 52px
-            }
-
-            .mobile-call {
-                display: flex;
-                gap: 10px;
-                position: fixed;
-                left: 16px;
-                right: 16px;
-                bottom: calc(14px + env(safe-area-inset-bottom, 0px));
-                z-index: 15
-            }
-
-            .mobile-call a {
-                flex: 1;
-                text-align: center;
-                background: var(--red);
-                color: var(--on-red);
-                text-decoration: none;
-                font-weight: 700;
-                padding: 14px;
-                border-radius: 99px;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, .3)
-            }
-
-            .mobile-call a.z {
-                background: #0068ff
-            }
-
-            body {
-                padding-bottom: 80px
             }
         }
 
@@ -772,7 +726,7 @@
         .float-list-btn {
             position: fixed;
             right: 20px;
-            bottom: 85px;
+            bottom: 24px;
             z-index: 99;
             background: var(--hero);
             color: #fff;
@@ -2056,7 +2010,7 @@
         @media (max-width: 600px) {
             .float-list-btn {
                 right: 16px !important;
-                bottom: 84px !important;
+                bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important;
                 padding: 9px 15px !important;
                 font-size: 13px !important;
             }
@@ -7190,8 +7144,6 @@
             </div>
         </div>
     </footer>
-    <div class="mobile-call"><a href="tel:0393955516">📞 Gọi ngay</a><a class="z" href="https://zalo.me/0393955516">💬
-            Zalo</a></div>
     <script>
         (function () {
             var g = function (i) { var el = document.getElementById(i); return el ? el.value.trim() : ""; };
@@ -10256,40 +10208,6 @@
                 }
             });
         });
-    </script>
-
-    <script>
-
-        // Hiện thanh Gọi ngay - Zalo khi khách cuộn qua phần giới thiệu
-        document.addEventListener("DOMContentLoaded", function () {
-            const mobileCall = document.querySelector(".mobile-call");
-            const hero = document.querySelector(".hero");
-
-            if (!mobileCall || !hero) return;
-
-            function updateMobileCall() {
-                if (window.innerWidth <= 600) {
-                    const heroBottom = hero.getBoundingClientRect().bottom;
-
-                    if (heroBottom <= 100) {
-                        mobileCall.classList.add("is-visible");
-                    } else {
-                        mobileCall.classList.remove("is-visible");
-                    }
-                } else {
-                    mobileCall.classList.remove("is-visible");
-                }
-            }
-
-            window.addEventListener("scroll", updateMobileCall, {
-                passive: true
-            });
-
-            window.addEventListener("resize", updateMobileCall);
-
-            updateMobileCall();
-        });
-
     </script>
 
     <!-- HIỆU ỨNG CUỘN TRANG MƯỢT MÀ CHUẨN LUXURY (BƯỚC 1 - LENIS) -->

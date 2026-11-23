@@ -4560,27 +4560,30 @@
             border-color: #ffffff !important;
         }
 
-        /* --- FOOTER ĐẲNG CẤP DOANH NGHIỆP --- */
+        /* --- FOOTER SẮC XUÂN TẾT MAY MẮN & ĐẲNG CẤP DOANH NGHIỆP --- */
         footer.luxury-footer {
-            background: linear-gradient(180deg, #280605 0%, #1b0201 100%) !important;
-            color: rgba(255, 255, 255, 0.75) !important;
+            background: 
+                radial-gradient(circle at 20% 0%, rgba(251, 191, 36, 0.22) 0%, transparent 50%),
+                radial-gradient(circle at 80% 100%, rgba(239, 68, 68, 0.25) 0%, transparent 50%),
+                linear-gradient(145deg, #7d1611 0%, #991b1b 50%, #68110c 100%) !important;
+            color: rgba(255, 255, 255, 0.92) !important;
             padding: 60px 0 36px !important;
-            border-top: 1px solid rgba(212, 160, 23, 0.3) !important;
+            border-top: 3px solid #d4a017 !important;
             position: relative !important;
             overflow: hidden !important;
             font-size: 14px !important;
             text-align: left !important;
+            box-shadow: 0 -10px 30px rgba(125, 22, 17, 0.2) !important;
         }
 
         footer.luxury-footer::before {
             content: "";
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 180px;
-            background: radial-gradient(ellipse at center top, rgba(212, 160, 23, 0.12) 0%, transparent 70%);
+            left: 0;
+            right: 0;
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent, #fef08a, #d4a017, #fef08a, transparent);
             pointer-events: none;
         }
 
@@ -4590,11 +4593,11 @@
             gap: 48px;
             align-items: start;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .f-col.brand-col .flogo {
-            height: 48px !important;
+            height: 52px !important;
             width: auto !important;
             background: transparent !important;
             border-radius: 0 !important;
@@ -4603,26 +4606,42 @@
             box-shadow: none !important;
             border: none !important;
             display: inline-block !important;
-            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35)) !important;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35)) !important;
         }
 
         .f-brand-desc {
-            color: rgba(255, 255, 255, 0.8) !important;
+            color: rgba(255, 255, 255, 0.92) !important;
             font-size: 13.5px !important;
             line-height: 1.7 !important;
             margin: 0 !important;
             max-width: 360px !important;
         }
 
-        .f-col-title {
-            color: #d4a017 !important;
+        .tet-badge-spring {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            background: rgba(251, 191, 36, 0.22) !important;
+            border: 1px solid rgba(251, 191, 36, 0.5) !important;
+            color: #fef08a !important;
+            padding: 5px 14px !important;
+            border-radius: 99px !important;
             font-size: 12px !important;
+            font-weight: 700 !important;
+            margin-top: 14px !important;
+            letter-spacing: 0.02em !important;
+        }
+
+        .f-col-title {
+            color: #fde047 !important;
+            font-size: 12.5px !important;
             font-weight: 800 !important;
             letter-spacing: 0.12em !important;
             text-transform: uppercase !important;
             margin: 0 0 18px 0 !important;
             position: relative !important;
             padding-bottom: 8px !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
         }
 
         .f-col-title::after {
@@ -4632,7 +4651,7 @@
             left: 0;
             width: 28px;
             height: 2px;
-            background: #d4a017;
+            background: #facc15;
             border-radius: 2px;
         }
 
@@ -4646,7 +4665,7 @@
         }
 
         .f-links a {
-            color: rgba(255, 255, 255, 0.75) !important;
+            color: rgba(255, 255, 255, 0.88) !important;
             text-decoration: none !important;
             font-size: 14px !important;
             transition: all 0.25s ease !important;
@@ -4657,62 +4676,67 @@
         }
 
         .f-links a:hover {
-            color: #ffffff !important;
+            color: #fef08a !important;
             transform: translateX(4px) !important;
-            text-shadow: 0 0 10px rgba(212, 160, 23, 0.4) !important;
+            text-shadow: 0 0 10px rgba(254, 240, 138, 0.6) !important;
         }
 
         .f-hotline-p {
             margin: 0 0 10px 0 !important;
             font-size: 14px !important;
-            color: rgba(255, 255, 255, 0.85) !important;
+            color: rgba(255, 255, 255, 0.95) !important;
         }
 
         .f-hotline-label {
-            color: rgba(255, 255, 255, 0.8) !important;
+            color: rgba(255, 255, 255, 0.88) !important;
             margin-right: 6px !important;
         }
 
         .f-hotline-link {
-            color: #f2c75c !important;
-            font-size: 18px !important;
+            color: #fde047 !important;
+            font-size: 19px !important;
             font-weight: 800 !important;
             text-decoration: none !important;
-            transition: color 0.25s ease, text-shadow 0.25s ease !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+            transition: all 0.25s ease !important;
         }
 
         .f-hotline-link:hover {
             color: #ffffff !important;
-            text-shadow: 0 0 12px rgba(242, 199, 92, 0.7) !important;
+            text-shadow: 0 0 16px rgba(250, 204, 21, 0.9) !important;
         }
 
         .f-email-p {
-            color: rgba(255, 255, 255, 0.75) !important;
+            color: rgba(255, 255, 255, 0.88) !important;
             font-size: 13.5px !important;
             margin: 0 0 12px 0 !important;
         }
 
         .f-email-p a {
-            color: rgba(255, 255, 255, 0.95) !important;
+            color: #fef08a !important;
             text-decoration: underline !important;
             transition: color 0.25s ease !important;
         }
 
         .f-email-p a:hover {
-            color: #f2c75c !important;
+            color: #ffffff !important;
         }
 
         .f-serve-note {
-            color: #e5b84c !important;
+            color: #fef08a !important;
             font-size: 12.5px !important;
-            font-weight: 600 !important;
+            font-weight: 700 !important;
             margin: 0 !important;
             line-height: 1.5 !important;
+            background: rgba(0, 0, 0, 0.16) !important;
+            padding: 8px 12px !important;
+            border-radius: 8px !important;
+            border-left: 3px solid #facc15 !important;
         }
 
         .footer-divider {
             height: 1px !important;
-            background: rgba(255, 255, 255, 0.08) !important;
+            background: linear-gradient(90deg, transparent, rgba(254, 240, 138, 0.35), rgba(254, 240, 138, 0.35), transparent) !important;
             margin: 36px 0 20px !important;
             position: relative !important;
             z-index: 1 !important;
@@ -4724,7 +4748,7 @@
             justify-content: space-between !important;
             gap: 16px !important;
             font-size: 13px !important;
-            color: rgba(255, 255, 255, 0.45) !important;
+            color: rgba(255, 255, 255, 0.82) !important;
             position: relative !important;
             z-index: 1 !important;
         }
@@ -4733,8 +4757,14 @@
             margin: 0 !important;
         }
 
+        .tet-blessing {
+            color: #fde047 !important;
+            font-weight: 700 !important;
+            margin-left: 6px !important;
+        }
+
         .f-cert {
-            color: rgba(212, 160, 23, 0.85) !important;
+            color: #fde047 !important;
             font-weight: 600 !important;
         }
 
@@ -7495,7 +7525,8 @@
                 <div class="f-col brand-col">
                     <img class="flogo" src="images/logo.webp" alt="Lisa Food">
                     <p class="f-brand-desc">Quà tặng cao cấp từ nông sản Việt. Kết tinh di sản truyền thống và chuẩn mực
-                        an toàn thực phẩm quốc tế ISO 22000.</p>
+                        an toàn thực phẩm quốc tế ISO 22000 trao gửi vạn lộc xuân.</p>
+                    <div class="tet-badge-spring">🧧 Xuân Như Ý · Vạn Sự Khởi Sắc 2027</div>
                 </div>
 
                 <!-- Cột 2: Liên kết hệ thống -->
@@ -7511,7 +7542,7 @@
 
                 <!-- Cột 3: Tư vấn B2B & Hotline -->
                 <div class="f-col contact-col">
-                    <h4 class="f-col-title">TƯ VẤN QUÀ TẶNG DOANH NGHIỆP</h4>
+                    <h4 class="f-col-title">TƯ VẤN QUÀ TẶNG TẾT DOANH NGHIỆP</h4>
                     <p class="f-hotline-p">
                         <span class="f-hotline-label">Hotline / Zalo:</span>
                         <a href="tel:0393955516" class="f-hotline-link">0393.955.516</a>
@@ -7524,7 +7555,7 @@
             <div class="footer-divider"></div>
 
             <div class="footer-bottom-bar">
-                <p class="f-copy">© 2027 Lisa Food. Bản quyền thuộc về Lisa Food.</p>
+                <p class="f-copy">© 2027 Lisa Food. <span class="tet-blessing">🌸 Kính chúc Quý khách Năm Mới An Khang Thịnh Vượng!</span></p>
                 <p class="f-cert">Đạt tiêu chuẩn xuất khẩu &amp; An toàn thực phẩm ISO 22000</p>
             </div>
         </div>

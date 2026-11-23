@@ -1284,18 +1284,18 @@
             }
         }
 
-        /* 2. GIAO DIỆN 2 CỘT CHI TIẾT SẢN PHẨM & HAMPER (CẢM HỨNG THIẾT KẾ HIỆN ĐẠI) */
+        /* 2. GIAO DIỆN 2 CỘT CHI TIẾT SẢN PHẨM (CHỈ DÀNH RIÊNG CHO SẢN PHẨM LẺ) */
         .lightbox-modal-card {
             position: relative;
             background: #ffffff;
             border: 1.5px solid rgba(212, 160, 23, 0.45);
             border-radius: 20px;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
-            max-width: 980px;
-            width: 95%;
-            max-height: 88vh;
+            max-width: 960px;
+            width: 100%;
+            max-height: 90vh;
             display: grid;
-            grid-template-columns: 430px 1fr;
+            grid-template-columns: 1.05fr 1fr;
             overflow: hidden;
             animation: lbModalIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -1340,16 +1340,15 @@
         }
 
         .lb-col-gallery {
-            background: #faf8f5;
+            background: #faf7f2;
             padding: 24px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            border-right: 1px solid #ebd9c3;
+            justify-content: space-between;
+            border-right: 1px solid #f0e6d6;
             position: relative;
             user-select: none;
-            overflow: hidden;
         }
 
         .lb-main-img-wrap {
@@ -1362,16 +1361,14 @@
             cursor: crosshair;
             overflow: hidden;
             border-radius: 14px;
-            background: #ffffff;
-            border: 1px solid #ebd9c3;
-            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.02);
+            background: #faf8f5;
         }
 
         .lb-main-img-wrap img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            border-radius: 10px;
+            border-radius: 12px;
             filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
             transition: transform 0.15s ease-out, opacity 0.22s ease;
             opacity: 1;
@@ -1389,26 +1386,6 @@
                 cursor: default;
                 pointer-events: auto;
             }
-        }
-
-        .lb-angle-pill {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: rgba(20, 14, 10, 0.82);
-            color: #f2c75c;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(242, 199, 92, 0.35);
-            z-index: 10003;
-            pointer-events: none;
-            display: inline-flex;
-            align-items: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .lb-zoom-hint-btn {
@@ -1759,30 +1736,25 @@
         }
 
         .lb-col-info {
-            padding: 26px 26px 20px 26px;
+            padding: 28px 26px 24px 26px;
             display: flex;
             flex-direction: column;
             overflow-y: auto;
-            max-height: 88vh;
-            background: #ffffff;
-        }
-
-        .lb-header-box {
-            margin-bottom: 12px;
+            max-height: 90vh;
         }
 
         .lb-badge {
-            display: inline-block;
+            align-self: flex-start;
             background: #fff5e6;
             color: #b86200;
             border: 1px solid #ffd280;
-            font-size: 11px;
+            font-size: 11.5px;
             font-weight: 700;
             letter-spacing: 0.03em;
             text-transform: uppercase;
             padding: 4px 11px;
             border-radius: 20px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .lb-title {
@@ -1798,8 +1770,8 @@
             display: flex;
             align-items: baseline;
             gap: 10px;
-            margin-bottom: 12px;
-            padding-bottom: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
             border-bottom: 1px dashed #e8dcc8;
         }
 
@@ -1817,90 +1789,17 @@
             letter-spacing: 0.04em;
         }
 
-        /* HỆ THỐNG TABS ĐIỀU HƯỚNG HIỆN ĐẠI (KIỂU BATDONGSAN) */
-        .lb-tabs {
+        .lb-details-box {
             display: flex;
-            gap: 6px;
-            background: #f7f2ea;
-            padding: 4px;
-            border-radius: 12px;
-            margin-bottom: 14px;
-            border: 1px solid #ebd9c3;
+            flex-direction: column;
+            margin-bottom: 16px;
         }
 
-        .lb-tab-btn {
-            flex: 1;
-            padding: 8px 10px;
-            font-size: 12.5px;
-            font-weight: 600;
-            color: #5d5346;
-            background: transparent;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-        }
-
-        .lb-tab-btn svg {
-            opacity: 0.75;
-            transition: all 0.2s ease;
-        }
-
-        .lb-tab-btn:hover {
-            color: #8B0000;
-            background: rgba(255, 255, 255, 0.65);
-        }
-
-        .lb-tab-btn.active {
-            color: #8B0000;
-            background: #ffffff;
-            font-weight: 700;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(212, 160, 23, 0.35);
-        }
-
-        .lb-tab-btn.active svg {
-            opacity: 1;
-            stroke: #8B0000;
-        }
-
-        .lb-tab-contents {
-            flex: 1;
-            min-height: 0;
-        }
-
-        .lb-tab-panel {
-            display: none;
-            animation: lbTabFadeIn 0.22s ease;
-        }
-
-        .lb-tab-panel.active {
-            display: block;
-        }
-
-        @keyframes lbTabFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(4px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* TAB 1: THÔNG TIN & ĐIỂM NỔI BẬT */
         .lb-desc-text {
             font-size: 13.5px;
             color: #444;
             line-height: 1.65;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
 
         .lb-desc-text p {
@@ -1912,224 +1811,61 @@
             margin-bottom: 0;
         }
 
-        /* 3 FACT CARDS NHANH (CẢM HỨNG TỪ BATDONGSAN) */
-        .lb-facts-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 14px;
-        }
-
-        .lb-fact-card {
-            background: #faf8f5;
-            border: 1px solid #ede1d1;
-            border-radius: 10px;
-            padding: 10px 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.2s ease;
-        }
-
-        .lb-fact-card:hover {
-            border-color: #d4a017;
-            background: #fffdf9;
-        }
-
-        .lb-fact-icon {
-            font-size: 20px;
-            line-height: 1;
-            flex-shrink: 0;
-        }
-
-        .lb-fact-body {
-            display: flex;
-            flex-direction: column;
-            min-width: 0;
-        }
-
-        .lb-fact-lbl {
-            font-size: 10.5px;
-            color: #777;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-        }
-
-        .lb-fact-val {
-            font-size: 13px;
-            color: #1a1a1a;
-            font-weight: 700;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* HIGHLIGHTS CHECKLIST */
-        .lb-highlights-box {
-            background: #fbfdf9;
-            border: 1px solid #dceed5;
-            border-radius: 10px;
-            padding: 12px 14px;
-            margin-bottom: 14px;
+        .lb-specs-table {
+            background: #faf7f2;
+            border: 1px solid #ebd9c3;
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 16px;
             display: flex;
             flex-direction: column;
             gap: 8px;
+            font-size: 13px;
+            color: #3b3b3b;
+            line-height: 1.55;
         }
 
-        .lb-highlight-item {
+        .lb-spec-item {
+            display: block;
+        }
+
+        .lb-spec-item b {
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .lb-detail-row {
             display: flex;
             align-items: flex-start;
             gap: 8px;
-            font-size: 13px;
-            color: #2b3d2b;
-            line-height: 1.45;
         }
 
-        .lb-hl-check {
-            color: #2e7d32;
-            font-weight: 800;
+        .lb-detail-icon {
+            color: #d4a017;
             font-size: 14px;
-            line-height: 1.2;
             flex-shrink: 0;
+            margin-top: 3px;
         }
 
-        /* TAB 2: TIÊU CHUẨN & PHÁP LÝ */
-        .lb-specs-table {
-            background: #faf8f5;
-            border: 1px solid #ebd9c3;
-            border-radius: 12px;
-            padding: 6px 14px;
-            margin-bottom: 12px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .lb-spec-row {
-            display: flex;
-            padding: 8px 0;
-            border-bottom: 1px dashed #e8dcc8;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-
-        .lb-spec-row:last-child {
-            border-bottom: none;
-        }
-
-        .lb-spec-label {
+        .lb-detail-label {
             font-weight: 700;
-            color: #1a1a1a;
-            width: 145px;
+            color: #222;
+            min-width: 90px;
             flex-shrink: 0;
         }
 
-        .lb-spec-val {
+        .lb-detail-val {
             color: #444;
             flex: 1;
         }
 
-        .lb-cert-banner {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: #fff8e8;
-            border: 1px solid #f2c75c;
-            border-radius: 10px;
-            padding: 11px 14px;
-            font-size: 12.5px;
-            color: #634300;
-            line-height: 1.45;
-        }
-
-        .lb-cert-icon {
-            font-size: 24px;
-            line-height: 1;
-            flex-shrink: 0;
-        }
-
-        .lb-cert-text {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .lb-cert-text strong {
-            color: #8B0000;
-            font-size: 13px;
-        }
-
-        /* TAB 3: BÁO GIÁ DOANH NGHIỆP */
-        .lb-b2b-tier-card {
-            background: #faf7f2;
-            border: 1px solid #e2d2bd;
-            border-radius: 12px;
-            padding: 14px 16px;
-            margin-bottom: 12px;
-        }
-
-        .lb-b2b-tier-title {
-            font-size: 13.5px;
-            font-weight: 700;
-            color: #8B0000;
-            margin-bottom: 10px;
-        }
-
-        .lb-b2b-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            font-size: 12.5px;
-            color: #3b3b3b;
-            line-height: 1.5;
-        }
-
-        .lb-b2b-list li {
-            position: relative;
-            padding-left: 18px;
-        }
-
-        .lb-b2b-list li::before {
-            content: "✦";
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #d4a017;
-            font-size: 12px;
-        }
-
-        .lb-b2b-direct-box {
-            background: #fdfaf6;
-            border: 1px dashed #d4a017;
-            border-radius: 10px;
-            padding: 12px 14px;
-            text-align: center;
-        }
-
-        .lb-b2b-direct-label {
-            display: block;
-            font-size: 12.5px;
-            font-weight: 600;
-            color: #444;
-            margin-bottom: 10px;
-        }
-
-        .lb-b2b-btns {
-            display: flex;
-            gap: 10px;
-        }
-
-        /* KHU VỰC SỐ LƯỢNG & NÚT THAO TÁC */
         .lb-actions-box {
             margin-top: auto;
-            padding-top: 14px;
-            border-top: 1px solid #ebd9c3;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .lb-qty-row {
@@ -2138,17 +1874,10 @@
             gap: 12px;
         }
 
-        .lb-qty-selector-group {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
         .lb-qty-label {
             font-size: 13.5px;
             font-weight: 600;
             color: #444;
-            white-space: nowrap;
         }
 
         .lb-qty-ctrl {
@@ -2194,9 +1923,9 @@
             background: #8B0000;
             color: #ffffff;
             border: 1.5px solid #8B0000;
-            padding: 9px 16px;
+            padding: 10px 18px;
             border-radius: 8px;
-            font-size: 13.5px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
             display: flex;
@@ -2205,7 +1934,6 @@
             gap: 8px;
             transition: all 0.2s;
             box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
-            white-space: nowrap;
         }
 
         .lb-btn-add:hover {
@@ -2226,7 +1954,7 @@
 
         .lb-btn-consult {
             flex: 1;
-            padding: 8px 12px;
+            padding: 9px 12px;
             border-radius: 8px;
             font-size: 13px;
             font-weight: 600;
@@ -2236,7 +1964,6 @@
             justify-content: center;
             gap: 6px;
             transition: all 0.2s;
-            white-space: nowrap;
         }
 
         .lb-btn-zalo {
@@ -2264,54 +1991,30 @@
         @media (max-width: 768px) {
             .lightbox-modal-card {
                 grid-template-columns: 1fr;
-                max-height: 94vh;
-                height: 94vh;
-                display: flex;
-                flex-direction: column;
-                border-radius: 18px;
-                overflow: hidden;
-            }
-
-            .lightbox-close-btn {
-                top: 10px;
-                right: 10px;
-                width: 32px;
-                height: 32px;
-                font-size: 20px;
-                background: rgba(255, 255, 255, 0.9);
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                max-height: 92vh;
+                overflow-y: auto;
+                border-radius: 16px;
             }
 
             .lb-col-gallery {
-                padding: 12px 14px 8px 14px;
+                padding: 16px;
                 border-right: none;
-                border-bottom: 1px solid #ebd9c3;
-                flex-shrink: 0;
+                border-bottom: 1px solid #f0e6d6;
             }
 
             .lb-main-img-wrap {
-                height: clamp(190px, 28vh, 230px);
-                border-radius: 10px;
+                height: 250px;
             }
 
             .lb-thumb-item {
-                width: 48px;
-                height: 48px;
-                border-radius: 8px;
-            }
-
-            .lb-thumbs-row {
-                margin-top: 8px;
-                gap: 6px;
+                width: 52px;
+                height: 52px;
             }
 
             .lb-col-info {
-                padding: 14px 16px;
-                flex: 1;
-                overflow-y: auto;
-                -webkit-overflow-scrolling: touch;
-                padding-bottom: 95px;
-                position: relative;
+                padding: 18px 16px 20px 16px;
+                max-height: none;
+                overflow-y: visible;
             }
 
             .lb-title {
@@ -2323,99 +2026,13 @@
                 font-size: 22px;
             }
 
-            .lb-tabs {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-                margin-bottom: 12px;
-                padding: 3px;
-            }
-
-            .lb-tabs::-webkit-scrollbar {
-                display: none;
-            }
-
-            .lb-tab-btn {
-                padding: 7px 10px;
-                font-size: 12px;
-                flex-shrink: 0;
-            }
-
-            .lb-facts-grid {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
-
-            .lb-actions-box {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
-                border-top: 1.5px solid #ebd9c3;
-                box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
-                padding: 10px 14px 12px 14px;
-                z-index: 10010;
-                margin-top: 0;
-                gap: 8px;
-            }
-
             .lb-qty-row {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-
-            .lb-qty-selector-group {
-                display: flex;
-                align-items: center;
-                gap: 6px;
-            }
-
-            .lb-qty-label {
-                font-size: 12.5px;
-            }
-
-            .lb-qty-btn {
-                width: 28px;
-                height: 28px;
-                font-size: 15px;
-            }
-
-            .lb-qty-input {
-                width: 32px;
-                height: 28px;
-                font-size: 13px;
+                flex-wrap: wrap;
             }
 
             .lb-btn-add {
-                flex: 1;
-                padding: 8px 10px;
-                font-size: 13px;
-            }
-
-            .lb-consult-row {
-                gap: 8px;
-            }
-
-            .lb-btn-consult {
-                padding: 7px 10px;
-                font-size: 12px;
-            }
-
-            .lb-spec-label {
-                width: 110px;
-                font-size: 12px;
-            }
-
-            .lb-spec-val {
-                font-size: 12px;
-            }
-
-            .lb-b2b-btns {
-                flex-direction: column;
-                gap: 8px;
+                width: 100%;
+                flex: none;
             }
 
             /* ẨN TOÀN BỘ NÚT CHUYỂN ẢNH TRÊN MOBILE ĐỂ KHÔNG CHE HÌNH VÀ TĂNG TÍNH THẨM MỸ */
@@ -8026,7 +7643,7 @@
             <div class="lightbox-counter" id="lbClassicCounter"></div>
         </div>
 
-        <!-- 2. GIAO DIỆN 2 CỘT CHI TIẾT SẢN PHẨM & HAMPER (CẢM HỨNG BATDONGSAN CAO CẤP) -->
+        <!-- 2. GIAO DIỆN 2 CỘT CHI TIẾT SẢN PHẨM (DÀNH RIÊNG CHO SẢN PHẨM LẺ) -->
         <div class="lightbox-modal-card" id="lbProductCard" style="display: none;">
             <button type="button" class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
 
@@ -8040,7 +7657,6 @@
                     <button type="button" class="lb-nav-btn lb-nav-next" id="lbNext"
                         onclick="navigateLightbox(1, event)">&#10095;</button>
                     <div class="lb-counter-pill" id="lbCounter"></div>
-                    <div class="lb-angle-pill" id="lbAnglePill" style="display: none;">01 / 01 · Mặt chính</div>
                     <button type="button" class="lb-zoom-hint-btn" onclick="openFullZoom(event)" title="Xem to ảnh HD">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -8055,93 +7671,26 @@
                 <div class="lb-thumbs-row" id="lbThumbsRow"></div>
             </div>
 
-            <!-- CỘT BÊN PHẢI: KHUNG THÔNG TIN SẢN PHẨM CHI TIẾT -->
+            <!-- CỘT BÊN PHẢI: KHUNG THÔNG TIN SẢN PHẨM LẺ -->
             <div class="lb-col-info">
-                <!-- HEADER: BADGE + TITLE + PRICE -->
-                <div class="lb-header-box">
-                    <div class="lb-badge" id="lbBadge">Nông sản xuất khẩu</div>
-                    <h3 class="lb-title" id="lbTitle">Hạt điều rang muối 250g</h3>
-                    <div class="lb-price-wrap">
-                        <span class="lb-price" id="lbPrice">177.000đ</span>
-                        <span class="lb-price-note">Giá niêm yết (Đã gồm thuế)</span>
-                    </div>
+                <div class="lb-badge" id="lbBadge">Nông sản xuất khẩu</div>
+                <h3 class="lb-title" id="lbTitle">Hạt điều rang muối 250g</h3>
+                <div class="lb-price-wrap">
+                    <span class="lb-price" id="lbPrice">177.000đ</span>
+                    <span class="lb-price-note">Giá niêm yết</span>
                 </div>
 
-                <!-- TABS ĐIỀU HƯỚNG HIỆN ĐẠI (KIỂU BATDONGSAN) -->
-                <div class="lb-tabs" id="lbTabs">
-                    <button type="button" class="lb-tab-btn active" id="lbTabBtnInfo" onclick="switchLbTab('info')">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                        <span>Thông tin & Điểm nổi bật</span>
-                    </button>
-                    <button type="button" class="lb-tab-btn" id="lbTabBtnSpecs" onclick="switchLbTab('specs')">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        <span>Tiêu chuẩn & Pháp lý</span>
-                    </button>
-                    <button type="button" class="lb-tab-btn" id="lbTabBtnOrder" onclick="switchLbTab('order')">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                        <span>Báo giá Doanh nghiệp</span>
-                    </button>
-                </div>
+                <!-- KHỐI ĐẶC ĐIỂM CHI TIẾT SẢN PHẨM LẺ -->
+                <div class="lb-details-box" id="lbDetailsBox"></div>
 
-                <!-- NỘI DUNG TỪNG TAB -->
-                <div class="lb-tab-contents">
-                    <!-- TAB 1: THÔNG TIN & ĐIỂM NỔI BẬT -->
-                    <div class="lb-tab-panel active" id="lbPanelInfo">
-                        <div class="lb-desc-text" id="lbDescText"></div>
-                        <div class="lb-facts-grid" id="lbFactsGrid"></div>
-                        <div class="lb-highlights-box" id="lbHighlightsBox"></div>
-                    </div>
-
-                    <!-- TAB 2: TIÊU CHUẨN & PHÁP LÝ -->
-                    <div class="lb-tab-panel" id="lbPanelSpecs">
-                        <div class="lb-specs-table" id="lbSpecsTable"></div>
-                        <div class="lb-cert-banner">
-                            <span class="lb-cert-icon">🛡️</span>
-                            <div class="lb-cert-text">
-                                <strong>Cam kết chất lượng chuẩn quốc tế</strong>
-                                <span>Chứng nhận ISO 22000 & HACCP, nguồn gốc xuất xứ minh bạch, kiểm định nghiêm ngặt từ xưởng đến thành phẩm.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- TAB 3: BÁO GIÁ DOANH NGHIỆP -->
-                    <div class="lb-tab-panel" id="lbPanelOrder">
-                        <div class="lb-b2b-tier-card">
-                            <div class="lb-b2b-tier-title">🎁 Chính sách chiết khấu & Ưu đãi doanh nghiệp</div>
-                            <ul class="lb-b2b-list">
-                                <li><strong>Chiết khấu hấp dẫn:</strong> Tùy theo số lượng đặt hàng từ 10 - 50 - 100+ phần quà.</li>
-                                <li><strong>Khắc / In Logo miễn phí:</strong> Khắc laser dấu ấn thương hiệu doanh nghiệp sang trọng trên hộp quà.</li>
-                                <li><strong>Thiết kế thiệp chúc & phong bao lì xì:</strong> Đồng bộ theo bộ nhận diện thương hiệu công ty.</li>
-                                <li><strong>Hóa đơn VAT điện tử:</strong> Xuất hóa đơn tài chính minh bạch, hợp lệ đầy đủ.</li>
-                                <li><strong>Giao hàng toàn quốc:</strong> Đúng tiến độ cam kết, đóng gói bảo quản chống va đập chuyên nghiệp.</li>
-                            </ul>
-                        </div>
-                        <div class="lb-b2b-direct-box">
-                            <span class="lb-b2b-direct-label">Cần tư vấn mẫu thiết kế riêng hoặc bảng giá dự toán chi tiết?</span>
-                            <div class="lb-b2b-btns">
-                                <a href="https://zalo.me/0393955516" target="_blank" class="lb-btn-consult lb-btn-zalo">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.09-1.34C8.54 21.52 10.23 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                                    Nhắn tin Zalo ngay
-                                </a>
-                                <a href="tel:0393955516" class="lb-btn-consult lb-btn-hotline">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                                    Hotline: 0393.955.516
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KHU VỰC SỐ LƯỢNG & NÚT THAO TÁC (DOCKING STICKY Ở ĐÁY TRÊN MOBILE) -->
+                <!-- KHU VỰC SỐ LƯỢNG & NÚT THAO TÁC -->
                 <div class="lb-actions-box">
                     <div class="lb-qty-row">
-                        <div class="lb-qty-selector-group">
-                            <span class="lb-qty-label">Số lượng:</span>
-                            <div class="lb-qty-ctrl">
-                                <button type="button" class="lb-qty-btn" onclick="adjustModalQty(-1)">-</button>
-                                <input type="text" class="lb-qty-input" id="modalQtyVal" value="1" readonly>
-                                <button type="button" class="lb-qty-btn" onclick="adjustModalQty(1)">+</button>
-                            </div>
+                        <span class="lb-qty-label">Số lượng:</span>
+                        <div class="lb-qty-ctrl">
+                            <button type="button" class="lb-qty-btn" onclick="adjustModalQty(-1)">-</button>
+                            <input type="text" class="lb-qty-input" id="modalQtyVal" value="1" readonly>
+                            <button type="button" class="lb-qty-btn" onclick="adjustModalQty(1)">+</button>
                         </div>
                         <button type="button" class="lb-btn-add" id="lbBtnAdd" onclick="addCurrentProductToList()">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -9278,22 +8827,6 @@
             preloadedImages[url] = p;
         }
 
-        function switchLbTab(tabName) {
-            var tabs = ["info", "specs", "order"];
-            tabs.forEach(function (t) {
-                var btn = document.getElementById("lbTabBtn" + (t.charAt(0).toUpperCase() + t.slice(1)));
-                var panel = document.getElementById("lbPanel" + (t.charAt(0).toUpperCase() + t.slice(1)));
-                if (btn) {
-                    if (t === tabName) btn.classList.add("active");
-                    else btn.classList.remove("active");
-                }
-                if (panel) {
-                    if (t === tabName) panel.classList.add("active");
-                    else panel.classList.remove("active");
-                }
-            });
-        }
-
         function openAlbumLightbox(imgList, title, cardEl) {
             var lb = document.getElementById("imgLightbox");
             if (!lb || !imgList || imgList.length === 0) return;
@@ -9332,6 +8865,7 @@
                 var badgeEl = document.getElementById("lbBadge");
                 var titleEl = document.getElementById("lbTitle");
                 var priceEl = document.getElementById("lbPrice");
+                var detailsBox = document.getElementById("lbDetailsBox");
                 var qtyInput = document.getElementById("modalQtyVal");
                 var btnAdd = document.getElementById("lbBtnAdd");
                 var btnAddText = document.getElementById("lbBtnAddText");
@@ -9343,113 +8877,28 @@
                 if (btnAddText) btnAddText.textContent = isHamper ? "Chọn mẫu này vào dự toán" : "Chọn vào danh sách báo giá";
                 if (btnAdd) btnAdd.classList.remove("added");
 
-                // Mặc định chuyển về Tab 1: Thông tin
-                switchLbTab("info");
-
-                // Đổ dữ liệu Tab 1: Mô tả ngắn gọn, thoáng đãng
-                var descEl = document.getElementById("lbDescText");
-                if (descEl) {
-                    var descHtml = "";
-                    if (Array.isArray(productDetail.description)) {
-                        descHtml = productDetail.description.map(function (p) {
-                            return "<p>" + p + "</p>";
-                        }).join("");
-                    } else if (productDetail.description) {
-                        descHtml = "<p>" + productDetail.description + "</p>";
-                    }
-                    descEl.innerHTML = descHtml;
+                // Tạo HTML cho phần mô tả (không cần tiêu đề, từng đoạn nội dung thoáng đãng)
+                var descHtml = "";
+                if (Array.isArray(productDetail.description)) {
+                    descHtml = productDetail.description.map(function (p) {
+                        return "<p>" + p + "</p>";
+                    }).join("");
+                } else if (productDetail.description) {
+                    descHtml = "<p>" + productDetail.description + "</p>";
                 }
 
-                // Đổ dữ liệu Tab 1: 3 Thẻ Fact Cards (Cảm hứng kiến trúc từ batdongsan)
-                var factsGrid = document.getElementById("lbFactsGrid");
-                if (factsGrid) {
-                    var f1 = { icon: "⚖️", label: "Quy cách", val: "Chuẩn tuyển chọn" };
-                    var f2 = { icon: "🛡️", label: "Tiêu chuẩn", val: "ISO 22000 & HACCP" };
-                    var f3 = { icon: "✨", label: "Dấu ấn", val: "Nông sản Việt" };
-
-                    if (isHamper) {
-                        var compCount = 4;
-                        if (productDetail.specs) {
-                            var compSpec = productDetail.specs.find(function (s) { return s.label && s.label.indexOf("Thành phần") !== -1; });
-                            if (compSpec && compSpec.value) {
-                                var parts = compSpec.value.split(",");
-                                if (parts.length > 0) compCount = parts.length;
-                            }
-                        }
-                        f1 = { icon: "🎁", label: "Bộ quà Tết", val: compCount + " món thượng hạng" };
-                        f2 = { icon: "🛡️", label: "Tiêu chuẩn", val: "ISO 22000 : 2018" };
-                        f3 = { icon: "🖋️", label: "Dấu ấn", val: "Khắc logo độc quyền" };
-                    } else {
-                        var matchW = (productDetail.title || title).match(/\d+\s*(g|kg)/i);
-                        var weightStr = matchW ? matchW[0] : "Hũ cao cấp";
-                        f1 = { icon: "⚖️", label: "Quy cách", val: weightStr };
-                        f2 = { icon: "🛡️", label: "Tiêu chuẩn", val: "ISO 22000 & HACCP" };
-                        f3 = { icon: "🌱", label: "Phân hạng", val: "Tuyển chọn loại 1" };
-                    }
-
-                    factsGrid.innerHTML =
-                        '<div class="lb-fact-card">' +
-                            '<div class="lb-fact-icon">' + f1.icon + '</div>' +
-                            '<div class="lb-fact-body">' +
-                                '<span class="lb-fact-lbl">' + f1.label + '</span>' +
-                                '<strong class="lb-fact-val">' + f1.val + '</strong>' +
-                            '</div>' +
-                        '</div>' +
-                        '<div class="lb-fact-card">' +
-                            '<div class="lb-fact-icon">' + f2.icon + '</div>' +
-                            '<div class="lb-fact-body">' +
-                                '<span class="lb-fact-lbl">' + f2.label + '</span>' +
-                                '<strong class="lb-fact-val">' + f2.val + '</strong>' +
-                            '</div>' +
-                        '</div>' +
-                        '<div class="lb-fact-card">' +
-                            '<div class="lb-fact-icon">' + f3.icon + '</div>' +
-                            '<div class="lb-fact-body">' +
-                                '<span class="lb-fact-lbl">' + f3.label + '</span>' +
-                                '<strong class="lb-fact-val">' + f3.val + '</strong>' +
-                            '</div>' +
-                        '</div>';
-                }
-
-                // Đổ dữ liệu Tab 1: Checklist điểm nổi bật
-                var highlightsBox = document.getElementById("lbHighlightsBox");
-                if (highlightsBox) {
-                    var hlItems = [];
-                    if (isHamper) {
-                        hlItems = [
-                            "Hộp quà mỹ thuật cao cấp thiết kế trang trọng, kết hợp phong vị Tết truyền thống và hiện đại.",
-                            "100% nông sản thượng hạng, kiểm soát nghiêm ngặt theo quy chuẩn ISO 22000 & HACCP.",
-                            "Tặng kèm túi xách đồng bộ sang trọng, hỗ trợ in khắc logo doanh nghiệp và thiệp chúc độc bản."
-                        ];
-                    } else {
-                        hlItems = [
-                            "Nguồn nông sản Việt Nam tuyển chọn kỹ lưỡng, giữ trọn vị giòn rụm và hương vị bùi béo tự nhiên.",
-                            "Chế biến rang sấy theo tiêu chuẩn kiểm soát chất lượng nghiêm ngặt của nhà máy ISO 22000.",
-                            "Thiết kế bao bì kết hợp nét đẹp văn hóa Việt và phong cách hiện đại, tinh tế làm quà biếu tặng."
-                        ];
-                    }
-                    highlightsBox.innerHTML = hlItems.map(function (hl) {
-                        return '<div class="lb-highlight-item"><span class="lb-hl-check">✓</span><span>' + hl + '</span></div>';
+                // Tạo HTML cho khung thành phần & thông tin pháp lý
+                var specsHtml = "";
+                if (Array.isArray(productDetail.specs)) {
+                    specsHtml = productDetail.specs.map(function (s) {
+                        return '<div class="lb-spec-item"><b>' + s.label + '</b> ' + s.value + '</div>';
                     }).join("");
                 }
 
-                // Đổ dữ liệu Tab 2: Bảng Tiêu chuẩn & Pháp lý
-                var specsTable = document.getElementById("lbSpecsTable");
-                if (specsTable) {
-                    var specsHtml = "";
-                    if (Array.isArray(productDetail.specs)) {
-                        specsHtml = productDetail.specs.map(function (s) {
-                            return '<div class="lb-spec-row"><span class="lb-spec-label">' + s.label + '</span><span class="lb-spec-val">' + s.value + '</span></div>';
-                        }).join("");
-                    }
-                    specsTable.innerHTML = specsHtml;
-                }
-
-                // Đảm bảo không bị kẹt zoom kính lúp
-                var pImg = document.getElementById("lightboxImg");
-                if (pImg) {
-                    pImg.style.transform = "scale(1)";
-                    pImg.style.transformOrigin = "center center";
+                if (detailsBox) {
+                    detailsBox.innerHTML =
+                        (descHtml ? '<div class="lb-desc-text">' + descHtml + '</div>' : '') +
+                        (specsHtml ? '<div class="lb-specs-table">' + specsHtml + '</div>' : '');
                 }
 
                 // Dựng thumbnails dưới ảnh sản phẩm lẻ
@@ -9545,32 +8994,22 @@
             }
 
             if (isProduct) {
-                // CẬP NHẬT GIAO DIỆN 2 CỘT SẢN PHẨM LẺ & HAMPER
+                // CẬP NHẬT GIAO DIỆN 2 CỘT SẢN PHẨM LẺ
                 var img = document.getElementById("lightboxImg");
                 var counter = document.getElementById("lbCounter");
                 var prevBtn = document.getElementById("lbPrev");
                 var nextBtn = document.getElementById("lbNext");
                 var spinner = document.getElementById("lbSpinner");
-                var anglePill = document.getElementById("lbAnglePill");
 
                 if (currentAlbum.length > 1) {
                     if (counter) {
                         counter.textContent = (currentAlbumIdx + 1) + " / " + currentAlbum.length;
                         counter.style.display = "block";
                     }
-                    if (anglePill) {
-                        var angleLabels = ["Mặt chính", "Mặt nghiêng", "Chi tiết / Thành phần", "Góc cận cảnh", "Bao bì"];
-                        var label = angleLabels[currentAlbumIdx] || ("Góc " + (currentAlbumIdx + 1));
-                        var numStr = (currentAlbumIdx + 1 < 10 ? "0" : "") + (currentAlbumIdx + 1);
-                        var totalStr = (currentAlbum.length < 10 ? "0" : "") + currentAlbum.length;
-                        anglePill.textContent = numStr + " / " + totalStr + " · " + label;
-                        anglePill.style.display = "inline-flex";
-                    }
                     if (prevBtn) prevBtn.style.display = "flex";
                     if (nextBtn) nextBtn.style.display = "flex";
                 } else {
                     if (counter) counter.style.display = "none";
-                    if (anglePill) anglePill.style.display = "none";
                     if (prevBtn) prevBtn.style.display = "none";
                     if (nextBtn) nextBtn.style.display = "none";
                 }

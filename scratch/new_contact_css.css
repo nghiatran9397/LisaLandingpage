@@ -1,0 +1,265 @@
+
+        /* --- MỤC LIÊN HỆ (CONTACT SECTION) THEO STYLE LISA FOOD GLOBAL --- */
+        #lienhe {
+            padding: 80px 0 76px !important;
+            background: linear-gradient(180deg, #fdfbf7 0%, #faf7f2 100%) !important;
+            border-top: 1px solid rgba(217, 119, 6, 0.2) !important;
+        }
+
+        .contact-lisa-container {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 48px;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Cột trái: Tiêu đề & Lời nhắn */
+        .contact-lisa-left {
+            position: sticky;
+            top: 100px;
+        }
+
+        .contact-lisa-title {
+            font-family: var(--font-serif, 'Playfair Display', serif);
+            font-size: clamp(32px, 4.5vw, 46px);
+            font-weight: 800;
+            color: #1f2937;
+            line-height: 1.15;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-gold-line {
+            width: 48px;
+            height: 3px;
+            background: #d4a017;
+            border-radius: 99px;
+            margin-bottom: 22px;
+        }
+
+        .contact-lisa-desc {
+            font-size: 15.5px;
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .contact-lisa-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .contact-pill-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 26px;
+            border-radius: 99px;
+            background: linear-gradient(135deg, #d4a017 0%, #b45309 100%);
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(180, 83, 9, 0.25);
+            transition: all 0.25s ease;
+        }
+
+        .contact-pill-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(180, 83, 9, 0.35);
+            background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+            color: #ffffff;
+        }
+
+        .contact-pill-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 24px;
+            border-radius: 99px;
+            background: #ffffff;
+            border: 1.5px solid #d1d5db;
+            color: #374151;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .contact-pill-btn-secondary:hover {
+            border-color: #d97706;
+            color: #7d1611;
+            background: #fffdfa;
+            transform: translateY(-2px);
+        }
+
+        /* Cột phải: Thẻ danh thiếp liên hệ */
+        .contact-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .contact-card-box {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid rgba(229, 231, 235, 0.9);
+            padding: 24px 22px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+            transition: all 0.25s ease;
+        }
+
+        .contact-card-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(180, 83, 9, 0.08);
+            border-color: rgba(217, 119, 6, 0.35);
+        }
+
+        .contact-card-box.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .contact-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .contact-icon-bubble {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #fffbeb;
+            border: 1px solid #fed7aa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b45309;
+            flex-shrink: 0;
+        }
+
+        .contact-card-tag {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: #6b7280;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        /* Hotline Sub-Cards */
+        .hotline-sub-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .hotline-sub-card {
+            background: #f9fafb;
+            border: 1px solid #f3f4f6;
+            border-radius: 14px;
+            padding: 14px 16px;
+            transition: all 0.2s ease;
+        }
+
+        .hotline-sub-card:hover {
+            background: #fffbeb;
+            border-color: #fed7aa;
+        }
+
+        .hotline-sub-tag {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #9ca3af;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .hotline-sub-val {
+            font-size: 15.5px;
+            font-weight: 800;
+            color: #1f2937;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+            display: block;
+            transition: color 0.2s ease;
+        }
+
+        .hotline-sub-val:hover {
+            color: #b45309;
+        }
+
+        .contact-card-val {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1f2937;
+            text-decoration: none;
+            word-break: break-word;
+            display: block;
+            transition: color 0.2s ease;
+        }
+
+        .contact-card-val:hover {
+            color: #b45309;
+        }
+
+        .contact-card-note {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 900px) {
+            .contact-lisa-container {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .contact-lisa-left {
+                position: static;
+                text-align: center;
+            }
+
+            .contact-gold-line {
+                margin: 0 auto 20px;
+            }
+
+            .contact-lisa-btns {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #lienhe {
+                padding: 56px 0 50px !important;
+            }
+
+            .contact-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .hotline-sub-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .contact-card-box {
+                padding: 18px 16px;
+                border-radius: 16px;
+            }
+
+            .contact-pill-btn-primary,
+            .contact-pill-btn-secondary {
+                width: 100%;
+            }
+        }

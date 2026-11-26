@@ -4915,17 +4915,14 @@
 
             <div class="ln-search-tags">
                 <span class="ln-tags-label">Gợi ý tìm nhanh:</span>
-                <button type="button" class="ln-tag-btn" data-tag="Hạt điều" onclick="applySearchTag('Hạt điều')">Hạt
-                    điều</button>
-                <button type="button" class="ln-tag-btn" data-tag="Macca" onclick="applySearchTag('Macca')">Hạt
-                    Macca</button>
-                <button type="button" class="ln-tag-btn" data-tag="Hạnh nhân" onclick="applySearchTag('Hạnh nhân')">Hạnh
-                    nhân</button>
-                <button type="button" class="ln-tag-btn" data-tag="Khô gà" onclick="applySearchTag('Khô gà')">Khô
-                    gà</button>
+                <button type="button" class="ln-tag-btn" data-tag="Hạt điều" onclick="applySearchTag('Hạt điều')">Hạt điều</button>
+                <button type="button" class="ln-tag-btn" data-tag="Macca" onclick="applySearchTag('Macca')">Hạt Macca</button>
+                <button type="button" class="ln-tag-btn" data-tag="Hạnh nhân" onclick="applySearchTag('Hạnh nhân')">Hạnh nhân</button>
+                <button type="button" class="ln-tag-btn" data-tag="Khô gà" onclick="applySearchTag('Khô gà')">Khô gà</button>
                 <button type="button" class="ln-tag-btn" data-tag="Mix" onclick="applySearchTag('Mix')">Hạt mix</button>
-                <button type="button" class="ln-tag-btn" data-tag="Nho khô" onclick="applySearchTag('Nho khô')">Nho
-                    khô</button>
+                <button type="button" class="ln-tag-btn" data-tag="Nho khô" onclick="applySearchTag('Nho khô')">Nho khô</button>
+                <button type="button" class="ln-tag-btn" data-tag="Khô bò" onclick="applySearchTag('Khô bò')">Khô bò</button>
+                <button type="button" class="ln-tag-btn" data-tag="Trái cây sấy" onclick="applySearchTag('Trái cây sấy')">Trái cây sấy</button>
             </div>
 
             <div class="ln-search-hint" id="retailSearchHint">
@@ -8763,39 +8760,7 @@
         function initRetailSearchData() {
             retailSearchData = [];
 
-            // 1. Chỉ mục hóa các bộ quà Hamper Tết 2027 để khách tìm kiếm linh hoạt
-            var hampers = [
-                { id: "h1", title: "Hamper Happy New Year", price: "590.000đ", img: "../images/hamper-happy-new-year.webp", url: "../#hamper" },
-                { id: "h2", title: "Hamper Sắc Xuân 01 (A)", price: "1.022.000đ", img: "../images/hamper-sac-xuan-01-a-2.webp", url: "../#hamper" },
-                { id: "h3", title: "Hamper Sắc Xuân 01 (B)", price: "1.154.000đ", img: "../images/hamper-sac-xuan-01-b.webp", url: "../#hamper" },
-                { id: "h4", title: "Hamper Sắc Xuân 02 (A)", price: "1.043.000đ", img: "../images/hamper-sac-xuan-02-a.webp", url: "../#hamper" },
-                { id: "h5", title: "Hamper Sắc Xuân 02 (B)", price: "999.000đ", img: "../images/hamper-sac-xuan-02-b.webp", url: "../#hamper" },
-                { id: "h6", title: "Hamper Ngọc Vũ Khai Lộc (A)", price: "955.000đ", img: "../images/hamper-ngoc-vu-khai-loc-a.webp", url: "../#hamper" },
-                { id: "h7", title: "Hamper Ngọc Vũ Khai Lộc (B)", price: "899.000đ", img: "../images/hamper-ngoc-vu-khai-loc-b.webp", url: "../#hamper" },
-                { id: "h8", title: "Hamper Xuân Hoan Ca", price: "1.380.000đ", img: "../images/hamper-xuan-hoan-ca.webp", url: "../#hamper" },
-                { id: "h9", title: "Hamper Hương Xuân", price: "1.314.000đ", img: "../images/hamper-huong-xuan.webp", url: "../#hamper" },
-                { id: "h10", title: "Hamper Xuân Đong Đầy", price: "1.055.000đ", img: "../images/hamper-xuan-dong-day.webp", url: "../#hamper" },
-                { id: "h11", title: "Hamper Xuân Như Ý", price: "1.655.000đ", img: "../images/hamper-xuan-nhu-y.webp", url: "../#hamper" },
-                { id: "h12", title: "Hamper Tết Lạc Hồng", price: "1.682.000đ", img: "../images/hamper-tet-lac-hong.webp", url: "../#hamper" },
-                { id: "h13", title: "Hamper Tết Việt", price: "1.435.000đ", img: "../images/hamper-tet-viet.webp", url: "../#hamper" },
-                { id: "h14", title: "Hamper Phượng Vũ Nghinh Xuân", price: "1.010.000đ", img: "../images/hamper-phuong-vu-nghinh-xuan.webp", url: "../#hamper" }
-            ];
-
-            hampers.forEach(function (h) {
-                retailSearchData.push({
-                    id: h.id,
-                    type: "hamper",
-                    title: h.title,
-                    price: h.price,
-                    img: h.img,
-                    url: h.url,
-                    cardEl: null,
-                    category: "hamper",
-                    normalized: removeVietnameseTones("hamper tet qua tet hop qua set qua " + h.title + " " + h.price)
-                });
-            });
-
-            // 2. Chỉ mục hóa 28 sản phẩm nông sản lẻ trên kệ hàng
+            // Chỉ mục hóa 28 sản phẩm nông sản thượng hạng trên kệ hàng
             var cards = document.querySelectorAll('#retailProductGrid .pc');
             cards.forEach(function (card, idx) {
                 var titleEl = card.querySelector('b');
@@ -8877,7 +8842,6 @@
             var filterBannerText = document.getElementById("retailFilterBannerText");
             var emptyGrid = document.getElementById("retailGridEmpty");
 
-
             if (clearBtn) {
                 clearBtn.style.display = retailSearchQuery.length > 0 ? "block" : "none";
             }
@@ -8913,13 +8877,11 @@
                             selectRetailProduct(item.id, item.img, item.type, item.url);
                         };
 
-                        var badgeClass = item.type === "hamper" ? "badge-hamper" : "badge-product";
-                        var badgeText = item.type === "hamper" ? "🎁 Hamper Tết" : "🥜 Sản phẩm";
                         row.innerHTML =
                             '<div class="ln-result-left">' +
                             '  <img class="ln-result-thumb" src="' + item.img + '" alt="' + escapeHtml(item.title) + '">' +
                             '  <div class="ln-result-info">' +
-                            '    <div class="ln-result-name">' + escapeHtml(item.title) + ' <span class="ln-result-badge ' + badgeClass + '">' + badgeText + '</span></div>' +
+                            '    <div class="ln-result-name">' + escapeHtml(item.title) + ' <span class="ln-result-badge badge-product">🥜 Sản phẩm</span></div>' +
                             '    <div class="ln-result-price">' + item.price + '</div>' +
                             '  </div>' +
                             '</div>' +
@@ -8949,7 +8911,6 @@
                 }
             });
 
-            var productMatches = matched.filter(function (item) { return item.cardEl !== null; });
             if (emptyGrid) {
                 emptyGrid.style.display = (matched.length === 0) ? "block" : "none";
             }
@@ -8957,22 +8918,19 @@
             if (filterBanner) {
                 filterBanner.style.display = "block";
                 if (filterBannerText) {
-                    var hasHamper = matched.some(function (item) { return item.type === "hamper"; });
-                    if (hasHamper) {
-                        filterBannerText.innerHTML = '🎁 Đang tìm: <b>"' + escapeHtml(retailSearchQuery) + '"</b> (' + matched.length + ' kết quả bao gồm Set quà Hamper Tết & Nông sản) — <a href="../#hamper" style="color:#d97706;text-decoration:underline;font-weight:700;">Xem Bộ sưu tập Hamper ➔</a>';
-                    } else {
-                        filterBannerText.innerHTML = '🔍 Đang lọc theo từ khóa: <b>"' + escapeHtml(retailSearchQuery) + '"</b> (' + matched.length + ' sản phẩm)';
-                    }
+                    filterBannerText.innerHTML = '🔍 Đang lọc theo từ khóa: <b>"' + escapeHtml(retailSearchQuery) + '"</b> (' + matched.length + ' sản phẩm)';
                 }
             }
 
             if (resultsBox) {
                 resultsBox.classList.add("active");
                 resultsBox.innerHTML = "";
+
                 if (matched.length === 0) {
-                    resultsBox.innerHTML = '<div class="ln-search-empty" style="text-align:center;padding:18px;color:#94a3b8;font-size:13px;">Không tìm thấy sản phẩm nào khớp với <b>"' + escapeHtml(retailSearchQuery) + '"</b></div>';
+                    resultsBox.innerHTML = '<div class="ln-search-empty" style="text-align:center;padding:18px;color:#94a3b8;font-size:13px;">Không tìm thấy sản phẩm nào khớp với <b>\"' + escapeHtml(retailSearchQuery) + '\"</b></div>';
                     return;
                 }
+
                 matched.forEach(function (item) {
                     var row = document.createElement("div");
                     row.className = "ln-result-item";
@@ -8980,20 +8938,15 @@
                         selectRetailProduct(item.id, item.img, item.type, item.url);
                     };
 
-                    var regex = new RegExp("(" + escapeRegex(retailSearchQuery) + ")", "gi");
-                    var highlightedTitle = escapeHtml(item.title).replace(regex, "<mark>$1</mark>");
-                    var badgeClass = item.type === "hamper" ? "badge-hamper" : "badge-product";
-                    var badgeText = item.type === "hamper" ? "🎁 Hamper Tết" : "🥜 Sản phẩm";
-
                     row.innerHTML =
                         '<div class="ln-result-left">' +
                         '  <img class="ln-result-thumb" src="' + item.img + '" alt="' + escapeHtml(item.title) + '">' +
                         '  <div class="ln-result-info">' +
-                        '    <div class="ln-result-name">' + highlightedTitle + ' <span class="ln-result-badge ' + badgeClass + '">' + badgeText + '</span></div>' +
+                        '    <div class="ln-result-name">' + escapeHtml(item.title) + ' <span class="ln-result-badge badge-product">🥜 Sản phẩm</span></div>' +
                         '    <div class="ln-result-price">' + item.price + '</div>' +
                         '  </div>' +
                         '</div>' +
-                        '<span class="ln-result-btn">Xem chi tiết ➔</span>';
+                        '<span class="ln-result-btn">Xem ngay ➔</span>';
 
                     resultsBox.appendChild(row);
                 });

@@ -5150,7 +5150,7 @@
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
-                    <span class="ln-search-text">Tìm kiếm sản phẩm</span>
+                    <span class="ln-search-text">Tìm kiếm Hamper</span>
                 </button>
                 <a href="tel:0393955516" class="ln-call-btn">
                     <span>📞 0393.955.516</span>
@@ -5223,7 +5223,7 @@
                     </svg>
                 </span>
                 <input type="text" id="retailSearchInput" class="ln-search-input"
-                    placeholder="Tìm Hamper Tết, hạt điều, macca, khô gà..." autocomplete="off">
+                    placeholder="Tìm kiếm mẫu hamper Tết (Sắc Xuân, Ngọc Vũ, Lạc Hồng...)" autocomplete="off">
                 <button type="button" class="ln-search-clear" id="retailSearchClear" onclick="clearRetailSearch()"
                     title="Xóa tìm kiếm">&times;</button>
             </div>
@@ -5231,19 +5231,14 @@
             <!-- Thẻ gợi ý tìm nhanh -->
             <div class="ln-search-tags">
                 <span class="ln-tags-label">Gợi ý tìm nhanh:</span>
-                <button type="button" class="ln-tag-btn" data-tag="Hamper Tết" onclick="applySearchTag('Hamper Tết')">🎁
-                    Hamper Tết</button>
-                <button type="button" class="ln-tag-btn" data-tag="Hạt điều" onclick="applySearchTag('Hạt điều')">Hạt
-                    điều</button>
-                <button type="button" class="ln-tag-btn" data-tag="Macca" onclick="applySearchTag('Macca')">Hạt
-                    Macca</button>
-                <button type="button" class="ln-tag-btn" data-tag="Hạnh nhân" onclick="applySearchTag('Hạnh nhân')">Hạnh
-                    nhân</button>
-                <button type="button" class="ln-tag-btn" data-tag="Khô gà" onclick="applySearchTag('Khô gà')">Khô
-                    gà</button>
-                <button type="button" class="ln-tag-btn" data-tag="Mix" onclick="applySearchTag('Mix')">Hạt mix</button>
-                <button type="button" class="ln-tag-btn" data-tag="Nho khô" onclick="applySearchTag('Nho khô')">Nho
-                    khô</button>
+                <button type="button" class="ln-tag-btn" data-tag="Hamper" onclick="applySearchTag('Hamper')">🎁 Tất cả Hamper</button>
+                <button type="button" class="ln-tag-btn" data-tag="Sắc Xuân" onclick="applySearchTag('Sắc Xuân')">Sắc Xuân</button>
+                <button type="button" class="ln-tag-btn" data-tag="Ngọc Vũ" onclick="applySearchTag('Ngọc Vũ')">Ngọc Vũ</button>
+                <button type="button" class="ln-tag-btn" data-tag="Xuân Hoan Ca" onclick="applySearchTag('Xuân Hoan Ca')">Xuân Hoan Ca</button>
+                <button type="button" class="ln-tag-btn" data-tag="Lạc Hồng" onclick="applySearchTag('Lạc Hồng')">Tết Lạc Hồng</button>
+                <button type="button" class="ln-tag-btn" data-tag="Xuân Như Ý" onclick="applySearchTag('Xuân Như Ý')">Xuân Như Ý</button>
+                <button type="button" class="ln-tag-btn" data-tag="Happy New Year" onclick="applySearchTag('Happy New Year')">Happy New Year</button>
+                <button type="button" class="ln-tag-btn" data-tag="Hương Xuân" onclick="applySearchTag('Hương Xuân')">Hương Xuân</button>
             </div>
 
             <!-- Dòng chú thích khi chưa tìm kiếm -->
@@ -9978,7 +9973,7 @@
             if (retailSearchData.length > 0) return;
             retailSearchData = [];
 
-            // 1. Chỉ mục hóa 14 Hamper Tết 2027
+            // Chỉ mục hóa 15 mẫu Hamper Tết 2027
             var hamperCards = document.querySelectorAll("#hamper .hc");
             hamperCards.forEach(function (card, idx) {
                 var imgEl = card.querySelector("img");
@@ -10003,288 +9998,6 @@
                     img: imgSrc,
                     cardEl: card
                 });
-            });
-
-            // 2. Chỉ mục hóa 28 sản phẩm Nông Sản Thượng Hạng
-            retailSearchData.push({
-                id: "prod_search_0",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều rang muối 250g",
-                cleanName: removeVietnameseTones("Hạt điều rang muối 250g 177.000đ"),
-                price: "177.000đ",
-                img: "images/hat-dieu-rang-muoi-250g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_1",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt Macca sấy 250g",
-                cleanName: removeVietnameseTones("Hạt Macca sấy 250g 172.000đ"),
-                price: "172.000đ",
-                img: "images/hat-macca-say-250g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_2",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạnh nhân rang bơ 250g",
-                cleanName: removeVietnameseTones("Hạnh nhân rang bơ 250g 160.000đ"),
-                price: "160.000đ",
-                img: "images/hanh-nhan-rang-bo-250g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_3",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều rang mộc bóc vỏ 250g",
-                cleanName: removeVietnameseTones("Hạt điều rang mộc bóc vỏ 250g 196.000đ"),
-                price: "196.000đ",
-                img: "images/hat-dieu-rang-moc-boc-vo-250g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_4",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều rang mộc vỏ lụa 250g",
-                cleanName: removeVietnameseTones("Hạt điều rang mộc vỏ lụa 250g 186.000đ"),
-                price: "186.000đ",
-                img: "images/hat-dieu-rang-moc-vo-lua-250g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_5",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều rang muối hộp gỗ 500g",
-                cleanName: removeVietnameseTones("Hạt điều rang muối hộp gỗ 500g 428.000đ"),
-                price: "428.000đ",
-                img: "images/hat-dieu-rang-muoi-hop-go-500g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_6",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều rang muối vỏ lụa 210g",
-                cleanName: removeVietnameseTones("Hạt điều rang muối vỏ lụa 210g 144.000đ"),
-                price: "144.000đ",
-                img: "images/hat-dieu-rang-muoi-vo-lua-210g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_7",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều rang muối bóc vỏ 210g",
-                cleanName: removeVietnameseTones("Hạt điều rang muối bóc vỏ 210g 155.000đ"),
-                price: "155.000đ",
-                img: "images/hat-dieu-rang-muoi-boc-vo-210g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_8",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt mix tổng hợp 210g",
-                cleanName: removeVietnameseTones("Hạt mix tổng hợp 210g 137.000đ"),
-                price: "137.000đ",
-                img: "images/hat-mix-tong-hop-210g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_9",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều capuchino 210g",
-                cleanName: removeVietnameseTones("Hạt điều capuchino 210g 162.000đ"),
-                price: "162.000đ",
-                img: "images/hat-dieu-capuchino-210g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_10",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều tỏi ớt 210g",
-                cleanName: removeVietnameseTones("Hạt điều tỏi ớt 210g 157.000đ"),
-                price: "157.000đ",
-                img: "images/hat-dieu-toi-ot-210g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_11",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều cacao 210g",
-                cleanName: removeVietnameseTones("Hạt điều cacao 210g 160.000đ"),
-                price: "160.000đ",
-                img: "images/hat-dieu-cacao-210g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_12",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Nhân macca wasabi",
-                cleanName: removeVietnameseTones("Nhân macca wasabi 224.000đ"),
-                price: "224.000đ",
-                img: "images/nhan-macca-wasabi.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_13",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều tỏi ớt 200g",
-                cleanName: removeVietnameseTones("Hạt điều tỏi ớt 200g 160.000đ"),
-                price: "160.000đ",
-                img: "images/hat-dieu-toi-ot-200g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_14",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều capuchino 200g",
-                cleanName: removeVietnameseTones("Hạt điều capuchino 200g 163.000đ"),
-                price: "163.000đ",
-                img: "images/hat-dieu-capuchino-200g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_15",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều cacao 200g",
-                cleanName: removeVietnameseTones("Hạt điều cacao 200g 163.000đ"),
-                price: "163.000đ",
-                img: "images/hat-dieu-cacao-200g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_16",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt sachi rang mộc 250g",
-                cleanName: removeVietnameseTones("Hạt sachi rang mộc 250g 145.000đ"),
-                price: "145.000đ",
-                img: "images/hat-sachi-rang-moc-250g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_17",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Nho khô 250g",
-                cleanName: removeVietnameseTones("Nho khô 250g 110.000đ"),
-                price: "110.000đ",
-                img: "images/nho-kho-250g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_18",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt sachi rang mộc 100g",
-                cleanName: removeVietnameseTones("Hạt sachi rang mộc 100g 68.000đ"),
-                price: "68.000đ",
-                img: "images/hat-sachi-rang-moc-100g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_19",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều rang muối vỏ lụa 100g",
-                cleanName: removeVietnameseTones("Hạt điều rang muối vỏ lụa 100g 68.000đ"),
-                price: "68.000đ",
-                img: "images/hat-dieu-rang-muoi-vo-lua-100g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_20",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều rang muối bóc vỏ 205g",
-                cleanName: removeVietnameseTones("Hạt điều rang muối bóc vỏ 205g 170.000đ"),
-                price: "170.000đ",
-                img: "images/hat-dieu-rang-muoi-boc-vo-205g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_21",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều rang muối vỏ lụa 205g",
-                cleanName: removeVietnameseTones("Hạt điều rang muối vỏ lụa 205g 145.000đ"),
-                price: "145.000đ",
-                img: "images/hat-dieu-rang-muoi-vo-lua-205g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_22",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều rang muối vỏ lụa 400g",
-                cleanName: removeVietnameseTones("Hạt điều rang muối vỏ lụa 400g 297.000đ"),
-                price: "297.000đ",
-                img: "images/hat-dieu-rang-muoi-vo-lua-400g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_23",
-                type: "product",
-                badge: "🥜 Hạt dinh dưỡng",
-                name: "Hạt điều rang muối bóc vỏ 400g",
-                cleanName: removeVietnameseTones("Hạt điều rang muối bóc vỏ 400g 342.000đ"),
-                price: "342.000đ",
-                img: "images/hat-dieu-rang-muoi-boc-vo-400g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_24",
-                type: "product",
-                badge: "🥜 Khô gà",
-                name: "Khô gà bơ tỏi 200g",
-                cleanName: removeVietnameseTones("Khô gà bơ tỏi 200g 160.000đ"),
-                price: "160.000đ",
-                img: "images/kho-ga-bo-toi-200g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_25",
-                type: "product",
-                badge: "🥜 Khô gà",
-                name: "Khô gà lá chanh 200g",
-                cleanName: removeVietnameseTones("Khô gà lá chanh 200g 151.000đ"),
-                price: "151.000đ",
-                img: "images/kho-ga-la-chanh-200g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_26",
-                type: "product",
-                badge: "🥜 Khô gà",
-                name: "Khô gà bơ tỏi 100g",
-                cleanName: removeVietnameseTones("Khô gà bơ tỏi 100g 56.000đ"),
-                price: "56.000đ",
-                img: "images/kho-ga-bo-toi-100g.webp",
-                cardEl: null
-            });
-            retailSearchData.push({
-                id: "prod_search_27",
-                type: "product",
-                badge: "🥜 Khô gà",
-                name: "Khô gà lá chanh 100g",
-                cleanName: removeVietnameseTones("Khô gà lá chanh 100g 52.000đ"),
-                price: "52.000đ",
-                img: "images/kho-ga-la-chanh-100g.webp",
-                cardEl: null
             });
         }
 
@@ -10342,9 +10055,6 @@
             var metaEl = document.getElementById("retailSearchMeta");
             var countEl = document.getElementById("retailSearchCount");
             var hintEl = document.getElementById("retailSearchHint");
-            var banner = document.getElementById("retailFilterBanner");
-            var bannerText = document.getElementById("retailFilterBannerText");
-            var emptyGrid = document.getElementById("retailGridEmpty");
 
             // Cập nhật trạng thái active cho các nút gợi ý tìm nhanh
             var tagBtns = document.querySelectorAll(".ln-tag-btn");
@@ -10357,17 +10067,15 @@
                 }
             });
 
-            // KHI CHƯA NHẬP TỪ KHÓA: Hiển thị ngay tất cả các mẫu quà & sản phẩm, không bắt khách hàng phải gõ
+            // KHI CHƯA NHẬP TỪ KHÓA: Hiển thị ngay tất cả các mẫu Hamper Tết để khách hàng chọn ngay
             if (!query.trim()) {
                 if (hintEl) hintEl.style.display = "none";
                 if (metaEl) metaEl.style.display = "flex";
-                if (countEl) countEl.textContent = "Tất cả các mẫu quà & sản phẩm nổi bật (Chạm để xem nhanh):";
+                if (countEl) countEl.textContent = "Tất cả " + retailSearchData.length + " mẫu Hamper Tết 2027 (Chạm để xem nhanh):";
 
                 retailSearchData.forEach(function (item) {
                     if (item.cardEl) item.cardEl.style.display = "";
                 });
-                if (banner) banner.style.display = "none";
-                if (emptyGrid) emptyGrid.style.display = "none";
 
                 if (resultsWrap) {
                     resultsWrap.innerHTML = "";
@@ -10378,12 +10086,11 @@
                             selectRetailProduct(item.id, item.img, item.type, item.name);
                         };
 
-                        var badgeClass = item.type === "hamper" ? "badge-hamper" : "badge-product";
                         itemEl.innerHTML =
                             '<div class="ln-result-left">' +
                             '  <img class="ln-result-thumb" src="' + item.img + '" alt="' + escapeHtml(item.name) + '">' +
                             '  <div class="ln-result-info">' +
-                            '    <div class="ln-result-name">' + escapeHtml(item.name) + ' <span class="ln-result-badge ' + badgeClass + '">' + item.badge + '</span></div>' +
+                            '    <div class="ln-result-name">' + escapeHtml(item.name) + ' <span class="ln-result-badge badge-hamper">' + item.badge + '</span></div>' +
                             '    <div class="ln-result-price">' + item.price + '</div>' +
                             '  </div>' +
                             '</div>' +
@@ -10406,31 +10113,21 @@
                 });
                 if (isMatch) matched.push(item);
 
-                // Lọc kệ sản phẩm lẻ nếu người dùng đang xem ở kệ sản phẩm
-                if (item.type === "product" && item.cardEl) {
-                    item.cardEl.style.display = isMatch ? "flex" : "none";
+                // Lọc hiển thị trực tiếp trên bộ sưu tập Hamper
+                if (item.cardEl) {
+                    item.cardEl.style.display = isMatch ? "" : "none";
                 }
             });
 
-            if (banner && bannerText) {
-                banner.style.display = "block";
-                bannerText.innerHTML = "🔍 Đang lọc theo từ khóa: <b>\"" + escapeHtml(query.trim()) + "\"</b> (" + matched.length + " kết quả)";
-            }
-
-            if (emptyGrid) {
-                var prodMatches = matched.filter(function (it) { return it.type === "product"; });
-                emptyGrid.style.display = (prodMatches.length === 0) ? "block" : "none";
-            }
-
             if (countEl) {
-                countEl.textContent = "Tìm thấy " + matched.length + " mục phù hợp";
+                countEl.textContent = "Tìm thấy " + matched.length + " bộ quà Hamper Tết phù hợp";
             }
 
             if (!resultsWrap) return;
             resultsWrap.innerHTML = "";
 
             if (matched.length === 0) {
-                resultsWrap.innerHTML = '<div class="ln-search-empty" style="text-align:center;padding:18px;color:#94a3b8;font-size:13px;">Không tìm thấy quà Tết hay sản phẩm nào khớp với <b>\"' + escapeHtml(query) + '\"</b></div>';
+                resultsWrap.innerHTML = '<div class="ln-search-empty" style="text-align:center;padding:18px;color:#94a3b8;font-size:13px;">Không tìm thấy mẫu Hamper Tết nào khớp với <b>\"' + escapeHtml(query) + '\"</b></div>';
                 return;
             }
 
@@ -10441,19 +10138,15 @@
                     selectRetailProduct(item.id, item.img, item.type, item.name);
                 };
 
-                var regex = new RegExp("(" + escapeRegex(query.trim()) + ")", "gi");
-                var highlightedName = escapeHtml(item.name).replace(regex, "<mark>$1</mark>");
-                var badgeClass = item.type === "hamper" ? "badge-hamper" : "badge-product";
-
                 itemEl.innerHTML =
                     '<div class="ln-result-left">' +
                     '  <img class="ln-result-thumb" src="' + item.img + '" alt="' + escapeHtml(item.name) + '">' +
                     '  <div class="ln-result-info">' +
-                    '    <div class="ln-result-name">' + highlightedName + ' <span class="ln-result-badge ' + badgeClass + '">' + item.badge + '</span></div>' +
+                    '    <div class="ln-result-name">' + escapeHtml(item.name) + ' <span class="ln-result-badge badge-hamper">' + item.badge + '</span></div>' +
                     '    <div class="ln-result-price">' + item.price + '</div>' +
                     '  </div>' +
                     '</div>' +
-                    '<span class="ln-result-btn">Xem chi tiết ➔</span>';
+                    '<span class="ln-result-btn">Xem ngay ➔</span>';
 
                 resultsWrap.appendChild(itemEl);
             });
@@ -10517,12 +10210,9 @@
         function scrollToRetailGrid() {
             toggleRetailSearch(false);
             toggleMobileNavbar(false);
-            var input = document.getElementById("retailSearchInput");
-            var q = input ? input.value.trim() : "";
-            if (q) {
-                window.location.href = "san-pham/?q=" + encodeURIComponent(q);
-            } else {
-                window.location.href = "san-pham/";
+            var hSec = document.getElementById("hamper");
+            if (hSec) {
+                hSec.scrollIntoView({ behavior: "smooth", block: "start" });
             }
         }
 

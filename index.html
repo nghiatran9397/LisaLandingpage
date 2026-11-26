@@ -3409,7 +3409,8 @@
             z-index: 1400;
         }
 
-        .ln-mobile-menu.open {
+        .ln-mobile-menu.open,
+        .ln-mobile-menu.active {
             display: flex;
         }
 
@@ -5230,9 +5231,6 @@
                     </svg>
                     <span class="ln-search-text">Tìm kiếm Hamper</span>
                 </button>
-                <a href="tel:0393955516" class="ln-call-btn">
-                    <span>📞 0393.955.516</span>
-                </a>
                 <button type="button" class="ln-burger" id="burgerBtn" onclick="toggleMobileNavbar()" aria-label="Menu">
                     ☰
                 </button>
@@ -10031,13 +10029,16 @@
             if (typeof forceState === "boolean") {
                 if (forceState) {
                     menu.classList.add("open");
+                    menu.classList.add("active");
                     if (btn) btn.textContent = "✕";
                 } else {
                     menu.classList.remove("open");
+                    menu.classList.remove("active");
                     if (btn) btn.textContent = "☰";
                 }
             } else {
                 var isOpen = menu.classList.toggle("open");
+                menu.classList.toggle("active", isOpen);
                 if (btn) btn.textContent = isOpen ? "✕" : "☰";
             }
         }

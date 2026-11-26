@@ -3604,7 +3604,8 @@
             z-index: 1400;
         }
 
-        .ln-mobile-menu.open {
+        .ln-mobile-menu.open,
+        .ln-mobile-menu.active {
             display: flex;
         }
 
@@ -5105,9 +5106,6 @@
                     </svg>
                     <span class="ln-search-text">Tìm kiếm sản phẩm</span>
                 </button>
-                <a href="tel:0393955516" class="ln-call-btn">
-                    <span>📞 0393.955.516</span>
-                </a>
                 <button type="button" class="ln-burger" id="burgerBtn" onclick="toggleMobileNavbar()" aria-label="Menu">
                     ☰
                 </button>
@@ -8520,13 +8518,20 @@
             var menu = document.getElementById("mobileNavMenu");
             var btn = document.getElementById("burgerBtn");
             if (!menu) return;
-            var isOpening = (forceState !== undefined) ? forceState : !menu.classList.contains("active");
-            if (isOpening) {
-                menu.classList.add("active");
-                if (btn) btn.classList.add("active");
+            if (typeof forceState === "boolean") {
+                if (forceState) {
+                    menu.classList.add("open");
+                    menu.classList.add("active");
+                    if (btn) btn.textContent = "✕";
+                } else {
+                    menu.classList.remove("open");
+                    menu.classList.remove("active");
+                    if (btn) btn.textContent = "☰";
+                }
             } else {
-                menu.classList.remove("active");
-                if (btn) btn.classList.remove("active");
+                var isOpen = menu.classList.toggle("open");
+                menu.classList.toggle("active", isOpen);
+                if (btn) btn.textContent = isOpen ? "✕" : "☰";
             }
         }
 

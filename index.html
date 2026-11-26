@@ -5099,7 +5099,85 @@
 
 
 
-    </style>
+    
+        /* --- BỘ LỌC PHÂN KHÚC GIÁ HAMPER SANG TRỌNG --- */
+        .hamper-filter-container {
+            margin: 28px 0 32px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hamper-filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hamper-filter-btn {
+            appearance: none;
+            background: #ffffff;
+            border: 2px solid #ecdac3;
+            color: #4a3b32;
+            padding: 11px 22px;
+            border-radius: 99px;
+            font-size: 14.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(67, 20, 7, 0.04);
+            user-select: none;
+        }
+
+        .hamper-filter-btn:hover {
+            border-color: #b45309;
+            color: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(180, 83, 9, 0.15);
+        }
+
+        .hamper-filter-btn.active {
+            background: linear-gradient(135deg, #7d1611 0%, #a3221b 100%) !important;
+            color: #ffffff !important;
+            border-color: #d97706 !important;
+            box-shadow: 0 8px 24px rgba(125, 22, 17, 0.32) !important;
+            transform: translateY(-1px);
+        }
+
+        .hamper-filter-btn .badge-num {
+            background: rgba(245, 158, 11, 0.18);
+            color: #b45309;
+            font-size: 11.5px;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 99px;
+            transition: all 0.25s ease;
+        }
+
+        .hamper-filter-btn.active .badge-num {
+            background: rgba(255, 255, 255, 0.25) !important;
+            color: #ffffff !important;
+        }
+
+        @media (max-width: 680px) {
+            .hamper-filter-tabs {
+                gap: 8px;
+            }
+            .hamper-filter-btn {
+                padding: 8px 14px;
+                font-size: 13px;
+                gap: 6px;
+            }
+            .hamper-filter-btn .badge-num {
+                padding: 1px 6px;
+                font-size: 10.5px;
+            }
+        }
+</style>
     <!-- Tự động fallback về PNG nếu trình duyệt không tải được WebP -->
     <script>
         document.addEventListener("error", function (e) {
@@ -5330,8 +5408,35 @@
                     <p>Giá từ 590.000đ. Mỗi set được tặng khắc logo doanh nghiệp.</p>
                     <div class="bar"></div>
                 </div>
-                <div class="hg">
-                    <article class="hc">
+                
+                <!-- BỘ LỌC PHÂN KHÚC GIÁ HAMPER SANG TRỌNG (PHƯƠNG ÁN A) -->
+                <div class="hamper-filter-container">
+                    <div class="hamper-filter-tabs" id="hamperPriceTabs">
+                        <button type="button" class="hamper-filter-btn active" data-range="all" onclick="filterHamperPrice('all', this)">
+                            <span>🎁 Tất cả mức giá</span>
+                            <span class="badge-num">15</span>
+                        </button>
+                        <button type="button" class="hamper-filter-btn" data-range="under-1m" onclick="filterHamperPrice('under-1m', this)">
+                            <span>Dưới 1.000.000đ</span>
+                            <span class="badge-num">4</span>
+                        </button>
+                        <button type="button" class="hamper-filter-btn" data-range="1m-1.5m" onclick="filterHamperPrice('1m-1.5m', this)">
+                            <span>1.000.000đ - 1.500.000đ</span>
+                            <span class="badge-num">8</span>
+                        </button>
+                        <button type="button" class="hamper-filter-btn" data-range="above-1.5m" onclick="filterHamperPrice('above-1.5m', this)">
+                            <span>Trên 1.500.000đ</span>
+                            <span class="badge-num">2</span>
+                        </button>
+                        <button type="button" class="hamper-filter-btn" data-range="custom" onclick="filterHamperPrice('custom', this)">
+                            <span>Mẫu tự phối quà</span>
+                            <span class="badge-num">1</span>
+                        </button>
+                    </div>
+                </div>
+<div class="hg">
+                    
+                    <article class="hc" data-price="590000" data-price-range="under-1m">
                         <div class="spotlight-glow"></div><img src="images/hamper-happy-new-year.webp"
                             alt="Hamper Happy New Year" loading="lazy">
                         <div class="hb">
@@ -5478,7 +5583,375 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc">
+                    <article class="hc" data-price="899000" data-price-range="under-1m">
+                        <div class="spotlight-glow"></div><img src="images/hamper-ngoc-vu-khai-loc-b.webp"
+                            alt="Hamper Ngọc Vũ Khai Lộc (B)" loading="lazy">
+                        <div class="hb">
+                            <h3>Ngọc Vũ Khai Lộc (B)</h3>
+                            <div class="pr">899.000đ</div>
+                            <p class="exact-subtitle">Hộp quà lục giác mỹ thuật có đèn cùng bộ 4 món hạt dinh dưỡng</p>
+                            <div style="margin-bottom: 14px;">
+                                <p class="exact-heading">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m7.5 4.27 9 5.15"></path>
+                                        <path
+                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+                                        </path>
+                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
+                                        <path d="M12 22V12"></path>
+                                    </svg>
+                                    Thành phần tuyển chọn bên trong:
+                                </p>
+                                <div class="exact-items-grid">
+
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Nho khô Chile</span>
+                                        </span>
+                                        <span class="exact-item-weight">250g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt mix tổng hợp</span>
+                                        </span>
+                                        <span class="exact-item-weight">230g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt Sachi rang mộc</span>
+                                        </span>
+                                        <span class="exact-item-weight">250g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Nhân Macca Wasabi</span>
+                                        </span>
+                                        <span class="exact-item-weight">210g</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qty-box">
+                                <div class="qty-ctrl">
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+                                    <input type="text" class="qty-val" value="1" readonly>
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+                                </div>
+                                <button type="button" class="btn-add-list"
+                                    onclick="addItemToList('Ngọc Vũ Khai Lộc (B)', 899000, '899.000đ', this)">Chọn mẫu
+                                    này</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="hc" data-price="955000" data-price-range="under-1m">
+                        <div class="spotlight-glow"></div><img src="images/hamper-ngoc-vu-khai-loc-a.webp"
+                            alt="Hamper Ngọc Vũ Khai Lộc (A)" loading="lazy">
+                        <div class="hb">
+                            <h3>Ngọc Vũ Khai Lộc (A)</h3>
+                            <div class="pr">955.000đ</div>
+                            <p class="exact-subtitle">Thiết kế hộp lục giác tích hợp đèn LED phát sáng nghệ thuật & Rượu
+                                sake</p>
+                            <div style="margin-bottom: 14px;">
+                                <p class="exact-heading">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m7.5 4.27 9 5.15"></path>
+                                        <path
+                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+                                        </path>
+                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
+                                        <path d="M12 22V12"></path>
+                                    </svg>
+                                    Thành phần tuyển chọn bên trong:
+                                </p>
+                                <div class="exact-items-grid">
+
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Rượu sake Masuki Aka</span>
+                                        </span>
+                                        <span class="exact-item-weight">300ml</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều tỏi ớt</span>
+                                        </span>
+                                        <span class="exact-item-weight">210g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều Cacao</span>
+                                        </span>
+                                        <span class="exact-item-weight">210g</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qty-box">
+                                <div class="qty-ctrl">
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+                                    <input type="text" class="qty-val" value="1" readonly>
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+                                </div>
+                                <button type="button" class="btn-add-list"
+                                    onclick="addItemToList('Ngọc Vũ Khai Lộc (A)', 955000, '955.000đ', this)">Chọn mẫu
+                                    này</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="hc" data-price="999000" data-price-range="under-1m">
+                        <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-02-b.webp"
+                            alt="Hamper Sắc Xuân 02 (B)" loading="lazy">
+                        <div class="hb">
+                            <h3>Sắc Xuân 02 (B)</h3>
+                            <div class="pr">999.000đ</div>
+                            <p class="exact-subtitle">Món quà trọn vẹn sức khỏe dưới 1 triệu đồng cho doanh nghiệp</p>
+                            <div style="margin-bottom: 14px;">
+                                <p class="exact-heading">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m7.5 4.27 9 5.15"></path>
+                                        <path
+                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+                                        </path>
+                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
+                                        <path d="M12 22V12"></path>
+                                    </svg>
+                                    Thành phần tuyển chọn bên trong:
+                                </p>
+                                <div class="exact-items-grid">
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều rang muối</span>
+                                        </span>
+                                        <span class="exact-item-weight">250g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt Macca sấy</span>
+                                        </span>
+                                        <span class="exact-item-weight">250g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Khô gà lá chanh</span>
+                                        </span>
+                                        <span class="exact-item-weight">200g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Khô gà bơ tỏi</span>
+                                        </span>
+                                        <span class="exact-item-weight">200g</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qty-box">
+                                <div class="qty-ctrl">
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+                                    <input type="text" class="qty-val" value="1" readonly>
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+                                </div>
+                                <button type="button" class="btn-add-list"
+                                    onclick="addItemToList('Sắc Xuân 02 (B)', 999000, '999.000đ', this)">Chọn mẫu
+                                    này</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="hc" data-price="1010000" data-price-range="1m-1.5m">
+                        <div class="spotlight-glow"></div><img src="images/hamper-phuong-vu-nghinh-xuan.webp"
+                            alt="Hamper Phượng Vũ Nghinh Xuân" loading="lazy">
+                        <div class="hb">
+                            <h3>Phượng Vũ Nghinh Xuân</h3>
+                            <div class="pr">1.010.000đ</div>
+                            <p class="exact-subtitle">Phượng Vũ Nghinh Xuân - Sắc phượng tung bay, đón mùa thịnh vượng
+                            </p>
+                            <div style="margin-bottom: 14px;">
+                                <p class="exact-heading">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m7.5 4.27 9 5.15"></path>
+                                        <path
+                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+                                        </path>
+                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
+                                        <path d="M12 22V12"></path>
+                                    </svg>
+                                    Thành phần tuyển chọn bên trong:
+                                </p>
+                                <div class="exact-items-grid">
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Trái cây nhúng Sô-cô-la</span>
+                                        </span>
+                                        <span class="exact-item-weight">120g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt mix tổng hợp</span>
+                                        </span>
+                                        <span class="exact-item-weight">200g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều Cacao</span>
+                                        </span>
+                                        <span class="exact-item-weight">210g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều Capuchino</span>
+                                        </span>
+                                        <span class="exact-item-weight">210g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều tỏi ớt</span>
+                                        </span>
+                                        <span class="exact-item-weight">210g</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qty-box">
+                                <div class="qty-ctrl">
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+                                    <input type="text" class="qty-val" value="1" readonly>
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+                                </div>
+                                <button type="button" class="btn-add-list"
+                                    onclick="addItemToList('Phượng Vũ Nghinh Xuân', 1010000, '1.010.000đ', this)">Chọn
+                                    mẫu này</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="hc" data-price="1022000" data-price-range="1m-1.5m">
                         <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-01-a-2.webp"
                             alt="Hamper Sắc Xuân 01 (A)" loading="lazy">
                         <div class="hb">
@@ -5571,7 +6044,190 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc">
+                    <article class="hc" data-price="1043000" data-price-range="1m-1.5m">
+                        <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-02-a.webp"
+                            alt="Hamper Sắc Xuân 02 (A)" loading="lazy">
+                        <div class="hb">
+                            <h3>Sắc Xuân 02 (A)</h3>
+                            <div class="pr">1.043.000đ</div>
+                            <p class="exact-subtitle">Kết hợp hoàn mỹ cùng Rượu Vang Ý, Chi-lê, Pháp nhập khẩu</p>
+                            <div style="margin-bottom: 14px;">
+                                <p class="exact-heading">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m7.5 4.27 9 5.15"></path>
+                                        <path
+                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+                                        </path>
+                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
+                                        <path d="M12 22V12"></path>
+                                    </svg>
+                                    Thành phần tuyển chọn bên trong:
+                                </p>
+                                <div class="exact-items-grid">
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Rượu vang Ý / Chi-lê / Pháp</span>
+                                        </span>
+                                        <span class="exact-item-weight">750ml</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều rang muối</span>
+                                        </span>
+                                        <span class="exact-item-weight">250g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt Macca sấy</span>
+                                        </span>
+                                        <span class="exact-item-weight">250g</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qty-box">
+                                <div class="qty-ctrl">
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+                                    <input type="text" class="qty-val" value="1" readonly>
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+                                </div>
+                                <button type="button" class="btn-add-list"
+                                    onclick="addItemToList('Sắc Xuân 02 (A)', 1043000, '1.043.000đ', this)">Chọn mẫu
+                                    này</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="hc" data-price="1055000" data-price-range="1m-1.5m">
+                        <div class="spotlight-glow"></div><img src="images/hamper-xuan-dong-day.webp"
+                            alt="Hamper Xuân Đong Đầy" loading="lazy">
+                        <div class="hb">
+                            <h3>Xuân Đong Đầy</h3>
+                            <div class="pr">1.055.000đ</div>
+                            <p class="exact-subtitle">Bộ 5 loại hạt dinh dưỡng thanh lành cho gia đình sum vầy</p>
+                            <div style="margin-bottom: 14px;">
+                                <p class="exact-heading">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m7.5 4.27 9 5.15"></path>
+                                        <path
+                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+                                        </path>
+                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
+                                        <path d="M12 22V12"></path>
+                                    </svg>
+                                    Thành phần tuyển chọn bên trong:
+                                </p>
+                                <div class="exact-items-grid">
+
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt Sachi rang mộc</span>
+                                        </span>
+                                        <span class="exact-item-weight">200g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều Capuchino</span>
+                                        </span>
+                                        <span class="exact-item-weight">210g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều Cacao</span>
+                                        </span>
+                                        <span class="exact-item-weight">210g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều tỏi ớt</span>
+                                        </span>
+                                        <span class="exact-item-weight">210g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt mix tổng hợp</span>
+                                        </span>
+                                        <span class="exact-item-weight">200g</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qty-box">
+                                <div class="qty-ctrl">
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+                                    <input type="text" class="qty-val" value="1" readonly>
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+                                </div>
+                                <button type="button" class="btn-add-list"
+                                    onclick="addItemToList('Xuân Đong Đầy', 1055000, '1.055.000đ', this)">Chọn mẫu
+                                    này</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="hc" data-price="1154000" data-price-range="1m-1.5m">
                         <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-01-b.webp"
                             alt="Hamper Sắc Xuân 01 (B)" loading="lazy">
                         <div class="hb">
@@ -5692,453 +6348,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-02-a.webp"
-                            alt="Hamper Sắc Xuân 02 (A)" loading="lazy">
-                        <div class="hb">
-                            <h3>Sắc Xuân 02 (A)</h3>
-                            <div class="pr">1.043.000đ</div>
-                            <p class="exact-subtitle">Kết hợp hoàn mỹ cùng Rượu Vang Ý, Chi-lê, Pháp nhập khẩu</p>
-                            <div style="margin-bottom: 14px;">
-                                <p class="exact-heading">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m7.5 4.27 9 5.15"></path>
-                                        <path
-                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
-                                        </path>
-                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
-                                        <path d="M12 22V12"></path>
-                                    </svg>
-                                    Thành phần tuyển chọn bên trong:
-                                </p>
-                                <div class="exact-items-grid">
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Rượu vang Ý / Chi-lê / Pháp</span>
-                                        </span>
-                                        <span class="exact-item-weight">750ml</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều rang muối</span>
-                                        </span>
-                                        <span class="exact-item-weight">250g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt Macca sấy</span>
-                                        </span>
-                                        <span class="exact-item-weight">250g</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="qty-box">
-                                <div class="qty-ctrl">
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
-                                    <input type="text" class="qty-val" value="1" readonly>
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
-                                </div>
-                                <button type="button" class="btn-add-list"
-                                    onclick="addItemToList('Sắc Xuân 02 (A)', 1043000, '1.043.000đ', this)">Chọn mẫu
-                                    này</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-sac-xuan-02-b.webp"
-                            alt="Hamper Sắc Xuân 02 (B)" loading="lazy">
-                        <div class="hb">
-                            <h3>Sắc Xuân 02 (B)</h3>
-                            <div class="pr">999.000đ</div>
-                            <p class="exact-subtitle">Món quà trọn vẹn sức khỏe dưới 1 triệu đồng cho doanh nghiệp</p>
-                            <div style="margin-bottom: 14px;">
-                                <p class="exact-heading">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m7.5 4.27 9 5.15"></path>
-                                        <path
-                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
-                                        </path>
-                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
-                                        <path d="M12 22V12"></path>
-                                    </svg>
-                                    Thành phần tuyển chọn bên trong:
-                                </p>
-                                <div class="exact-items-grid">
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều rang muối</span>
-                                        </span>
-                                        <span class="exact-item-weight">250g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt Macca sấy</span>
-                                        </span>
-                                        <span class="exact-item-weight">250g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Khô gà lá chanh</span>
-                                        </span>
-                                        <span class="exact-item-weight">200g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Khô gà bơ tỏi</span>
-                                        </span>
-                                        <span class="exact-item-weight">200g</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="qty-box">
-                                <div class="qty-ctrl">
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
-                                    <input type="text" class="qty-val" value="1" readonly>
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
-                                </div>
-                                <button type="button" class="btn-add-list"
-                                    onclick="addItemToList('Sắc Xuân 02 (B)', 999000, '999.000đ', this)">Chọn mẫu
-                                    này</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-ngoc-vu-khai-loc-a.webp"
-                            alt="Hamper Ngọc Vũ Khai Lộc (A)" loading="lazy">
-                        <div class="hb">
-                            <h3>Ngọc Vũ Khai Lộc (A)</h3>
-                            <div class="pr">955.000đ</div>
-                            <p class="exact-subtitle">Thiết kế hộp lục giác tích hợp đèn LED phát sáng nghệ thuật & Rượu
-                                sake</p>
-                            <div style="margin-bottom: 14px;">
-                                <p class="exact-heading">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m7.5 4.27 9 5.15"></path>
-                                        <path
-                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
-                                        </path>
-                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
-                                        <path d="M12 22V12"></path>
-                                    </svg>
-                                    Thành phần tuyển chọn bên trong:
-                                </p>
-                                <div class="exact-items-grid">
-
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Rượu sake Masuki Aka</span>
-                                        </span>
-                                        <span class="exact-item-weight">300ml</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều tỏi ớt</span>
-                                        </span>
-                                        <span class="exact-item-weight">210g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều Cacao</span>
-                                        </span>
-                                        <span class="exact-item-weight">210g</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="qty-box">
-                                <div class="qty-ctrl">
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
-                                    <input type="text" class="qty-val" value="1" readonly>
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
-                                </div>
-                                <button type="button" class="btn-add-list"
-                                    onclick="addItemToList('Ngọc Vũ Khai Lộc (A)', 955000, '955.000đ', this)">Chọn mẫu
-                                    này</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-ngoc-vu-khai-loc-b.webp"
-                            alt="Hamper Ngọc Vũ Khai Lộc (B)" loading="lazy">
-                        <div class="hb">
-                            <h3>Ngọc Vũ Khai Lộc (B)</h3>
-                            <div class="pr">899.000đ</div>
-                            <p class="exact-subtitle">Hộp quà lục giác mỹ thuật có đèn cùng bộ 4 món hạt dinh dưỡng</p>
-                            <div style="margin-bottom: 14px;">
-                                <p class="exact-heading">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m7.5 4.27 9 5.15"></path>
-                                        <path
-                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
-                                        </path>
-                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
-                                        <path d="M12 22V12"></path>
-                                    </svg>
-                                    Thành phần tuyển chọn bên trong:
-                                </p>
-                                <div class="exact-items-grid">
-
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Nho khô Chile</span>
-                                        </span>
-                                        <span class="exact-item-weight">250g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt mix tổng hợp</span>
-                                        </span>
-                                        <span class="exact-item-weight">230g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt Sachi rang mộc</span>
-                                        </span>
-                                        <span class="exact-item-weight">250g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Nhân Macca Wasabi</span>
-                                        </span>
-                                        <span class="exact-item-weight">210g</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="qty-box">
-                                <div class="qty-ctrl">
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
-                                    <input type="text" class="qty-val" value="1" readonly>
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
-                                </div>
-                                <button type="button" class="btn-add-list"
-                                    onclick="addItemToList('Ngọc Vũ Khai Lộc (B)', 899000, '899.000đ', this)">Chọn mẫu
-                                    này</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-xuan-hoan-ca.webp"
-                            alt="Hamper Xuân Hoan Ca" loading="lazy">
-                        <div class="hb">
-                            <h3>Xuân Hoan Ca</h3>
-                            <div class="pr">1.380.000đ</div>
-                            <p class="exact-subtitle">Hộp mỹ thuật hoa văn xanh lam quý phái cùng vang trắng Paolini
-                                Lucido</p>
-                            <div style="margin-bottom: 14px;">
-                                <p class="exact-heading">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m7.5 4.27 9 5.15"></path>
-                                        <path
-                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
-                                        </path>
-                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
-                                        <path d="M12 22V12"></path>
-                                    </svg>
-                                    Thành phần tuyển chọn bên trong:
-                                </p>
-                                <div class="exact-items-grid">
-
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Rượu vang trắng Paolini Lucido</span>
-                                        </span>
-                                        <span class="exact-item-weight">750ml</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạnh nhân rang bơ</span>
-                                        </span>
-                                        <span class="exact-item-weight">250g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều rang muối</span>
-                                        </span>
-                                        <span class="exact-item-weight">250g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều tỏi ớt</span>
-                                        </span>
-                                        <span class="exact-item-weight">210g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều Cacao</span>
-                                        </span>
-                                        <span class="exact-item-weight">210g</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="qty-box">
-                                <div class="qty-ctrl">
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
-                                    <input type="text" class="qty-val" value="1" readonly>
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
-                                </div>
-                                <button type="button" class="btn-add-list"
-                                    onclick="addItemToList('Xuân Hoan Ca', 1380000, '1.380.000đ', this)">Chọn mẫu
-                                    này</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="hc">
+                    <article class="hc" data-price="1314000" data-price-range="1m-1.5m">
                         <div class="spotlight-glow"></div><img src="images/hamper-huong-xuan.webp"
                             alt="Hamper Hương Xuân" loading="lazy">
                         <div class="hb">
@@ -6258,13 +6468,14 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-xuan-dong-day.webp"
-                            alt="Hamper Xuân Đong Đầy" loading="lazy">
+                    <article class="hc" data-price="1380000" data-price-range="1m-1.5m">
+                        <div class="spotlight-glow"></div><img src="images/hamper-xuan-hoan-ca.webp"
+                            alt="Hamper Xuân Hoan Ca" loading="lazy">
                         <div class="hb">
-                            <h3>Xuân Đong Đầy</h3>
-                            <div class="pr">1.055.000đ</div>
-                            <p class="exact-subtitle">Bộ 5 loại hạt dinh dưỡng thanh lành cho gia đình sum vầy</p>
+                            <h3>Xuân Hoan Ca</h3>
+                            <div class="pr">1.380.000đ</div>
+                            <p class="exact-subtitle">Hộp mỹ thuật hoa văn xanh lam quý phái cùng vang trắng Paolini
+                                Lucido</p>
                             <div style="margin-bottom: 14px;">
                                 <p class="exact-heading">
                                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -6290,9 +6501,9 @@
                                                 </path>
                                                 <path d="m9 12 2 2 4-4"></path>
                                             </svg>
-                                            <span>Hạt Sachi rang mộc</span>
+                                            <span>Rượu vang trắng Paolini Lucido</span>
                                         </span>
-                                        <span class="exact-item-weight">200g</span>
+                                        <span class="exact-item-weight">750ml</span>
                                     </div>
                                     <div class="exact-item-pill">
                                         <span class="exact-item-left">
@@ -6304,7 +6515,112 @@
                                                 </path>
                                                 <path d="m9 12 2 2 4-4"></path>
                                             </svg>
-                                            <span>Hạt điều Capuchino</span>
+                                            <span>Hạnh nhân rang bơ</span>
+                                        </span>
+                                        <span class="exact-item-weight">250g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều rang muối</span>
+                                        </span>
+                                        <span class="exact-item-weight">250g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều tỏi ớt</span>
+                                        </span>
+                                        <span class="exact-item-weight">210g</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều Cacao</span>
+                                        </span>
+                                        <span class="exact-item-weight">210g</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qty-box">
+                                <div class="qty-ctrl">
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
+                                    <input type="text" class="qty-val" value="1" readonly>
+                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
+                                </div>
+                                <button type="button" class="btn-add-list"
+                                    onclick="addItemToList('Xuân Hoan Ca', 1380000, '1.380.000đ', this)">Chọn mẫu
+                                    này</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="hc" data-price="1435000" data-price-range="1m-1.5m">
+                        <div class="spotlight-glow"></div><img src="images/hamper-tet-viet.webp" alt="Hamper Tết Việt"
+                            loading="lazy">
+                        <div class="hb">
+                            <h3>Tết Việt</h3>
+                            <div class="pr">1.435.000đ</div>
+                            <p class="exact-subtitle">Tết Việt - Hạc vàng khai niên, phú quý cát tường</p>
+                            <div style="margin-bottom: 14px;">
+                                <p class="exact-heading">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m7.5 4.27 9 5.15"></path>
+                                        <path
+                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+                                        </path>
+                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
+                                        <path d="M12 22V12"></path>
+                                    </svg>
+                                    Thành phần tuyển chọn bên trong:
+                                </p>
+                                <div class="exact-items-grid">
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Rượu mơ Moriko</span>
+                                        </span>
+                                        <span class="exact-item-weight">500ml</span>
+                                    </div>
+                                    <div class="exact-item-pill">
+                                        <span class="exact-item-left">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
+                                                </path>
+                                                <path d="m9 12 2 2 4-4"></path>
+                                            </svg>
+                                            <span>Hạt điều tỏi ớt</span>
                                         </span>
                                         <span class="exact-item-weight">210g</span>
                                     </div>
@@ -6332,7 +6648,7 @@
                                                 </path>
                                                 <path d="m9 12 2 2 4-4"></path>
                                             </svg>
-                                            <span>Hạt điều tỏi ớt</span>
+                                            <span>Hạt điều Capuchino</span>
                                         </span>
                                         <span class="exact-item-weight">210g</span>
                                     </div>
@@ -6346,7 +6662,7 @@
                                                 </path>
                                                 <path d="m9 12 2 2 4-4"></path>
                                             </svg>
-                                            <span>Hạt mix tổng hợp</span>
+                                            <span>Nhân Macca Wasabi</span>
                                         </span>
                                         <span class="exact-item-weight">200g</span>
                                     </div>
@@ -6359,12 +6675,12 @@
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
                                 </div>
                                 <button type="button" class="btn-add-list"
-                                    onclick="addItemToList('Xuân Đong Đầy', 1055000, '1.055.000đ', this)">Chọn mẫu
+                                    onclick="addItemToList('Tết Việt', 1435000, '1.435.000đ', this)">Chọn mẫu
                                     này</button>
                             </div>
                         </div>
                     </article>
-                    <article class="hc">
+                    <article class="hc" data-price="1655000" data-price-range="above-1.5m">
                         <div class="spotlight-glow"></div><img src="images/hamper-xuan-nhu-y.webp"
                             alt="Hamper Xuân Như Ý" loading="lazy">
                         <div class="hb">
@@ -6511,7 +6827,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc">
+                    <article class="hc" data-price="1682000" data-price-range="above-1.5m">
                         <div class="spotlight-glow"></div><img src="images/hamper-tet-lac-hong.webp"
                             alt="Hamper Tết Lạc Hồng" loading="lazy">
                         <div class="hb">
@@ -6645,224 +6961,13 @@
                             </div>
                         </div>
                     </article>
-                    <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-tet-viet.webp" alt="Hamper Tết Việt"
-                            loading="lazy">
-                        <div class="hb">
-                            <h3>Tết Việt</h3>
-                            <div class="pr">1.435.000đ</div>
-                            <p class="exact-subtitle">Tết Việt - Hạc vàng khai niên, phú quý cát tường</p>
-                            <div style="margin-bottom: 14px;">
-                                <p class="exact-heading">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m7.5 4.27 9 5.15"></path>
-                                        <path
-                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
-                                        </path>
-                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
-                                        <path d="M12 22V12"></path>
-                                    </svg>
-                                    Thành phần tuyển chọn bên trong:
-                                </p>
-                                <div class="exact-items-grid">
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Rượu mơ Moriko</span>
-                                        </span>
-                                        <span class="exact-item-weight">500ml</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều tỏi ớt</span>
-                                        </span>
-                                        <span class="exact-item-weight">210g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều Cacao</span>
-                                        </span>
-                                        <span class="exact-item-weight">210g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều Capuchino</span>
-                                        </span>
-                                        <span class="exact-item-weight">210g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Nhân Macca Wasabi</span>
-                                        </span>
-                                        <span class="exact-item-weight">200g</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="qty-box">
-                                <div class="qty-ctrl">
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
-                                    <input type="text" class="qty-val" value="1" readonly>
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
-                                </div>
-                                <button type="button" class="btn-add-list"
-                                    onclick="addItemToList('Tết Việt', 1435000, '1.435.000đ', this)">Chọn mẫu
-                                    này</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="hc">
-                        <div class="spotlight-glow"></div><img src="images/hamper-phuong-vu-nghinh-xuan.webp"
-                            alt="Hamper Phượng Vũ Nghinh Xuân" loading="lazy">
-                        <div class="hb">
-                            <h3>Phượng Vũ Nghinh Xuân</h3>
-                            <div class="pr">1.010.000đ</div>
-                            <p class="exact-subtitle">Phượng Vũ Nghinh Xuân - Sắc phượng tung bay, đón mùa thịnh vượng
-                            </p>
-                            <div style="margin-bottom: 14px;">
-                                <p class="exact-heading">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m7.5 4.27 9 5.15"></path>
-                                        <path
-                                            d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
-                                        </path>
-                                        <path d="m3.3 7 8.7 5 8.7-5"></path>
-                                        <path d="M12 22V12"></path>
-                                    </svg>
-                                    Thành phần tuyển chọn bên trong:
-                                </p>
-                                <div class="exact-items-grid">
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Trái cây nhúng Sô-cô-la</span>
-                                        </span>
-                                        <span class="exact-item-weight">120g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt mix tổng hợp</span>
-                                        </span>
-                                        <span class="exact-item-weight">200g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều Cacao</span>
-                                        </span>
-                                        <span class="exact-item-weight">210g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều Capuchino</span>
-                                        </span>
-                                        <span class="exact-item-weight">210g</span>
-                                    </div>
-                                    <div class="exact-item-pill">
-                                        <span class="exact-item-left">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <path
-                                                    d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z">
-                                                </path>
-                                                <path d="m9 12 2 2 4-4"></path>
-                                            </svg>
-                                            <span>Hạt điều tỏi ớt</span>
-                                        </span>
-                                        <span class="exact-item-weight">210g</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="qty-box">
-                                <div class="qty-ctrl">
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, -1)">-</button>
-                                    <input type="text" class="qty-val" value="1" readonly>
-                                    <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
-                                </div>
-                                <button type="button" class="btn-add-list"
-                                    onclick="addItemToList('Phượng Vũ Nghinh Xuân', 1010000, '1.010.000đ', this)">Chọn
-                                    mẫu này</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="hc">
+                    <article class="hc" data-price="0" data-price-range="custom">
                         <div class="spotlight-glow"></div><img src="images/hamper-huong-xuan-1.webp"
                             alt="Hamper Hương Xuân (A)" loading="lazy">
                         <div class="hb">
                             <h3>Hương Xuân (A)</h3>
-                            <div class="pr"> </div>
-                            <p class="exact-subtitle">Gửi trao phú quý, đón lộc an khang</p>
+                            <div class="pr" style="font-size: 14.5px; color: #b45309; font-weight: 700; background: #fff8eb; padding: 4px 12px; border-radius: 99px; display: inline-block; border: 1px dashed #d97706;">Tùy chọn phối quà</div>
+                            <p class="exact-subtitle">Set mẫu tham khảo để phối các sản phẩm nông sản lẻ theo yêu cầu</p>
                             <div style="margin-bottom: 14px;">
                                 <p class="exact-heading">
                                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -6985,11 +7090,12 @@
                                     <button type="button" class="qty-btn" onclick="adjustQty(this, 1)">+</button>
                                 </div>
                                 <button type="button" class="btn-add-list"
-                                    onclick="addItemToList('Hương Xuân (A)', this)">Chọn mẫu
+                                    onclick="addItemToList('Hương Xuân (A) - Tự phối', 0, 'Tùy chọn phối quà', this)">Chọn mẫu
                                     này</button>
                             </div>
                         </div>
                     </article>
+
                 </div>
                 <div class="perks"><span>🎁 Miễn phí khắc logo doanh nghiệp</span><span>🚚 Hỗ trợ vận chuyển toàn
                         quốc</span><span>✏️ Thiết kế theo yêu cầu giá tương đương</span><span>✨ Dấu ấn độc bản cho từng
@@ -9969,6 +10075,31 @@
             return str.trim();
         }
 
+        
+        var currentHamperRange = "all";
+
+        function filterHamperPrice(range, btnEl) {
+            currentHamperRange = range;
+            var tabs = document.querySelectorAll(".hamper-filter-btn");
+            tabs.forEach(function (btn) {
+                if (btn.getAttribute("data-range") === range) {
+                    btn.classList.add("active");
+                } else {
+                    btn.classList.remove("active");
+                }
+            });
+
+            var cards = document.querySelectorAll("#hamper .hc");
+            cards.forEach(function (card) {
+                var cardRange = card.getAttribute("data-price-range");
+                if (range === "all" || cardRange === range) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
         function initRetailSearchData() {
             if (retailSearchData.length > 0) return;
             retailSearchData = [];
@@ -10074,7 +10205,14 @@
                 if (countEl) countEl.textContent = "Tất cả " + retailSearchData.length + " mẫu Hamper Tết 2027 (Chạm để xem nhanh):";
 
                 retailSearchData.forEach(function (item) {
-                    if (item.cardEl) item.cardEl.style.display = "";
+                    if (item.cardEl) {
+                        var cardRange = item.cardEl.getAttribute("data-price-range");
+                        if (currentHamperRange === "all" || cardRange === currentHamperRange) {
+                            item.cardEl.style.display = "";
+                        } else {
+                            item.cardEl.style.display = "none";
+                        }
+                    }
                 });
 
                 if (resultsWrap) {

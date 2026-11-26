@@ -4640,7 +4640,151 @@
             transform: translateY(-2px) scale(1.03);
             box-shadow: 0 10px 28px rgba(245, 158, 11, 0.45), 0 0 0 2px rgba(254, 240, 138, 0.6) !important;
         }
-    </style>
+    
+        /* --- FORM BÁO GIÁ SANG TRỌNG (#baogia) --- */
+        #baogia {
+            padding: 72px 0 68px !important;
+            background: linear-gradient(180deg, #fdfbf7 0%, #fffdfa 50%, #ffffff 100%) !important;
+            scroll-margin-top: 70px !important;
+        }
+
+        .fm {
+            max-width: 720px !important;
+            margin: 36px auto 0 !important;
+            background: #ffffff !important;
+            border: 1.5px solid rgba(245, 158, 11, 0.35) !important;
+            border-radius: 24px !important;
+            padding: 38px 34px 34px !important;
+            box-shadow: 0 20px 50px -12px rgba(180, 83, 9, 0.12), 0 0 0 1px rgba(254, 240, 138, 0.35) !important;
+            display: grid !important;
+            gap: 18px !important;
+            position: relative !important;
+            overflow: hidden !important;
+            transition: box-shadow 0.35s ease, border-color 0.35s ease !important;
+        }
+
+        .fm:hover {
+            box-shadow: 0 25px 60px -12px rgba(180, 83, 9, 0.18), 0 0 0 1px rgba(245, 158, 11, 0.45) !important;
+            border-color: rgba(245, 158, 11, 0.6) !important;
+        }
+
+        .fm input,
+        .fm select,
+        .fm textarea {
+            font: inherit !important;
+            color: #1f2937 !important;
+            background: #fffdfa !important;
+            border: 1.5px solid #fed7aa !important;
+            border-radius: 12px !important;
+            padding: 12px 15px !important;
+            width: 100% !important;
+            font-size: 14.5px !important;
+            transition: all 0.25s ease !important;
+        }
+
+        .fm input:focus,
+        .fm select:focus,
+        .fm textarea:focus {
+            outline: none !important;
+            border-color: #d97706 !important;
+            background: #ffffff !important;
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.18) !important;
+        }
+
+        /* --- BỘ CHỌN HÌNH THỨC ĐẶT QUÀ (ĐỒNG BỘ 100% VỚI MAIN-CAT-TABS BÊN SẢN PHẨM) --- */
+        .order-type-wrapper {
+            margin-bottom: 8px;
+        }
+
+        .order-type-title {
+            display: block;
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #7d1611;
+            margin-bottom: 12px;
+        }
+
+        .order-type-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .order-type-btn {
+            position: relative;
+            appearance: none;
+            background: #ffffff;
+            border: 2px solid #ecdac3;
+            color: #4a3b32;
+            padding: 12px 24px;
+            border-radius: 99px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(67, 20, 7, 0.04);
+            user-select: none;
+        }
+
+        .order-type-btn input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+            width: 0;
+            height: 0;
+            margin: 0;
+        }
+
+        .order-type-btn:hover {
+            border-color: #b45309;
+            color: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(180, 83, 9, 0.15);
+        }
+
+        .order-type-btn.active,
+        .order-type-btn:has(input:checked) {
+            background: linear-gradient(135deg, #7d1611 0%, #a3221b 100%) !important;
+            color: #ffffff !important;
+            border-color: #d97706 !important;
+            box-shadow: 0 8px 24px rgba(125, 22, 17, 0.32) !important;
+            transform: translateY(-1px);
+        }
+
+        .order-type-btn .badge-num {
+            background: rgba(245, 158, 11, 0.2);
+            color: #b45309;
+            font-size: 11.5px;
+            font-weight: 800;
+            padding: 2px 9px;
+            border-radius: 99px;
+            transition: all 0.25s ease;
+        }
+
+        .order-type-btn.active .badge-num,
+        .order-type-btn:has(input:checked) .badge-num {
+            background: rgba(255, 255, 255, 0.25) !important;
+            color: #ffffff !important;
+        }
+
+        @media (max-width: 680px) {
+            .order-type-tabs {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .order-type-btn {
+                justify-content: center;
+                padding: 12px 20px;
+                font-size: 13.5px;
+            }
+        }
+</style>
 
     <!-- Tự động fallback về PNG nếu trình duyệt không tải được WebP -->
     <script>
@@ -4675,7 +4819,11 @@
                     <span class="ln-link-desktop">Sản phẩm</span>
                     <span class="ln-link-mobile">Sản phẩm</span>
                 </a>
-                <a href="../#baogia" class="ln-nav-link ln-desktop-only">Nhận báo giá</a>
+                <a href="#baogia" class="ln-nav-link ln-desktop-only">Nhận báo giá</a>
+                <a href="#lienhe" class="ln-nav-link">
+                    <span class="ln-link-desktop">Liên hệ</span>
+                    <span class="ln-link-mobile">Liên hệ</span>
+                </a>
             </nav>
 
             <!-- Cột bên phải: Nút tìm kiếm sản phẩm, hotline và menu mobile -->
@@ -4723,8 +4871,12 @@
                 <span>📋 Danh sách quan tâm (<span id="menuCartBadge">0</span>)</span>
                 <span>›</span>
             </a>
-            <a href="../#baogia" class="ln-mobile-link" onclick="toggleMobileNavbar(false)">
+            <a href="#baogia" class="ln-mobile-link" onclick="toggleMobileNavbar(false)">
                 <span>📋 Nhận báo giá Hamper Tết</span>
+                <span>›</span>
+            </a>
+            <a href="#lienhe" class="ln-mobile-link" onclick="toggleMobileNavbar(false)">
+                <span>📞 Liên hệ & Tư vấn</span>
                 <span>›</span>
             </a>
         </div>
@@ -5427,7 +5579,7 @@
                         cho doanh nghiệp.</p>
                     <div class="btns">
                         <a href="../#hamper" class="btn gold">Khám Phá Bộ Sưu Tập Hamper ➔</a>
-                        <a href="../#baogia" class="btn ghost">Đăng Ký Nhận Báo Giá</a>
+                        <a href="#baogia" class="btn ghost">Đăng Ký Nhận Báo Giá</a>
                     </div>
                 </div>
 
@@ -5448,6 +5600,232 @@
                         <h4>Bao Bì Sang Trọng</h4>
                         <p>Hộp giấy, túi zip và hũ hiện đại, bảo quản tối ưu độ giòn và thẩm mỹ cao khi biếu tặng.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="alt" id="baogia">
+            <div class="wrap">
+                <div class="title">
+                    <h2>Nhận báo giá hamper Tết</h2>
+                    <p>Để lại thông tin, Lisa Food sẽ liên hệ tư vấn sớm nhất.</p>
+                    <div class="bar"></div>
+                </div>
+                <div class="fm">
+                    <div class="f2"><label>Họ và tên<input id="fn" autocomplete="name"
+                                placeholder="Nguyễn Văn A"></label><label>Số điện thoại *<input id="fp" type="tel"
+                                inputmode="tel" autocomplete="tel" placeholder="09xx xxx xxx"></label></div>
+                    <div class="f2"><label>Công ty (nếu có)<input id="fc" autocomplete="organization"></label><label>Số
+                            lượng set<input id="fq" inputmode="numeric" placeholder="VD: 50"></label></div>
+
+                    <!-- 3 Lựa chọn hình thức đặt quà theo phong cách Tab chuẩn sản phẩm -->
+                    <div class="order-type-wrapper">
+                        <label class="order-type-title">Hình thức đặt quà bạn quan tâm:</label>
+                        <div class="order-type-tabs" id="orderTypeTabs">
+                            <label class="order-type-btn active" data-type="standard">
+                                <input type="radio" name="order_type" value="standard" checked>
+                                <span>Mẫu hamper quan tâm</span>
+                            </label>
+                            <label class="order-type-btn" data-type="custom_set">
+                                <input type="radio" name="order_type" value="custom_set">
+                                <span>Thiết kế theo yêu cầu</span>
+                            </label>
+                            <label class="order-type-btn" data-type="budget">
+                                <input type="radio" name="order_type" value="budget">
+                                <span>Ngân sách theo yêu cầu</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Khối 1: Mẫu hamper quan tâm -->
+                    <div id="block_standard">
+                        <label>Mẫu hamper quan tâm (kèm giá)
+                            <select id="fh">
+                                <option value="">-- Chọn mẫu hamper có sẵn --</option>
+                                <option value="Sắc Xuân 01 (A) - 1.022.000đ">Sắc Xuân 01 (A) - 1.022.000đ</option>
+                                <option value="Sắc Xuân 01 (B) - 1.154.000đ">Sắc Xuân 01 (B) - 1.154.000đ</option>
+                                <option value="Sắc Xuân 02 (A) - 1.043.000đ">Sắc Xuân 02 (A) - 1.043.000đ</option>
+                                <option value="Sắc Xuân 02 (B) - 999.000đ">Sắc Xuân 02 (B) - 999.000đ</option>
+                                <option value="Ngọc Vũ Khai Lộc (A) - 955.000đ">Ngọc Vũ Khai Lộc (A) - 955.000đ</option>
+                                <option value="Ngọc Vũ Khai Lộc (B) - 899.000đ">Ngọc Vũ Khai Lộc (B) - 899.000đ</option>
+                                <option value="Xuân Hoan Ca - 1.380.000đ">Xuân Hoan Ca - 1.380.000đ</option>
+                                <option value="Hương Xuân - 1.314.000đ">Hương Xuân - 1.314.000đ</option>
+                                <option value="Xuân Đong Đầy - 1.055.000đ">Xuân Đong Đầy - 1.055.000đ</option>
+                                <option value="Xuân Như Ý - 1.655.000đ">Xuân Như Ý - 1.655.000đ</option>
+                                <option value="Tết Lạc Hồng - 1.682.000đ">Tết Lạc Hồng - 1.682.000đ</option>
+                                <option value="Tết Việt - 1.435.000đ">Tết Lạc Hồng - 1.435.000đ</option>
+                                <option value="Phượng Vũ Nghinh Xuân - 1.010.000đ">Tết Lạc Hồng - 1.010.000đ</option>
+                                <option value="Hương Xuân (A)">Hương Xuân (A)</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <!-- Khối 2: Thiết kế mẫu hamper theo yêu cầu -->
+                    <div id="block_custom_set"
+                        style="display:none;display:none;border:1px dashed var(--gold);padding:16px;border-radius:14px;background:var(--bg);">
+                        <label style="font-weight:700;color:var(--text);margin-bottom:6px;">1. Chọn mẫu set quà muốn
+                            thiết kế riêng (không kèm giá):
+                            <select id="fh_custom" style="margin-top:6px;">
+                                <option value="">-- Chọn mẫu set quà muốn tùy chỉnh --</option>
+                                <option value="Sắc Xuân 01 (A)">Sắc Xuân 01 (A)</option>
+                                <option value="Sắc Xuân 01 (B)">Sắc Xuân 01 (B)</option>
+                                <option value="Sắc Xuân 02 (A)">Sắc Xuân 02 (A)</option>
+                                <option value="Sắc Xuân 02 (B)">Sắc Xuân 02 (B)</option>
+                                <option value="Ngọc Vũ Khai Lộc (A)">Ngọc Vũ Khai Lộc (A)</option>
+                                <option value="Ngọc Vũ Khai Lộc (B)">Ngọc Vũ Khai Lộc (B)</option>
+                                <option value="Xuân Hoan Ca">Xuân Hoan Ca</option>
+                                <option value="Hương Xuân">Hương Xuân</option>
+                                <option value="Xuân Đong Đầy">Xuân Đong Đầy</option>
+                                <option value="Xuân Như Ý">Xuân Như Ý</option>
+                                <option value="Tết Lạc Hồng">Tết Lạc Hồng</option>
+                                <option value="Tết Việt">Tết Lạc Hồng</option>
+                                <option value="Phượng Vũ Nghinh Xuân">Tết Lạc Hồng</option>
+                                <option value="Hương Xuân (A)">Hương Xuân (A)</option>
+                            </select>
+                        </label>
+
+                        <div id="sub_products_list"
+                            style="display:none;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);">
+                            <span
+                                style="display:block;font-size:13px;font-weight:700;margin-bottom:8px;color:var(--red);">2.
+                                Chọn thêm / thay đổi các sản phẩm lẻ vào set:</span>
+                            <div
+                                style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;max-height:220px;overflow-y:auto;padding-right:4px;">
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Hạt điều rang muối 250g"
+                                        style="width:auto;margin:0;">
+                                    <span>Hạt điều rang muối 250g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Hạt macca sấy 250g"
+                                        style="width:auto;margin:0;">
+                                    <span>Hạt Macca sấy 250g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Hạnh nhân rang bơ 250g"
+                                        style="width:auto;margin:0;">
+                                    <span>Hạnh nhân rang bơ 250g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Hạt mix tổng hợp 210g"
+                                        style="width:auto;margin:0;">
+                                    <span>Hạt mix tổng hợp 210g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Hạt điều capuchino 210g"
+                                        style="width:auto;margin:0;">
+                                    <span>Hạt điều Capuchino 210g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Hạt điều tỏi ớt 210g"
+                                        style="width:auto;margin:0;">
+                                    <span>Hạt điều tỏi ớt 210g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Hạt điều cacao 210g"
+                                        style="width:auto;margin:0;">
+                                    <span>Hạt điều Cacao 210g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Nhân macca wasabi"
+                                        style="width:auto;margin:0;">
+                                    <span>Nhân Macca Wasabi</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Hạt điều tỏi ớt 200g (hũ)"
+                                        style="width:auto;margin:0;">
+                                    <span>Hạt điều tỏi ớt 200g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Hạt điều cacao 200g (hũ)"
+                                        style="width:auto;margin:0;">
+                                    <span>Hạt điều Cacao 200g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Hạt sachi rang mộc 100g"
+                                        style="width:auto;margin:0;">
+                                    <span>Hạt Sachi rang mộc 100g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Khô gà bơ tỏi 200g"
+                                        style="width:auto;margin:0;">
+                                    <span>Khô gà bơ tỏi 200g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Khô gà lá chanh 200g"
+                                        style="width:auto;margin:0;">
+                                    <span>Khô gà lá chanh 200g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Khô gà bơ tỏi 100g"
+                                        style="width:auto;margin:0;">
+                                    <span>Khô gà bơ tỏi 100g</span>
+                                </label>
+
+                                <label
+                                    style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:400;cursor:pointer;background:var(--bg);padding:8px 12px;border:1px solid var(--line);border-radius:8px;">
+                                    <input type="checkbox" name="custom_prod" value="Khô gà lá chanh 100g"
+                                        style="width:auto;margin:0;">
+                                    <span>Khô gà lá chanh 100g</span>
+                                </label>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Khối 3: Ngân sách theo yêu cầu -->
+                    <div id="block_budget"
+                        style="display:none;border:1px dashed var(--gold);padding:16px;border-radius:14px;background:var(--bg);">
+                        <label style="font-weight:700;color:var(--text);">Ngân sách dự kiến cho 1 set quà:
+                            <input id="f_budget" type="text" placeholder="VD: 500.000đ - 1.000.000đ hoặc 800.000đ/set"
+                                style="margin-top:6px;">
+                        </label>
+                        <p style="margin:6px 0 0;font-size:12px;color:var(--muted);">* Chuyên viên Lisa Food sẽ đề xuất
+                            các giải pháp hộp quà & sản phẩm tối ưu nhất trong tầm giá này.</p>
+                    </div>
+
+                    <label>Ghi chú<textarea id="fm" rows="3"
+                            placeholder="Khắc logo, địa chỉ giao hàng, ngày nhận..."></textarea></label>
+                    <div
+                        style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:6px;">
+                        <button class="btn sub" id="fs" type="button"
+                            style="background:var(--red);color:var(--on-red);border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">📩
+                            Gửi yêu cầu qua Email</button>
+                        <button class="btn sub" id="fs_wa" type="button"
+                            style="background:#25D366;color:#fff;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;">💬
+                            Gửi nhanh qua WhatsApp</button>
+                    </div>
+                    <p class="fmsg" id="fmsg" role="status"></p>
+                    <p class="note" style="margin-top:8px">Thông tin được bảo mật và gửi trực tiếp đến bộ phận kinh
+                        doanh Lisa Food (sale@lisafood.vn hoặc WhatsApp/Hotline: 0393.955.516).</p>
                 </div>
             </div>
         </section>
@@ -8813,6 +9191,160 @@
                 revealObserver.observe(el);
             });
         });
+    </script>
+<script>
+        (function () {
+            var g = function (i) { var el = document.getElementById(i); return el ? el.value.trim() : ""; };
+            var m = document.getElementById("fmsg");
+            var bMail = document.getElementById("fs");
+            var bWa = document.getElementById("fs_wa");
+
+            var radios = document.querySelectorAll('input[name="order_type"]');
+            var blockStandard = document.getElementById("block_standard");
+            var blockCustomSet = document.getElementById("block_custom_set");
+            var blockBudget = document.getElementById("block_budget");
+
+            var selectCustomHamper = document.getElementById("fh_custom");
+            var subProductsList = document.getElementById("sub_products_list");
+
+            // Chuyển đổi giữa 3 mục: chỉ được chọn 1 trong 3
+            radios.forEach(function (r) {
+                r.addEventListener("change", function () {
+                    document.querySelectorAll('.order-type-btn').forEach(function (b) { b.classList.remove('active'); });
+                    var parentBtn = r.closest('.order-type-btn');
+                    if (parentBtn) parentBtn.classList.add('active');
+                    var val = this.value;
+                    blockStandard.style.display = (val === "standard") ? "block" : "none";
+                    blockCustomSet.style.display = (val === "custom_set") ? "block" : "none";
+                    blockBudget.style.display = (val === "budget") ? "block" : "none";
+                });
+            });
+
+            // Khi chọn 1 set trong mục "Thiết kế theo yêu cầu" -> mở danh sách sản phẩm lẻ
+            if (selectCustomHamper) {
+                selectCustomHamper.addEventListener("change", function () {
+                    if (this.value) {
+                        subProductsList.style.display = "block";
+                    } else {
+                        subProductsList.style.display = "none";
+                    }
+                });
+            }
+
+            function validate() {
+                var ph = g("fp");
+                if (ph.replace(/\D/g, "").length < 9) {
+                    m.style.color = "var(--red)";
+                    m.textContent = "Vui lòng nhập số điện thoại hợp lệ để Lisa Food tiện liên hệ.";
+                    return false;
+                }
+                var activeType = document.querySelector('input[name="order_type"]:checked').value;
+                if (activeType === "standard" && !g("fh")) {
+                    m.style.color = "var(--red)";
+                    m.textContent = "Vui lòng chọn một mẫu hamper quan tâm trong danh sách.";
+                    return false;
+                }
+                if (activeType === "custom_set" && !g("fh_custom")) {
+                    m.style.color = "var(--red)";
+                    m.textContent = "Vui lòng chọn mẫu set quà bạn muốn thiết kế.";
+                    return false;
+                }
+                if (activeType === "budget" && !g("f_budget")) {
+                    m.style.color = "var(--red)";
+                    m.textContent = "Vui lòng nhập mức ngân sách bạn mong muốn.";
+                    return false;
+                }
+                return true;
+            }
+
+            function getSelectedProducts() {
+                var checked = document.querySelectorAll('input[name="custom_prod"]:checked');
+                var items = [];
+                checked.forEach(function (c) { items.push(c.value); });
+                return items.length > 0 ? items.join(", ") : "Chưa chọn (tư vấn theo mẫu)";
+            }
+
+            function buildFormDetails() {
+                var activeType = document.querySelector('input[name="order_type"]:checked').value;
+                var hType = "";
+                var hDetail = "";
+
+                if (activeType === "standard") {
+                    hType = "Mẫu hamper có sẵn (kèm giá)";
+                    hDetail = g("fh");
+                } else if (activeType === "custom_set") {
+                    hType = "Thiết kế mẫu hamper theo yêu cầu";
+                    hDetail = "Set mẫu: " + g("fh_custom") + "\n• Sản phẩm lẻ phối thêm: " + getSelectedProducts();
+                } else if (activeType === "budget") {
+                    hType = "Ngân sách theo yêu cầu";
+                    hDetail = "Mức ngân sách yêu cầu: " + g("f_budget");
+                }
+
+                return {
+                    type: hType,
+                    detail: hDetail,
+                    text: "[YÊU CẦU BÁO GIÁ HAMPER TẾT 2027]\n" +
+                        "• Họ tên: " + (g("fn") || "(Chưa điền)") + "\n" +
+                        "• Số điện thoại: " + g("fp") + "\n" +
+                        "• Công ty: " + (g("fc") || "(Cá nhân)") + "\n" +
+                        "• Số lượng: " + (g("fq") || "1") + " set\n" +
+                        "• Hình thức: " + hType + "\n" +
+                        "• Chi tiết chọn: " + hDetail + "\n" +
+                        "• Ghi chú thêm: " + (g("fm") || "(Không có)")
+                };
+            }
+
+            if (bMail) {
+                bMail.addEventListener("click", function () {
+                    if (!validate()) return;
+                    m.style.color = "var(--gold)";
+                    m.textContent = "Đang gửi yêu cầu đến sale@lisafood.vn...";
+                    bMail.disabled = true;
+
+                    var info = buildFormDetails();
+
+                    fetch("https://formsubmit.co/ajax/sale@lisafood.vn", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                        body: JSON.stringify({
+                            _subject: "[Lisa Food Hamper] Yêu cầu báo giá từ " + (g("fn") || g("fp")),
+                            "Họ và tên": g("fn"),
+                            "Số điện thoại": g("fp"),
+                            "Công ty": g("fc"),
+                            "Số lượng": g("fq"),
+                            "Hình thức lựa chọn": info.type,
+                            "Chi tiết yêu cầu": info.detail,
+                            "Ghi chú": g("fm")
+                        })
+                    })
+                        .then(function (res) { return res.json(); })
+                        .then(function (data) {
+                            m.style.color = "#2e7d32";
+                            m.textContent = "✓ Gửi yêu cầu thành công! Bộ phận kinh doanh Lisa Food sẽ liên hệ lại sớm nhất.";
+                            bMail.disabled = false;
+                        })
+                        .catch(function (err) {
+                            var a = document.createElement("a");
+                            a.href = "mailto:sale@lisafood.vn?subject=" + encodeURIComponent("Yêu cầu báo giá hamper Tết 2027") + "&body=" + encodeURIComponent(info.text);
+                            document.body.appendChild(a); a.click(); a.remove();
+                            m.style.color = "#2e7d32";
+                            m.textContent = "Đã mở ứng dụng Email để hoàn tất gửi đến sale@lisafood.vn.";
+                            bMail.disabled = false;
+                        });
+                });
+            }
+
+            if (bWa) {
+                bWa.addEventListener("click", function () {
+                    if (!validate()) return;
+                    var info = buildFormDetails();
+                    var waUrl = "https://api.whatsapp.com/send?phone=84907560668&text=" + encodeURIComponent(info.text);
+                    m.style.color = "#25D366";
+                    m.textContent = "Đang mở WhatsApp với nội dung soạn sẵn...";
+                    window.open(waUrl, "_blank");
+                });
+            }
+        })();
     </script>
 </body>
 
